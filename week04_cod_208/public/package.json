@@ -1,0 +1,19 @@
+{
+  "name": "week04_slides",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.3",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.49",
+    "@iconify-json/uim": "^1.1.5",
+    "playwright-chromium": "^1.31.2"
+  }
+}
