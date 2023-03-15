@@ -73,7 +73,7 @@ h1 {
 
 ---
 layout: image
-image: imageH.jpg
+image: /imageH.jpg
 class: text-center py-50
 ---
 
@@ -89,7 +89,7 @@ h1, p {
 
 ---
 layout: image-left
-image: imageH2.jpg
+image: /imageH2.jpg
 class: text-center pt-50%
 ---
 
