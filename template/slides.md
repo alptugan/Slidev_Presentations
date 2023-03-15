@@ -5,16 +5,16 @@ class: text-center
 highlighter: shiki
 lineNumbers: true
 info: |
-    ## Week 0x Presentation.
+    ## ## Sanat ve Tasarım İşlerinde Mikro Denetleyiciler ve Yaratıcı Kodlama
     Learn more at [Github](https://www.github.com/alptugan)
 drawings:
     persist: true
 transition: slide-up
 aspect-ratio: 16/9
-css: unocss
-title: What Exactly Is Interactivity
+css: windicss
+title: Sanat ve Tasarım İşlerinde Mikro Denetleyiciler ve Yaratıcı Kodlama
 download: true
-exportFilename: "slidev-exported-week0x"
+exportFilename: "slidev-exported-workshop_Arduino"
 # export options
 # use export CLI options in camelCase format
 # Learn more: https://sli.dev/guide/exporting.html
@@ -28,9 +28,9 @@ export:
 selectable: true
 ---
 
-# What Exactly Is Interactivity?
+# Sanat ve Tasarım İşlerinde Mikro Denetleyiciler ve Yaratıcı Kodlama
 
-The overused and misunderstood term _Interactivity_
+Alp Tuğan 
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -42,7 +42,7 @@ The overused and misunderstood term _Interactivity_
 </a>
 
 --- 
-image: 33417713_8043625.jpg
+image: /imageV.jpg
 layout: image-left
 ---
 
@@ -73,7 +73,7 @@ h1 {
 
 ---
 layout: image
-image: photo-1593073862407-a3ce22748763.webp
+image: /imageH.jpg
 class: text-center py-50
 ---
 
@@ -89,7 +89,7 @@ h1, p {
 
 ---
 layout: image-left
-image: photo-1599825919241-ace91951e68c.webp
+image: /imageH2.jpg
 class: text-center pt-50%
 ---
 
