@@ -12,3 +12,7 @@
 4. To deploy the presentation
    1. If the source files are located in a subfolder under the root, you must set the ```--base``` parameter. This **required** in order to load relevant files and assets properly on a Github page or your custom domain.
    2. Run ```slidev build --base /Slidev_Presentations/OMM_Arduino_Workshop/dist/```
+
+
+# Link to Workshop Presentations
+[OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
