@@ -16,7 +16,7 @@
 
 # Link to COD 208 Creative Coding Presentations
 ## week 04: What is Interactivity?
-- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_208/dist)
+- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_208/dist/)
 - Crawford's three principles for interactivity; Speaking, Listening, Processing
 - Levels of interaction. Is the concept of interaction measurement subjective or objective?
 - Two actors at least
