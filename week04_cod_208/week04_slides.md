@@ -37,12 +37,12 @@ The overused and misunderstood term _Interactivity_
     COD 208 - Week 04 Class <carbon:arrow-right class="inline"/>
   </span>
 </div>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" class="abs-br m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+  <a href="https://github.com/alptugan/Slidev_Presentations" target="_blank" alt="GitHub" class="abs-br m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
   <carbon-logo-github />
 </a>
 
 --- 
-image: 33417713_8043625.jpg
+image: /33417713_8043625.jpg
 layout: image-left
 ---
 
@@ -105,7 +105,7 @@ Interaction is a process in which two actors alternately listen, ask questions, 
 
 ---
 layout: image-right 
-image: full-shot-woman-checking-fridge_23-2149894801.webp
+image: /full-shot-woman-checking-fridge_23-2149894801.webp
 ---
 
 # Refregirator Case
@@ -228,7 +228,7 @@ class: px-60
 >Plenty of people claim that everything is subjective, so I won’t try to convince you if you belong to that tribe. But if you’re willing to grant the existence of occasional objective truths, here’s an explanation that offers some practical value for a designer.
 
 ---
-image: photo-1598024055266-e772a5f8c128.webp
+image: /photo-1598024055266-e772a5f8c128.webp
 layout: image 
 class: text-center pt-20% text-shadow-lg 
 ---
@@ -253,7 +253,7 @@ Eventually, a book cannot interpret your feelings, thoughts...
 
 ---
 layout: image
-image: photo-1520483691742-bada60a1edd6.webp 
+image: /photo-1520483691742-bada60a1edd6.webp 
 class: text-center px-50 text-shadow-lg
 ---
 
@@ -276,7 +276,7 @@ it is participation
 
 ---
 layout: image
-image: photo-1581291518633-83b4ebd1d83e.webp
+image: /photo-1581291518633-83b4ebd1d83e.webp
 class: text-left pr-130 text-shadow-lg
 ---
 
@@ -290,7 +290,7 @@ Interactivity design focuses on optimizing the user-computer thought process and
 
 ---
 layout: image-left
-image: premium_photo-1663047504447-d54e624ef2d5.webp
+image: /premium_photo-1663047504447-d54e624ef2d5.webp
 class: text-left text-shadow-lg
 ---
 # Graphic Design and Multimedia
@@ -308,7 +308,7 @@ Holding onto expertise in graphic design without embracing interactivity design 
 
 ---
 layout: image
-image: photo-1593073862407-a3ce22748763.webp
+image: /photo-1593073862407-a3ce22748763.webp
 class: text-center py-50
 ---
 
@@ -324,7 +324,7 @@ h1, p {
 
 ---
 layout: image-left
-image: photo-1599825919241-ace91951e68c.webp
+image: /photo-1599825919241-ace91951e68c.webp
 class: text-center pt-50%
 ---
 
