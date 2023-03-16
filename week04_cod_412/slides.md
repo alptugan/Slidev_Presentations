@@ -276,7 +276,7 @@ class:  m-0 text-left text-shadow-lg p-0
 
 ---
 transition: slide-up
-class:  m-0 text-left text-shadow-lg p-0
+class:  m-0 text-left text-shadow-lg p-0 
 ---
 <div class="container">
   <div class="box">
