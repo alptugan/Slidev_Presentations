@@ -6,7 +6,7 @@ highlighter: shiki
 lineNumbers: true
 info: |
     ## Week 04 Presentation.
-    Learn more at [Github](https://www.github.com/alptugan)
+    Learn more at [Github](https://github.com/alptugan/Slidev_Presentations)
 drawings:
     persist: true
 transition: slide-up
@@ -129,7 +129,7 @@ transition: slide-left
 
 ---
 layout: image-left
-image: photo-1530281700549-e82e7bf110d6.webp
+image: /photo-1530281700549-e82e7bf110d6.webp
 class: text-left
 transition: slide-left
 ---
@@ -155,7 +155,7 @@ Or we can identify a particular object by hearing the sound of it.
 
 ---
 layout: image
-image: photo-1593697909683-bccb1b9e68a4.webp
+image: /photo-1593697909683-bccb1b9e68a4.webp
 class: text-left text-shadow-lg pr-100
 transition: slide-left
 ---

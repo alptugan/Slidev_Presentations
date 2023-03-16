@@ -16,7 +16,7 @@
 
 # Link to COD 208 Creative Coding Presentations
 ## week 04: What is Interactivity?
-- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_208/dist/)
+- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_208/dist)
 - Crawford's three principles for interactivity; Speaking, Listening, Processing
 - Levels of interaction. Is the concept of interaction measurement subjective or objective?
 - Two actors at least
@@ -26,6 +26,12 @@
 
 
 # Link to COD 412 Sound In New Media Presentations
+## week 04: Hearing Through Listening
+- [week 04 Presentation](https://github.com/alptugan/Slidev_Presentations/week04_cod_412/dist)
+- Michel Chion's Listening Modes
+- Casual Listening
+- Semantic Listening
+- Reduced Listening
 
 # Link to Workshop Presentations
 [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
