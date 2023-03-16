@@ -11,8 +11,21 @@
    5. Add all images into ```public```folder.
 4. To deploy the presentation
    1. If the source files are located in a subfolder under the root, you must set the ```--base``` parameter. This **required** in order to load relevant files and assets properly on a Github page or your custom domain.
-   2. Run ```slidev build --base /Slidev_Presentations/OMM_Arduino_Workshop/dist/```
+   2. Run ```slidev build --base /Name_of_the_Repo/Name_of_the_subfolder/dist/```
+   E.g. ```slidev build --base /Slidev_Presentations/OMM_Arduino_Workshop/dist/```
 
+# Link to COD 208 Creative Coding Presentations
+## week 04: What is Interactivity?
+- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_208/dist)
+- Crawford's three principles for interactivity; Speaking, Listening, Processing
+- Levels of interaction. Is the concept of interaction measurement subjective or objective?
+- Two actors at least
+- Intellectual dignity
+- Resembles to Campbell's "controllable systems"
+
+
+
+# Link to COD 412 Sound In New Media Presentations
 
 # Link to Workshop Presentations
 [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
