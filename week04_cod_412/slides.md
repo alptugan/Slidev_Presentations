@@ -4,6 +4,10 @@ background: https://source.unsplash.com/collection/262224/1920x1080
 class: text-center px-40
 highlighter: shiki
 lineNumbers: true
+# enable monaco editor, can be boolean, 'dev' or 'build'
+# monaco: false
+# download remote assets in local using vite-plugin-remote-assets, can be boolean, 'dev' or 'build'
+remoteAssets: false
 info: |
     ## Week 04 Presentation.
     Learn more at [Github](https://github.com/alptugan/Slidev_Presentations)
@@ -26,6 +30,15 @@ export:
     withToc: false
 # controls whether texts in slides are selectable
 selectable: true
+# force color schema for the slides, can be 'auto', 'light', or 'dark'
+colorSchema: 'auto'
+# favicon, can be a local file path or URL
+favicon: 'https://www.alptugan.com/v5/favicon-192.png'
+themeConfig:
+  primary: '#ffcc00'
+
+disabled: false
+codeCopy: true
 ---
 
 # Hearing Through Listening
@@ -260,7 +273,7 @@ class:  m-0 text-left text-shadow-lg p-0
   <img absolute src="https://source.unsplash.com/collection/9468077"/>
 </div>
 
-<div absolute  p-40>
+<div absolute mx-20 my-10 p-10 rounded style="background:rgba(0,0,0, 0.7);">
 <h1>Assignment</h1>
 - Compose a track using acousmatic practices.<br/>
 - Listen to the following music and watch the video track. Train your ears with using  Michel Chion's Reduced Listening practices.<br/>
@@ -269,6 +282,7 @@ class:  m-0 text-left text-shadow-lg p-0
 - Create a  <i text-yellow>Reduced Listening</i> experience by supporting the sounds you produce with visual stimuli.<br/>
 - Concentrate and listen to the recordings that your classmate has made. Describe the sounds you hear in writing. Submit your answers to the LMS forum.<br/>
 - Upload your finalized track with the video. If your video size exceeds 500MB, try to reduce the file size using handbrake application. There is tutorial for that.<br/>
+- <b><i text-yellow>READING:</i></b> Wrightson, K. (2000). An introduction to acoustic ecology. Soundscape: The journal of acoustic ecology, 1(1), 10-13.<br/>
 </div>
 
 ---
