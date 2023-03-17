@@ -262,57 +262,17 @@ class:  m-0 text-left text-shadow-lg p-0
 
 <div absolute  p-40>
 <h1>Assignment</h1>
-- Choose a main theme. <br>
-- Produce sound samples based on this main theme, as in the previous video. <br>
-- Create a <i text-yellow>Reduced Listening</i> experience by supporting the sounds you produce with visual stimuli.<br>
-- Concentrate and listen to the recordings that your classmate has made. Describe the sounds you hear in writing.
+- Compose a track using acousmatic practices.<br/>
+- Listen to the following music and watch the video track. Train your ears with using  Michel Chion's Reduced Listening practices.<br/>
+- Choose a main theme.<br/>
+- Produce sound samples based on this main theme, as in the the video.<br/>
+- Create a  <i text-yellow>Reduced Listening</i> experience by supporting the sounds you produce with visual stimuli.<br/>
+- Concentrate and listen to the recordings that your classmate has made. Describe the sounds you hear in writing. Submit your answers to the LMS forum.<br/>
+- Upload your finalized track with the video. If your video size exceeds 500MB, try to reduce the file size using handbrake application. There is tutorial for that.<br/>
 </div>
-
-<style>
-#imge {
-  filter: blur(4px) !important;
-}
-</style>
 
 ---
 transition: slide-up
-class:  m-0 text-left text-shadow-lg p-0 
+class: p-0 
 ---
-<div class="container">
-  <div class="box">
-    <p>backdrop-filter: blur(10px)</p>
-  </div>
-</div>
-
-<style>
-.box {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  font-family: sans-serif;
-  text-align: center;
-  line-height: 1;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  max-width: 50%;
-  max-height: 50%;
-  padding: 20px 40px;
-}
-
-.container {
-    background-image: url("https://source.unsplash.com/collection/9468077"), linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172));
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-
-
-</style>
-
----
-
 <Youtube width="100%" height="100%" static id="WqksLUiX2cw" />
