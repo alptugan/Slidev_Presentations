@@ -27,7 +27,7 @@
 
 # Link to COD 412 Sound In New Media Presentations
 ## week 04: Hearing Through Listening
-- [week 04 Presentation](https://github.com/alptugan/Slidev_Presentations/week04_cod_412/dist)
+- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_412/dist)
 - Michel Chion's Listening Modes
 - Casual Listening
 - Semantic Listening
