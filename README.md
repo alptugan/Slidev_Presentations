@@ -23,7 +23,7 @@
 - Intellectual dignity
 - Resembles to Campbell's "controllable systems"
 
-## week 04: Metaphors in Interaction Design
+## week 05: Metaphors in Interaction Design
 - [week 05 Presentation](https://alptugan.github.io/Slidev_Presentations/week05_cod_208-Metaphors/dist)
 - Crawford's 5 Steps to create metaphors
 - Why do metaphors crucial in design and coding?
