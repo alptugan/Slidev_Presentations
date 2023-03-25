@@ -23,6 +23,16 @@
 - Intellectual dignity
 - Resembles to Campbell's "controllable systems"
 
+## week 04: Metaphors in Interaction Design
+- [week 05 Presentation](https://alptugan.github.io/Slidev_Presentations/week05_cod_208-Metaphors/dist)
+- Crawford's 5 Steps to create metaphors
+- Why do metaphors crucial in design and coding?
+- How do we perceive metaphors?
+  - Neuroscience → **Feature Extraction**
+  - Edge Detection
+  - Pattern Recognition
+  - Facial Feature Extraction
+- Metaphors in computational environments. 
 
 
 # Link to COD 412 Sound In New Media Presentations
@@ -33,5 +43,25 @@
 - Semantic Listening
 - Reduced Listening
 
+## week 05: Acoustic Ecology
+- [week 05 Presentation](https://alptugan.github.io/Slidev_Presentations/week05_cod_412-Acoustic_Ecology/dist)
+- R. Murray Schafer's "World Soundscape Project"
+- What is Acoustic Ecology (Ecoacoustics)?
+- Soundscape?
+  - Keynote
+  - Signal
+  - Soundmark
+- Hi-fi vs. Lo-fi soundscapes?
+
+
 # Link to Workshop Presentations
 [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
+- Creative Coding.
+- Microcontrollers (Arduino) in design & art.
+- Case Studies.
+- Hands in mud → Demonstrations; 
+  - Arduino Programming Environment.
+  - Blink a led.
+  - Control led blinking state.
+  - Read data from a photocell.
+  - Adjust led light intensity according to photocell input serial data.

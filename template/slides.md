@@ -94,12 +94,12 @@ h1, p {
 </style>
 
 ---
-layout: image-left
-image: /imageH2.jpg
-class: text-center pt-50%
+src: /break.md
 ---
 
-# BREAK
-10 mins.
 
-Then lab study...
+
+
+---
+src: /assignment.md
+---
