@@ -34,6 +34,13 @@
   - Facial Feature Extraction
 - Metaphors in computational environments. 
 
+## week 06: Generative Design Through Pseudo-Intuition
+- [week 06 Presentation](https://alptugan.github.io/Slidev_Presentations/week06_cod_208-Generative_Masks/dist)
+- Intuiton and Design
+- Randomness & Pseudo-randomness 
+- Why do people use masks? History, background
+- Programming a mask
+- Making a generative mask: Implementation of human intuition
 
 # Link to COD 412 Sound In New Media Presentations
 ## week 04: Hearing Through Listening
