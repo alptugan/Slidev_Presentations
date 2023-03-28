@@ -60,6 +60,11 @@
   - Soundmark
 - Hi-fi vs. Lo-fi soundscapes?
 
+## week 06: Sound In Films
+- [week 06 Presentation](https://alptugan.github.io/Slidev_Presentations/week06_cod_412-Diegetic_Non-Diegetic_Internal-Diegetic/dist)
+- Diegetic, Non-diegetic and Internal Diegetic sounds
+- Acousmatic experience
+- Acoustic Ecology sound classfication notes
 
 # Link to Workshop Presentations
 [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
