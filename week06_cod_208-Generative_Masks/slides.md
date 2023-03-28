@@ -471,8 +471,54 @@ circle(95, 170, 5);	// 5th point coords: x: 95, y: 170
 class: p-0 m-0
 ---
 
-<iframe src="https://openprocessing.org/sketch/1879055/embed/" width="100%" height="100%"></iframe>
+<iframe src="https://openprocessing.org/sketch/1879055/embed/" width="100%" height="95%"></iframe>
 
+---
+image: https://source.unsplash.com/Tv1L6bskVUA
+layout: image
+---
+<div text-18 py-40>
+Random
+<div text-sm v-click op-50 w-70>
+ The end result is already set since it follows the rules of inputting numbers and code.
+</div>
+</div>
+
+---
+image: /Georg-Nees-Achtecke-1965-CGeorg-Nees-Closed-polygons-of-8-vertices-placed-into-a.png
+layout: image-right
+---
+# Randomness in Art & Design
+
+<div text-8 v-click>
+ George Nees
+</div>
+
+<div text-8 v-click>
+ Frieder Nake
+</div>
+
+<div text-8 v-click>
+ George Nees
+</div>
+
+<div text-8 v-click>
+ A. Michael Noll
+</div>
+
+<div text-8 v-click>
+ Amadeus Mozart
+</div>
+
+<div text-8 v-click>
+ Iannis Xenakis
+</div>
+
+
+<div text-xs pt-10 op-50>
+Image Credit: George Nees, Achtecke, 1965, polygons of 8 vertices placed into a regular grid. The random variation of placing the vertices inside a small drawing area demonstrates a wild variety of simple shapes. The original drawing only shows the black lines of the polygons on white ground.
+</div>
 ---
 src: /assignment.md
 ---
+
