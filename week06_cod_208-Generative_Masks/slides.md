@@ -518,6 +518,7 @@ layout: image-right
 <div text-xs pt-10 op-50>
 Image Credit: George Nees, Achtecke, 1965, polygons of 8 vertices placed into a regular grid. The random variation of placing the vertices inside a small drawing area demonstrates a wild variety of simple shapes. The original drawing only shows the black lines of the polygons on white ground.
 </div>
+
 ---
 src: /assignment.md
 ---
