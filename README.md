@@ -66,6 +66,9 @@
 - Acousmatic experience
 - Acoustic Ecology sound classfication notes
 
+## week 07: Sound Art
+- [week 07 Presentation](https://alptugan.github.io/Slidev_Presentations/week07_cod_412-SoundArt/dist)
+
 # Link to Workshop Presentations
 [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
 - Creative Coding.

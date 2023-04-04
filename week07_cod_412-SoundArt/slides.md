@@ -331,7 +331,7 @@ layout: statement
 transition: fade
 ---
 <h1 text-shadow-md style="color:white!important">Janet Cardiff & George Bures Miller</h1>
-<img class="bgCover" src='cardiff-miller-darkpool-f.jpg'/>
+<img class="bgCover" src='/cardiff-miller-darkpool-f.jpg'/>
 
 <div
 text-shadow-xl
