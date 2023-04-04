@@ -42,6 +42,9 @@
 - Programming a mask
 - Making a generative mask: Implementation of human intuition
 
+## week 07: Machine Learning with ml5.js Library
+- [week 07 Presentation](https://alptugan.github.io/Slidev_Presentations/week07_cod_412-SoundArt/dist/)
+
 # Link to COD 412 Sound In New Media Presentations
 ## week 04: Hearing Through Listening
 - [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_412/dist)
