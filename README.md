@@ -44,6 +44,10 @@
 
 ## week 07: Machine Learning with ml5.js Library
 - [week 07 Presentation](https://alptugan.github.io/Slidev_Presentations/week07_cod_208-ML5_FaceApi/dist/)
+- What is Artificial Intelligence (AI)?
+- Artificial Narrow Intelligence (ANI), Artificial General Intelligence (AGI), Artificial Super Intelligence (ASI)
+- Machine Learning -> ml5 library
+- faceApi + Generative Mask mapping.
 
 # Link to COD 412 Sound In New Media Presentations
 ## week 04: Hearing Through Listening
@@ -71,6 +75,11 @@
 
 ## week 07: Sound Art
 - [week 07 Presentation](https://alptugan.github.io/Slidev_Presentations/week07_cod_412-SoundArt/dist)
+- What is Sound Art?
+- Historical figures; Russolo, Cage, Xenakis, Stochausen,...
+- Techniques, Tools and Mediums Used in Sound Art
+- Effects on society
+- Sound artists showcase
 
 # Link to Workshop Presentations
 [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
