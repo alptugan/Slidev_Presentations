@@ -24,17 +24,27 @@
     z-index: -99999;
 }
 
-.caption {
-    position: absolute;
+.caption,
+.caption-left {
+    position: absolute; /*absolute*/
     font-size: xx-small;
-    bottom: 0;
+    bottom: inherit;
     margin: 0;
-    padding: 4px 15px;
-    padding-right: 6rem;
+    width: max-content;
+    padding: 4px 0px;
+    padding-right: 0.5rem;
     right: 0;
     height: 1.2rem;
     text-align: right;
     font-style: italic;
     background-color: rgba(0, 0, 0, 0.8);
     font-family: sans-serif;
+}
+
+.caption-left {
+    padding: 4px 15px;
+    padding-left: 0.5rem;
+    text-align: left;
+    left: 0;
+    width: max-content;
 }

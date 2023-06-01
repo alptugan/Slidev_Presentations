@@ -50,8 +50,7 @@ Diegetic, Non-diegetic, and Internal Diegetic
 
 ---
 
-<Toc />
-
+<Toc :columns="2"/>
 --- 
 image: /imageV.jpg
 layout: image-left
