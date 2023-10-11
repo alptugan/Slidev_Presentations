@@ -28,7 +28,7 @@ Includes my course and workshop presentations built with slidev.js
 - Foods for source
 - Syllabus handed-out
 
-### 🔗 [week 02: Computers & Programming](https://alptugan.github.io/Slidev_Presentations/week02_cod_207/dist)
+### 🔗 [week 02: Computers & Programming](https://alptugan.github.io/Slidev_Presentations/week02_cod_207/dist){:target="_blank"}
 - Programming, Coding & Programming Languages
 - Openprocessing Web App
 - Examples
