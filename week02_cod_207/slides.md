@@ -41,18 +41,32 @@ src: ./pages/header.md
 
 
 ---
-layout: fact
-class: text-center
-transition: fade-out
+layout: image-left
+image: /terminology-header.png
+class: text-center effect_Shadow mt-25 text-10
+transition: fade-out 
 ---
 
 # Overview
-<br>
-Terminology
 
-P5JS sketch
+<!--<img w-100 m-auto src='/terminology-header.png'/>-->
 
-openProcessing
+<div pt-3 v-click>
+
+📚 Terminology
+</div>
+
+<div pt-3 v-click>
+
+🖼️ P5JS sketch
+</div>
+
+<div pt-3 v-click>
+
+🖥️ openProcessing
+</div>
+
+
 
 
 ---
@@ -371,8 +385,8 @@ preload: false
       delay:1000,
     }
   }">
-  <Arrow x1="200" y1="240" x2="675" y2="240" color="#ff0000" width="4" />
-  <div absolute top-60 right-65 text-red-500 text-10 >Download Your Sketch</div>
+  <Arrow x1="230" y1="48" x2="795" y2="48" color="#ff0000" width="4" />
+  <div absolute top-15 right-58 text-red-500 text-10 >Download Your Sketch</div>
 </div>
 
 ---
@@ -464,6 +478,17 @@ class: p-5
 
 <Tweet id="1577636022128558081" />
 
+---
+layout: two-cols
+class: text-left
+hide: true
+---
+
+# Exhibtion & Events
+
+[Grand Pera - Eskizden Piksele](https://www.instagram.com/p/CxxsIiIo-dn/)
+
+[David Szauder](https://www.instagram.com/alptugan/saved/creative-coding/17989090882163487/?img_index=1)
 
 ---
 layout: two-cols
@@ -480,7 +505,9 @@ hide: true
 <Tweet id="1686015782277251074" />
 
 ::right::
-<Tweet id="1427649830491496448" />
+<Tweet  id="1427649830491496448" />
+
+[Neil Mendoza](https://www.instagram.com/p/CGF0b-zFGAX/)
 
 ---
 layout: center
