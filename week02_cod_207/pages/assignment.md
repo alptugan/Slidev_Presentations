@@ -6,7 +6,7 @@ transition: fade-out
 ---
 
 # Assignments
-1. 👀 Implement one of your peer's drawing instructions using P5JS posted to forum.
+1. 👀 Redraw the submitted sketch for week 1 using P5JS. Rules are same. Just use 20 points instead of 100, if it's too much. 
 2. ⏫ Upload the sketch to your openProcessing account.
 3. ❗Submit the openprocessing link.
 4. ❗Submit the sketch source code as zip file as well.
