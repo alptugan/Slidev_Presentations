@@ -1,5 +1,3 @@
-markdown: kramdown
-
 # Slidev_Presentations
 
 Includes my course and workshop presentations built with slidev.js
@@ -30,7 +28,7 @@ Includes my course and workshop presentations built with slidev.js
 - Foods for source
 - Syllabus handed-out
 
-### 🔗 [week 02: Computers & Programming](https://alptugan.github.io/Slidev_Presentations/week02_cod_207/dist){:target="_blank"}
+### 🔗 [week 02: Computers & Programming](https://alptugan.github.io/Slidev_Presentations/week02_cod_207/dist)
 - Programming, Coding & Programming Languages
 - Openprocessing Web App
 - Examples
