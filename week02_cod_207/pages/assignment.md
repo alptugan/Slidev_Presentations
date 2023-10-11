@@ -10,5 +10,6 @@ transition: fade-out
 2. ⏫ Upload the sketch to your openProcessing account.
 3. ❗Submit the openprocessing link.
 4. ❗Submit the sketch source code as zip file as well.
-5. 📖 Read the sections Cartesian Coordinates and Color from the book.
+5. 📖 Read pg:25-26 (Drawing Order)
+6. 📺 Watch the video. You can use the same code in openprocessing web editor. You don't have to use p5js editor.
 
