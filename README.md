@@ -35,6 +35,10 @@ Includes my course and workshop presentations built with slidev.js
 - Hello World
 
 ### 🔗 [week 03: TBA](https://alptugan.github.io/Slidev_Presentations/week03_cod_207/dist)
+- Drawing Order → Swap object back and forth
+- Styling → fill(), noStroke()
+- Computational Thinking Framework
+- Case Study: Piet Mondrian's artwroks
 
 ### 🔗 [week 04: TBA](https://alptugan.github.io/Slidev_Presentations/week04_cod_207/dist)
 
