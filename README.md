@@ -34,7 +34,7 @@ Includes my course and workshop presentations built with slidev.js
 - Examples
 - Hello World
 
-### 🔗 [week 03: TBA](https://alptugan.github.io/Slidev_Presentations/week03_cod_207/dist)
+### 🔗 [week 03: Analyze & Reproduce](https://alptugan.github.io/Slidev_Presentations/week03_cod_207/dist)
 - Drawing Order → Swap object back and forth
 - Styling → fill(), noStroke()
 - Computational Thinking Framework
