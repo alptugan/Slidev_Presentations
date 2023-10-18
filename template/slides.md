@@ -1,8 +1,7 @@
 ---
-theme: default
 background: https://source.unsplash.com/collection/94734566/1920x1080
-title: Week 02 -
-exportFilename: "week02--"
+title: Week 03 -
+exportFilename: "week03--"
 class: text-center
 highlighter: shiki
 lineNumbers: true
@@ -13,7 +12,6 @@ info: |
     Access all week contents @[Github/alptugan](https://github.com/alptugan/Slidev_Presentations)
 drawings:
     persist: true
-transition: slide-up
 aspect-ratio: 16/9
 css: unocss
 download: true
@@ -33,59 +31,31 @@ codeCopy: true
 favicon: "https://www.alptugan.com/v5/favicon-192.png"
 themeConfig:
     primary: "#ffcc00"
+transition: fade-out
+theme: seriph
+src: ./pages/header.md
 ---
-
-# Sound In Films
-
-Diegetic, Non-diegetic, and Internal Diegetic
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    COD 412 - Week 06 Class <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<a href="https://github.com/alptugan/Slidev_Presentations" target="_blank" alt="GitHub" class="abs-br m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white"><carbon-logo-github /></a>
 
 ---
 
 <Toc :columns="2"/>
 
-<!-- prettier-ignore-start -->
+
 
 ---
 image: /imageV.jpg
 layout: image-left
 ---
 
-<!-- prettier-ignore-end -->
 
-# Title 2
+# Wrap-up (Summary)
 
-A cyclic process that involves at least two actors;
+Things we learn about P5JS programming language.
+- Cartesian Coordinate System (How canvas positioning works)
+- Structure (Built-in functions (setup, draw) / inline functions (createWindow, background))
+- Drawing simple shapes (circle)
 
--   Actors build a dialogue between each other.
--   Recall Campbell's _interactive systems_?
--   A successful interaction depends on the quality of each subtask.
-    -   👂Listening,
-    -   💬 Thinking,
-    -   🗣️ Speaking.
 
-<br>
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!-- prettier-ignore-start -->
 
 ---
 layout: image
@@ -93,28 +63,53 @@ image: /imageH.jpg
 class: text-center py-50
 ---
 
-<!-- prettier-ignore-end -->
+# Coordinate System
 
-# Conslusion
+Top left corner of the the canvas is the starting point of x and y coordinates
 
-That is, it generates guidelines for good design that make sense
+-> There will be coordinate system image
 
-<style>
-h1, p {
-  color: #fff !important;
-  text-shadow: 2px 2px 10px black;
-  opacity: 1 !important;
+
+---
+layout: image
+image: /imageH.jpg
+class: text-left
+---
+
+# Built-in Functions
+```js {0|1,4|6,10|3|6|6,10|7|8|9|10|6|7|8|9|10|6|7|8|9|10|6|7|8|9|10} {lines:true, startLine:1} 
+function setup() {
+  // Creates the application window params: width=600, height=600
+  createCanvas(600, 600);
 }
-</style>
 
-<!-- prettier-ignore-start -->
+function draw() {
+  // Set the background color of the window params: Red: 100, Green: 20, Blue: 20
+  // R,G,B values must be between 0 - 255
+  background(100,20,20);
+}
+```
 
 ---
-src: /break.md
+src: ./pages/break.md
+hide: false
 ---
 
+
+
 ---
-src: /assignment.md
+layout: section
+class: text-center text-yellow 
 ---
 
-<!-- prettier-ignore-end -->
+# *"First, solve the problem.*
+# *Then, write the code."*
+<div pt-10 text-gray>John Johnson</div>
+
+<img class='bgCover' src='/grad-bg3.jpg'/>
+
+
+---
+src: ./pages/assignment.md
+hide: false
+---
