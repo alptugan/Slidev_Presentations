@@ -40,7 +40,7 @@ Includes my course and workshop presentations built with slidev.js
 - Computational Thinking Framework
 - Case Study: Piet Mondrian's artwroks
 
-### 🔗 [week 04: TBA](https://alptugan.github.io/Slidev_Presentations/week04_cod_207/dist)
+### 🔗 [week 04: Variables, Computational Thinking, Case Study](https://alptugan.github.io/Slidev_Presentations/week04_cod_207/dist)
 
 ### 🔗 [week 05: TBA](https://alptugan.github.io/Slidev_Presentations/week05_cod_207/dist)
 
