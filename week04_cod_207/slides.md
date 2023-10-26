@@ -248,7 +248,8 @@ layout: section
 class: text-center text-yellow 
 ---
 
-# After Break
+# *"First, solve the problem.*
+# *Then, write the code."*
 <div pt-10 text-gray>John Johnson</div>
 
 <img class='bgCover' src='/grad-bg3.jpg'/>
