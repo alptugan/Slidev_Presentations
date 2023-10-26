@@ -41,24 +41,51 @@ Includes my course and workshop presentations built with slidev.js
 - Case Study: Piet Mondrian's artwroks
 
 ### 🔗 [week 04: Variables, Computational Thinking, Case Study](https://alptugan.github.io/Slidev_Presentations/week04_cod_207/dist)
+- Styling Objects → `stroke()`, `noStroke()`, `noFill()`...
+- Variables → Why we need them?
+- Static vs. Dynamic values
+- Case Study: Transform position, size, and style many object using three variables.
+- Computational Thinking as a tool to generate algorithms
 
-### 🔗 [week 05: TBA](https://alptugan.github.io/Slidev_Presentations/week05_cod_207/dist)
+### 🔗 [week 05: Generative Art Paradigms: Randomness](https://alptugan.github.io/Slidev_Presentations/week05_cod_207/dist)
+- What is Generative Art?
+- 50s Computer Art Scene → Computers and Automation Magazine
+- Deterministic & Stochastic Randomness
+- Randomness in Algorithmic (Generative) Art
+- Case Study: `random()` function to create variations
 
-### 🔗 [week 06: TBA](https://alptugan.github.io/Slidev_Presentations/week06_cod_207/dist)
+### 🔗 [week 06: Intelligence Through Conditionals](https://alptugan.github.io/Slidev_Presentations/week06_cod_207/dist)
+- Logical Operators
+- If / Else Conditions
+- Logic and Randomness
+- Combine randomness with conditionals
 
-### 🔗 [week 07: TBA](https://alptugan.github.io/Slidev_Presentations/week07_cod_207/dist)
+### 🔗 [week 07: Interaction](https://alptugan.github.io/Slidev_Presentations/week07_cod_207/dist)
+- Fundamental computer interaction tools: Computer mouse & keyboard
+- Modify objects on the canvas via the user input
+- `mousePressed()` and `keyPressed()` functions
+- Make one of the sketches interactive
 
-### 🔗 [week 08: TBA](https://alptugan.github.io/Slidev_Presentations/week08_cod_207/dist)
+### 🔗 [week 08: Generative Art Paradigms: Iterations & Loops](https://alptugan.github.io/Slidev_Presentations/week08_cod_207/dist)
+- Tesselations
+- Case Study: [Escher, Islamic Art](https://mymodernmet.com/tessellation-art/), Warhol, LeWitt,[Sébastien Truchet](https://en.wikipedia.org/wiki/Truchet_tiles) 
+- [Wiki Page](https://en.wikipedia.org/wiki/Tessellation)
+- For Loops and While loops
+- In class practice
 
-### 🔗 [week 09: TBA](https://alptugan.github.io/Slidev_Presentations/week09_cod_207/dist)
+### 🔗 [week 09: Media](https://alptugan.github.io/Slidev_Presentations/week09_cod_207/dist)
+- Import Image, sound and video
+- Case Study: Create generative collage
 
-### 🔗 [week 10: TBA](https://alptugan.github.io/Slidev_Presentations/week10_cod_207/dist)
+### 🔗 [week 10: Typography](https://alptugan.github.io/Slidev_Presentations/week10_cod_207/dist)
 
-### 🔗 [week 11: TBA](https://alptugan.github.io/Slidev_Presentations/week11_cod_207/dist)
+### 🔗 [week 11: Final Project Proposals](#)
 
-### 🔗 [week 12: TBA](https://alptugan.github.io/Slidev_Presentations/week12_cod_207/dist)
+### 🔗 [week 12: Final Project Reviews](#)
 
-### 🔗 [week 13: TBA](https://alptugan.github.io/Slidev_Presentations/week13_cod_207/dist)
+### 🔗 [week 13: Final Project Reviews](#)
+
+### 🔗 [week 13: Final Project Presentations](#)
 
 </details>
 
