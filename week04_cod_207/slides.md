@@ -73,7 +73,7 @@ class: text-left
 # Import p5.Utils using OpenProcessing IDE
 Detailed instructions are in the following link.
 
-[👉 Download the tutorial pdf](/Tutorial_HowtouseP5.UtilsPixelRuleronOpenProcessingWebApp_PDF_2023-10-18.pdf)
+[👉 Download the tutorial pdf](https://scribehow.com/shared/How_to_use_P5Utils_PixelRuler_on_OpenProcessing_Web_App__cvTYA6hPRPuqtvtGeZTuhQ)
 
 ::right::
 
