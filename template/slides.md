@@ -37,8 +37,12 @@ src: ./pages/header.md
 ---
 
 ---
+layout: default
+---
+# Table of Contents
 
-<Toc :columns="2"/>
+<Toc :columns="2" />
+
 
 
 

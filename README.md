@@ -47,7 +47,7 @@ Includes my course and workshop presentations built with slidev.js
 - Case Study: Transform position, size, and style many object using three variables.
 - Computational Thinking as a tool to generate algorithms
 
-### 🔗 [week 05: Generative Art Paradigms: Randomness](https://alptugan.github.io/Slidev_Presentations/week05_cod_207/dist)
+### 🔗 [week 05: Generative Art Paradigms: Randomness](https://alptugan.github.io/Slidev_Presentations/week05_cod_207-Randomness/dist)
 - What is Generative Art?
 - 50s Computer Art Scene → Computers and Automation Magazine
 - Deterministic & Stochastic Randomness
