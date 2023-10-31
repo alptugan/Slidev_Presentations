@@ -46,8 +46,7 @@ layout: default
 
 
 ---
-image: /imageV.jpg
-layout: image-left
+layout: default
 ---
 
 
@@ -81,8 +80,6 @@ class: text-left text-8
 <div v-click>
 4️⃣ Algorithm
 </div>
-
-
 
 
 ---

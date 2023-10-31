@@ -1,10 +1,10 @@
 # Creative Coding
 
-How do computers work?, P5JS Setup, Hello World
+Generative Art Paradigms: Randomness
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    COD 207 - Week 02 Class <carbon:arrow-right class="inline" />
+    COD 207 - Week 05 Class <carbon:arrow-right class="inline" />
   </span>
 </div>
 
