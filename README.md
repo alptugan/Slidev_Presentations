@@ -54,7 +54,7 @@ Includes my course and workshop presentations built with slidev.js
 - Randomness in Algorithmic (Generative) Art
 - Case Study: `random()` function to create variations
 
-### 🔗 [week 06: Intelligence Through Conditionals](https://alptugan.github.io/Slidev_Presentations/week06_cod_207/dist)
+### 🔗 [week 06: Intelligence Through Conditionals](https://alptugan.github.io/Slidev_Presentations/week06_cod_207-Conditionals-Loops/dist)
 - Logical Operators
 - If / Else Conditions
 - Logic and Randomness
