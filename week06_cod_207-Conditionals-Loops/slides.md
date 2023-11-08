@@ -250,3 +250,14 @@ class: text-center
 src: ./pages/assignment.md
 hide: false
 ---
+
+---
+layout: image
+image: /grad-bg2.jpg
+class: text-center
+---
+
+# Assignment Reference Image
+You can choose your own colors, and other shape properties.
+
+<img m-auto h-100 src='/5x5 Grid For Loops.jpg' />
