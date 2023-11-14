@@ -61,11 +61,12 @@ Includes my course and workshop presentations built with slidev.js
 - Logic and Randomness
 - Combine randomness with conditionals
 
-### 🔗 [week 07: Interaction](https://alptugan.github.io/Slidev_Presentations/week07_cod_207/dist)
+### 🔗 [week 07: Interaction](https://alptugan.github.io/Slidev_Presentations/week07_cod_207-Interactivity/dist)
 - Fundamental computer interaction tools: Computer mouse & keyboard
 - Modify objects on the canvas via the user input
 - `mousePressed()` and `keyPressed()` functions
 - Make one of the sketches interactive
+- Generative Art Paradigms: Tesselation / Tiling
 
 ### 🔗 [week 08: Generative Art Paradigms: Iterations & Loops](https://alptugan.github.io/Slidev_Presentations/week08_cod_207/dist)
 - Tesselations
