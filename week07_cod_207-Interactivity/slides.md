@@ -164,6 +164,35 @@ src: ./pages/break.md
 hide: false
 ---
 
+---
+layout: default
+class: text-left
+---
+
+# Nested For Loops: Tiling
+```js {all} {lines:true, startLine:1} 
+function setup() {
+  // Creates the application window params: width=600, height=600
+  createCanvas(600, 600);
+  noLoop();
+}
+
+function draw() {
+  // Set the background color of the window params: Red: 100, Green: 20, Blue: 20
+  // R,G,B values must be between 0 - 255
+  background(100,20,20);
+
+  for(let i = 0; i < 6; i++ ) {
+    for(let j = 0; j < 6; j++ ) {
+      let x = i * 100;
+      let y = j * 100;
+      rect(x, y, 100, 100);
+    }
+  }
+}
+
+```
+
 
 ---
 layout: center
