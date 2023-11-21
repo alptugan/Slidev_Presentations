@@ -68,12 +68,12 @@ Includes my course and workshop presentations built with slidev.js
 - Make one of the sketches interactive
 - Generative Art Paradigms: Tesselation / Tiling
 
-### 🔗 [week 08: Generative Art Paradigms: Iterations & Loops](https://alptugan.github.io/Slidev_Presentations/week08_cod_207/dist)
+### 🔗 [week 08: Tesselations - Translation](https://alptugan.github.io/Slidev_Presentations/week08_cod_207-CustomShapes/dist)
 - Tesselations
 - Case Study: [Escher, Islamic Art](https://mymodernmet.com/tessellation-art/), Warhol, LeWitt,[Sébastien Truchet](https://en.wikipedia.org/wiki/Truchet_tiles) 
 - [Wiki Page](https://en.wikipedia.org/wiki/Tessellation)
-- For Loops and While loops
-- In class practice
+- For Loops and Tessellation
+- Push, Pop, Translate, Rotate, Scale...
 
 ### 🔗 [week 09: Media](https://alptugan.github.io/Slidev_Presentations/week09_cod_207/dist)
 - Import Image, sound and video
