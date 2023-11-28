@@ -75,20 +75,23 @@ Includes my course and workshop presentations built with slidev.js
 - For Loops and Tessellation
 - Push, Pop, Translate, Rotate, Scale...
 
-### 🔗 [week 09: Media](https://alptugan.github.io/Slidev_Presentations/week09_cod_207/dist)
+### 🔗 [week 09: Media](https://alptugan.github.io/Slidev_Presentations/week09_cod_207-Media/dist)
 - Import Image, sound and video
 - Case Study: Create generative collage
 - Arrays
 
-### 🔗 [week 10: Typography](https://alptugan.github.io/Slidev_Presentations/week10_cod_207/dist)
+### 🔗 [week 10: Typography](https://alptugan.github.io/Slidev_Presentations/week10_cod_207-Typography/dist)
+- Poster Design
+- Deconstruction / Reconstruction
+- Generative Typography
 
-### 🔗 [week 11: Final Project Proposals](#)
+### week 11: Final Project Proposals
 
-### 🔗 [week 12: Final Project Reviews](#)
+### week 12: Final Project Reviews
 
-### 🔗 [week 13: Final Project Reviews](#)
+### week 13: Final Project Reviews
 
-### 🔗 [week 13: Final Project Presentations](#)
+### week 14: Final Project Presentations
 
 </details>
 
