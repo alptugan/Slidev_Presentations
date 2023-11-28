@@ -1,7 +1,7 @@
 ---
 background: https://source.unsplash.com/collection/94734566/1920x1080
-title: Week 03 -
-exportFilename: "week03--"
+title: Week 10 -
+exportFilename: "week10-Typography-"
 class: text-center
 highlighter: shiki
 lineNumbers: true
@@ -47,40 +47,27 @@ layout: default
 
 
 ---
-image: /imageV.jpg
-layout: image-left
+layout: center
 ---
 
 
-# Wrap-up (Summary)
-
-Things we learn about P5JS programming language.
-- Cartesian Coordinate System (How canvas positioning works)
-- Structure (Built-in functions (setup, draw) / inline functions (createWindow, background))
-- Drawing simple shapes (circle)
+# Display Text on Canvas
+text() function with default parameters
 
 
 
 ---
-layout: image
-image: /imageH.jpg
-class: text-center py-50
+layout: center
 ---
 
-# Coordinate System
-
-Top left corner of the the canvas is the starting point of x and y coordinates
-
--> There will be coordinate system image
-
+# Custom style
+Style customization
 
 ---
-layout: image
-image: /imageH.jpg
-class: text-left
+layout: center
 ---
 
-# Built-in Functions
+# Loading Custom Fonts
 ```js {0|1,4|6,10|3|6|6,10|7|8|9|10|6|7|8|9|10|6|7|8|9|10|6|7|8|9|10} {lines:true, startLine:1} 
 function setup() {
   // Creates the application window params: width=600, height=600
@@ -100,17 +87,15 @@ hide: false
 ---
 
 
-
 ---
-layout: section
-class: text-center text-yellow 
+layout: center
 ---
 
-# *"First, solve the problem.*
-# *Then, write the code."*
-<div pt-10 text-gray>John Johnson</div>
+# Deconstruct / Reconstruct
 
-<img class='bgCover' src='/grad-bg3.jpg'/>
+- Hansen's method 
+- Comoputational Graphic Design Repository → [link](https://www.pinterest.com/stixan/computational-graphic-design-inspiration/)
+
 
 
 ---

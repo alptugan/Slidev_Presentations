@@ -216,6 +216,15 @@ Following examples are developed using p5JS editor.
 
 
 ---
+class: text-left
+layout: center
+---
+
+# Media cheatsheet
+
+[Download the pdf](/media_cheatsheet.pdf)
+
+---
 src: ./pages/assignment.md
 hide: false
 ---

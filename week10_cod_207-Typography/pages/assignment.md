@@ -7,10 +7,10 @@ transition: fade-out
 
 # Assignments
 
-1. 👀 Redraw the submitted sketch for week 1 using P5JS. Rules are same. Just use 20 points instead of 100, if it's too much.
-2. ⏫ Upload the sketch to your openProcessing account.
-3. ❗Submit the openprocessing link.
-4. ❗Submit the sketch source code as zip file as well.
-5. 📖 Read pg:25-26 (Drawing Order)
-6. 📺 Watch the video. You can use the same code in openprocessing web editor. You don't have to use p5js editor.
+1. Create a generative poster design.
+2. Refer to the [pinterest repository](https://www.pinterest.com/stixan/computational-graphic-design-inspiration/)
+3. Use randomness to create variations of your design.
+4. Upload 3 different variations as jpg file from the same code.
+5. ❗Submit the openprocessing link.
+6. ❗Submit the sketch source code as zip file as well.
 
