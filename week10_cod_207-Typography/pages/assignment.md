@@ -9,7 +9,7 @@ transition: fade-out
 
 1. Create a generative poster design.
 2. Refer to the [pinterest repository](https://www.pinterest.com/stixan/computational-graphic-design-inspiration/)
-3. Use randomness to create variations of your design.
+3. Use randomness to create variations of your design. You can randomize colors, fonts, size of objects, position of objects, and so on...
 4. Upload 3 different variations as jpg file from the same code.
 5. ❗Submit the openprocessing link.
 6. ❗Submit the sketch source code as zip file as well.
