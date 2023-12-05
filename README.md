@@ -81,13 +81,18 @@ Includes my course and workshop presentations built with slidev.js
 - Arrays
 
 ### 🔗 [week 10: Typography](https://alptugan.github.io/Slidev_Presentations/week10_cod_207-Typography/dist)
+- Display text on the canvas
+- text(), textSize(), textAlign(), loadFont()
 - Poster Design
 - Deconstruction / Reconstruction
 - Generative Typography
 
-### week 11: Final Project Proposals
+### week 11: Final Project Discussion
+- Prepare moodboard for the final project
+- Background information (Inspiration & Purpose)
+- Peer-discussions
 
-### week 12: Final Project Reviews
+### week 12: Final Project Proposals
 
 ### week 13: Final Project Reviews
 
