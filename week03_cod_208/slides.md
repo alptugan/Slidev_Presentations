@@ -1,31 +1,38 @@
 ---
-theme: seriph
 background: https://source.unsplash.com/collection/94734566/1920x1080
+title: Week 03 - Objects & Arrays
+exportFilename: "week03--"
 class: text-center
 highlighter: shiki
 lineNumbers: true
 info: |
-    ## Week 03 Presentation.
-    Learn more at [Github](https://www.github.com/alptugan)
+    ## Özyeğin University Course Presentation
+    Lecturer Alp Tuğan
+
+    Access all week contents @[Github/alptugan](https://github.com/alptugan/Slidev_Presentations)
 drawings:
     persist: true
-transition: slide-left
 aspect-ratio: 16/9
 css: unocss
-title: Coding as Creativity
 download: true
-exportFilename: "slidev-exported-week03"
 # export options
 # use export CLI options in camelCase format
 # Learn more: https://sli.dev/guide/exporting.html
 export:
     format: pdf
     timeout: 30000
-    dark: false
+    dark: true
     withClicks: false
-    withToc: false
+    withToc: true
 # controls whether texts in slides are selectable
 selectable: true
+codeCopy: true
+# favicon, can be a local file path or URL
+favicon: "https://www.alptugan.com/v5/favicon-192.png"
+themeConfig:
+    primary: "#ffcc00"
+transition: fade-out
+theme: seriph
 ---
 
 # Coding as Creativity
@@ -48,37 +55,40 @@ Influences of software tools on contemporary design & visual culture
   </a>
 </div>
 
-<!--The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)-->
+<!--The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+-->
 
-<!-- prettier-ignore-start -->
+
+---
+layout: default
+---
+# Table of Contents
+<Toc :columns="2" />
+
 
 ---
 transition: slide-up
 image: /bg1.png
 layout: image-right
+title: Questions
 ---
-<!-- prettier-ignore-end -->
-
-## 🎨 HOW HAS SOFTWARE AFFECTED THE VISUAL ARTS & DESIGN?
+🎨 HOW HAS SOFTWARE AFFECTED THE VISUAL ARTS & DESIGN?
 
 <br>
 
-## 🤹 WHAT IS THE POTENTIAL FOR SOFTWARE WITHIN THE VISUAL ARTS?
+🤹 WHAT IS THE POTENTIAL FOR SOFTWARE WITHIN THE VISUAL ARTS?
 
 <br>
 
-## 🧑‍💻 AS A DESIGNER OR ARTIST, WHY WOULD I WANT OR NEED TO WRITE SOFTWARE?
+🧑‍💻 AS A DESIGNER OR ARTIST, WHY WOULD I WANT OR NEED TO WRITE SOFTWARE?
 
-<!-- prettier-ignore-start -->
 
 ---
 transition: slide-left
 layout: center 
-class: "text-center"
+class: text-center
 preload: false
 ---
-<!-- prettier-ignore-end -->
-
 # Coding As Medium
 
 <div v-motion
@@ -276,14 +286,11 @@ img {
 }
 </style>
 
-<!-- prettier-ignore-start -->
 
 ---
 transition: slide-up
 layout: center
 ---
-<!-- prettier-ignore-end -->
-
 # Qualities of an Algorithm
 
 <v-clicks>

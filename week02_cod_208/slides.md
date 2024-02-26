@@ -1,87 +1,156 @@
 ---
-theme : "black"
-transition: "slide"
-highlightTheme : "arta"
+background: https://source.unsplash.com/collection/94734566/1920x1080
+title: Week 02 - Objects
+exportFilename: "week02--"
+class: text-center
+highlighter: shiki
+lineNumbers: true
+info: |
+    ## Özyeğin University Course Presentation
+    Lecturer Alp Tuğan
+
+    Access all week contents @[Github/alptugan](https://github.com/alptugan/Slidev_Presentations)
+drawings:
+    persist: true
+aspect-ratio: 16/9
+css: unocss
+download: true
+# export options
+# use export CLI options in camelCase format
+# Learn more: https://sli.dev/guide/exporting.html
+export:
+    format: pdf
+    timeout: 30000
+    dark: true
+    withClicks: false
+    withToc: true
+# controls whether texts in slides are selectable
+selectable: true
+codeCopy: true
+# favicon, can be a local file path or URL
+favicon: "https://www.alptugan.com/v5/favicon-192.png"
+themeConfig:
+    primary: "#ffcc00"
+transition: fade-out
+theme: seriph
+src: ./pages/header.md
 ---
-# Classes in p5.js [Tutorial]
-
-![bg](https://p5js.org/assets/img/p5js.svg){:height="auto" width="60%"}
-
-In p5.js, an object is a standalone entity that encapsulates state and behavior. Objects have properties and methods, which can be accessed and modified using dot notation. This tutorial will cover the basics of creating and using objects in p5.js.
 
 ---
+layout: default
+---
+# Table of Contents
 
-## Creating Objects
+<Toc :columns="2" />
 
-To create an object in p5.js, you need to define a class first. A class is a blueprint for creating objects with a specific set of properties and methods. Here's an example of a class that defines a simple rectangle object: "**Falling Items**"
 
-<pre>
-<code data-line-numbers="3,4-6">class FallingItem {
-  constructor(x, y, w, h) {
-    this.x = x;   // x positon of the item
-    this.y = y;   // y positon of the item
-    this.w = w;   // width of the item
-    this.h = h;   // height of the item
-  }
+---
+layout:default
+---
 
-  // A custom function to display the item on the canvas
-  // within input arguments in the *construtor()*
-  show() {
-    rect(this.x, this.y, this.w, this.h);
-  }
+# Coding is a Superpower
+
+<Youtube id='Bwiln7v0fdc' width='100%' height='90%' />
+
+---
+image: /oop1.jpg
+layout: image-left
+---
+
+
+# Object Oriented Programming (OOP)
+
+Object-oriented programming (OOP) is a way of <span text-color-green>organizing</span> and designing computer programs. It focuses on creating <span text-color-yellow>objects</span> that have both <span text-color-red>properties</span> (attributes) and <span text-color-red>actions</span> (methods). 
+
+Objects are created from <span text-color-purple>classes</span>, which are like <span text-color-blue>blueprints</span> that define what an object can do and what information it can hold. OOP helps in writing code that is modular, reusable, and easy to understand and maintain.
+
+
+
+---
+layout: deafult
+class: text-left py-10
+---
+
+# Objects and Classes
+An object is a blueprint for creating objects called a class.
+
+<img h-100 m-auto src='/blog-images-3.png' />
+
+---
+layout: center
+class: text-left
+---
+# Syntax In Javascript
+
+<img h-70 src='/syntax.png' />
+
+
+```js {1|11|2|5|3|4|7|8|all}
+class Name-of-the-class {
+    constructor() {
+        // Properties of the class
+        this.name = "MyClass";
+    }
+
+    // You can add your custom functions
+    someFunctionName() {
+
+    }
 }
-</code>
-</pre>
-
-In this example, we define a FallingItem class with four properties: `x`, `y`, `w`, and `h`. We also define a `show()` method that draws a rectangle on the canvas using the `rect()` function.
-
----
-
-## How to instantiate a class in p5JS
-
-To create a new instance of the FallingItem class, we can use the `new` operator:
-
-``` js
-
-let r = new FallingItem(50, 50, 100, 50);
-
-```
-
-This creates a new rectangle with an x-coordinate of 50, a y-coordinate of 50, a width of 100, and a height of 50.
-
----
-
-## Accessing Class Properties
-
-Once you've created a class, you can access its properties using dot notation. For example, to get the x-coordinate of the rectangle we created earlier, we can do:
-
-``` js
-let x = r.x;
-
-```
-
---
-
-To modify the x-coordinate, we can do:
-
-``` js
-r.x = 75;
-
 ```
 
 ---
+layout: default
+image: /oop1.png
+preload: false
+---
 
-## Calling Class Methods
+# Create a class in openProcessing
+Move your mouse next to "mySketch" tab. A plus (+) will appear.
 
-You can also call object methods using dot notation. For example, to draw the rectangle we created earlier, we can do:
+<img m-auto h-100 src='/oop1.png' />
+<Arrow v-motion-fade
+  :initial="{ x: -20, y: 20, opacity: 0 }"
+  :enter="{ x: 0, y: 0, opacity: 1, transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+    }, }" x2="400" y2="175" x1="100" y1="450" color="rgba(200,0,0,1)" />
 
-```
-r.show();
+---
+src: ./pages/break.md
+hide: false
+---
 
-```
+---
+layout: image-left
+image: /slide4.jpeg
+class: text-left py-40
+---
+# Convert Your Object into Class
+- Choose a class name.
+- Create a new file on openProcessing.
+- Use the template example of my sketch as starter code.
 
 ---
 
-## Conclusion
+<Youtube id='ZLWxSam4HfE' width='100%' height='100%' />
 
-That's it for this tutorial on objects in p5.js. We covered the basics of creating and using objects, including defining a class, creating instances of that class, accessing object properties, and calling object methods. With these tools, you can create and manipulate objects to add interactivity and complexity to your p5.js sketches
+
+---
+src: ./pages/assignment.md
+hide: false
+---
+
+---
+layout: two-cols
+class: p-5
+---
+
+# Tutorials: Arrays
+
+<Youtube id='vrMCIbHGJgE' width='100%' height='100%' />
+
+::right::
+
+<Youtube mt-14 id='mryE76fcMSE' width='100%' height='100%' />
+https://www.youtube.com/watch?v=UsIF5r8rAvk&t=289s
