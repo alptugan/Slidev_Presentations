@@ -74,10 +74,10 @@ title: DTFA Method
 <div v-click mb-5 font-200 text-4.5 text-gray-500>Identify the procedural flow to solve the problem. Switch between registers. Use diagrams and arrows or take notes again.</div>
 
 ## 3. Translation 📚 🔀 ⚙️ 
-<div v-click mb-5 font-200 text-4.5 text-gray-500>Open the code editor. Identify variables and functions from previous step. Write to your code. Refer to p5Js <a href="https://p5js.org/reference/">reference page.</a> <span text-green-400 op-60>Keep running your code whenwever you add new lines to check if it is ok.</span></div>
+<div v-click mb-5 font-200 text-4.5 text-gray-500>Open the code editor. Identify variables and functions from previous step. In this step start coding. Refer to p5Js <a href="https://p5js.org/reference/">reference page.</a> <span text-green-400 op-60>Keep running your code whenwever you add new lines to check if it is ok.</span></div>
 
 ## 4. Algorithm 🔁 🔤 🔢 
-<div v-click font-200 text-4.5 text-gray-500>Implement the flow design to your code. Conditional statements <code text-green-400 op-60>(if/else)</code>, repetetions <code text-green-400 op-60>for loops</code>, trigonometric funcitons <code text-green-400 op-60>sin()</code>, and probability <code text-green-400 op-60>random()</code> </div>
+<div v-click font-200 text-4.5 text-gray-500>Implement the flow design to your code. Utilize conditional statements <code text-green-400 op-60>(if/else)</code>, repetetions <code text-green-400 op-60>for loops</code>, trigonometric funcitons <code text-green-400 op-60>sin()</code>, and probability<code text-green-400 op-60>random()</code>to reveal the creative potetial of your application by experimenting with the code. If your code involves interactivity (mouse, keyboard, sound or camera), test your code for each potetial use case.</div>
 
 
 ---
@@ -179,7 +179,7 @@ image: ./abstraction (1).png
 ---
 # 3. Translation 📚 🔀 ⚙️ (15 minutes)
 Determine the equivalents of your notes in P5Js language. Create code blocks to reorder them according to the flow.
-* Mask shape 1 on top → rect(x,y,w,h)
+* Mask shape 1 on top → rect(x,y,w,h) µ≥
 * Mask shape 2 at bottom → rect(x,y,w,h)
 * Mask shape 1-2 color → fill(r, g, b)
 * Mask shape 3 Horn Left → triangle(x1, y1, x2, y2, x3, y3)

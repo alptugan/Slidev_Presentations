@@ -6,10 +6,12 @@ transition: fade-out
 ---
 
 # Assignments
-
-1. 👀 Implement all of the scenes that you design for your game in P5Js.
-2. You can use the codes in my game and implement to yours. Fork my [game template](https://openprocessing.org/sketch/2191906) to adapt your game scenes. For those who have different game mechanics than my game, do your best. I want to see the implemented design in P5Js. Please ask to me or your friends in class whenever you need help or get stuck!!! I can provide you tutorials and reference code snippets. 
-2. ⏫ Upload the sketch to your openProcessing account.
-3. ❗Submit the openprocessing link.
-4. ❗Submit the sketch source code as zip file as well.
+Please READ! If you don't understand ask me, or your friend, or to an AI chatbot. No Late Submissions 💢❗❗❗
+- Use Decomposition, Flow, Translation, and Algorithm Design steps for your mask generation. I want to see how you implement your ideas. Upload text, diagram or any kind of material that you include your programming activity. Create a pdf for your design process as I show you in this presentation. **(40 points)** [Tutorial](https://openprocessing.org/sketch/2217223)
+- Write down the mask code. **(20 points)**
+- Apply ML5 library to enable head tracking on camera. **(20 points)** [ML5 Face Tracking Example](https://openprocessing.org/sketch/2213624), [Face Tracking with Mask Example](https://openprocessing.org/sketch/2220776)
+- Skim the attached document (Form+Code Book, Repetetion pg. 42-65)
+- Choose an image that includes repetition in the artwork from the follwing [link](https://alptugan.notion.site/0025088dd8be4eafad7826c90260dc59?v=e8195072f5ec42f4b9f39a70b64b429d).
+- ❗Submit the openprocessing link.
+- ❗Submit the sketch source code as zip file as well.
 
