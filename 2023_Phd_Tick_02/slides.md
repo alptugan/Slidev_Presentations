@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: https://source.unsplash.com/aiqKc07b5PA/1920x1080
+background: https://source.unsplash.com/random/?sky&1
 title: Contextualizing Programming with Algorithmic Art Practices
 exportFilename: "2024-06-10-alptugan-"
 class: text-center
