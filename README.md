@@ -19,8 +19,8 @@ Includes my course and workshop presentations built with slidev.js
    E.g. ```slidev build --base /Slidev_Presentations/OMM_Arduino_Workshop/dist/```
 </details>
 
-<details open>
-  <summary><b><span style="color:orange;">Link to COD 207 Creative Coding Presentations</span></b></summary>
+<details>
+  <summary><span style="color:orange;">Link to COD 207 Creative Coding Presentations</span></summary>
 
 ### 🔗 [week 01 Introduction](https://alptugan.github.io/Slidev_Presentations/week01_cod_207/dist)
 - Creativity
