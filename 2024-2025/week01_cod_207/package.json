@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@iconify-json/logos": "^1.2.0",
     "@playwright/test": "^1.38.1",
     "playwright-chromium": "^1.38.1"
   }

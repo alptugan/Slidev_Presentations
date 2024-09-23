@@ -5,4 +5,4 @@ class: text-center pt-50%
 ---
 
 # BREAK
-10 mins.
+10 mins...

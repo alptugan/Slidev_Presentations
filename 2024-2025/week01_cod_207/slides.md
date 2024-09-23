@@ -56,19 +56,25 @@ title: Table of contents
 <Toc :columns="2"/>
 
 ---
+src: /aboutme.md
+---
+---
 class: text-left
 layout: image-right
+image: /survey.jpg
 title: Survey
 ---
 
 # Pre-survey 
-- Please navigate to ÖZÜ LMS 
+Please kindly respond to the questions anonymously and truthfully.
+
+- Navigate to ÖZÜ LMS 
 - Fill the survey.
 - Submit your answers.
 
+🔗 [Survey Link](https://forms.gle/xeon8bUa8K443muw5)
 ::right::
 
-link
 
 ---
 class: text-center
