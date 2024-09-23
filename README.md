@@ -5,8 +5,8 @@ Includes my course and workshop presentations built with slidev.js
 <details>
   <summary><span style="color:gray;">Build From Source Instructions</span></summary>
 
-1. Follow the instruction on slidev.js Github page.
-2. Create the slideshow using markdown and html.
+1. Follow the instruction on slidev.js Github page.</br>
+2. Create the slideshow using markdown and html.<br>
 3. To run preview in real-time locally;
    1. Duplicate the ```template``` folder.
    2. Rename it.
