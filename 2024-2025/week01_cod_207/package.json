@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.38.1",
+    "playwright-chromium": "^1.38.1"
+  }
+}

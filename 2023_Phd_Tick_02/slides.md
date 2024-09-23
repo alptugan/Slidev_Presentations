@@ -57,7 +57,7 @@ title: Table of Contents
 
 ---
 layout: center
-title: Summary
+title: Statement
 ---
 <v-click>
 
@@ -74,7 +74,7 @@ title: Research Question
 ---
 
 # Research Question
-## How should we <span text-color-green>contextualize</span> programming fundamentals through <span text-color-green>algorithmic art practices</span> to improve students' <span text-color-green>Computational Thinking</span> skills and <span text-color-green>engagement</span> in design departments?
+## How should we <span text-color-green>contextualize</span> programming fundamentals through <span text-color-green>algorithmic art practices</span> to improve students' <span text-color-green>computational thinking</span> skills and <span text-color-green>engagement</span> in design departments?
 
 
 <!-- Nasıl yapmalıyız sorusu. Çünkü belirsiz olarak atfettiğim alan burası. CT teorik anlamda, teknoloji tabanlı problem-çözme yöntemi. Nasıl sorusuna cevabım da 2 modülde geliyor. 1.cisi materyal olarak kullanılacak kaynak, 2.cisi bu kaynağın nasıl hazırlanacağı. 
@@ -154,13 +154,18 @@ Bu yüzden her bir kategorinin, aynı zamanda ilgili pratiği gösterirken, fark
 -->
 
 ---
-layout: center
-class: pr-40 pl-40
+layout: two-cols
+class: m-auto
 title: How does it relate to programming?
 ---
 
 # How does Duval's theory relate to the programming?
 In the context of programming education, non-congruent conversions can arise when students need to translate between natural language descriptions of problems and their corresponding programming code representation - (Bråting & Kilhamn, 2021).
+
+::right::
+<div v-click>
+  <img src='/Bloom_Taxonomy.png' />
+</div>
 
 ---
 transition: slide-left
@@ -187,6 +192,14 @@ title: The Methodological Framework
     <img src='/Registers.png'/>
   </div>
 </div>
+
+---
+transition: slide-left
+title: Methodology
+---
+# OPP
+
+<img h-130 m-auto src='/PHD_ANT_03_expanded.jpg' />
 
 ---
 transition: slide-left
