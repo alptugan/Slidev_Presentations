@@ -14,9 +14,6 @@ drawings:
 aspect-ratio: 16/9
 css: unocss
 download: true
-# export options
-# use export CLI options in camelCase format
-# Learn more: https://sli.dev/guide/exporting.html
 export:
     format: pdf
     timeout: 30000
@@ -38,58 +35,10 @@ src: ./pages/header.md
 ---
 title: Table of Contents
 ---
+
 # Table of Contents
 
 <Toc :columns="2"/>
-
-
-
----
-layout: image-left
-image: /pro1.png
-class: text-left
----
-
-# Structure
-
-Inline functions
-
-```js {1,3|5,10|2,6,8,9|all} {lines:true, startLine: 1}
-function setup() {
-    createCanvas(400, 600);
-}
-
-function draw() {
-    background(100, 100, 100);
-
-    fill(200, 0, 0);
-    circle(300, 300, 100);
-}
-```
-
-
-
----
-layout: center
-image: /grad-bg2.jpg
-class: text-left
----
-
-# Rendering, Built-in & Inline Functions
-```js {0|1,4|6,10|3|6|6,10|7|8|9|10|6|7|8|9|10|6|7|8|9|10|6|7|8|9|10} {startLine:1} 
-function setup() {
-  // Creates the application window params: width=600, height=600
-  createCanvas(600, 600);
-}
-
-function draw() {
-  // Set the background color of the window params: Red: 100, Green: 20, Blue: 20
-  // R,G,B values must be between 0 - 255
-  background(100,20,20);
-}
-```
-
-
 
 ---
 layout: center
@@ -150,20 +99,6 @@ Sound by Telefon Tel Aviv
 🔗 [vimeo link](https://vimeo.com/23281150)
 
 
-
-
----
-layout: center
-title: Computational Thinking Framework image
----
-
-<img w-180 m-auto src='/comp.jpg'/>
-
-
-
-
-
-
 ---
 layout: image-left
 image: /ct.png
@@ -193,6 +128,7 @@ backgroundSize: 130%
 ---
 layout:default
 ---
+
 # Computer Science Basics
 1️⃣ Sequences, 2️⃣ Selection, and 3️⃣ Loops
 
@@ -212,6 +148,7 @@ layout: center
 background: /grad-bg2.jpg
 class: text-left px-40
 ---
+
 # <i text-white>for</i> loops
 Repeats a section of code or code-block a limited number of times. Three steps of creating for loops;
 
@@ -249,6 +186,7 @@ title: for loops
 ---
 layout: statement
 ---
+
 # Replace the <span text-white>`print("...")`</span> function with a shape
 Do you see a single shape? Where are the other shapes?
 
@@ -257,6 +195,7 @@ layout: image
 image: /grad-bg2.jpg
 class: text-center
 ---
+
 # Open the black box
 
 <img h-100 m-auto src='/loops2.png' />
@@ -266,20 +205,11 @@ layout: image
 image: /grad-bg2.jpg
 class: text-center
 ---
+
 # Open the black box
 
 <img h-100 m-auto src='/loops3.png' />
 
-
----
-layout: image
-image: /grad-bg2.jpg
-class: text-center
----
-# Access the counter variable to modify the repeating code
-Use the counter variable `i` as a dynamic value. 
-
-<img h-100 m-auto src='/loops4.png' />
 
 ---
 layout: center
@@ -320,12 +250,10 @@ title: Moire Pattern
     🔗 <a href='https://www.wolframscience.com/nks/notes-10-7--moire-patterns/'>link to source</a>
 </div>
 
-
 ---
 src: ./pages/break.md
 hide: false
 ---
-
 
 ---
 layout: image-left
@@ -337,6 +265,38 @@ class: text-center mt-50
 
 ### → Review the examples on [Pinterest](https://www.pinterest.com/search/pins/?q=moire&rs=typed)
 
+---
+title: Moire Rotating Lines
+layout: two-cols
+class: text-center
+---
+
+<iframe src="https://openprocessing.org/sketch/2395082/embed/" width="400" height="450"></iframe>
+
+::right::
+
+<div mt-50>
+    
+</div>
+
+🔗 [openprocessing link](https://openprocessing.org/sketch/2395082)
+
+
+---
+title: Moire Rotating Squares
+layout: two-cols
+class: text-center
+---
+
+<iframe src="https://openprocessing.org/sketch/2395088/embed/" width="400" height="450" ></iframe>
+
+::right::
+
+<div mt-50>
+    
+</div>
+
+🔗 [openprocessing link](https://openprocessing.org/sketch/2395088)
 
 ---
 layout: section
@@ -344,7 +304,6 @@ layout: section
 
 # Conditionals
 ## if/else statements
-
 
 ---
 layout: image
@@ -396,7 +355,6 @@ class: text-center
 # Cyclic motion with If Statement
 Move the second group of circles using if statements
 
-
 ---
 src: ./pages/assignment.md
 hide: false
@@ -414,13 +372,13 @@ You can choose your own colors, and other shape properties.
 
 <img m-auto h-100 src='/5x5 Grid For Loops.jpg' />
 
-
 ---
 layout: image
 image: /grad-bg2.jpg
 class: text-center
 hide: true
 ---
+
 # Tutorial
 
 <iframe src="https://openprocessing.org/sketch/1707047/embed/" width="100%" height="400"></iframe>
