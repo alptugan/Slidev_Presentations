@@ -1,6 +1,6 @@
 ---
 background: /cover_collage.png
-title: Week 06 -
+title: Week 06 - Media - Images
 exportFilename: "week06-Media-Images"
 class: text-center
 highlighter: shiki
@@ -95,6 +95,7 @@ function draw() {
 layout: two-cols
 class: text-left
 ---
+
 # Practice in class!
 Before uploading your image, check its resolution and filesize. Large files are loaded slowly. Resize your image in photoeditor app of your choice before uploading. To upload your files;
 
@@ -108,13 +109,42 @@ Before uploading your image, check its resolution and filesize. Large files are 
 <img src='/upload_image.png' />
 
 
+---
 
+# Computational Characters
+
+<img src='/computational_collage01.jpg' />
+
+<a href='https://openprocessing.org/sketch/2419680' target='_blank'>🔗 Source code</a>
 
 ---
 src: ./pages/break.md
 hide: false
 ---
 
+
+---
+image: /computational_collage02.jpg
+layout: image-left
+backgroundSize: 90%
+---
+
+# Computational Collage
+
+<v-clicks>
+
+
+- Create 600 x 800 photoshop document
+- Collect images (min. 10)
+  - Background paper Texture
+  - For ground focus object
+  - Typographic element
+- Trim each image as a seperate layer
+- Export each image in png format
+- Load images using P5JS
+- Adjust positions 
+- Apply randomness to create different variations of your collage
+</v-clicks>
 
 
 ---
