@@ -1,3 +1,4 @@
 {
-    "slidev.preview-sync": false
+    "slidev.preview-sync": false,
+    "slidev.port": 3031
 }

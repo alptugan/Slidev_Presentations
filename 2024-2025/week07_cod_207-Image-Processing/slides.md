@@ -135,30 +135,6 @@ src: ./pages/break.md
 hide: false
 ---
 
-
----
-layout: two-cols
----
-# Case Studies Inspiration
-
-Following examples are developed using p5JS editor. 
-
-[Pixelate the image](https://editor.p5js.org/alptugan/sketches/11dqVHTpg)
-
-[Mosaic Like Image](https://editor.p5js.org/alptugan/sketches/WWBofOF2B)
-
-[Diagonally mirrored image](https://editor.p5js.org/alptugan/sketches/5N5Vpk2ZM)
-
-[Image Processing 1](https://editor.p5js.org/alptugan/sketches/pCfnd8yy3)
-
-[Image Processing 2](https://editor.p5js.org/alptugan/sketches/l4kNx2BWm)
-
-[Use Image as Texture](https://editor.p5js.org/alptugan/sketches/F3U2pc01Q)
-
-::right::
-
-![](/cases.png)
-
 ---
 layout: section
 ---
@@ -217,6 +193,56 @@ function mousePressed() {
   // Increase the size of the circle whenever the user clicks on mouse or touchpad
 }
 ```
+
+---
+layout: image-left
+image: /dom.png
+backgroundSize: 100%
+class: text-left mt-20
+---
+# GUI via DOM Manupulation
+
+You can create HTML elements to make your application interactive. Play around with other elements to create and change your application parameters such as slider, toggle, div elements, etc...
+
+🔗 [createButton() reference](https://p5js.org/reference/p5/createButton/) 
+
+🔗 [Available DOM Element in p5Js](https://p5js.org/reference/#DOM)
+
+---
+layout: image-left
+backgroundSize: 80%
+image: /dom2.png
+---
+
+# Exemplified Case Study
+In this version you can see html `<button>` elements created and utilized using p5JS to interactively switch between autonomous and interactive modes.
+
+🔗 [Source Code](https://openprocessing.org/sketch/2430753)
+
+
+
+---
+layout: two-cols
+---
+# Case Studies for Inspiration
+
+Following examples are developed using p5JS editor. 
+
+[Pixelate the image](https://editor.p5js.org/alptugan/sketches/11dqVHTpg)
+
+[Mosaic Like Image](https://editor.p5js.org/alptugan/sketches/WWBofOF2B)
+
+[Diagonally mirrored image](https://editor.p5js.org/alptugan/sketches/5N5Vpk2ZM)
+
+[Image Processing 1](https://editor.p5js.org/alptugan/sketches/pCfnd8yy3)
+
+[Image Processing 2](https://editor.p5js.org/alptugan/sketches/l4kNx2BWm)
+
+[Use Image as Texture](https://editor.p5js.org/alptugan/sketches/F3U2pc01Q)
+
+::right::
+
+![](/cases.png)
 
 
 ---
