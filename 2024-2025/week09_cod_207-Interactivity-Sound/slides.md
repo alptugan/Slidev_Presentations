@@ -1,7 +1,7 @@
 ---
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: /cover_audiovisual.png
 title: Week 07 -
-exportFilename: "week07-COD207-Interactivity"
+exportFilename: "week09-COD207-Sound"
 class: text-center
 highlighter: shiki
 lineNumbers: true
@@ -47,164 +47,144 @@ layout: default
 
 
 ---
-image: /imageV.jpg
+image: /giphy-3097233655.gif
 layout: image-left
+backgroundSize: 100%
+class: pt-50
 ---
 
+# Loading Sound
+Loading sound is same as loading image or a font file. 
 
-# Wrap-up (Summary)
+Check following example code → [link](https://editor.p5js.org/alptugan/sketches/K2CtshVh5)
 
-Things we learn about P5JS programming language.
-- Varibales
-- Conditionals (If/else)
-- Loops (for)
-
+[P5JS Sound Reference](https://p5js.org/reference/p5.sound/)
 
 ---
-layout: center
-class: text-center py-50
+layout: two-cols
+class: pt-50
 ---
+# In-class Exercise
+Replace the audio file and add buttons to play, stop, and pause the song.
 
-# Generative Art: Tiling to Tesselation
-Tiling is repeating a pattern in horizontal, vertical or both directions repeatedly covering any kind of surface.
+::right::
 
-Regular Tesselation 
-<img src='/t-regular.png' />
+```javascript {1|3-5|7-11|13-15|17|18-20|22-24|26-29|all}{maxHeight:'400px'} 
+var song; // Define variable
 
----
-layout: center
-class: text-center py-50
----
+function preload() {
+  song = loadSound("RAW-all.mp3");  // load sound into the variable
+}
 
-# Generative Art: Semi-Regular Tesselation
-
-Semi-Regular Tesselation
-<img h-100 m-auto pt-5 src='/s-regular.png' />
-
-
----
-layout: center
-class: text-center py-50
----
-
-# Generative Art: Demi-Regular Tesselation
-
-Demi-Regular Tesselation
-<div bg-white>
-<img h-100 m-auto pt-5 src='/DemiregularTessellations_601.svg' />
-</div>
-
----
-layout: center
-class: text-center py-50
----
-
-# Tiling-Tesselation Repository
-
-<img h-100 m-auto pt-5 src='/tiling_repo.png' />
-
-[🔗 Goto Repository](https://www.pinterest.com/alptugan/algorithmic-art-01-tiling/more_ideas/?request_params=%7B%221%22:%2039,%20%227%22:%20%22253794213013526600%22,%20%228%22:%20%22575686833557435365%22,%20%2232%22:%2020,%20%2237%22:%20%22Ideas%20for%20your%20board%22%7D&full_feed_title=Ideas%20for%20your%20board&view_parameter_type=3173&pins_display=3&ideas_referrer=25)
-
----
-layout: default
-class: text-left
----
-
-# Built-in Functions: Keyboard
-```js {all} {lines:true, startLine:1} 
 function setup() {
-  // Creates the application window params: width=600, height=600
-  createCanvas(600, 600);
-  noLoop();
+  createCanvas(400, 400); // Canvas size
+  
+  song.loop(); // enable loop for the sound. 
 }
 
 function draw() {
-  // Set the background color of the window params: Red: 100, Green: 20, Blue: 20
-  // R,G,B values must be between 0 - 255
-  background(100,20,20);
+  background(220); // set background color
 }
 
-// key is built-in variable. You don't need to declare on top of your code.
 function keyPressed() {
-  if(key == 'r') {
-    // set the background to a random color
+  if(key == 'p') {
+    song.play();  // play the song
   }
+  
+  else if(key == 's') {
+    song.stop(); // stop the song
+  }
+  
+  else if(key == 'a') {
+    song.pause(); // pause the song
+    
+  }  
 }
 ```
 
 ---
-layout: default
-class: text-left
+layout: image-left
+image: /audi.png
+backgroundSize: 80%
 ---
+# Audiovisual Composition
+Enable microphone access on your browser when prompted.
 
-# Built-in Functions: Mouse
-```js {all} {lines:true, startLine:1} 
-function setup() {
-  // Creates the application window params: width=600, height=600
-  createCanvas(600, 600);
-  noLoop();
-}
+[link](https://editor.p5js.org/alptugan/sketches/-dUH7xoUX)
 
-function draw() {
-  // Set the background color of the window params: Red: 100, Green: 20, Blue: 20
-  // R,G,B values must be between 0 - 255
-  background(100,20,20);
-  circle(width/2,height/2,300);
-}
+---
+layout: image-left
+image: /tinker.png
+backgroundSize: 100%
+---
+# Audioreactive Game
+Enable microphone access on your browser when prompted.
 
-// this function will be triggered whenever the user clicks on mouse or touchpad
-function mousePressed() {
-  // Increase the size of the circle whenever the user clicks on mouse or touchpad
-}
-```
-
+[link](https://editor.p5js.org/alptugan/sketches/GwedNwyRC)
 
 ---
 src: ./pages/break.md
 hide: false
 ---
 
+
+---
+layout: center
+class: pl-50 pr-50
+---
+# Tutorials 
+.
+
+ 🔗 [Audiovisual 01](https://openprocessing.org/sketch/1741359) The tutorial showcases how to use microphone input to modify the parameters of visuals on canvas.
+
+
+ 🔗 [Audiovisual 02](https://openprocessing.org/sketch/1743284) Similar to the preivous tutoria with different cyclic motion.
+
+---
+layout: image-left
+image: /example.png
+backgroundSize: 100%
+class: mt-50
+---
+
+# Example Implementation
+
+🔗 [link](https://openprocessing.org/sketch/1744738)
+
+🔗 [Kick Drum](https://openprocessing.org/sketch/2420493)
+
+---
+layout: image-left
+image: /inclass.png
+backgroundSize: 100%
+class: pt-50
+---
+# In-class Practice
+Save As Fork, and complete the code to make every image and sound interactice as the Floppy Disk image.
+
+🔗 [Museums of Sound](https://openprocessing.org/sketch/2420517)
+
+
+
 ---
 layout: default
 class: text-left
 ---
 
-# Nested For Loops: Tiling
-```js {all} {lines:true, startLine:1} 
-function setup() {
-  // Creates the application window params: width=600, height=600
-  createCanvas(600, 600);
-  noLoop();
-}
-
-function draw() {
-  // Set the background color of the window params: Red: 100, Green: 20, Blue: 20
-  // R,G,B values must be between 0 - 255
-  background(100,20,20);
-
-  for(let i = 0; i < 6; i++ ) {
-    for(let j = 0; j < 6; j++ ) {
-      let x = i * 100;
-      let y = j * 100;
-      rect(x, y, 100, 100);
-    }
-  }
-}
-
-```
-
+# Tutorial: Coding Train
+🔗 [link](https://deploy-preview-1767--codingtrain.netlify.app/tracks/sound/sound/1-loading-and-playing) Coding Train website for sound related tutorials.
+ 
+<img src='/codingtrain.png' />
 
 ---
-layout: center
-class: text-center py-50
+layout: image-left
+image: /p5jsrepo.png
+backgroundSize: 90%
 ---
+# Examples on p5JS site
+Click on files to run the codes.
 
-# Download The CheatSheet
-
-<img h-100 m-auto src='/cheatsheet.png' />
-
-[Download The CheatSheet 🔗](Learn p5.js_ Interaction Cheatsheet _ Codecademy.pdf)
-
+[link](https://editor.p5js.org/alptugan/collections/DHRvDH1Oe)
 
 ---
 src: ./pages/assignment.md

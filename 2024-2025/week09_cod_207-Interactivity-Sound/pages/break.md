@@ -1,8 +1,9 @@
 ---
 layout: image-left
-image: https://source.unsplash.com/collection/239580
+image: /peanuts-snoopy-3721560045.gif
 class: text-center pt-50%
 transition: fade-out
+backgroundSize: 100%
 ---
 
 # BREAK

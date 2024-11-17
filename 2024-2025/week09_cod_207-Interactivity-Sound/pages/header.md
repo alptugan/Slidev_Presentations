@@ -1,10 +1,10 @@
 # Creative Coding
 
-Interactivity via Computer Mouse and Keyboard
+Sound + Interactivity + Visualization
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    COD 207 - Week 07 Class <carbon:arrow-right class="inline" />
+    COD 207 - Week 09 Class <carbon:arrow-right class="inline" />
   </span>
 </div>
 
