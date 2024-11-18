@@ -1,6 +1,6 @@
 ---
 background: /cover_audiovisual.png
-title: Week 07 -
+title: Week 09 Sound Interactivity
 exportFilename: "week09-COD207-Sound"
 class: text-center
 highlighter: shiki
