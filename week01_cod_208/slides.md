@@ -1,7 +1,7 @@
 ---
 background: https://source.unsplash.com/collection/94734566/1920x1080
 title: Week 01 -
-exportFilename: "week01--"
+exportFilename: "week01-Introduction"
 class: text-center
 highlighter: shiki
 lineNumbers: true
@@ -95,12 +95,11 @@ It is up to you!
 - if (missed_classes > 3) <span color-red>FAIL</span>
 - if (missed_finalProject ||  missed_proposal > 0) <span color-red>FAIL</span>
 
-
-
 ---
-src: ./pages/break.md
-hide: false
+layout: section
 ---
+
+# Course Content
 
 ---
 layout: image-left
@@ -108,21 +107,102 @@ image: /slide4.jpeg
 class: text-left py-40
 ---
 # Topics to Discuss Through semester
-- Artificial Intellegence (AI)
-- One-click Games/Apps
-- Physical Computing
-- Experimental UI 
+
+- Machine Learning
+- Simple 2D Games
+- Experimental Interfaces 
 - Generative Art
+- Physical Computing
+
+---
+layout: section
+---
+
+# Artificial Intelligence 
+Machine Learning - AI Models - Teaching Something to a Model
 
 ---
 layout: image-left
 image: /slide5.png
 ---
 
-# AI + P5JS → Flowers From Speech Recognition
+# Flowers From Speech Recognition
 
 - [reference](https://resources.digitalmoment.org/algorithmic-art-using-p5.js-ai-flower/flower-gallery)
 - [ML5 Machine Learning Library](https://ml5js.org/)
+
+
+---
+
+# Interactive Story Telling
+
+<Youtube id='AIt7x0MvnrA' width='100%' height='100%' />
+
+---
+
+# Simple Game + ML
+
+<Youtube id='0yUHgDmwr2E' width='100%' height='100%' />
+
+---
+
+# Experimental Interface + ML
+
+<Youtube id='2HVP5dewl_8' width='100%' height='100%' />
+
+---
+
+# Adver Game
+In short, an advergame is a video game created to promote a specific brand or product.
+
+<Youtube id='s-aEP-bH83Y' width='100%' height='100%' />
+
+---
+
+# Generative Art + Yoga + ML
+
+<Youtube id='E_U_Ftip7z0' width='100%' height='100%' />
+
+---
+
+# New Musical Interface + ML
+
+<Youtube id='p7nqgo8Dy_M' width='100%' height='100%' />
+
+---
+
+# Apps for Disabled People
+
+<Youtube id='3w3P_MyUKCo' width='100%' height='100%' />
+
+---
+
+# Apps for Disabled People
+
+<Youtube id='oTnjExkmPTU' width='100%' height='100%' />
+
+---
+
+# New Musical Interface
+
+<Youtube id='lkClgzumWRk' width='100%' height='100%' />
+
+---
+
+# Educational Music App
+
+<Youtube id='27n8HSidoC0' width='100%' height='100%' />
+
+---
+src: ./pages/break.md
+hide: false
+---
+
+---
+layout: section
+---
+
+# Games
 
 ---
 layout: image-left
@@ -134,6 +214,36 @@ image: /slide6.png
 - [Catching Fallen Items](https://editor.p5js.org/ehersh/sketches/Hk52gNXR7)
 - [Classic Snake Game](https://p5js.org/examples/interaction-snake-game.html)
 - [Clicking Objects](https://www.perplexity.ai/search/p5js-arrays-gGg4ZNm0TceIG.bdkz68_A?s=u)
+
+---
+
+# Top-Scrolling Game
+[Game: Save Your Country](https://editor.p5js.org/aliemretunali/sketches/cap3AVD9x) by Ali Emre Tunalı
+
+<img src='/Basic-Game.png' />
+
+---
+
+# Puzzle Game
+[Game: Black Void Man](https://editor.p5js.org/d.il.ara/sketches/d5y3NT-m0) by Dilara Albayrak
+
+<img scale-60 mt--35 src='/back-void-man.png' />
+
+---
+
+# Collect The Trash
+[Game: Educational Reflex App](https://editor.p5js.org/almiraoguz/full/G1zQIL7EV) by Almira Oğuz
+
+<img  scale-50 mt--45 src='/almira.png' />
+
+---
+layout: image
+image: /jaws.png
+backgroundSize: contain
+---
+
+# Advergames
+[Advergame:RAWS](https://editor.p5js.org/YoussofHamed/sketches/TQIZF4PiK) by Youssof Hamed
 
 
 ---
