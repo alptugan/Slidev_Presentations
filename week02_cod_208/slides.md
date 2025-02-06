@@ -67,7 +67,7 @@ Objects are created from <span text-color-purple>classes</span>, which are like 
 
 
 ---
-layout: deafult
+layout: default
 class: text-left py-10
 ---
 
@@ -98,6 +98,39 @@ class Name-of-the-class {
     }
 }
 ```
+---
+layout: default
+image: /oop1.png
+preload: false
+---
+
+# Create a class in p5JS Editor
+Move your mouse next to "mySketch" tab. A plus (+) will appear.
+
+<img src='/week2-file-add.png' />
+<Arrow v-click v-motion-fade
+  :initial="{ x: 10, y: 40, opacity: 0 }"
+  :enter="{ x: 10, y: 0, opacity: 1, transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+    }, }" x2="85" y2="210" x1="85" y1="450" color="rgba(254, 234, 12,1)" />
+
+
+<Arrow v-click v-motion-fade
+  :initial="{ x: 10, y: 40, opacity: 0 }"
+  :enter="{ x: 10, y: 0, opacity: 1, transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+    }, }" x2="380" y2="190" x1="380" y1="450" color="rgba(254, 234, 12,1)" />
+
+
+<Arrow v-click v-motion-fade
+  :initial="{ x: 10, y: 40, opacity: 0 }"
+  :enter="{ x: 10, y: 0, opacity: 1, transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+    }, }" x2="640" y2="230" x1="640" y1="450" color="rgba(254, 234, 12,1)" />
+
 
 ---
 layout: default
@@ -114,7 +147,7 @@ Move your mouse next to "mySketch" tab. A plus (+) will appear.
   :enter="{ x: 0, y: 0, opacity: 1, transition: {
       repeat: Infinity,
       repeatType: 'mirror',
-    }, }" x2="400" y2="175" x1="100" y1="450" color="rgba(200,0,0,1)" />
+    }, }" x2="400" y2="175" x1="100" y1="450" color="rgb(254, 0, 0)" />
 
 ---
 src: ./pages/break.md
@@ -142,15 +175,29 @@ hide: false
 ---
 
 ---
-layout: two-cols
-class: p-5
+class: p-0 m-0
+layout: default
+title: Joani Lemercier
 ---
 
-# Tutorials: Arrays
+<Tweet scale="0.7" pl-100 id="1886854389287280795" />
 
-<Youtube id='vrMCIbHGJgE' width='100%' height='100%' />
 
-::right::
+---
+class: m-0
+layout: default
+title: Bonnie2.0.0
+---
 
-<Youtube mt-14 id='mryE76fcMSE' width='100%' height='100%' />
-https://www.youtube.com/watch?v=UsIF5r8rAvk&t=289s
+<div style="position:absolute">
+Visit Instagram profile ➡️ <a href="https://www.instagram.com/bonnie2.0.0/" target="_blank">link</a>
+</div>
+
+<SlidevVideo autoplay controls h-120 m-auto>
+  
+  <source src="/ml5.mp4" type="video/mp4" />
+  <!-- <source src="/myMovie.webm" type="video/webm" /> -->
+  
+</SlidevVideo>
+
+
