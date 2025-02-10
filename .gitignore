@@ -12,3 +12,6 @@ phd/*
 
 # Allow all files and subfolders inside 2024_Phd_tik03-1
 #!phd/2024_Phd_tik03-1/**
+
+
+week02_cod_208/node_modules

@@ -1,7 +1,7 @@
 ---
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: /cover-week2-2028.png
 title: Week 02 - Objects
-exportFilename: "week02--"
+exportFilename: "week02-OOP"
 class: text-center
 highlighter: shiki
 lineNumbers: true
@@ -45,12 +45,22 @@ layout: default
 
 
 ---
-layout:default
+layout: default
 ---
 
 # Coding is a Superpower
 
 <Youtube id='Bwiln7v0fdc' width='100%' height='90%' />
+
+---
+
+# Computer Arts Society Online Event
+[Register link](https://www.eventbrite.com/e/8-bit-ii-computer-art-from-the-1980s-tickets-1216653897559)
+
+<img scale-90 src='/event.jpg' />
+
+
+
 
 ---
 image: /oop1.jpg
@@ -156,23 +166,99 @@ hide: false
 
 ---
 layout: image-left
-image: /slide4.jpeg
+image: /oop2.png
 class: text-left py-40
 ---
 # Convert Your Object into Class
 - Choose a class name.
-- Create a new file on openProcessing.
+- Create a new file on openProcessing or p5JS editor.
 - Use the template example of my sketch as starter code.
+
+---
+layout: section
+---
+
+# Goto and check slide page \#7
+<Link to="7">Click to view</Link> 
+
+<!-- Sun in light mode, Moon in dark mode, from Carbon -->
+<div class="i-carbon-sun dark:i-carbon-moon opacity-0" />
+
+<!-- A basic anchor icon from Phosphor icons -->
+<button class="i-ph-anchor"/>
+
+---
+layout: two-cols
+class: text-left pl-5 my-auto
+---
+
+````md magic-move
+```js
+class class_name {
+
+}
+```
+
+```js
+class Gem {
+  
+}
+```
+
+```js
+class Gem {
+  constructor() {
+    
+  }
+}
+```
+
+
+```js
+class Gem {
+  constructor() {
+    
+  }
+
+  display() {
+    
+  }
+}
+```
+
+```js
+class Gem {
+  constructor() {
+    
+  }
+
+  display() {
+    fill(200);
+    stroke(180)
+    beginShape();
+    for(var i = 0; i < 3; i++) {
+      var x = 100 * cos(TWO_PI/ 3 * i);
+      var y = 100 * sin(TWO_PI/ 3 * i);
+      vertext(x,y);
+    }
+    endShape();
+  }
+}
+```
+
+````
+
+::right::
+
+# Convert Your Object into Class
+- Create a new file on openProcessing or p5JS editor.
+- Choose a name for the class.
+- Define the `constructor()` function.
 
 ---
 
 <Youtube id='ZLWxSam4HfE' width='100%' height='100%' />
 
-
----
-src: ./pages/assignment.md
-hide: false
----
 
 ---
 class: p-0 m-0
@@ -193,11 +279,23 @@ title: Bonnie2.0.0
 Visit Instagram profile ➡️ <a href="https://www.instagram.com/bonnie2.0.0/" target="_blank">link</a>
 </div>
 
-<SlidevVideo autoplay controls h-120 m-auto>
+<SlidevVideo controls h-120 m-auto>
   
   <source src="/ml5.mp4" type="video/mp4" />
   <!-- <source src="/myMovie.webm" type="video/webm" /> -->
   
 </SlidevVideo>
 
+---
 
+# Side Scrolling Game
+[Play](https://aijs.io/project?user=Tezumie&project=SK89)
+
+<img h-100 m-auto src='/game-dog.png' />
+
+
+
+---
+src: ./pages/assignment.md
+hide: false
+---

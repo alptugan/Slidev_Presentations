@@ -1,6 +1,6 @@
 ---
 background: https://source.unsplash.com/collection/9468077
-layout: cover
+layout: default
 class: m-0 text-left text-shadow-lg p-10
 transition: fade-out
 ---

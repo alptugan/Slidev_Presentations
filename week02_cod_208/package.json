@@ -1,6 +1,9 @@
 {
   "devDependencies": {
-    "playwright-chromium": "^1.38.1",
-    "unocss":"@latest"
+    "playwright-chromium": "^1.38.1"
+  },
+  "dependencies": {
+    "shiki": "^2.3.2",
+    "shiki-magic-move": "^1.0.0"
   }
 }
