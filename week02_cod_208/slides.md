@@ -256,6 +256,8 @@ class Gem {
 - Define the `constructor()` function.
 
 ---
+title: Ars Electronica Festival 2023
+---
 
 <Youtube id='ZLWxSam4HfE' width='100%' height='100%' />
 
@@ -292,6 +294,15 @@ Visit Instagram profile ➡️ <a href="https://www.instagram.com/bonnie2.0.0/" 
 [Play](https://aijs.io/project?user=Tezumie&project=SK89)
 
 <img h-100 m-auto src='/game-dog.png' />
+
+---
+title: Genuary Walkthrough
+---
+
+# Offer
+Complete all of the prompts in Genuary event and receive 50 points from Final Project! Goto [genuary.art](https://genuary.art/prompts) website.
+
+<Youtube m-auto id='c1BPd8omBro' width='85%' height='85%' />
 
 
 
