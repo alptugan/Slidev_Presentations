@@ -300,7 +300,7 @@ title: Genuary Walkthrough
 ---
 
 # Offer
-Complete all of the prompts in Genuary event and receive 50 points from Final Project! Goto [genuary.art](https://genuary.art/prompts) website.
+You can choose to complete all of the prompts in Genuary event as your Final Project! Goto [genuary.art](https://genuary.art/prompts) website.
 
 <Youtube m-auto id='c1BPd8omBro' width='85%' height='85%' />
 
