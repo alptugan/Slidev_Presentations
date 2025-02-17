@@ -1,6 +1,6 @@
 {
   "devDependencies": {
     "playwright-chromium": "^1.38.1",
-    "unocss":"@latest"
+    "unocss": "latest"
   }
 }

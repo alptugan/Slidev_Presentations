@@ -1,5 +1,4 @@
 ---
-background: https://source.unsplash.com/collection/94734566/1920x1080
 title: Week 03 - Array of Objects
 exportFilename: "week03--"
 class: text-center
@@ -57,7 +56,7 @@ If you are selected as emerging artist with your project, you will earn extra cr
 
 
 ---
-layout:default
+layout: default
 ---
 
 # A History of Generative Art
