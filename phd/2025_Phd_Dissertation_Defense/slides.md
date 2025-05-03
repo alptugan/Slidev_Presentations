@@ -323,7 +323,6 @@ A register of representation refers to a specific semiotic system used to expres
 
 ---
 layout: two-cols
-transition: slide-left
 title: Register Conversion
 ---
 
@@ -435,7 +434,6 @@ layout: section
 
 
 ---
-transition: slide-left
 title: The Methodological Framework
 ---
 
