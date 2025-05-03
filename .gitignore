@@ -4,14 +4,15 @@
 template
 template_backup
 
+week02_cod_208/node_modules
+
 # Ignore everything in the phd folder
 phd/*
 
 # Allow the 2024_Phd_tik03-1 folder
-!phd/2025_Phd_Dissertation_Defense/
+!phd/2025_Phd_Dissertation_Defense
+!phd/2025_Phd_Dissertation_Defense/dist/*
 
 # Allow all files and subfolders inside 2024_Phd_tik03-1
 !phd/2025_Phd_Dissertation_Defense/**
-
-
-week02_cod_208/node_modules
+!phd/2025_Phd_Dissertation_Defense/dist
