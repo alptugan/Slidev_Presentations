@@ -1,7 +1,13 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+## Information
+
+To view the live version of the presentation navigate to the [link](alptugan.github.io/Slidev_Presentations/phd/2025_Phd_Dissertation_Defense)
+
+
+## Local Setup
 
 To start the slide show:
 
+- clone the repo
 - `pnpm install`
 - `pnpm dev`
 - visit <http://localhost:3030>
