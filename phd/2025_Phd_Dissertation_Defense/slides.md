@@ -67,6 +67,10 @@ title: Table of Contents
 
 <Toc text-3 ml-40 :columns="2"/>
 
+<!--
+Bridging the gap between AA and programming for contextualized learning.
+-->
+
 ---
 layout: center
 class: px-50
@@ -84,15 +88,13 @@ Paradigmatic Shift on Human-computer Interaction
 GUI to Command-based Interface (CBI)
 
 <!--
-Paradigmatic Shift is required, we can observe this in three contexts.
+CT is a problem-solving method. Criticized for lack of tools. Includes 4 steps;
+- Decomposition
+- Pattern Recognition
+- Abstraction
+- Algorithm Design
 
-1. The number of programmers increased. Causing the change in HCI paradigms. Why? Because the more a social group grows population, the more they have HCI paradigms. Open-source tools, custom scripts, command-based interfaces increased. Like reading, writing, and arithmetics are essential, programming should be 4th R.
-
-2. Growing Population of specific actors in a network results in domination of the crowded group. E.g. Democracy in our country. It is not the reflection of Tech. Determinism.
-
-23 New Approaches in Human-Computer Interaction
-
-
+Today, computational devices are an integral part of our lives. It is inevitable.
 -->
 
 ---
@@ -132,17 +134,19 @@ layout: center
 </div>
 
 <!--
-This is the reason why programming becomes a required knowledge. It does not mean that eveybody must learn programming as a programmer. It is required how reading, writing, and artihmetics is required in a modern society today.
+Why do we need a bridge?
+Because there is a paradigmatic shift in technology. 
 
-1. Paradigmatic Shift is happening, 
-Everything we do one way or another depends on computers. 
-Designers, doctors, artists, citizens—everyone uses computers.
-Having first aid education is not a must, but we should have it.
-Having reading, writing, and arithmetics knowledge does not make you a scientist, but it is required to live in a modern world.
+We can observe this in three contexts.
 
-Why this shift happens?
+The number of programmers increased. 
 
-2. Increasing number of programmers mean that teachnology dependent tools is increasing also. Which means that rather than using predefined scripts, we start to alter the scripts
+This led to a shift in HCI paradigms. 
+
+Why? 
+As a social group grows in population, its dominance increases. 
+
+The use of open-source tools, custom scripts, and command-based interfaces has increased.
 -->
 
 ---
@@ -170,7 +174,14 @@ Why this shift happens?
 </div>
 
 <!--
-All of these new paradigms reduce the tedius tasks, and leave time for the designer to be creative. 
+This shift is not just obvious on emerging tools only, also older tools adapt it.
+
+
+Like reading, writing, and arithmetic, which are essential, programming should be the 4th R.
+
+
+But the problem is the learning & teaching of programming for individuals, specially for non-majors other than CS.
+
 
 Video Scripting: https://www.youtube.com/watch?v=AtqHdzVqok0&ab_channel=Dansky
 Video Scripting: https://www.youtube.com/watch?v=EGdgrP7azUQ&t=648s&ab_channel=NTProductions
@@ -219,20 +230,15 @@ Literature supports context-based learning for engagement but lacks specific, ac
 
 **Research Goal:** Propose practical methods and contribute to debates on developing CT skills through contextualized programming paradigms by analyzing algorithmic art.
 
-Develop and evaluate a methodology using algorithmic art to facilitate programming education that is both educationally rigorous and creatively relevant to design students
-
 </v-clicks>
 
 <!--
-Clearly state the gap identified in the literature: while context helps, there isn't a defined framework or tools for using art, specifically algorithmic art, effectively for design students learning to program
+While contextualization helps, there isn't a defined framework or tools for using art
 
-Explain that existing CT tools often target technical students
+specifically designed for students in design-based undergraduate programs, where visual learners are prominent. To bridge this gap, this study introduces materials (ALAP) and a method (D/I) that can be implemented in programming education within the context of algorithmic art.
 
-Articulate the specific research goal: to fill this gap by creating and evaluating a structured, art-based approach
-
-Research indicates that contextualized programming education positively impacts students' learning and enthusiasm for the subject. However, there is a requirement for resources and explicit instructional methods specifically designed for students in design-based undergraduate programs, where visual learners are prominent. To bridge this gap, this study introduces materials (ALAP) and a method (D/I) that can be implemented in programming education within the context of algorithmic art.
+Research indicates that contextualized programming education positively impacts students' learning and enthusiasm for the subject. However, there is a requirement for resources and explicit instructional methods
 -->
-
 
 ---
 layout: statement
@@ -257,6 +263,17 @@ title: SRQs
 
 ### SRQ2: <span text-gray italic>"How can we relate common practices used in algorithmic art with computational thinking to provide hands on tools that can be used as teaching and learning material in a visual context?"</span>
 
+<!--
+SRQ1:
+To contextualize, started research on AA
+Collect Artworks
+Analyze in comparison CC Books
+Match formalistic features - categorize
+
+
+SRQ2:
+Find a way to utilize outcomes from the SRQ1
+-->
 
 ---
 layout: two-cols
@@ -269,7 +286,7 @@ Seymour Papert's Constructionist Theory: Students learn best when actively creat
 
 Actor-Network Theory (ANT): Useful for understanding complex relationships between human and non-human actors. 
 
-Duval's Theory of Semiotic Representation: Addresses the cognitive challenges of converting representations between different systems (visual, verbal, code). Non-congruent conversions and cognitive dissociation are key challenges the method aims to address.
+Duval's Theory of Semiotic Representation: Addresses the cognitive challenges of converting representations between different systems (visual, verbal, code). Non-congruent conversions is the key challenge.
 
 ::right::
 
@@ -279,16 +296,19 @@ Figure: Research Network Actors
 </div>
 
 <!--
+Papert:
+- Students learn best when they actively create personally meaningful artifacts,
 
-- Explain that the research is built on established educational and sociological theories.
-
-- Detail Constructionism's emphasis on "learning by making" and its relevance to creative coding.
-
-- Describe how Pragmatism supports the development and testing of practical methods.
+- connecting new concepts to prior knowledge and experiences helps learners construct deeper understanding and engage more effectively with new material.
 
 - Explain ANT's relevance, particularly the idea of understanding and modifying the "scripts" within technology, linking it to the method's name.
 
-- Introduce Duval's theory to frame the challenges students face in translating between different ways of representing information (like ideas, sketches, and code)
+- Introduce Duval's theory to frame the challenges students 
+face in translating between different ways of representing information (like ideas, sketches, and code)
+
+..................................................
+
+Will talk about Duval's theory in detail.
 -->
 
 ---
@@ -297,6 +317,10 @@ image: /PHD_ANT_02.jpg
 backgroundSize: 75%
 ---
 
+<!--
+Sensual objects referenced from Graham Harman's OOO 
+engagement, previous knowledge, meaningful to them, teaching approach, etc.
+-->
 
 ---  
 title: Registers
@@ -339,15 +363,11 @@ Congruent and Non-congruent registers
   ### Non-congruent Register Conversion
 
   `Adding eight and half of four gives the sum of ten`, the word "adding" comes before the numbers, two is derived from the half of four and the conversion becomes non-congruent.
-</div> 
+</div>
 
-
-<!--non-congruent conversion relates to the cognitive challenges students face when transforming representations between different semiotic registers, especially when there is no one-to-one mapping between the source and target representations. 
-
-Bu yüzden her bir kategorinin, aynı zamanda ilgili pratiği gösterirken, farklı registerlara dönüştüğünde de karışıklığa sebep olmaması için cheat-sheet önemli hale geliyor.
-
+<!--
+non-congruent conversion relates to the cognitive challenges students face when transforming representations between different semiotic registers, especially when there is no one-to-one mapping between the source and target representations.
 -->
-
 
 ---
 layout: intro
@@ -360,7 +380,8 @@ layout: intro
  - Phase 2: De-scription/In-scription Method
 
 <!--
-The research consists of two consequential phases aimed at creating a framework connecting computational and artistic practices
+The research consists of two consequential 
+phases aimed at creating a framework connecting computational and artistic practices
 
 Phase 1: 
 Develop tools (database, categories, cheat sheet) to connect programming practices with algorithmic art for visual learners
@@ -378,11 +399,6 @@ Address sub-question 2 by offering a practical framework.
 
 
 ◦◦◦◦◦◦◦◦◦◦◦◦
-Outline the structure of the research methodology.
-
-Clearly distinguish the goals of Phase 1 (creating resources) and Phase 2 (using resources in a teaching method).
-
-Mention that these phases build upon each other and address specific research questions
 -->
 
 ---
@@ -401,15 +417,15 @@ Link to [ALAP Database](https://alptugan.notion.site/0025088dd8be4eafad7826c9026
 <img scale-75 mt--15 src='/figure_database_diagram_02.jpg' />
 
 <!--
-ALAP Database: An online repository of algorithmic artworks (1940-2000) illustrating how programming constructs are foundational to algorithmic art. Includes works from both computer-generated artists and those using algorithms for human agents (e.g., Sol LeWitt).
+ALAP Database: An online repository of algorithmic artworks (1940-2000) illustrating how programming constructs are foundational to algorithmic art. 
 
-ALAP Categories: 18 distinct categories linking visual art techniques to core programming concepts (e.g., Tiling, Translation, Rotation, Scaling, Repetition, Randomness, Oscillation, Trace). Derived from programming terms and algorithms in creative coding frameworks.
+ALAP Categories: 18 distinct categories linking visual art techniques to core programming concepts. Derived from programming terms and algorithms in creative coding frameworks.
 
-ALAP Cheat Sheet: A tool condensing and simplifying ALAP categories into practical steps with visual illustrations and descriptions. Designed for visual learners to connect programming constructs to concrete examples.
+ALAP Cheat Sheet: Designed for visual learners to connect programming constructs to concrete examples.
 
-Purpose: To contextualize programming education, make abstract concepts accessible, facilitate interdisciplinary understanding, and provide tools for teaching CT.
+Purpose: provide tools for teaching CT.
 
-Platform: Hosted on Notion, designed as a visually appealing grid (image gallery) with detailed information and filtering.
+Platform: Notion
 -->
 
 ---
@@ -682,8 +698,10 @@ title: Conclusion (ALAP Survey)
 
 ::right::
 
-<div mt-13 ml-0 v-click>
+<div mt-13 ml-0 text-left>
 Results show that;
+
+<v-clicks>
 
 - Participants comprehend categories. 
 - Some of the selected artworks take time to identify. The artworks, including abstract and natural forms (e.g., Desmond Paul Henry's ), become more challenging than those generated with simple shapes, such as Vera Molnar's geometric works.
@@ -692,6 +710,7 @@ Results show that;
 - In-class discussions increased.
 - Participants use cheat-sheets while asking questions.
 
+</v-clicks>
 </div>
 
 <!--
@@ -714,6 +733,7 @@ layout: two-cols
 class: text-left
 title: Survey 2 (D/I)
 ---
+
 # Results (Survey De-scription/In-scription)
 
 <img h-100 src='/figure_Description-Inscription.jpg' />
@@ -722,9 +742,13 @@ title: Survey 2 (D/I)
 
 <div mt-23 ml-5>
 
+<v-clicks>
+
 - The survey is divided into two main sections. 
 - The first section, related to participants' backgrounds, providing essential demographic information. 
 - The second section, focuses on the efficiency of the De-scription/In-scription method. 
+
+</v-clicks>
 
 </div>
 
@@ -733,6 +757,7 @@ layout: center
 class: text-center
 title: Results 1 (D/I)
 ---
+
 # Participants' Background
 
 
@@ -772,12 +797,36 @@ title: Results 1 (D/I)
 </div>
 </div>
 
+<!--
+1. Department (CD)
+
+2. Gender (female)
+
+3. Computer usage frequency (every day)
+
+4. Computer literacy (self-confidence)
+
+5. Perceive programming? 
+- learning high
+- panic quarter
+- comfort small
+
+6. Familarity of GA, AA, and CC
+- quarter don't know
+- small know very well
+- 65 percent heard
+
+7. CT knowledge
+- 68 % don't 
+- others know.
+-->
 
 ---
 layout: center
 class: text-center
 title: Results 2 (D/I)
 ---
+
 # Is The Method Effective?
 <div class='grid grid-cols-3 gap-4'>
 <div>
@@ -802,61 +851,86 @@ title: Results 2 (D/I)
 
 </div>
 </div>
-<!--The survey data indicated that the CT-based programming approach positively impacted student learning, motivation, and engagement. However, the feedback also highlighted areas for improvement, such as increased exposure to algorithmic/generative art, creative coding, and better support for students struggling with programming concepts.
+
+<!--
+- Ct is mostly helpful
+
+- Confidence of programming
+
+- contextualization is helpful to understand?
+
+- Do you cover how digital graphics  is generated
+
+- Is coding required for designers?
+- half say they must
+- half say they should
+- 8 % leave to CS
+
+
+The survey data indicated that the 
+- CT-based programming approach positively impacted student learning, motivation, and engagement. 
+
+- However, the feedback also highlighted areas for improvement, such as increased exposure to algorithmic/generative art, creative coding, and better support for students struggling with programming concepts.
 
 Some participants desired additional case studies and explanations related to specific programming paradigms like Agent-based and Displacement. These findings align with Duval's emphasis on the cognitive challenges of non-congruent conversions between semiotic registers (Duval, 2006; Hoppe, 2020). Overall, the survey results suggest that the De-scription/In-scription method, grounded in algorithmic art practices, effectively boosted student motivation and provided a constructive learning experience. However, incorporating additional support mechanisms, such as generative art projects and supplementary exercises, could further enhance the cognitive processes involved in semiotic register conversion, improving comprehension of programming concepts.
 -->
 
-
+---
+class: text-left
 ---
 
 # Contributions of the Research
 .
 
-The De-scription/In-scription Method: A validated experimental method specifically for teaching creative coding to visual learners in design.
+**The De-scription/In-scription Method:** A validated experimental method specifically for teaching creative coding to visual learners in design.
 
-The ALAP Framework and Resources:
-Algorithmic Art Praxis (ALAP) database: A unique online repository (1940-2000) providing historical context and examples.
+**The ALAP Framework and Resources:**
+Algorithmic Art Praxis (ALAP) database: A unique online repository (1920-2000) providing historical context and examples.
 
-ALAP Categories: 18 distinct categories linking algorithmic art practices to programming paradigms.
+**ALAP Categories:** 18 distinct categories linking algorithmic art practices to programming paradigms.
 
-ALAP Cheat Sheet: A practical, visual tool aiding register conversion and CT activities.
+**ALAP Cheat Sheet:** A practical, visual tool aiding register conversion and CT activities.
 
-Theoretical Contribution: Contributes to the discourse on CT in higher education, reframing it as essential for interdisciplinary creativity, not just technical fields. Empirically grounds Papert's constructionism and utilizes concepts from ANT and Duval's semiotics in a practical teaching method.
+**Theoretical Contribution:** Contributes to the discourse on CT in higher education.
 
-Empirical Analysis: Provides in-depth quantitative and qualitative data on design majors' perspectives towards programming
+**Research Repository:** Online environment for other researchers covering works of algorithmic art.
 
 ---
-class: text-4
+class: text-3.5
 ---
 
 # Limitations and Future Directions
 
-<v-click>
-
 ### *Limitations*
-Restricted Accessibility of the ALAP Database: Currently only accessible to the author, hindering wider use and sustainability.
 
-Study conducted with a specific group of design students at one university.
+<v-clicks>
 
-Workshop duration (four weeks) is relatively short for comprehensive programming proficiency.
-</v-click>
+- Restricted Accessibility of the ALAP Database: Currently only accessible to the author, hindering wider use and sustainability.
 
-<v-click>
+- Study conducted with a specific group of design students at one university.
+
+- Workshop duration (four weeks) is relatively short for comprehensive programming proficiency.
+
+</v-clicks>
+
 
 ### *Future Research Directions*
 
-Establish a dedicated, accessible online platform for the ALAP database, allowing collaboration and expansion (including contemporary works).
 
-Integrate interactive elements allowing direct code experimentation within visual contexts.
+<v-clicks>
 
-Add more case studies within the ALAP framework.
+- Establish a dedicated, accessible online platform for the ALAP database, allowing collaboration and expansion (including contemporary works).
 
-Explore the application of the method in other non-technical disciplines.
+- Integrate interactive elements allowing direct code experimentation within visual contexts.
 
-Further clarify distinctions between similar ALAP categories (e.g., Tiling/Tessellation) and provide more references
+- Add more case studies within the ALAP framework.
 
-</v-click>
+- Explore the application of the method in other non-technical disciplines.
+
+- Further clarify distinctions between similar ALAP categories (e.g., Tiling/Tessellation) and provide more references
+
+
+</v-clicks>
 
 ---
 layout: default
@@ -866,6 +940,8 @@ title: Conclusion
 # Conclusion
 Equipping students with opportunities to express themselves through visual aids like the ALAP categories can significantly enhance the learning experience, comprehending cognitive processes, and fostering self-assurance and willingness to articulate views.
 
+<v-clicks>
+
 - ALAP Database provide source material for contextualization.
 - ALAP categories eases the process of register conversion. 
 - ALAP cheatsheet improves communication between the instructor and the learner (CT Tools).
@@ -873,12 +949,12 @@ Equipping students with opportunities to express themselves through visual aids 
 - Improvement of student ↔ instructor communication.
 - Increased self-confidence results in higher engagement.
 
-<!--
-This dissertation provides a comprehensive framework (ALAP + De-scription/In-scription) for contextualized programming education using algorithmic art practices.
+</v-clicks>
 
+<!--
 Offers a structured, visually engaging pathway for design students to explore programming and computational thinking.
 
-Successfully bridges the gap between technical skill acquisition and artistic exploration.
+Bridges the gap between technical skill acquisition and artistic exploration.
 
 Repositions coding: From an intimidating technical skill to a creative, adaptable tool essential for designers in a technology-driven future.
 
@@ -900,15 +976,8 @@ Bunun için de ALAP kategorileri ve cheat sheet'i var.
 
 Bunun ötesinde contextualize etmek işe yarıyor fakat bu da başka bir layer ekleyerek durumu yine zorlaştırıyor.
 
-Vardığım sonuç contextualize edilen eğitimde CT' için özel toollar tasarlamak gerekiyor. Aksi taktirde CT'nin efektif olma olasılığı azalıyor...
 
-Benim vardığım en temel çıkarım ise CT teorik anlamda çalışan bir çerçeve ancak pratik anlamda yetersiz kalıyor. 
-
-Problem çözme aşamasını kolaylaştırma şekli, kişiye sistematik ilerlemesini söylemekten öteye gidemiyor. Burada temel sorun Duval'in de belirttiği gibi register'lar arası translation.
-Bunun için de ALAP kategorileri ve cheat sheet'i var. 
-
-Bunun ötesinde contextualize etmek işe yarıyor fakat bu da başka bir layer ekleyerek durumu yine zorlaştırıyor.
-Vardığım sonuç contextualize edilen eğitimde CT' için özel toollar tasarlamak gerekiyor. Aksi taktirde CT'nin efektif olma olasılığı azalıyor...
+Benim vardığım en temel çıkarım ise CT teorik anlamda çalışan bir çerçeve ancak pratik anlamda yetersiz kalıyor.
 -->
 
 ---
@@ -924,4 +993,5 @@ The End
 
 <!--
 Final projelerinde bile kullandılar
+pnpm run build --base /Slidev_Presentations/phd/2025_Phd_Dissertation_Defense/dist/
 -->
