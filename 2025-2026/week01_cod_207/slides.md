@@ -2,7 +2,6 @@
 theme: default
 background: https://cover.sli.dev
 title: Week 01 - Creative Coding I
-exportFilename: "week01-Creative_Coding"
 class: text-center
 highlighter: shiki
 lineNumbers: true
