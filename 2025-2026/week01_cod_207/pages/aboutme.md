@@ -1,5 +1,5 @@
 ---
-image: ./alp_tugan_noiseparticle.jpg
+image: alp_tugan_noiseparticle.jpg
 layout: image-left
 ---
 # αλπ τυγαν
@@ -98,7 +98,7 @@ Neden paylaşıyorum?
  -->
 
 ---
-image: /raw-sonar+D.jpeg
+image: raw-sonar+D.jpeg
 layout: image
 title: RAW
 ---

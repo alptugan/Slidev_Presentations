@@ -57,10 +57,11 @@ title: Table of contents
 ---
 src: /pages/aboutme.md
 ---
+
 ---
 class: text-left
 layout: image-right
-image: /survey.jpg
+image: survey.jpg
 title: Survey
 ---
 
@@ -176,7 +177,7 @@ For <kbd>PDF</kbd> → ÖZÜ Library.
 
 ---
 layout: image
-image: /imageT.jpg
+image: imageT.jpg
 class: text-left py-25 px-50
 ---
 
@@ -188,8 +189,6 @@ class: text-left py-25 px-50
 - Generative Art A Practical Guide Using Processing, Matt Pearson
 
 ---
-layout: image
-image: /imageT.jpg
 class: text-left py-15 px-50
 ---
 
@@ -210,9 +209,7 @@ class: text-left py-15 px-50
 - [p5.js Tutorials by Patt Vira](https://www.pattvira.com/)
 
 ---
-layout: image
-image: /imageT.jpg
-class: text-left 
+class: text-center 
 ---
 
 # Social Media 
@@ -227,8 +224,6 @@ Hashtags & Accounts
 <kbd><span text-6>#generativedesign</span></kbd>
 
 ---
-layout: image
-image: /imageT.jpg
 class: text-center
 ---
 
@@ -238,8 +233,6 @@ Course instructor distribute the necessary pdf documents, videos and sound recor
 <div style="padding-top:2%;padding-left:25%;width:auto;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/d9CX7F5Um8vzZIZOp4" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
 ---
-layout: image
-image: /imageT.jpg
 class: text-center 
 ---
 
@@ -390,7 +383,7 @@ title: Generative Art Speedrun
 
 
 ---
-background: /randomseed.jpg
+background: randomseed.jpg
 layout: cover
 class: text-left effect_Shadow
 ---
@@ -400,7 +393,7 @@ class: text-left effect_Shadow
 
 
 ---
-background: /youtube_playlist.jpg
+background: youtube_playlist.jpg
 layout: cover
 class: text-left effect_Shadow
 ---
@@ -410,7 +403,7 @@ Includes selected student projects
 <carbon-link /> [Creative Coding Selected Student Works](https://www.youtube.com/playlist?list=PLvcJjvBzWDXan8ZkLsE5gYtNX9AhjQNW-)
 
 ---
-background: /cod207_googlesites.jpeg
+background: cod207_googlesites.jpeg
 layout: cover
 class: text-left effect_Shadow
 ---
