@@ -17,6 +17,9 @@ Due to next week's class.
 
 📚 Read the “Preface”, “Chapter 1”, Hello from the book and practice on P5JS editor
 
+✏️ Choose an object and create abstracted version of it using pen and paper. Bring it to the class.
+
+
 <carbon-link color-yellow/> Review the [p5js page](https://p5js.org) 
 
 ::right::
