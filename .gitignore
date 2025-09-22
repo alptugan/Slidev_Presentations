@@ -1,16 +1,14 @@
 .DS_Store
 .gitignore
+.npmrc
 
 template
 template_backup
 
 week02_cod_208/node_modules
 
+node_modules
+
 # Ignore everything in the phd folder
 phd/*
-
-# Allow the 2025_Phd_Dissertation_Defense folder
-!phd/2025_Phd_Dissertation_Defense/
-
-# Allow all contents (including dist) inside 2025_Phd_Dissertation_Defense
-!phd/2025_Phd_Dissertation_Defense/**
+phd/**
