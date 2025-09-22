@@ -9,5 +9,7 @@ week02_cod_208/node_modules
 
 node_modules
 
+!dist/**
+
 # Ignore everything in the phd folder
 phd/*
