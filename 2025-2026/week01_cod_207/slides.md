@@ -153,7 +153,7 @@ layout: image-left
 
 ---
 layout: image
-image: /book_mockup.jpg
+image: book_mockup.jpg
 class: text-left
 ---
 

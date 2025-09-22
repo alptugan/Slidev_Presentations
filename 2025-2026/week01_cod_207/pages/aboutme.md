@@ -1,5 +1,5 @@
 ---
-image: /alp_tugan_noiseparticle.jpg
+image: ./alp_tugan_noiseparticle.jpg
 layout: image-left
 ---
 # αλπ τυγαν
