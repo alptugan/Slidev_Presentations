@@ -13,7 +13,7 @@ drawings:
     persist: true
 aspect-ratio: 16/9
 css: unocss
-download: true
+download: false
 # export options
 # use export CLI options in camelCase format
 # Learn more: https://sli.dev/guide/exporting.html
@@ -42,6 +42,48 @@ title: Table of contents
 
 <Toc :columns="2"/>
 
+---
+title: How to contact me?
+layout: center
+---
+
+# How should you contact me?
+You can expect a reply within 24-48 hours on following conditions;
+
+<v-clicks>
+
+✅ Weekdays & Before 6 PM
+
+✅ Obey Turkish or English Grammar rules
+
+✅ Provide the name of the course and section (E.g COD-207, Section A)
+
+</v-clicks>
+
+---
+title: How should not contact me?
+layout: center
+---
+
+# How should not contact me?
+
+Do not expect a reply if you contact me under following conditions;
+
+<v-clicks>
+
+❌ Weekends & After 6 PM 
+
+❌ Informal Language (E.g WhatsApp, SMS, Messenger)
+
+❌ Questions without any context (E.g "Can you help me?")
+
+❌ Questions that can be answered by a simple Google search (E.g "What is a function?")
+
+❌ Questions about things that are already explained in the course materials (E.g "How to submit assignment?")
+
+❌ Excuses about missing deadlines (E.g "I was sick", "My computer broke down", 💩)
+
+</v-clicks>
 
 ---
 layout: image-left
@@ -291,6 +333,7 @@ title: Styling - Fill/noFill
 image: p5js-colors-2.jpg
 layout: image-left
 class: text-left m-auto
+backgroundSize: 25em
 ---
 
 # RGB Values
@@ -300,13 +343,13 @@ class: text-left m-auto
 - Min value 0
 - fill(<span text-red>Red</span>, <span text-green>Green</span>, <span text-blue>Blue</span>)
 
-<br /><br />
+<br />
 
 # Hexadecimal Codes
 - fill(<span text-yellow>#ffcc00</span>)
 
 
-<br /><br />
+<br />
 
 # Disable Fill
 - noFill();
@@ -316,6 +359,7 @@ class: text-left m-auto
 title: Styling - Stroke/noStroke
 image: stroke.png
 layout: image-left
+backgroundSize: 25em
 ---
 
 # RGB Values
@@ -325,15 +369,15 @@ layout: image-left
 - Min value 0
 - stroke(<span text-red>Red</span>, <span text-green>Green</span>, <span text-blue>Blue</span>)
 
-<br /><br />
+<br />
 
 # Hexadecimal Codes
 - stroke(<span text-yellow>#ffcc00</span>)
 
 
-<br /><br />
+<br />
 
-# Disable Fill
+# Disable Stroke
 - noStroke();
 
 
@@ -341,6 +385,7 @@ layout: image-left
 title: Combine Everything
 layout: image-left
 image: Abstracted-Shape.jpg
+backgroundSize: 30em
 ---
 
 # Abstraction 
