@@ -111,7 +111,7 @@ The p5.js canvas uses a coordinate system to describe space. The origin, (0, 0),
 
 ---
 layout: image
-image: /pro-2.png
+image: pro-2.png
 title: Coordinate System Image
 ---
 
@@ -119,7 +119,7 @@ title: Coordinate System Image
 
 ---
 layout: image-left
-image: /pro-3.png
+image: pro-3.png
 class: text-left
 ---
 
@@ -145,7 +145,7 @@ function draw() {
 
 ---
 layout: image
-image: /bg-01.png
+image: bg-01.png
 class: text-center px-50
 ---
 
@@ -165,7 +165,7 @@ The resulting image, also called a <span text-green>render</span> or <span text-
 
 ---
 layout: center
-image: /grad-bg2.jpg
+image: grad-bg2.jpg
 class: text-left
 ---
 
@@ -290,7 +290,6 @@ backgroundSize: 29em
 
 
 ---
-layout: image
 class: text-left
 ---
 
@@ -329,7 +328,7 @@ class: text-center text-yellow
 
 ---
 layout: image-left
-image: /ct.png
+image: ct.png
 hide: false
 ---
 
