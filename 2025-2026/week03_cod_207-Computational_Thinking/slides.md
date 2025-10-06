@@ -51,7 +51,7 @@ title: Artist of the Week
 <Youtube id='ja3U7hK2bOk' width='100%' height='100%' />
 
 ---
-image: /recall.png
+image: recall.png
 layout: image-left
 ---
 
@@ -66,8 +66,6 @@ Things we learn about P5JS programming language.
 
 
 ---
-image: /layer_order.png
----
 
 # Drawing Order
 
@@ -78,7 +76,7 @@ Drawing Order: Set the layer order of the shapes.
 
 ---
 layout: image-left
-image: /pro1.png
+image: pro1.png
 class: text-left
 ---
 
