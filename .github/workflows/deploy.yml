@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # Make every run: command execute inside the folder that contains package.json
+    # run: steps will execute inside the folder that contains package.json
     defaults:
       run:
         working-directory: 2025-2026/week05_cod_207-Randomness-Repetetion
@@ -38,20 +38,33 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Use a relative base so emitted asset links are relative to index.html.
-      # This avoids absolute-path mismatches when GitHub Pages serves the site under
-      # /<username>.github.io/<repo>/... and prevents requests for assets returning
-      # the Pages HTML 404 (which causes NS_ERROR_CORRUPTED_CONTENT).
+      # Build using a relative base so emitted asset urls are relative to index.html.
+      # This is generally the most robust choice for project pages nested under /<repo>/...
       - name: Build
         run: pnpm build --base ./
+
+      # Debugging helpers (remove after confirming deploy works)
+      - name: Show dist file tree
+        run: |
+          echo "=== repo root (ls) ==="
+          ls -la
+          echo "=== dist (ls) ==="
+          ls -la dist || true
+          echo "=== recursive dist listing (first 200 lines) ==="
+          find dist -type f | sed -n '1,200p'
+
+      - name: Show index.html head (inspect asset URLs)
+        run: sed -n '1,200p' dist/index.html || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the generated site; default run working directory ensures this path exists
-          path: dist
+          # IMPORTANT: path is repository-relative. Upload the dist folder produced inside
+          # the subdirectory so the artifact root = site root (index.html at artifact root).
+          path: 2025-2026/week05_cod_207-Randomness-Repetetion/dist
 
   deploy:
     environment:
