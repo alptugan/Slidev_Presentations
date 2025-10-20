@@ -25,14 +25,16 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
 
       - name: Install dependencies
-        run: nci
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/
+        run: pnpm build --base /${{github.event.repository.name}}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
