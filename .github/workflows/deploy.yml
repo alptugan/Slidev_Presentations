@@ -36,7 +36,10 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/2025-2026/week05_cod_207-Randomness-Repetetion/
+        run: nr build --base /Slidev_Presentations/2025-2026/week05_cod_207-Randomness-Repetetion/
+
+      - name: Add .nojekyll file
+        run: touch dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
