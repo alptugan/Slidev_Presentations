@@ -30,18 +30,23 @@ jobs:
         with:
           version: latest
 
+      # Install dependencies from the subdirectory that contains package.json
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        working-directory: ./2025-2026/week05_cod_207-Randomness-Repetetion
 
+      # Build from the same subdirectory; keep your --base if you need it
       - name: Build
-        run: pnpm build --base /${{github.event.repository.name}}/2025-2026/week05_cod_207-Randomness-Repetetion/
+        run: pnpm build --base /${{ github.event.repository.name }}/
+        working-directory: ./2025-2026/week05_cod_207-Randomness-Repetetion
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          # Upload the dist folder generated inside the subdirectory
+          path: ./2025-2026/week05_cod_207-Randomness-Repetetion/dist
 
   deploy:
     environment:
