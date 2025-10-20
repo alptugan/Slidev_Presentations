@@ -36,17 +36,21 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build --base /Slidev_Presentations/2025-2026/week05_cod_207-Randomness-Repetetion/
+        run: nr build --base /Slidev_Presentations/
 
-      - name: Add .nojekyll file
-        run: touch dist/.nojekyll
+      - name: Create deployment structure
+        working-directory: .
+        run: |
+          mkdir -p deploy/2025-2026/week05_cod_207-Randomness-Repetetion
+          cp -r 2025-2026/week05_cod_207-Randomness-Repetetion/dist/* deploy/2025-2026/week05_cod_207-Randomness-Repetetion/
+          touch deploy/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 2025-2026/week05_cod_207-Randomness-Repetetion/dist
+          path: deploy
 
   deploy:
     environment:
