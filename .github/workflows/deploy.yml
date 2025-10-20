@@ -18,7 +18,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # run: steps will execute inside the folder that contains package.json
     defaults:
       run:
         working-directory: 2025-2026/week05_cod_207-Randomness-Repetetion
@@ -30,41 +29,21 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: nci
 
-      # Build using a relative base so emitted asset urls are relative to index.html.
-      # This is generally the most robust choice for project pages nested under /<repo>/...
       - name: Build
-        run: pnpm build --base ./
-
-      # Debugging helpers (remove after confirming deploy works)
-      - name: Show dist file tree
-        run: |
-          echo "=== repo root (ls) ==="
-          ls -la
-          echo "=== dist (ls) ==="
-          ls -la dist || true
-          echo "=== recursive dist listing (first 200 lines) ==="
-          find dist -type f | sed -n '1,200p'
-
-      - name: Show index.html head (inspect asset URLs)
-        run: sed -n '1,200p' dist/index.html || true
+        run: nr build --base /${{github.event.repository.name}}/2025-2026/week05_cod_207-Randomness-Repetetion/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANT: path is repository-relative. Upload the dist folder produced inside
-          # the subdirectory so the artifact root = site root (index.html at artifact root).
-          path: 2025-2026/week05_cod_207-Randomness-Repetetion/dist
+          path: dist
 
   deploy:
     environment:
