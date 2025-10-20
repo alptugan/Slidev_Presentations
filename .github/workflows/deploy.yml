@@ -38,33 +38,12 @@ jobs:
       - name: Build
         run: nr build --base /${{github.event.repository.name}}/2025-2026/week05_cod_207-Randomness-Repetetion/
 
-      - name: Verify build output (debug)
-        run: |
-          echo "Workspace: $GITHUB_WORKSPACE"
-          echo "Current working directory:"
-          pwd
-          echo "Listing repo root:"
-          ls -la $GITHUB_WORKSPACE
-          echo "Listing project folder:"
-          ls -la 2025-2026/week05_cod_207-Randomness-Repetetion || true
-          echo "Listing dist inside project folder:"
-          ls -la 2025-2026/week05_cod_207-Randomness-Repetetion/dist || true
-
-      - name: Copy dist to repository root for upload
-        run: |
-          # Ensure target location is clean
-          rm -rf $GITHUB_WORKSPACE/dist
-          # Copy build output to repository root so upload step can find 'dist'
-          cp -r 2025-2026/week05_cod_207-Randomness-Repetetion/dist $GITHUB_WORKSPACE/dist
-          echo "Copied to $GITHUB_WORKSPACE/dist:"
-          ls -la $GITHUB_WORKSPACE/dist
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: 2025-2026/week05_cod_207-Randomness-Repetetion/dist
 
   deploy:
     environment:
