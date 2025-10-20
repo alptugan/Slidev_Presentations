@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # set working-directory for run steps so we don't repeat it
+    # Make every run: command execute inside the folder that contains package.json
     defaults:
       run:
         working-directory: 2025-2026/week05_cod_207-Randomness-Repetetion
@@ -38,30 +38,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Build with an explicit base that ends with a trailing slash.
-      # This makes Vite/Slidev emit asset URLs that match the GitHub Pages path.
+      # Use a relative base so emitted asset links are relative to index.html.
+      # This avoids absolute-path mismatches when GitHub Pages serves the site under
+      # /<username>.github.io/<repo>/... and prevents requests for assets returning
+      # the Pages HTML 404 (which causes NS_ERROR_CORRUPTED_CONTENT).
       - name: Build
-        run: pnpm build --base /${{ github.event.repository.name }}/2025-2026/week05_cod_207-Randomness-Repetetion/
-
-      # Debug: show what was produced so we can confirm where index.html & assets are and how they reference each other
-      - name: Show dist file tree
-        run: |
-          echo "=== repo root ==="
-          ls -la
-          echo "=== dist root ==="
-          ls -la dist || true
-          echo "=== recursive dist listing (first 200 lines) ==="
-          find dist -type f | sed -n '1,200p'
-      - name: Show index.html head (to inspect asset URLs)
-        run: sed -n '1,200p' dist/index.html || true
+        run: pnpm build --base ./
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the built site (dist) created inside the subdirectory -> this ensures the artifact root is the built site
-          path: 2025-2026/week05_cod_207-Randomness-Repetetion/dist
+          # Upload the generated site; default run working directory ensures this path exists
+          path: dist
 
   deploy:
     environment:
