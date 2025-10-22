@@ -1,8 +1,7 @@
 ---
-background: https://source.unsplash.com/collection/9468077
-layout: cover
-class: m-0 text-left text-shadow-lg p-10
+class: m-0 text-3 pr-5
 transition: fade-out
+layout: two-cols
 ---
 
 # Assignment 1
@@ -14,6 +13,9 @@ Reproduce the following artwork (Des Ordres, 1974) of Vera Molnar. 
 
 👀 goto ALAP website. Choose an artwork that includes tiling and randomness. OR you can choose or create your own grid based pattern. E.g pattern on the walls, in your bathroom or kitchen walls. Anything that is tiled and including following conditions work.
 
+::right::
+
+# Instructions
 
 For both assignments you must follow the instructions below.
 
