@@ -166,30 +166,6 @@ backgroundSize: 91%
 </v-clicks>
 
 
----
-layout: two-cols
-class: text-left text-3.5
----
-# Generative Collage
-
-- Choose a concept → "analog devices, black & white, space, peace, Star Wars, Dune, Daft Punk, Cyberpunk, Steam Punk, etc..."
-- Collect at least 10 images
-- Create a photoshop document at size 600 x 800. Compose a collage.
-- Export the images as transparent layers. Load them in P5JS.
-- Upload to the openprocessing.
-- Use randomness to create different compositional variations of your design.
-- CT Analysis (20 pts)
-- The use of comments in the code (10 pts)
-- Tidy up the code (10 pts)
-- ❗Submit the openprocessing link. (5 pts)
-- ❗Submit the sketch source code as zip file as well. (5 pts)
-
-[image source: 🔗 Patrick Hüebner](https://www.patrik-huebner.com/creative-coding/generative-collage-synthesizer/)
-
-
-::right::
-
-<img src='/GenerativeCollageSynthesizer.gif' />
 
 ---
 layout: center
