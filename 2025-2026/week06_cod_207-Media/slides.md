@@ -145,7 +145,7 @@ hide: false
 ---
 image: /computational_collage02.jpg
 layout: image-left
-backgroundSize: 90%
+backgroundSize: 91%
 ---
 
 # Computational Collage
@@ -235,7 +235,7 @@ layout: center
 
 # Media cheatsheet
 
-[Download the pdf](/media_cheatsheet.pdf)
+[Download the pdf](https://github.com/alptugan/Slidev_Presentations/blob/b571175f83e7dc97470b074f43348b41cd7d82fc/2024-2025/week06_cod_207-Media/public/media_cheatsheet.pdf)
 
 ---
 src: ./pages/assignment.md
