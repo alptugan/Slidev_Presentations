@@ -20,7 +20,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: 2025-2026/week07_cod_207-Image-Processing
+        working-directory: 2025-2026/week06_cod_207-Media
 
     steps:
       - uses: actions/checkout@v4
@@ -36,13 +36,13 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build --base /Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/
+        run: nr build --base /Slidev_Presentations/2025-2026/week06_cod_207-Media/
 
       - name: Create deployment structure
         working-directory: .
         run: |
-          mkdir -p deploy/2025-2026/week07_cod_207-Image-Processing
-          cp -r 2025-2026/week07_cod_207-Image-Processing/dist/* deploy/2025-2026/week07_cod_207-Image-Processing/
+          mkdir -p deploy/2025-2026/week06_cod_207-Media
+          cp -r 2025-2026/week06_cod_207-Media/dist/* deploy/2025-2026/week06_cod_207-Media/
           touch deploy/.nojekyll
 
       - name: Setup Pages
