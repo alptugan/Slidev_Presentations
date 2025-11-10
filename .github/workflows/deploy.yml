@@ -41,7 +41,7 @@ jobs:
       - name: Create deployment structure
         working-directory: .
         run: |
-          mkdir -p deploy/2025-2026/week06_cod_207-Media
+          mkdir -p deploy/2025-2026/week07_cod_207-Image-Processing
           cp -r 2025-2026/week07_cod_207-Image-Processing/dist/* deploy/2025-2026/week07_cod_207-Image-Processing/
           touch deploy/.nojekyll
 
