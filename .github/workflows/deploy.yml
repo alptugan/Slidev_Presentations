@@ -29,11 +29,7 @@ jobs:
           - '2025-2026/week07_cod_207-Image-Processing'
           - '2025-2026/week06_cod_207-Media'
           - '2025-2026/week05_cod_207-Randomness-Repetetion'
-          # Add your other 4 project folders here...
-          # - '2025-2026/your-other-project-1'
-          # - '2025-2026/your-other-project-2'
-          # - '2025-2026/your-other-project-3'
-          # - '2025-2026/your-other-project-4'
+          # Add your other project folders here...
 
     steps:
       - name: Checkout repository
@@ -98,7 +94,6 @@ jobs:
   #
   package:
     runs-on: ubuntu-latest
-    # This job runs AFTER all 'build' matrix jobs are done
     needs: build
 
     steps:
@@ -131,10 +126,9 @@ jobs:
           fi
 
       - name: Upload final 'github-pages' artifact
-        # Now, upload the single, merged 'dist' folder
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages # This is the name the deploy job expects
+          name: github-pages
           path: ./dist
           retention-days: 1
 
@@ -142,7 +136,6 @@ jobs:
   # JOB 3: Deploy the final packaged artifact
   #
   deploy:
-    # This job now depends on 'package', not 'build'
     needs: package
 
     permissions:
