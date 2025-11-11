@@ -1,65 +1,87 @@
-name: Deploy pages
+name: Deploy Multiple Slidev Projects
 
+# Run on pushes to your main branch
 on:
-  workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main  # Or 'master', depending on your repository
 
+# Set permissions for the workflow
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  pages: write      # Required to deploy to GitHub Pages
+  id-token: write   # Required for OIDC token authentication
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: 2025-2026/week07_cod_207-Image-Processing
+    strategy:
+      matrix:
+        #
+        # === IMPORTANT ===
+        # Add all your project paths here.
+        # This list tells the workflow which folders to build.
+        #
+        project_path:
+          - '2025-2026/week07_cod_207-Image-Processing'
+          - '2025-2026/week06_cod_207-Media'
+          - 'week05_cod_207-Randomness-Repetetion'
+          # Add your other 4 project folders here...
+          # - '2025-2026/your-other-project-1'
+          # - '2025-2026/your-other-project-2'
+          # - '2025-2026/your-other-project-3'
+          # - '2025-2026/your-other-project-4'
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: '20' # Use a current LTS version
 
-      - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
+      - name: Install Slidev CLI
+        run: npm install -g @slidev/cli
 
-      - name: Install dependencies
-        run: nci
-
-      - name: Build
-        run: nr build --base /Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/
-
-      - name: Create deployment structure
-        working-directory: .
+      - name: Build Project (${{ matrix.project_path }})
         run: |
-          mkdir -p deploy/2025-2026/week07_cod_207-Image-Processing
-          cp -r 2025-2026/week07_cod_207-Image-Processing/dist/* deploy/2025-2026/week07_cod_207-Image-Processing/
-          touch deploy/.nojekyll
+          # Build the slides (assuming 'slides.md' is the entrypoint)
+          #
+          # --base: Sets the public path. This is crucial for correct asset linking.
+          #         /Slidev_Presentations/${{ matrix.project_path }}/
+          #
+          # --out:  Specifies the *output* directory. We build all projects
+          #         into a single 'dist' folder, maintaining the structure.
+          #         dist/${{ matrix.project_path }}
+          #
+          slidev build "${{ matrix.project_path }}/slides.md" \
+            --base "/Slidev_Presentations/${{ matrix.project_path }}/" \
+            --out "dist/${{ matrix.project_path }}"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        # This step uploads the entire 'dist' folder (containing all
+        # built projects) as an artifact for the 'deploy' job to use.
+        uses: actions/upload-artifact@v4
         with:
-          path: deploy
+          name: github-pages
+          path: ./dist
+          retention-days: 1
 
   deploy:
+    # This job runs *after* the 'build' job has successfully completed
+    needs: build
+
+    # Standard configuration for GitHub Pages deployment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
     runs-on: ubuntu-latest
-    name: Deploy
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        # This action automatically finds the 'github-pages' artifact
+        # uploaded by the 'build' job and deploys it.
