@@ -1,5 +1,5 @@
 ---
-background: /cover-image_processing-mona_lisa.png
+background: ./cover-image_processing-mona_lisa.png
 title: Week 07 - Image Processing
 exportFilename: "week07-COD207-Image-Processing"
 class: text-center
@@ -48,7 +48,7 @@ layout: default
 
 ---
 layout: image
-image: "/alap-image_processing.png"
+image: "alap-image_processing.png"
 backgroundSize: 60%
 ---
 
@@ -196,7 +196,7 @@ function mousePressed() {
 
 ---
 layout: image-left
-image: /dom.png
+image: dom.png
 backgroundSize: 100%
 class: text-left mt-20
 ---
@@ -211,7 +211,7 @@ You can create HTML elements to make your application interactive. Play around w
 ---
 layout: image-left
 backgroundSize: 80%
-image: /dom2.png
+image: dom2.png
 ---
 
 # Exemplified Case Study

@@ -11,6 +11,9 @@ permissions:
   id-token: write
 
 jobs:
+  #
+  # JOB 1: Build all projects in parallel
+  #
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -19,6 +22,10 @@ jobs:
           - '2025-2026/week07_cod_207-Image-Processing'
           # - '2025-2026/week06_cod_207-Media'
           # - '2025-2026/week05_cod_207-Randomness-Repetetion'
+          # Add your other 3 project folders here...
+          # - '2025-2026/your-other-project-1'
+          # - '2025-2026/your-other-project-2'
+          # - '2025-2026/your-other-project-3'
 
     steps:
       - name: Checkout repository
@@ -32,36 +39,51 @@ jobs:
       - name: Install Slidev CLI
         run: npm install -g @slidev/cli
 
-      - name: 1. (Debug) List project files
-        # This will show us the files in the project folder *before* building
-        run: ls -R "${{ matrix.project_path }}"
-
-      - name: 2. Build Project (${{ matrix.project_path }})
+      #
+      # === THIS IS THE NEW, CORRECTED BUILD STEP ===
+      #
+      - name: Build Project (${{ matrix.project_path }})
         run: |
-          #
-          # === CORE FIX ===
-          # Changed from "${{ matrix.project_path }}/slides.md"
-          # to just "${{ matrix.project_path }}".
-          # Slidev will now find the entrypoint .md file automatically.
-          #
-          slidev build "${{ matrix.project_path }}" \
+          set -euo pipefail # Fail the script if any command fails
+          echo "Building project: ${{ matrix.project_path }}"
+
+          # 1. Move into the project directory. This is the main fix.
+          # Asset paths like 'image.png' will now resolve correctly.
+          cd "${{ matrix.project_path }}"
+
+          # 2. Sanity check: make sure slides.md exists
+          if [ ! -f slides.md ]; then
+            echo "ERROR: slides.md not found in $(pwd)"
+            ls -la || true
+            exit 1
+          fi
+
+          # 3. Debug: check for any remaining bad asset paths (with leading slashes)
+          echo "Checking for leading-slash asset paths in slides.md..."
+          grep -nE '(^|\s)(src:|image:|background:|favicon:|!?\[).*["'\'']?\/' slides.md || true
+
+          # 4. Create the output directory relative to the *repo root*
+          # (../../ moves up from '.../week07' to '2025-2026' and then to root)
+          mkdir -p "../../dist/${{ matrix.project_path }}"
+
+          # 5. Run the build from *inside* the project folder
+          slidev build slides.md \
             --base "/Slidev_Presentations/${{ matrix.project_path }}/" \
-            --out "dist/${{ matrix.project_path }}"
+            --out "../../dist/${{ matrix.project_path }}"
 
-      - name: 3. (Debug) Check build output
-        # This will show all files after the build.
-        # We MUST see a 'dist' folder here.
-        run: ls -R
+          echo "Built files for ${{ matrix.project_path }}:"
+          ls -R "../../dist/${{ matrix.project_path }}" || true
 
-      - name: 4. Upload partial build artifact
+      # 6. Upload the artifact. The 'dist' folder is at the repo root.
+      - name: Upload partial build artifact
         uses: actions/upload-artifact@v4
         with:
           name: partial-dist-${{ hashFiles(matrix.project_path) }}
-          path: ./dist # This path MUST exist after step 2
+          path: ./dist # This path is correct, as the build step outputs to the root 'dist'
           retention-days: 1
 
   #
-  # Package and Deploy jobs remain unchanged
+  # JOB 2: Package all partial builds (No changes needed)
   #
   package:
     runs-on: ubuntu-latest
@@ -84,6 +106,9 @@ jobs:
           path: ./dist
           retention-days: 1
 
+  #
+  # JOB 3: Deploy the final artifact (No changes needed)
+  #
   deploy:
     needs: package
     permissions:
