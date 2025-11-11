@@ -26,7 +26,7 @@ jobs:
         project_path:
           - '2025-2026/week07_cod_207-Image-Processing'
           - '2025-2026/week06_cod_207-Media'
-          - 'week05_cod_207-Randomness-Repetetion'
+          - '2025-2026/week05_cod_207-Randomness-Repetetion'
           # Add your other 4 project folders here...
           # - '2025-2026/your-other-project-1'
           # - '2025-2026/your-other-project-2'
