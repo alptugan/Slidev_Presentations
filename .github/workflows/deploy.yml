@@ -22,11 +22,6 @@ jobs:
           - '2025-2026/week07_cod_207-Image-Processing'
           # - '2025-2026/week06_cod_207-Media'
           # - '2025-2026/week05_cod_207-Randomness-Repetetion'
-          # Add your other 3 project folders here...
-          # - '2025-2026/your-other-project-1'
-          # - '2025-2026/your-other-project-2'
-          # - '2025-2026/your-other-project-3'
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,46 +35,59 @@ jobs:
         run: npm install -g @slidev/cli
 
       #
-      # === THIS IS THE NEW, CORRECTED BUILD STEP ===
+      # === THIS IS THE NEW, WORKSPACE-AWARE BUILD STEP ===
       #
       - name: Build Project (${{ matrix.project_path }})
         run: |
-          set -euo pipefail # Fail the script if any command fails
+          set -euo pipefail
           echo "Building project: ${{ matrix.project_path }}"
 
-          # 1. Move into the project directory. This is the main fix.
-          # Asset paths like 'image.png' will now resolve correctly.
+          # Move into the project directory
           cd "${{ matrix.project_path }}"
 
-          # 2. Sanity check: make sure slides.md exists
+          # Sanity check: slides.md present
           if [ ! -f slides.md ]; then
             echo "ERROR: slides.md not found in $(pwd)"
             ls -la || true
             exit 1
           fi
 
-          # 3. Debug: check for any remaining bad asset paths (with leading slashes)
+          # Debug: check for leading-slash asset paths
           echo "Checking for leading-slash asset paths in slides.md..."
           grep -nE '(^|\s)(src:|image:|background:|favicon:|!?\[).*["'\'']?\/' slides.md || true
 
-          # 4. Create the output directory relative to the *repo root*
-          # (../../ moves up from '.../week07' to '2025-2026' and then to root)
-          mkdir -p "../../dist/${{ matrix.project_path }}"
+          # Ensure the output directory at the repo root ($GITHUB_WORKSPACE) exists
+          OUTDIR="${GITHUB_WORKSPACE}/dist/${{ matrix.project_path }}"
+          mkdir -p "$OUTDIR"
 
-          # 5. Run the build from *inside* the project folder
+          # Run the build and write directly to the absolute workspace path
           slidev build slides.md \
             --base "/Slidev_Presentations/${{ matrix.project_path }}/" \
-            --out "../../dist/${{ matrix.project_path }}"
+            --out "$OUTDIR"
 
-          echo "Built files for ${{ matrix.project_path }}:"
-          ls -R "../../dist/${{ matrix.project_path }}" || true
+          echo "Built files for ${{ matrix.project_path }} (written to $OUTDIR):"
+          ls -R "$OUTDIR" || true
 
-      # 6. Upload the artifact. The 'dist' folder is at the repo root.
+          # Show top-level dist to ensure uploader will find it
+          echo "Top-level dist contents in workspace:"
+          ls -R "${GITHUB_WORKSPACE}/dist" || true
+
+      #
+      # === NEW SAFETY-CHECK STEP ===
+      #
+      - name: Ensure dist exists before upload
+        run: |
+          if [ ! -d "${GITHUB_WORKSPACE}/dist" ]; then
+            echo "ERROR: '${GITHUB_WORKSPACE}/dist' does not exist. Build failed or wrote elsewhere."
+            ls -la "${GITHUB_WORKSPACE}" || true
+            exit 1
+          fi
+
       - name: Upload partial build artifact
         uses: actions/upload-artifact@v4
         with:
           name: partial-dist-${{ hashFiles(matrix.project_path) }}
-          path: ./dist # This path is correct, as the build step outputs to the root 'dist'
+          path: ./dist # This is correct, as it points to $GITHUB_WORKSPACE/dist
           retention-days: 1
 
   #
