@@ -4,7 +4,7 @@ name: Deploy Multiple Slidev Projects
 on:
   push:
     branches:
-      - main  # Or 'master', depending on your repository
+      - main
 
 # Set permissions for the workflow
 permissions:
@@ -13,6 +13,9 @@ permissions:
   id-token: write   # Required for OIDC token authentication
 
 jobs:
+  #
+  # JOB 1: Build all projects in parallel
+  #
   build:
     runs-on: ubuntu-latest
 
@@ -21,7 +24,6 @@ jobs:
         #
         # === IMPORTANT ===
         # Add all your project paths here.
-        # This list tells the workflow which folders to build.
         #
         project_path:
           - '2025-2026/week07_cod_207-Image-Processing'
@@ -40,40 +42,67 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use a current LTS version
+          node-version: '20'
 
       - name: Install Slidev CLI
         run: npm install -g @slidev/cli
 
       - name: Build Project (${{ matrix.project_path }})
         run: |
-          # Build the slides (assuming 'slides.md' is the entrypoint)
-          #
-          # --base: Sets the public path. This is crucial for correct asset linking.
-          #         /Slidev_Presentations/${{ matrix.project_path }}/
-          #
-          # --out:  Specifies the *output* directory. We build all projects
-          #         into a single 'dist' folder, maintaining the structure.
-          #         dist/${{ matrix.project_path }}
-          #
+          # Build this one project into its subdirectory
           slidev build "${{ matrix.project_path }}/slides.md" \
             --base "/Slidev_Presentations/${{ matrix.project_path }}/" \
             --out "dist/${{ matrix.project_path }}"
 
-      - name: Upload artifact
-        # This step uploads the entire 'dist' folder (containing all
-        # built projects) as an artifact for the 'deploy' job to use.
+      - name: Upload partial build artifact
+        # Each matrix job uploads its own 'dist' folder.
+        # We use a hash of the path to create a unique artifact name.
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          name: partial-dist-${{ hashFiles(matrix.project_path) }}
+          path: ./dist # This 'dist' folder only contains one built project
+          retention-days: 1
+
+  #
+  # JOB 2: Package all partial builds into one artifact
+  #
+  package:
+    runs-on: ubuntu-latest
+    # This job runs AFTER all 'build' matrix jobs are done
+    needs: build
+
+    steps:
+      - name: Download all partial build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          # Download all artifacts that start with 'partial-dist-'
+          pattern: partial-dist-*
+          # Merge them all into a single 'dist' directory
+          path: ./dist
+          merge-multiple: true
+
+      - name: List files for debugging (optional)
+        run: ls -R ./dist
+
+      - name: Upload final 'github-pages' artifact
+        # Now, upload the single, merged 'dist' folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages # This is the name the deploy job expects
           path: ./dist
           retention-days: 1
 
+  #
+  # JOB 3: Deploy the final packaged artifact
+  #
   deploy:
-    # This job runs *after* the 'build' job has successfully completed
-    needs: build
+    # This job now depends on 'package', not 'build'
+    needs: package
 
-    # Standard configuration for GitHub Pages deployment
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -84,4 +113,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         # This action automatically finds the 'github-pages' artifact
-        # uploaded by the 'build' job and deploys it.
+        # uploaded by the 'package' job.
