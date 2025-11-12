@@ -22,6 +22,7 @@ jobs:
           - '2025-2026/week07_cod_207-Image-Processing'
           # - '2025-2026/week06_cod_207-Media'
           # - '2025-2026/week05_cod_207-Randomness-Repetetion'
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,10 +30,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: lts/*'
 
-      - name: Install Slidev CLI
-        run: npm install -g @slidev/cli
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
+
+      - name: Install dependencies
+        run: nci
 
       #
       # === THIS IS THE NEW, WORKSPACE-AWARE BUILD STEP ===
