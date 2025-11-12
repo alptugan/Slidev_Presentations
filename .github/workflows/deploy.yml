@@ -28,9 +28,10 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - uses: pnpm/action-setup@v2
-        with:
-          run_install: false
+      - name: Enable corepack and activate pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Obtain pnpm store directory
         shell: bash
@@ -58,7 +59,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./2025-2026/dist
 
   deploy:
     environment:
