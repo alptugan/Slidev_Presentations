@@ -32,6 +32,9 @@ jobs:
         with:
           run_install: false
 
+      - name: Install dependencies
+        run: cd 2025-2026
+
       - name: Obtain pnpm store directory
         shell: bash
         run: |
