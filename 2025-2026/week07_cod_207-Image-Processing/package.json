@@ -5,6 +5,7 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
+    "build-base": "slidev build --out ../../dist/week07_cod_207-Image-Processing --base /2025-2026/week07_cod_207-Image-Processing/",
     "export": "slidev export"
   },
   "dependencies": {

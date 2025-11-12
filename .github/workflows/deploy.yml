@@ -1,135 +1,70 @@
-name: Deploy Multiple Slidev Projects
+name: Deploy pages
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  STORE_PATH: ''
+
 jobs:
-  #
-  # JOB 1: Build all projects in parallel
-  #
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        project_path:
-          - '2025-2026/week07_cod_207-Image-Processing'
-          # - '2025-2026/week06_cod_207-Media'
-          # - '2025-2026/week05_cod_207-Randomness-Repetetion'
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
 
-      - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
+      - uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+
+      - name: Obtain pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Configure pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
-      #
-      # === THIS IS THE NEW, WORKSPACE-AWARE BUILD STEP ===
-      #
-      - name: Build Project (${{ matrix.project_path }})
-        run: |
-          set -euo pipefail
-          echo "Building project: ${{ matrix.project_path }}"
+      - name: Build
+        run: pnpm run packages:build-base
 
-          # Move into the project directory
-          cd "${{ matrix.project_path }}"
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-          # Sanity check: slides.md present
-          if [ ! -f slides.md ]; then
-            echo "ERROR: slides.md not found in $(pwd)"
-            ls -la || true
-            exit 1
-          fi
-
-          # Debug: check for leading-slash asset paths
-          echo "Checking for leading-slash asset paths in slides.md..."
-          grep -nE '(^|\s)(src:|image:|background:|favicon:|!?\[).*["'\'']?\/' slides.md || true
-
-          # Ensure the output directory at the repo root ($GITHUB_WORKSPACE) exists
-          OUTDIR="${GITHUB_WORKSPACE}/dist/${{ matrix.project_path }}"
-          mkdir -p "$OUTDIR"
-
-          # Run the build and write directly to the absolute workspace path
-          slidev build slides.md \
-            --base "/Slidev_Presentations/${{ matrix.project_path }}/" \
-            --out "$OUTDIR"
-
-          echo "Built files for ${{ matrix.project_path }} (written to $OUTDIR):"
-          ls -R "$OUTDIR" || true
-
-          # Show top-level dist to ensure uploader will find it
-          echo "Top-level dist contents in workspace:"
-          ls -R "${GITHUB_WORKSPACE}/dist" || true
-
-      #
-      # === NEW SAFETY-CHECK STEP ===
-      #
-      - name: Ensure dist exists before upload
-        run: |
-          if [ ! -d "${GITHUB_WORKSPACE}/dist" ]; then
-            echo "ERROR: '${GITHUB_WORKSPACE}/dist' does not exist. Build failed or wrote elsewhere."
-            ls -la "${GITHUB_WORKSPACE}" || true
-            exit 1
-          fi
-
-      - name: Upload partial build artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: partial-dist-${{ hashFiles(matrix.project_path) }}
-          path: ./dist # This is correct, as it points to $GITHUB_WORKSPACE/dist
-          retention-days: 1
+          path: dist
 
-  #
-  # JOB 2: Package all partial builds (No changes needed)
-  #
-  package:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download all partial build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          pattern: partial-dist-*
-          path: ./dist
-          merge-multiple: true
-
-      - name: (Debug) List packaged files
-        run: ls -R ./dist
-
-      - name: Upload final 'github-pages' artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: ./dist
-          retention-days: 1
-
-  #
-  # JOB 3: Deploy the final artifact (No changes needed)
-  #
   deploy:
-    needs: package
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
     runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
