@@ -32,9 +32,6 @@ jobs:
         with:
           run_install: false
 
-      - name: Install dependencies
-        run: cd 2025-2026
-
       - name: Obtain pnpm store directory
         shell: bash
         run: |
@@ -50,9 +47,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        working-directory: ./2025-2026
 
       - name: Build
         run: pnpm run packages:build-base
+        working-directory: ./2025-2026
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
