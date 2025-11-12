@@ -36,7 +36,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install dependencies
-        run: nci
+        run: npm install
 
       #
       # === THIS IS THE NEW, WORKSPACE-AWARE BUILD STEP ===
