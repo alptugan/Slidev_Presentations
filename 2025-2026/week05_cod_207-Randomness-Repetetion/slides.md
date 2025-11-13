@@ -1,5 +1,5 @@
 ---
-background: ./cover_grid_loops.png
+background: /cover_grid_loops.png
 title: Week 05 - Randomness & Nested Loops and Algorithmic Art Praxis
 exportFilename: "week05-cod207-Algorithmic-Art-Praxis-Randomness-Nested-Loops"
 class: text-center
@@ -193,7 +193,7 @@ True randomness (E.g Rolling dice, toss a coin...)
 
 ---
 layout: image-left
-image: ./cybernetic serendipity.jpg
+image: cybernetic serendipity.jpg
 class: text-left
 ---
 
@@ -230,7 +230,7 @@ layout: default
 
 [Link to Sketch](https://openprocessing.org/sketch/1657308)
 
-<img m-auto src='./Magnetic_Field.png' />
+<img m-auto src='/Magnetic_Field.png' />
 
 
 
@@ -245,11 +245,11 @@ An L-system or Lindenmayer system is a parallel rewriting system and a type of f
 (ref: [🔗Wikipedia](https://en.wikipedia.org/wiki/L-system))
 
 ::left::
-<img pr-10 src='./lsystem2.png' />
+<img pr-10 src='/lsystem2.png' />
 
 ::right::
 
-<img src='./lsystem.png' />
+<img src='/lsystem.png' />
 
 ---
 layout: default
@@ -259,13 +259,13 @@ class: text-center
 # Alternative Variations
 <div class='grid grid-cols-3 gap-4'>
 <div>
-<img src='./nake1.webp' />
+<img src='/nake1.webp' />
 </div>
 <div>
-<img src='./nake2.webp' />
+<img src='/nake2.webp' />
 </div>
 <div>
-<img src='./nake3.webp' />
+<img src='/nake3.webp' />
 </div>
 </div>
 
@@ -277,7 +277,7 @@ class: text-center
 ---
 # Alternative Variations
 
-<img h-100 m-auto pb-4 src='./peter_beyls.png' />
+<img h-100 m-auto pb-4 src='/peter_beyls.png' />
 Peter Beyls, Untitled, 1981
 
 ---
@@ -287,7 +287,7 @@ class: text-center
 
 # Iterative Actions
 
-<img src='./longloop.png' />
+<img src='/longloop.png' />
 
 Paul Brown, Long Loop, 2000
 
@@ -297,7 +297,7 @@ class: text-center
 ---
 # Iterative Actions
 
-<img h-100 m-auto pb-10 src='./1968_KomuraYamanaka_ReturntoaSquareb.jpg' />
+<img h-100 m-auto pb-10 src='/1968_KomuraYamanaka_ReturntoaSquareb.jpg' />
 Masao Komura and Kunio Yamanaka, Return to a Square, 1968
 
 ---
@@ -310,14 +310,14 @@ title: Reference
 
 ::left::
 <v-click>
-<img src='./bander1.jpg' />
+<img src='/bander1.jpg' />
 
 </v-click>
 
 ::right::
 
 <v-click>
-<img src='./bander2.jpg' />
+<img src='/bander2.jpg' />
 
 </v-click>
 
@@ -348,11 +348,11 @@ hide: false
 
 [link to ALAP Database](https://alptugan.notion.site/0025088dd8be4eafad7826c90260dc59?v=e8195072f5ec42f4b9f39a70b64b429d)
 
-<img h-95 m-auto src='./ALAP.png' />
+<img h-95 m-auto src='/ALAP.png' />
 
 ---
 layout: image-left
-image: ./desorders.webp
+image: desorders.webp
 backgroundSize: 100%
 ---
 # Case Study 
