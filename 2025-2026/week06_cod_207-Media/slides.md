@@ -1,5 +1,5 @@
 ---
-background: ./cover_collage.png
+background: /cover_collage.png
 title: Week 06 - Media - Images
 exportFilename: "week06-Media-Images"
 class: text-center
@@ -50,14 +50,14 @@ layout: default
 layout: center
 ---
 
-# Loading External Media Sources
+# Loading External Media
 
 <div pb-2 v-click>
 🖼️ Images → jpg, gif, png
 </div>
 
 <div pb-2 v-click>
-🔉 Audio → mp3, ogg, wav files
+🔉 Audio → mp3, ogg, wav
 </div>
 
 
@@ -107,7 +107,7 @@ Before uploading your image, check its resolution and filesize. Large files are 
 
 ::right:: 
 
-<img src='./upload_image.png' />
+<img src='/upload_image.png' />
 
 ---
 layout: two-cols
@@ -125,14 +125,14 @@ Before uploading your image, check its resolution and filesize. Large files are 
 
 ::right:: 
 
-<img w-95 ml-10 src='./p5js-file-upload.jpg' />
+<img w-95 ml-10 src='/p5js-file-upload.jpg' />
 
 
 ---
 
 # Computational Characters
 
-<img src='./computational_collage01.jpg' />
+<img src='/computational_collage01.jpg' />
 
 <a href='https://openprocessing.org/sketch/2419680' target='_blank'>🔗 Source code</a>
 
@@ -143,7 +143,7 @@ hide: false
 
 
 ---
-image: ./computational_collage02.jpg
+image: /computational_collage02.jpg
 layout: image-left
 backgroundSize: 91%
 ---

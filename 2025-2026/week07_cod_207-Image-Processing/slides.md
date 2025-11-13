@@ -1,5 +1,5 @@
 ---
-background: ./cover-image_processing-mona_lisa.png
+background: /cover-image_processing-mona_lisa.png
 title: Week 07 - Image Processing
 exportFilename: "week07-COD207-Image-Processing"
 class: text-center
@@ -48,11 +48,11 @@ layout: default
 
 ---
 layout: image
-image: "./alap-image_processing.png"
+image: "alap-image_processing.png"
 backgroundSize: 60%
 ---
 
-# Algorithmic Art Praxis: Image Processing 
+# Algorithmic Art: Image Processing
 
 [link to ALAP Database](https://alptugan.notion.site/0025088dd8be4eafad7826c90260dc59?v=e8195072f5ec42f4b9f39a70b64b429d&pvs=4)
 
@@ -65,21 +65,21 @@ Load the image, replace the pixel data with shapes
 <div class='grid grid-cols-4 gap-4'>
 <div>
   <div v-click>
-    <img width="100%" src='./gundam.jpg' />
+    <img width="100%" src='/gundam.jpg' />
     <div text-color-gray mt-5>1. Load image</div>
   </div>
 </div>
 
 <div>
   <div v-click>
-    <img width="100%" src='./gundam_circle.png' />
+    <img width="100%" src='/gundam_circle.png' />
     <div text-color-gray mt-5>2. Swap pixels with circle()</div>
   </div>
 </div>
 
 <div>
   <div v-click>
-    <img width="100%" src='./gundam_circle_large.jpeg' />
+    <img width="100%" src='/gundam_circle_large.jpeg' />
     <div text-color-gray mt-5>3. Increase the circle() using random(min, max)</div>
   </div>
 </div>
@@ -87,7 +87,7 @@ Load the image, replace the pixel data with shapes
 
 <div>
   <div v-click>
-    <img width="100%" src='./gundam_rect.png' />
+    <img width="100%" src='/gundam_rect.png' />
     <div text-color-gray mt-5>4. Swap pixels with rect() using random(min, max)</div>
   </div>
 </div>
@@ -105,21 +105,21 @@ Load the image, replace the pixel data with another image.
 <div class='grid grid-cols-3 gap-4'>
 <div>
   <div v-click>
-    <img width="90%" src='./gundam.jpg' />
+    <img width="90%" src='/gundam.jpg' />
     <div>Load image</div>
   </div>
 </div>
 
 <div>
   <div v-click m-auto pt-30>
-    <img m-auto width="50%" src='./brush.png' />
+    <img m-auto width="50%" src='/brush.png' />
     <div mt-25>Create a brush in Photoshop in pure white color</div>
   </div>
 </div>
 
 <div>
     <div v-click>
-    <img m-auto width="90%" src='./gundam_rect_custom-brush.jpeg' />
+    <img m-auto width="90%" src='/gundam_rect_custom-brush.jpeg' />
     <div>Replace pixels with the brush image. Use `tint()` to set color</div>
   </div>
 </div>
@@ -196,7 +196,7 @@ function mousePressed() {
 
 ---
 layout: image-left
-image: ./dom.png
+image: dom.png
 backgroundSize: 100%
 class: text-left mt-20
 ---
@@ -211,7 +211,7 @@ You can create HTML elements to make your application interactive. Play around w
 ---
 layout: image-left
 backgroundSize: 80%
-image: ./dom2.png
+image: dom2.png
 ---
 
 # Exemplified Case Study
@@ -252,7 +252,7 @@ class: text-center py-50
 
 # Download The CheatSheet
 
-<img h-100 m-auto src='./cheatsheet.png' />
+<img h-100 m-auto src='/cheatsheet.png' />
 
 [Download The CheatSheet 🔗](https://www.codecademy.com/learn/learn-p5js/modules/p5js-interaction/cheatsheet)
 
