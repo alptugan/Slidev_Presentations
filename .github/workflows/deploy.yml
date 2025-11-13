@@ -1,74 +1,129 @@
-name: Deploy pages
+name: Build & Deploy Slidev shows
 
 on:
-  workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      roots:
+        description: 'Space-separated list of root directories to scan for Slidev projects (e.g. "2025-2026 presentations docs").'
+        required: false
+        default: '2025-2026'
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-env:
-  STORE_PATH: ''
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          node-version: 'lts/*'
+          fetch-depth: 0
 
-      - name: Enable corepack and activate pnpm
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Slidev CLI
+        run: npm install -g @slidev/cli
+
+      - name: Build changed Slidev projects
+        env:
+          ROOT_INPUT: ${{ github.event.inputs.roots }}
         run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          set -euo pipefail
+          OUT=out
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          REPO_BASE="/${REPO_NAME}"
 
-      - name: Obtain pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
 
-      - name: Configure pnpm cache
-        uses: actions/cache@v4
+          # Make sure we have sufficient history to diff
+          git fetch --prune --unshallow || true
+
+          # Roots: space-separated list (defaults to 2025-2026)
+          ROOTS="${ROOT_INPUT:-2025-2026}"
+          echo "Roots: $ROOTS"
+
+          # Determine changed files (for push events). For workflow_dispatch or first commits, fall back to all files.
+          CHANGED=""
+          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+            if [ "${GITHUB_EVENT_BEFORE}" = "0000000000000000000000000000000000000000" ]; then
+              CHANGED=$(git ls-files)
+            else
+              CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE}" "${GITHUB_SHA}")
+            fi
+          else
+            CHANGED=$(git ls-files)
+          fi
+
+          echo "Changed files:
+$CHANGED"
+
+          # Collect candidate project directories (immediate children of each root)
+          declare -A projects
+          for root in $ROOTS; do
+            if [ ! -d "$root" ]; then
+              echo "Root $root does not exist, skipping"
+              continue
+            fi
+
+            if [ -z "$CHANGED" ]; then
+              # No changed files available -> consider all immediate child directories under root
+              for d in "$root"/*; do
+                [ -d "$d" ] && projects["$d"]=1
+              done
+            else
+              # Find which top-level project directories under this root had changes
+              while IFS= read -r f; do
+                case "$f" in
+                  "$root"/*)
+                    rel="${f#"$root"/}"
+                    project="${rel%%/*}"
+                    proj_dir="$root/$project"
+                    projects["$proj_dir"]=1
+                    ;;
+                esac
+              done <<< "$CHANGED"
+            fi
+          done
+
+          if [ ${#projects[@]} -eq 0 ]; then
+            echo "No changed Slidev projects detected under ROOTS: $ROOTS"
+            exit 0
+          fi
+
+          # Build each detected Slidev project
+          for p in "${!projects[@]}"; do
+            echo "Evaluating project: $p"
+            if [ -d "$p" ]; then
+              if [ -f "$p/slides.md" ] || [ -f "$p/index.md" ] || [ -f "$p/slidev.config.ts" ]; then
+                echo "Building Slidev project: $p"
+                dest="$OUT/$p"
+                mkdir -p "$dest"
+                # Build with base set to /<repo>/<project>/ so assets load from the correct repo path
+                npx slidev build "$p" --out "$dest" --base "$REPO_BASE/$p/"
+              else
+                echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
+              fi
+            else
+              echo "Skipping $p (directory not found)"
+            fi
+          done
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          path: out
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-        working-directory: ./2025-2026
-
-      - name: Build
-        run: pnpm run packages:build-base
-        working-directory: ./2025-2026
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./2025-2026/dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1
