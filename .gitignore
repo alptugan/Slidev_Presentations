@@ -13,3 +13,4 @@ phd/*
 
 slidevpatch.sh
 template-assets/
+**/pnpm-workspace.yaml
