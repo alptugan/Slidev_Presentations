@@ -23,34 +23,36 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 8 # Match your local pnpm version
+          version: 8 # Use the same as in your projects, or update as needed
 
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-          cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Install Slidev global plugins and dependencies
+      - name: Find all Slidev projects
+        id: find_projects
         run: |
-          pnpm add -g @slidev/cli @slidev/theme-seriph @slidev/theme-default @iconify-json/logos playwright-chromium
-          pnpm exec playwright install --with-deps chromium
+          # Save all subdirs in 2025-2026 with slides.md to an output variable
+          echo "projects<<EOF" >> $GITHUB_OUTPUT
+          find 2025-2026 -mindepth 1 -maxdepth 1 -type d -print | while read dir; do
+            if [ -f "$dir/slides.md" ]; then
+              echo "$dir"
+            fi
+          done
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Build all Slidev projects
         run: |
           set -euxo pipefail
           OUTPUT_ROOT=dist
-          ROOT_DIR="2025-2026"
-          REPO_BASE="/${{ github.event.repository.name }}/"
-          rm -rf "$OUTPUT_ROOT"
           mkdir -p "$OUTPUT_ROOT"
-          for folder in "$ROOT_DIR"/*; do
-            if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
-              echo "Building $folder"
-              pnpm exec slidev build "$folder" --base "$REPO_BASE$folder/" --out "$OUTPUT_ROOT/$folder"
-            fi
+          for folder in ${{ steps.find_projects.outputs.projects }}; do
+            echo "Installing dependencies in $folder"
+            cd "$folder"
+            pnpm install --frozen-lockfile
+            cd -
+            echo "Building $folder"
+            pnpm exec slidev build "$folder" --base "/${{ github.event.repository.name }}/${folder}/" --out "$OUTPUT_ROOT/$folder"
           done
 
       - name: Setup Pages
