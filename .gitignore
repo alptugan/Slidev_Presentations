@@ -14,3 +14,5 @@ phd/*
 slidevpatch.sh
 template-assets/
 **/pnpm-workspace.yaml
+**/dist/
+2025-2026/week01_cod_207/dist/
