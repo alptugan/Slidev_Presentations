@@ -29,9 +29,12 @@ jobs:
         with:
           node-version: '20'
 
-      # THIS IS THE FIX: Install CLI, themes, and icon sets in one step
       - name: Install Slidev dependencies
-        run: npm install -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos
+        run: npm install -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos playwright-chromium
+
+      # THIS IS THE FIX: Install the browser binaries for Playwright
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
 
       - name: Build changed Slidev projects
         id: build
@@ -112,7 +115,6 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              # This command is now clean and will fail on any real error
               npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
             else
               echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
