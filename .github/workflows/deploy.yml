@@ -50,9 +50,9 @@ jobs:
           for p in $PROJECT_DIRS; do
             echo "--- Building project in: $p ---"
 
-            if [ ! -f "$p/package.json" ]; then
-              echo "Creating package.json for $p"
-              cat <<EOF > "$p/package.json"
+            # REMOVED the 'if' check. This now overwrites package.json on every run.
+            echo "Generating package.json for $p to ensure correct build command"
+            cat <<EOF > "$p/package.json"
           {
             "name": "slidev-presentation-$(basename $p)",
             "private": true,
@@ -68,11 +68,11 @@ jobs:
             }
           }
           EOF
-            fi
 
+            # Install local dependencies based on the newly created package.json
             (cd "$p" && npm install)
 
-            # The '--out' flag is passed to the 'npm run build' command
+            # Run the build, passing the output directory as an argument
             (cd "$p" && npm run build -- --out "../../$OUT_DIR/$p")
 
             echo "--- Finished building $p ---"
