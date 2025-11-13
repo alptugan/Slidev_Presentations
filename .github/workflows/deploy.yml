@@ -63,8 +63,7 @@ jobs:
             CHANGED=$(git ls-files)
           fi
 
-          echo "Changed files:
-$CHANGED"
+          echo "Changed files: $CHANGED"
 
           # Collect candidate project directories (immediate children of each root)
           declare -A projects
