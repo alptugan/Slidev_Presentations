@@ -29,8 +29,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Slidev CLI
-        run: npm install -g @slidev/cli
+      - name: Install specific Slidev CLI version
+        run: npm install -g @slidev/cli@0.48.0
 
       - name: Build changed Slidev projects
         id: build
@@ -111,25 +111,21 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              # CORRECTED AGAIN: Use '--debug' which is the standard Vite flag
-              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/" --debug > "build_log_${p//\//_}.txt" 2>&1 || true
-              echo "--- Build Log for $p ---"
-              cat "build_log_${p//\//_}.txt"
-              echo "--------------------------"
+              # REMOVED all debug flags and error suppression. This will now fail the step on any error.
+              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
             else
               echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
             fi
           done
 
           echo "--- Verifying Build Output ---"
-          echo "Listing final contents of 'out' directory:"
-          ls -laR out || echo "'out' directory is empty or does not exist."
-
           if [ -n "$(ls -A out 2>/dev/null)" ]; then
             echo "HAS_ARTIFACTS=true" >> "$GITHUB_ENV"
           else
+            # This should not be reached if the build succeeds. If it is, the build produced nothing.
             echo "HAS_ARTIFACTS=false" >> "$GITHUB_ENV"
-            echo "WARNING: 'out' directory is empty. No artifacts will be deployed."
+            echo "ERROR: Build command completed but 'out' directory is empty."
+            exit 1
           fi
 
       - name: Configure GitHub Pages
