@@ -1,145 +1,105 @@
-name: Build & Deploy Slidev shows
+name: Deploy Slidev Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
-    inputs:
-      roots:
-        description: 'Space-separated list of root directories to scan for Slidev projects (e.g. "2025-2026 presentations docs").'
-        required: false
-        default: '2025-2026'
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install Slidev dependencies
-        run: npm install -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos playwright-chromium
-
+      # Install Playwright browsers once for all builds
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Build changed Slidev projects
-        id: build
-        env:
-          ROOT_INPUT: ${{ github.event.inputs.roots }}
+      - name: Build All Slidev Projects
         run: |
           set -euo pipefail
-          OUT=out
+          OUT_DIR="dist"
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          REPO_BASE="/${REPO_NAME}"
 
-          rm -rf "$OUT"
-          mkdir -p "$OUT"
+          # Find all directories under '2025-2026' that have a slides.md
+          PROJECT_DIRS=$(find 2025-2026 -maxdepth 2 -type f -name 'slides.md' -printf '%h\n')
 
-          if git rev-parse --is-shallow-repository >/dev/null 2>&1 && [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
-            git fetch --prune --unshallow || true
-          fi
-
-          ROOTS="${ROOT_INPUT:-2025-2026}"
-          echo "Roots: $ROOTS"
-
-          CHANGED=""
-          if [ "${GITHUB_EVENT_NAME:-}" = "push" ]; then
-            if [ -n "${GITHUB_EVENT_BEFORE:-}" ] && [ -n "${GITHUB_SHA:-}" ] && [ "${GITHUB_EVENT_BEFORE}" != "0000000000000000000000000000000000000000" ]; then
-              CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE}" "${GITHUB_SHA}")
-            else
-              CHANGED=$(git ls-files)
-            fi
-          else
-            CHANGED=$(git ls-files)
-          fi
-
-          echo "Changed files: $CHANGED"
-
-          declare -A projects
-          for root in $ROOTS; do
-            if [ ! -d "$root" ]; then
-              echo "Root $root does not exist, skipping"
-              continue
-            fi
-
-            if [ -z "$CHANGED" ]; then
-              for d in "$root"/*; do
-                [ -d "$d" ] && projects["$d"]=1
-              done
-            else
-              while IFS= read -r f; do
-                case "$f" in
-                  "$root"/*)
-                    rel="${f#"$root"/}"
-                    project="${rel%%/*}"
-                    proj_dir="$root/$project"
-                    projects["$proj_dir"]=1
-                    ;;
-                esac
-              done <<< "$CHANGED"
-            fi
-          done
-
-          if [ ${#projects[@]} -eq 0 ]; then
-            echo "No changed Slidev projects detected under ROOTS: $ROOTS"
-            echo "HAS_ARTIFACTS=false" >> "$GITHUB_ENV"
+          if [ -z "$PROJECT_DIRS" ]; then
+            echo "No projects with slides.md found. Exiting."
             exit 0
           fi
 
-          for p in "${!projects[@]}"; do
-            echo "--- Evaluating project: $p ---"
-            entry_file=""
-            if [ -f "$p/slides.md" ]; then
-              entry_file="$p/slides.md"
-            elif [ -f "$p/index.md" ]; then
-              entry_file="$p/index.md"
-            elif [ -f "$p/slidev.config.ts" ]; then
-              entry_file="$p"
+          echo "Found projects in:"
+          echo "$PROJECT_DIRS"
+
+          # Loop through each project directory
+          for p in $PROJECT_DIRS; do
+            echo "--- Building project in: $p ---"
+
+            # --- This is the new, robust local install part ---
+            # Create a package.json if it doesn't exist, defining all deps
+            if [ ! -f "$p/package.json" ]; then
+              echo "Creating package.json for $p"
+              cat <<EOF > "$p/package.json"
+          {
+            "name": "slidev-presentation-$(basename $p)",
+            "private": true,
+            "scripts": {
+              "build": "slidev build --base /${REPO_NAME}/${p}/"
+            },
+            "dependencies": {
+              "@slidev/cli": "^0.48.0",
+              "@slidev/theme-default": "*",
+              "@slidev/theme-seriph": "*",
+              "@iconify-json/logos": "*",
+              "playwright-chromium": "*"
+            }
+          }
+          EOF
             fi
 
-            if [ -n "$entry_file" ]; then
-              echo "Building Slidev project: $p with entry $entry_file"
-              dest="$OUT/$p"
-              mkdir -p "$dest"
-              # ADDED the --wait-until none flag as requested
-              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/" --wait-until none
-            else
-              echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
-            fi
+            # Install local dependencies
+            (cd "$p" && npm install)
+
+            # Run the build using the local installation
+            # The output path is relative to the project dir, so we adjust
+            (cd "$p" && npm run build -- --out "../../$OUT_DIR/$p")
+
+            echo "--- Finished building $p ---"
           done
 
-          echo "--- Verifying Build Output ---"
-          if [ -n "$(ls -A out 2>/dev/null)" ]; then
-            echo "HAS_ARTIFACTS=true" >> "$GITHUB_ENV"
-          else
-            echo "HAS_ARTIFACTS=false" >> "$GITHUB_ENV"
-            echo "ERROR: Build command completed but 'out' directory is empty."
-            exit 1
-          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload Pages artifact
-        if: env.HAS_ARTIFACTS == 'true'
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: dist
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        if: env.HAS_ARTIFACTS == 'true'
         uses: actions/deploy-pages@v4
