@@ -50,7 +50,7 @@ layout: default
 layout: center
 ---
 
-# Loading External Media
+# Loading External Media Sources
 
 <div pb-2 v-click>
 🖼️ Images → jpg, gif, png
