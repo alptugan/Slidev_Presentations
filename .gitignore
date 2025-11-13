@@ -8,3 +8,6 @@ template_backup
 node_modules/
 # Ignore everything in the phd folder
 phd/*
+
+slidevpatch.sh
+template-assets/
