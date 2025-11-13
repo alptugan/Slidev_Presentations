@@ -25,13 +25,13 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Setup @antfu/ni
+      - name: Setup @antfu/ni (optional, safe to include)
         run: npm i -g @antfu/ni
 
       - name: Install dependencies
-        run: nci
+        run: npm install
 
-      - name: Install Slidev CLI and needed themes/icons globally
+      - name: Install Slidev CLI, themes, icons globally
         run: npm i -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos
 
       - name: Build all Slidev projects in 2025-2026/
