@@ -1,1 +1,0 @@
-import{o,b as n,f as t}from"../modules/vue-CVesHMZP.js";import{b as l}from"../index-BKD1IoN8.js";const s={};function r(e,c){return o(),n("div",null,[t(e.$slots,"default")])}const i=l(s,[["render",r],["__file","/opt/homebrew/lib/node_modules/@slidev/cli/node_modules/@slidev/client/layouts/none.vue"]]);export{i as I};
