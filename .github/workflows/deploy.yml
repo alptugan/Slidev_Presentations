@@ -1,9 +1,9 @@
-name: Deploy Slidev Pages
+name: Deploy all Slidev presentations
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,71 +18,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
+          node-version: 'lts/*'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
-
-      - name: Build All Slidev Projects
+      - name: Install global Slidev dependencies
         run: |
-          set -euo pipefail
-          OUT_DIR="dist"
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          npm i -g @slidev/cli @slidev/theme-default @slidev/theme-seriph @iconify-json/logos playwright-chromium
 
-          PROJECT_DIRS=$(find 2025-2026 -maxdepth 2 -type f -name 'slides.md' -printf '%h\n')
+      - name: Install local node_modules for all projects
+        run: nci || true
 
-          if [ -z "$PROJECT_DIRS" ]; then
-            echo "No projects with slides.md found. Exiting."
-            exit 0
-          fi
-
-          echo "Found projects in:"
-          echo "$PROJECT_DIRS"
-
-          for p in $PROJECT_DIRS; do
-            echo "--- Building project in: $p ---"
-
-            # REMOVED the 'if' check. This now overwrites package.json on every run.
-            echo "Generating package.json for $p to ensure correct build command"
-            cat <<EOF > "$p/package.json"
-          {
-            "name": "slidev-presentation-$(basename $p)",
-            "private": true,
-            "scripts": {
-              "build": "slidev build --base /${REPO_NAME}/${p}/ --wait-until domcontentloaded"
-            },
-            "dependencies": {
-              "@slidev/cli": "^0.48.0",
-              "@slidev/theme-default": "*",
-              "@slidev/theme-seriph": "*",
-              "@iconify-json/logos": "*",
-              "playwright-chromium": "*"
-            }
-          }
-          EOF
-
-            # Install local dependencies based on the newly created package.json
-            (cd "$p" && npm install)
-
-            # Run the build, passing the output directory as an argument
-            (cd "$p" && npm run build -- --out "../../$OUT_DIR/$p")
-
-            echo "--- Finished building $p ---"
+      - name: Build all Slidev projects under 2025-2026/
+        run: |
+          set -e
+          mkdir -p dist
+          for proj in 2025-2026/*; do
+            if [ -f "$proj/slides.md" ]; then
+              echo "Building $proj"
+              slidev build "$proj/slides.md" \
+                --out "dist/$proj" \
+                --base "/${{ github.event.repository.name }}/$proj/"
+            fi
           done
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -92,6 +60,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
