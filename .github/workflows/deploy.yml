@@ -21,34 +21,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8 # Match your local pnpm version
+
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: 'pnpm'
 
-      - name: Install Slidev CLI, themes, icons globally
-        run: npm i -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Build all Slidev projects in 2025-2026/
+      - name: Install Slidev global plugins and dependencies
+        run: |
+          pnpm add -g @slidev/cli @slidev/theme-seriph @slidev/theme-default @iconify-json/logos playwright-chromium
+          pnpm exec playwright install --with-deps chromium
+
+      - name: Build all Slidev projects
         run: |
           set -euxo pipefail
-          PROJECT_ROOT="2025-2026"
-          OUT="dist"
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-
-          rm -rf "$OUT"
-          mkdir -p "$OUT"
-
-          for f in $PROJECT_ROOT/*; do
-            if [ -d "$f" ] && [ -f "$f/slides.md" ]; then
-              echo "Building $f"
-              npx slidev build "$f/slides.md" --base "/$REPO_NAME/$f/" --out "$OUT/$f"
+          OUTPUT_ROOT=dist
+          ROOT_DIR="2025-2026"
+          REPO_BASE="/${{ github.event.repository.name }}/"
+          rm -rf "$OUTPUT_ROOT"
+          mkdir -p "$OUTPUT_ROOT"
+          for folder in "$ROOT_DIR"/*; do
+            if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
+              echo "Building $folder"
+              pnpm exec slidev build "$folder" --base "$REPO_BASE$folder/" --out "$OUTPUT_ROOT/$folder"
             fi
           done
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
