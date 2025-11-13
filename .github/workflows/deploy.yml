@@ -44,8 +44,10 @@ jobs:
           rm -rf "$OUT"
           mkdir -p "$OUT"
 
-          # Make sure we have sufficient history to diff
-          git fetch --prune --unshallow || true
+          # Only try to unshallow if the repo is actually shallow
+          if git rev-parse --is-shallow-repository >/dev/null 2>&1 && [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+            git fetch --prune --unshallow || true
+          fi
 
           # Roots: space-separated list (defaults to 2025-2026)
           ROOTS="${ROOT_INPUT:-2025-2026}"
@@ -53,11 +55,12 @@ jobs:
 
           # Determine changed files (for push events). For workflow_dispatch or first commits, fall back to all files.
           CHANGED=""
-          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
-            if [ "${GITHUB_EVENT_BEFORE}" = "0000000000000000000000000000000000000000" ]; then
+          if [ "${GITHUB_EVENT_NAME:-}" = "push" ]; then
+            # Use safe defaults to avoid unbound variable errors under 'set -u'
+            if [ "${GITHUB_EVENT_BEFORE:-}" = "0000000000000000000000000000000000000000" ]; then
               CHANGED=$(git ls-files)
             else
-              CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE}" "${GITHUB_SHA}")
+              CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE:-}" "${GITHUB_SHA:-}")
             fi
           else
             CHANGED=$(git ls-files)
@@ -120,7 +123,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload Pages artifact
-        # Updated to a newer upload-pages-artifact release to avoid pull-in of deprecated upload-artifact@v4
+        # Updated to a newer upload-pages-artifact release to avoid pull-in of deprecated upload-artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: out
