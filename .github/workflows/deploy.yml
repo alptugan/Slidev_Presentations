@@ -22,6 +22,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          # fetch-depth: 0 is required for git diff to work
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -53,14 +54,14 @@ jobs:
           ROOTS="${ROOT_INPUT:-2025-2026}"
           echo "Roots: $ROOTS"
 
-          # Determine changed files (for push events). For workflow_dispatch or first commits, fall back to all files.
+          # Determine changed files (for push events). For workflow_dispatch or missing refs, fall back to all files.
           CHANGED=""
           if [ "${GITHUB_EVENT_NAME:-}" = "push" ]; then
-            # Use safe defaults to avoid unbound variable errors under 'set -u'
-            if [ "${GITHUB_EVENT_BEFORE:-}" = "0000000000000000000000000000000000000000" ]; then
-              CHANGED=$(git ls-files)
+            # If we don't have a valid 'before' or 'sha', avoid passing empty args to git
+            if [ -n "${GITHUB_EVENT_BEFORE:-}" ] && [ -n "${GITHUB_SHA:-}" ] && [ "${GITHUB_EVENT_BEFORE}" != "0000000000000000000000000000000000000000" ]; then
+              CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE}" "${GITHUB_SHA}")
             else
-              CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE:-}" "${GITHUB_SHA:-}")
+              CHANGED=$(git ls-files)
             fi
           else
             CHANGED=$(git ls-files)
@@ -98,6 +99,7 @@ jobs:
 
           if [ ${#projects[@]} -eq 0 ]; then
             echo "No changed Slidev projects detected under ROOTS: $ROOTS"
+            # Exit with success code 0 so the workflow doesn't show as failed
             exit 0
           fi
 
@@ -109,7 +111,6 @@ jobs:
                 echo "Building Slidev project: $p"
                 dest="$OUT/$p"
                 mkdir -p "$dest"
-                # Build with base set to /<repo>/<project>/ so assets load from the correct repo path
                 npx slidev build "$p" --out "$dest" --base "$REPO_BASE/$p/"
               else
                 echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
@@ -123,8 +124,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload Pages artifact
-        # Updated to a newer upload-pages-artifact release to avoid pull-in of deprecated upload-artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: out
 
