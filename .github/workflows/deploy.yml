@@ -120,7 +120,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload Pages artifact
-        # Updated to a newer upload-pages-artifact release to avoid pull-in of deprecated upload-artifact@v3
+        # Updated to a newer upload-pages-artifact release to avoid pull-in of deprecated upload-artifact@v4
         uses: actions/upload-pages-artifact@v2
         with:
           path: out
