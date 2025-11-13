@@ -52,7 +52,7 @@ image: "alap-image_processing.png"
 backgroundSize: 60%
 ---
 
-# Algorithmic Art: Image Processing
+# Algorithmic Art Praxis: Image Processing 
 
 [link to ALAP Database](https://alptugan.notion.site/0025088dd8be4eafad7826c90260dc59?v=e8195072f5ec42f4b9f39a70b64b429d&pvs=4)
 
