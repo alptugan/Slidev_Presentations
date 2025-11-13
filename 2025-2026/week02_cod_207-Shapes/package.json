@@ -1,0 +1,20 @@
+{
+  "name": "week02-cod-207-shapes",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@iconify-json/logos": "^1.2.9",
+    "@slidev/cli": "^52.2.4",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.21"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.55.1"
+  }
+}
