@@ -32,7 +32,6 @@ jobs:
       - name: Install Slidev dependencies
         run: npm install -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos playwright-chromium
 
-      # THIS IS THE FIX: Install the browser binaries for Playwright
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
@@ -115,7 +114,8 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
+              # ADDED the --wait-until none flag as requested
+              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/" --wait-until none
             else
               echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
             fi
