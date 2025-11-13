@@ -1,7 +1,0 @@
-{
-    "slidev.preview-sync": true,
-    "slidev.include": [
-        "**/slides.md",
-        "pages/header.md"
-    ]
-}
