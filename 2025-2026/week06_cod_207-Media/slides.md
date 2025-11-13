@@ -57,7 +57,7 @@ layout: center
 </div>
 
 <div pb-2 v-click>
-🔉 Audio → mp3, ogg, wav
+🔉 Audio → mp3, ogg, wav files
 </div>
 
 
