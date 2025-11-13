@@ -121,7 +121,7 @@ jobs:
 
       - name: Upload Pages artifact
         # Updated to a newer upload-pages-artifact release to avoid pull-in of deprecated upload-artifact@v4
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: out
 
