@@ -29,8 +29,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install specific Slidev CLI version
+      - name: Install Slidev CLI
         run: npm install -g @slidev/cli@0.48.0
+
+      # THIS IS THE FIX: Install the required themes globally
+      - name: Install Slidev themes
+        run: npm install -g @slidev/theme-seriph @slidev/theme-default
 
       - name: Build changed Slidev projects
         id: build
@@ -111,7 +115,7 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              # REMOVED all debug flags and error suppression. This will now fail the step on any error.
+              # This command is now clean and will fail on any real error
               npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
             else
               echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
@@ -122,7 +126,6 @@ jobs:
           if [ -n "$(ls -A out 2>/dev/null)" ]; then
             echo "HAS_ARTIFACTS=true" >> "$GITHUB_ENV"
           else
-            # This should not be reached if the build succeeds. If it is, the build produced nothing.
             echo "HAS_ARTIFACTS=false" >> "$GITHUB_ENV"
             echo "ERROR: Build command completed but 'out' directory is empty."
             exit 1
