@@ -46,14 +46,28 @@ jobs:
           set -euxo pipefail
           OUTPUT_ROOT=dist
           mkdir -p "$OUTPUT_ROOT"
-          for folder in ${{ steps.find_projects.outputs.projects }}; do
-            echo "Installing dependencies in $folder"
-            cd "$folder"
-            pnpm install --frozen-lockfile
-            cd -
-            echo "Building $folder"
-            pnpm exec slidev build "$folder" --base "/${{ github.event.repository.name }}/${folder}/" --out "$OUTPUT_ROOT/$folder"
+          for folder in 2025-2026/*; do
+            if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
+              echo "==== $folder ===="
+              echo "Installing dependencies in $folder"
+              cd "$folder"
+              pnpm install --frozen-lockfile || { echo "pnpm install failed in $folder"; exit 1; }
+              echo "Building $folder"
+              pnpm exec slidev build --base "/${{ github.event.repository.name }}/$folder/" --out "../../$OUTPUT_ROOT/$folder" || { echo "Build failed in $folder"; exit 1; }
+              cd -
+              # List what got built
+              echo "Contents of $OUTPUT_ROOT/$folder:"
+              ls -lhR "$OUTPUT_ROOT/$folder"
+              # Fail if output is empty
+              if [ ! -f "$OUTPUT_ROOT/$folder/index.html" ]; then
+                echo "ERROR: No index.html built at $OUTPUT_ROOT/$folder"
+                exit 1
+              fi
+            fi
           done
+          # Top-level check
+          echo "Contents of $OUTPUT_ROOT:"
+          find "$OUTPUT_ROOT"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
