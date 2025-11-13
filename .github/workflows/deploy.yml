@@ -92,11 +92,13 @@ jobs:
 
           if [ ${#projects[@]} -eq 0 ]; then
             echo "No changed Slidev projects detected under ROOTS: $ROOTS"
+            # Set flag to false and exit cleanly
+            echo "HAS_ARTIFACTS=false" >> "$GITHUB_ENV"
             exit 0
           fi
 
           for p in "${!projects[@]}"; do
-            echo "Evaluating project: $p"
+            echo "--- Evaluating project: $p ---"
             entry_file=""
             if [ -f "$p/slides.md" ]; then
               entry_file="$p/slides.md"
@@ -110,21 +112,29 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
+              # ADDED DEBUGGING: Run with debug logging, capture all output to a file, and print it
+              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/" --log=debug > "build_log_${p//\//_}.txt" 2>&1 || true
+              echo "--- Build Log for $p ---"
+              cat "build_log_${p//\//_}.txt"
+              echo "--------------------------"
             else
               echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
             fi
           done
 
-          # Debug built output and set HAS_ARTIFACTS for subsequent steps
-          echo "Built out contents:"
-          ls -la out || true
+          echo "--- Verifying Build Output ---"
+          echo "Listing final contents of 'out' directory:"
+          ls -laR out || echo "'out' directory is empty or does not exist."
+
+          echo "Listing contents of a source project directory (to check for misplaced output):"
+          ls -laR "2025-2026/week02_cod_207-Shapes" || true
+
 
           if [ -n "$(ls -A out 2>/dev/null)" ]; then
             echo "HAS_ARTIFACTS=true" >> "$GITHUB_ENV"
           else
             echo "HAS_ARTIFACTS=false" >> "$GITHUB_ENV"
-            echo "No artifacts were built, skipping upload and deploy."
+            echo "WARNING: 'out' directory is empty. No artifacts will be deployed."
           fi
 
       - name: Configure GitHub Pages
