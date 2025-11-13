@@ -25,7 +25,7 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8 # Adjust to match your dev version
+          version: 9 # Updated to support current lockfile version
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
