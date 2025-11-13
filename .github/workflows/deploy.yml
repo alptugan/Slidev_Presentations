@@ -22,7 +22,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # fetch-depth: 0 is required for git diff to work
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -45,19 +44,15 @@ jobs:
           rm -rf "$OUT"
           mkdir -p "$OUT"
 
-          # Only try to unshallow if the repo is actually shallow
           if git rev-parse --is-shallow-repository >/dev/null 2>&1 && [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
             git fetch --prune --unshallow || true
           fi
 
-          # Roots: space-separated list (defaults to 2025-2026)
           ROOTS="${ROOT_INPUT:-2025-2026}"
           echo "Roots: $ROOTS"
 
-          # Determine changed files (for push events). For workflow_dispatch or missing refs, fall back to all files.
           CHANGED=""
           if [ "${GITHUB_EVENT_NAME:-}" = "push" ]; then
-            # If we don't have a valid 'before' or 'sha', avoid passing empty args to git
             if [ -n "${GITHUB_EVENT_BEFORE:-}" ] && [ -n "${GITHUB_SHA:-}" ] && [ "${GITHUB_EVENT_BEFORE}" != "0000000000000000000000000000000000000000" ]; then
               CHANGED=$(git diff --name-only "${GITHUB_EVENT_BEFORE}" "${GITHUB_SHA}")
             else
@@ -69,7 +64,6 @@ jobs:
 
           echo "Changed files: $CHANGED"
 
-          # Collect candidate project directories (immediate children of each root)
           declare -A projects
           for root in $ROOTS; do
             if [ ! -d "$root" ]; then
@@ -78,12 +72,10 @@ jobs:
             fi
 
             if [ -z "$CHANGED" ]; then
-              # No changed files available -> consider all immediate child directories under root
               for d in "$root"/*; do
                 [ -d "$d" ] && projects["$d"]=1
               done
             else
-              # Find which top-level project directories under this root had changes
               while IFS= read -r f; do
                 case "$f" in
                   "$root"/*)
@@ -99,24 +91,30 @@ jobs:
 
           if [ ${#projects[@]} -eq 0 ]; then
             echo "No changed Slidev projects detected under ROOTS: $ROOTS"
-            # Exit with success code 0 so the workflow doesn't show as failed
             exit 0
           fi
 
-          # Build each detected Slidev project
           for p in "${!projects[@]}"; do
             echo "Evaluating project: $p"
-            if [ -d "$p" ]; then
-              if [ -f "$p/slides.md" ] || [ -f "$p/index.md" ] || [ -f "$p/slidev.config.ts" ]; then
-                echo "Building Slidev project: $p"
-                dest="$OUT/$p"
-                mkdir -p "$dest"
-                npx slidev build "$p" --out "$dest" --base "$REPO_BASE/$p/"
-              else
-                echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
-              fi
+            # Define potential entrypoints
+            entry_file=""
+            if [ -f "$p/slides.md" ]; then
+              entry_file="$p/slides.md"
+            elif [ -f "$p/index.md" ]; then
+              entry_file="$p/index.md"
+            elif [ -f "$p/slidev.config.ts" ]; then
+              # When config is the entry, we pass the directory
+              entry_file="$p"
+            fi
+
+            if [ -n "$entry_file" ]; then
+              echo "Building Slidev project: $p with entry $entry_file"
+              dest="$OUT/$p"
+              mkdir -p "$dest"
+              # CORRECTED: Pass the entrypoint file, not the directory, to the build command.
+              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
             else
-              echo "Skipping $p (directory not found)"
+              echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
             fi
           done
 
