@@ -111,8 +111,8 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              # CORRECTED: Use the right flag '--log-level debug'
-              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/" --log-level debug > "build_log_${p//\//_}.txt" 2>&1 || true
+              # CORRECTED AGAIN: Use '--debug' which is the standard Vite flag
+              npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/" --debug > "build_log_${p//\//_}.txt" 2>&1 || true
               echo "--- Build Log for $p ---"
               cat "build_log_${p//\//_}.txt"
               echo "--------------------------"
