@@ -96,14 +96,12 @@ jobs:
 
           for p in "${!projects[@]}"; do
             echo "Evaluating project: $p"
-            # Define potential entrypoints
             entry_file=""
             if [ -f "$p/slides.md" ]; then
               entry_file="$p/slides.md"
             elif [ -f "$p/index.md" ]; then
               entry_file="$p/index.md"
             elif [ -f "$p/slidev.config.ts" ]; then
-              # When config is the entry, we pass the directory
               entry_file="$p"
             fi
 
@@ -111,7 +109,6 @@ jobs:
               echo "Building Slidev project: $p with entry $entry_file"
               dest="$OUT/$p"
               mkdir -p "$dest"
-              # CORRECTED: Pass the entrypoint file, not the directory, to the build command.
               npx slidev build "$entry_file" --out "$dest" --base "$REPO_BASE/$p/"
             else
               echo "Skipping $p (no slides.md / index.md / slidev.config.ts found)"
