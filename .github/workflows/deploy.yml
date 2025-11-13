@@ -29,12 +29,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Slidev CLI
-        run: npm install -g @slidev/cli@0.48.0
-
-      # THIS IS THE FIX: Install the required themes globally
-      - name: Install Slidev themes
-        run: npm install -g @slidev/theme-seriph @slidev/theme-default
+      # THIS IS THE FIX: Install CLI, themes, and icon sets in one step
+      - name: Install Slidev dependencies
+        run: npm install -g @slidev/cli@0.48.0 @slidev/theme-seriph @slidev/theme-default @iconify-json/logos
 
       - name: Build changed Slidev projects
         id: build
