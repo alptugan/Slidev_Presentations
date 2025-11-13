@@ -6,6 +6,7 @@ template
 template_backup
 
 node_modules/
+week01_cod_208/node_modules/
 
 # Ignore everything in the phd folder
 phd/*
