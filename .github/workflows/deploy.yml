@@ -21,16 +21,51 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for git diff
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9 # Updated to support current lockfile version
+          version: 9
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+
+      - name: Detect changed projects
+        id: changed
+        run: |
+          # Get list of changed files in the last commit
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            # For manual runs, build all projects
+            echo "Manual trigger - building all projects"
+            CHANGED_PROJECTS=$(find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | tr '\n' ' ')
+          else
+            # Get changed files from the push
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+            echo "Changed files:"
+            echo "$CHANGED_FILES"
+
+            # Extract unique project folders that were changed
+            CHANGED_PROJECTS=$(echo "$CHANGED_FILES" | grep "^2025-2026/" | cut -d'/' -f1-2 | sort -u | while read folder; do
+              if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
+                echo "$folder"
+              fi
+            done | tr '\n' ' ')
+          fi
+
+          echo "Projects to build: $CHANGED_PROJECTS"
+          echo "projects=$CHANGED_PROJECTS" >> $GITHUB_OUTPUT
+
+      - name: Cache previous builds
+        uses: actions/cache@v4
+        with:
+          path: dist
+          key: slidev-builds-${{ github.sha }}
+          restore-keys: |
+            slidev-builds-
 
       - name: Pre-build folder listing
         run: |
@@ -38,61 +73,72 @@ jobs:
           find 2025-2026 -mindepth 1 -maxdepth 1 -type d
           echo "------ Projects with slides.md ------"
           find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print
+          echo "------ Projects to build this run ------"
+          echo "${{ steps.changed.outputs.projects }}"
 
-      - name: Build all Slidev projects
+      - name: Build changed Slidev projects
         run: |
           set -euxo pipefail
           OUTPUT_ROOT=dist
           mkdir -p "$OUTPUT_ROOT"
           ERROR=0
+          BUILT_COUNT=0
 
-          for folder in 2025-2026/*; do
-            if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
-              echo "============ Processing: $folder ============"
-              if [ ! -f "$folder/package.json" ]; then
-                echo "::error:: $folder is missing package.json"
-                ERROR=1
-                continue
+          PROJECTS_TO_BUILD="${{ steps.changed.outputs.projects }}"
+
+          if [ -z "$PROJECTS_TO_BUILD" ]; then
+            echo "No projects need to be built"
+          else
+            for folder in $PROJECTS_TO_BUILD; do
+              if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
+                echo "============ Processing: $folder ============"
+                if [ ! -f "$folder/package.json" ]; then
+                  echo "::error:: $folder is missing package.json"
+                  ERROR=1
+                  continue
+                fi
+                if [ ! -f "$folder/pnpm-lock.yaml" ]; then
+                  echo "::error:: $folder is missing pnpm-lock.yaml"
+                  ERROR=1
+                  continue
+                fi
+                echo "--> Installing dependencies in $folder..."
+                ls -l "$folder"
+                cd "$folder"
+                pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
+                echo "--> Dependencies installed in $folder"
+                echo "--> Building Slidev presentation in $folder"
+                pnpm exec slidev build --base "/${{ github.event.repository.name }}/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
+                cd -
+                echo "--> Build complete for $folder. Listing output:"
+                if [ -d "$OUTPUT_ROOT/$folder" ]; then
+                  ls -lhR "$OUTPUT_ROOT/$folder"
+                  BUILT_COUNT=$((BUILT_COUNT + 1))
+                else
+                  echo "::error:: Expected output folder $OUTPUT_ROOT/$folder not found"
+                  ERROR=1
+                  continue
+                fi
+                if [ ! -f "$OUTPUT_ROOT/$folder/index.html" ]; then
+                  echo "::error:: No index.html produced in $OUTPUT_ROOT/$folder!"
+                  ERROR=1
+                  continue
+                fi
               fi
-              if [ ! -f "$folder/pnpm-lock.yaml" ]; then
-                echo "::error:: $folder is missing pnpm-lock.yaml"
-                ERROR=1
-                continue
-              fi
-              echo "--> Installing dependencies in $folder..."
-              ls -l "$folder"
-              cd "$folder"
-              pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
-              echo "--> Dependencies installed in $folder"
-              echo "--> Building Slidev presentation in $folder"
-              pnpm exec slidev build --base "/${{ github.event.repository.name }}/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
-              cd -
-              echo "--> Build complete for $folder. Listing output:"
-              if [ -d "$OUTPUT_ROOT/$folder" ]; then
-                ls -lhR "$OUTPUT_ROOT/$folder"
-              else
-                echo "::error:: Expected output folder $OUTPUT_ROOT/$folder not found"
-                ERROR=1
-                continue
-              fi
-              if [ ! -f "$OUTPUT_ROOT/$folder/index.html" ]; then
-                echo "::error:: No index.html produced in $OUTPUT_ROOT/$folder!"
-                ERROR=1
-                continue
-              fi
-            fi
-          done
+            done
+          fi
 
           echo "------ Final dist structure ------"
           find "$OUTPUT_ROOT" || echo "$OUTPUT_ROOT not found!"
+          echo "Built $BUILT_COUNT project(s) this run"
 
-          # Final fail if any project errored.
+          # Final fail if any project errored
           if [ "$ERROR" -ne 0 ]; then
             echo "::error:: One or more projects failed to build, check the log above."
             exit 1
           fi
 
-          # Ensure at least one index.html was built.
+          # Ensure at least one index.html exists in total
           if ! find "$OUTPUT_ROOT" -type f -name index.html | grep .; then
             echo "::error:: No index.html files found in $OUTPUT_ROOT"
             exit 1

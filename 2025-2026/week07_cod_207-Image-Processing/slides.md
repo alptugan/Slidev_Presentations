@@ -60,7 +60,7 @@ backgroundSize: 60%
 ---
 
 # Example: Basics
-Load the image, replace the pixel data with shapes
+Load a custom image, replace the pixel data with shapes
 
 <div class='grid grid-cols-4 gap-4'>
 <div>
