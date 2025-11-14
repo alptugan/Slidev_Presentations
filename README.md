@@ -1,192 +1,73 @@
-# Slidev_Presentations
+# Slidev Presentations
 
-Includes my course and workshop presentations built with slidev.js
+A collection of Slidev presentation projects for courses and workshops.
 
-<details>
-  <summary><span style="color:gray;">Build From Source Instructions</span></summary>
+## 📚 2025-2026 Course Materials
 
-1. Follow the instruction on slidev.js Github page.</br>
-2. Create the slideshow using markdown and html.<br>
-3. To run preview in real-time locally;
-   1. Duplicate the ```template``` folder.
-   2. Rename it.
-   3. Open it on VS Code.
-   4. Open Terminal run ```slidev -o```
-   5. Add all images into ```public```folder.
-4. To deploy the presentation
-   1. If the source files are located in a subfolder under the root, you must set the ```--base``` parameter. This **required** in order to load relevant files and assets properly on a Github page or your custom domain.
-   2. Run ```slidev build --base /Name_of_the_Repo/Name_of_the_subfolder/dist/```
-   E.g. ```slidev build --base /Slidev_Presentations/OMM_Arduino_Workshop/dist/```
-</details>
+- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026/week01_cod_207/)
+- [Week 02 - Shapes](https://alptugan.github.io/Slidev_Presentations/2025-2026/week02_cod_207-Shapes/)
+- [Week 03 - Computational Thinking](https://alptugan.github.io/Slidev_Presentations/2025-2026/week03_cod_207-Computational_Thinking/)
+- [Week 04 - Loops & Moiré Patterns](https://alptugan.github.io/Slidev_Presentations/2025-2026/week04_cod_207-Loops-Moire_Patterns/)
+- [Week 05 - Randomness & Repetition](https://alptugan.github.io/Slidev_Presentations/2025-2026/week05_cod_207-Randomness-Repetetion/)
+- [Week 06 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
+- [Week 07 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
 
-<details>
-  <summary><span style="color:orange;">Link to COD 207 Creative Coding Presentations</span></summary>
+## 🎓 Workshops
 
-### 🔗 [week 01 Introduction](https://alptugan.github.io/Slidev_Presentations/week01_cod_207/dist)
-- Creativity
-- Creative Coding?
-- Foods for source
-- Syllabus handed-out
+- [Code and Algorithm on Design](https://alptugan.github.io/Slidev_Presentations/Workshops/Code-and-algorithm-on-design/)
+- [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/Workshops/OMM_Arduino_Workshop/)
 
-### 🔗 [week 02: Computers & Programming](https://alptugan.github.io/Slidev_Presentations/week02_cod_207/dist)
-- Programming, Coding & Programming Languages
-- Openprocessing Web App
-- Examples
-- Hello World
+## 🚀 Automated Deployment
 
-### 🔗 [week 03: Analyze & Reproduce](https://alptugan.github.io/Slidev_Presentations/week03_cod_207/dist)
-- Drawing Order → Swap object back and forth
-- Styling → fill(), noStroke()
-- Computational Thinking Framework
-- Case Study: Piet Mondrian's artwroks
+This repository uses GitHub Actions to automatically build and deploy Slidev presentations to GitHub Pages.
 
-### 🔗 [week 04: Variables, Computational Thinking, Case Study](https://alptugan.github.io/Slidev_Presentations/week04_cod_207/dist)
-- Styling Objects → `stroke()`, `noStroke()`, `noFill()`...
-- Variables → Why we need them?
-- Static vs. Dynamic values
-- Case Study: Transform position, size, and style many object using three variables.
-- Computational Thinking as a tool to generate algorithms
+### How It Works
 
-### 🔗 [week 05: Generative Art Paradigms: Randomness](https://alptugan.github.io/Slidev_Presentations/week05_cod_207-Randomness/dist)
-- What is Generative Art?
-- 50s Computer Art Scene → Computers and Automation Magazine
-- Deterministic & Stochastic Randomness
-- Randomness in Algorithmic (Generative) Art
-- Case Study: `random()` function to create variations
+The `.github/workflows/deploy.yml` workflow provides:
 
-### 🔗 [week 06: Intelligence Through Conditionals & Loops](https://alptugan.github.io/Slidev_Presentations/week06_cod_207-Conditionals-Loops/dist)
-- Logical Operators
-- If / Else Conditions
-- For Loops
-- Logic and Randomness
-- Combine randomness with conditionals
+- **Incremental Builds**: Only rebuilds presentations that have changed, saving build time
+- **Multi-Directory Support**: Scans both `2025-2026` and `Workshops` folders for Slidev projects
+- **Artifact Caching**: Preserves previously built presentations, ensuring all projects remain accessible
+- **Automatic Detection**: Detects new or modified presentations and builds them automatically on push to `main`
+- **Manual Trigger**: Can be manually triggered via workflow_dispatch to rebuild all presentations
 
-### 🔗 [week 07: Interaction](https://alptugan.github.io/Slidev_Presentations/week07_cod_207-Interactivity/dist)
-- Fundamental computer interaction tools: Computer mouse & keyboard
-- Modify objects on the canvas via the user input
-- `mousePressed()` and `keyPressed()` functions
-- Make one of the sketches interactive
-- Generative Art Paradigms: Tesselation / Tiling
+### Workflow Features
 
-### 🔗 [week 08: Tesselations - Translation](https://alptugan.github.io/Slidev_Presentations/week08_cod_207-CustomShapes/dist)
-- Tesselations
-- Case Study: [Escher, Islamic Art](https://mymodernmet.com/tessellation-art/), Warhol, LeWitt,[Sébastien Truchet](https://en.wikipedia.org/wiki/Truchet_tiles) 
-- [Wiki Page](https://en.wikipedia.org/wiki/Tessellation)
-- For Loops and Tessellation
-- Push, Pop, Translate, Rotate, Scale...
+1. **Smart Change Detection**: Uses git diff to identify which presentation folders were modified
+2. **Previous Build Restoration**: Downloads and extracts previous deployment artifacts to maintain all presentations
+3. **Error Handling**: Validates each project has required files (package.json, pnpm-lock.yaml, slides.md)
+4. **Consolidated Deployment**: Merges new builds with existing ones before deploying to GitHub Pages
 
-### 🔗 [week 09: Media](https://alptugan.github.io/Slidev_Presentations/week09_cod_207-Media/dist)
-- Import Image, sound and video
-- Case Study: Create generative collage
-- Arrays
+### Directory Structure
 
-### 🔗 [week 10: Typography](https://alptugan.github.io/Slidev_Presentations/week10_cod_207-Typography/dist)
-- Display text on the canvas
-- text(), textSize(), textAlign(), loadFont()
-- Poster Design
-- Deconstruction / Reconstruction
-- Generative Typography
+```
+.
+├── 2025-2026/
+│   ├── week01_cod_207/
+│   │   ├── slides.md
+│   │   ├── package.json
+│   │   └── pnpm-lock.yaml
+│   └── ...
+├── Workshops/
+│   ├── Code-and-algorithm-on-design/
+│   └── OMM_Arduino_Workshop/
+└── .github/
+    └── workflows/
+        └── deploy.yml
+```
 
-### week 11: Final Project Discussion
-- Prepare moodboard for the final project
-- Background information (Inspiration & Purpose)
-- Peer-discussions
+Each presentation project must contain:
+- `slides.md` - The Slidev presentation content
+- `package.json` - Project dependencies
+- `pnpm-lock.yaml` - Locked dependency versions
 
-### week 12: Final Project Proposals
+## 📝 Adding New Presentations
 
-### week 13: Final Project Reviews
+1. Create a new folder in either `2025-2026/` or `Workshops/`
+2. Add your `slides.md`, `package.json`, and `pnpm-lock.yaml`
+3. Commit and push to `main` branch
+4. GitHub Actions will automatically build and deploy your presentation
 
-### week 14: Final Project Presentations
+---
 
-</details>
-
-
-<details>
-  <summary><b>Link to COD 208 Creative Coding Presentations</b></summary>
-
-## week 04: What is Interactivity?
-- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_208/dist)
-- Crawford's three principles for interactivity; Speaking, Listening, Processing
-- Levels of interaction. Is the concept of interaction measurement subjective or objective?
-- Two actors at least
-- Intellectual dignity
-- Resembles to Campbell's "controllable systems"
-
-## week 05: Metaphors in Interaction Design
-- [week 05 Presentation](https://alptugan.github.io/Slidev_Presentations/week05_cod_208-Metaphors/dist)
-- Crawford's 5 Steps to create metaphors
-- Why do metaphors crucial in design and coding?
-- How do we perceive metaphors?
-  - Neuroscience → **Feature Extraction**
-  - Edge Detection
-  - Pattern Recognition
-  - Facial Feature Extraction
-- Metaphors in computational environments. 
-
-## week 06: Generative Design Through Pseudo-Intuition
-- [week 06 Presentation](https://alptugan.github.io/Slidev_Presentations/week06_cod_208-Generative_Masks/dist)
-- Intuiton and Design
-- Randomness & Pseudo-randomness 
-- Why do people use masks? History, background
-- Programming a mask
-- Making a generative mask: Implementation of human intuition
-
-## week 07: Machine Learning with ml5.js Library
-- [week 07 Presentation](https://alptugan.github.io/Slidev_Presentations/week07_cod_208-ML5_FaceApi/dist/)
-- What is Artificial Intelligence (AI)?
-- Artificial Narrow Intelligence (ANI), Artificial General Intelligence (AGI), Artificial Super Intelligence (ASI)
-- Machine Learning -> ml5 library
-- faceApi + Generative Mask mapping.
-</details>
-
-<details>
-  <summary><b>Link to COD 412 Sound In New Media Presentations</b></summary>
-
-## week 04: Hearing Through Listening
-- [week 04 Presentation](https://alptugan.github.io/Slidev_Presentations/week04_cod_412/dist)
-- Michel Chion's Listening Modes
-- Casual Listening
-- Semantic Listening
-- Reduced Listening
-
-## week 05: Acoustic Ecology
-- [week 05 Presentation](https://alptugan.github.io/Slidev_Presentations/week05_cod_412-Acoustic_Ecology/dist)
-- R. Murray Schafer's "World Soundscape Project"
-- What is Acoustic Ecology (Ecoacoustics)?
-- Soundscape?
-  - Keynote
-  - Signal
-  - Soundmark
-- Hi-fi vs. Lo-fi soundscapes?
-
-## week 06: Sound In Films
-- [week 06 Presentation](https://alptugan.github.io/Slidev_Presentations/week06_cod_412-Diegetic_Non-Diegetic_Internal-Diegetic/dist)
-- Diegetic, Non-diegetic and Internal Diegetic sounds
-- Acousmatic experience
-- Acoustic Ecology sound classfication notes
-
-## week 07: Sound Art
-- [week 07 Presentation](https://alptugan.github.io/Slidev_Presentations/week07_cod_412-SoundArt/dist)
-- What is Sound Art?
-- Historical figures; Russolo, Cage, Xenakis, Stochausen,...
-- Techniques, Tools and Mediums Used in Sound Art
-- Effects on society
-- Sound artists showcase
-
-</details>
-
-<details>
-  <summary><b>Link to Workshop Presentations</b></summary>
-
-[OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/OMM_Arduino_Workshop/dist)
-- Creative Coding.
-- Microcontrollers (Arduino) in design & art.
-- Case Studies.
-- Hands in mud → Demonstrations; 
-  - Arduino Programming Environment.
-  - Blink a led.
-  - Control led blinking state.
-  - Read data from a photocell.
-  - Adjust led light intensity according to photocell input serial data.
-
-  </details>
+Built with [Slidev](https://sli.dev/) • Deployed on [GitHub Pages](https://pages.github.com/)
