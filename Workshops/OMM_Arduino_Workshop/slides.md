@@ -1,7 +1,7 @@
 ---
 theme: seriph
 # background: 'https://source.unsplash.com/1600x900/?nature,water'
-background: https://source.unsplash.com/collection/9022578/
+background: https://cover.sli.dev
 class: text-center
 highlighter: shiki
 lineNumbers: true

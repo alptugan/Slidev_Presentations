@@ -56,17 +56,39 @@ jobs:
             mkdir -p dist
           fi
 
+      - name: Find all Slidev projects
+        id: find-projects
+        run: |
+          # Define directories to search for Slidev projects
+          SEARCH_DIRS="2025-2026 Workshops"
+
+          echo "Searching for Slidev projects in: $SEARCH_DIRS"
+          ALL_PROJECTS=""
+
+          for dir in $SEARCH_DIRS; do
+            if [ -d "$dir" ]; then
+              echo "Searching in $dir..."
+              FOUND=$(find "$dir" -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | tr '\n' ' ')
+              ALL_PROJECTS="$ALL_PROJECTS $FOUND"
+            fi
+          done
+
+          echo "all_projects=$ALL_PROJECTS" >> $GITHUB_OUTPUT
+          echo "All Slidev projects found: $ALL_PROJECTS"
+
       - name: Detect changed projects
         id: changed
         run: |
           OUTPUT_ROOT=dist
           mkdir -p "$OUTPUT_ROOT"
 
+          ALL_PROJECTS="${{ steps.find-projects.outputs.all_projects }}"
+
           # Get list of changed files in the last commit
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             # For manual runs, build all projects
             echo "Manual trigger - building all projects"
-            CHANGED_PROJECTS=$(find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | tr '\n' ' ')
+            CHANGED_PROJECTS="$ALL_PROJECTS"
           else
             # Get changed files from the push
             CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
@@ -74,20 +96,24 @@ jobs:
             echo "$CHANGED_FILES"
 
             # Extract unique project folders that were changed
-            CHANGED_PROJECTS=$(echo "$CHANGED_FILES" | grep "^2025-2026/" | cut -d'/' -f1-2 | sort -u | while read folder; do
-              if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
-                echo "$folder"
+            CHANGED_PROJECTS=""
+            for project in $ALL_PROJECTS; do
+              # Check if any file in this project folder was changed
+              if echo "$CHANGED_FILES" | grep -q "^$project/"; then
+                echo "Project $project has changes"
+                CHANGED_PROJECTS="$CHANGED_PROJECTS $project"
               fi
-            done | tr '\n' ' ')
+            done
 
-            # If no changed projects detected, check if any 2025-2026 folder was modified
+            # If no changed projects detected, check for new projects
             if [ -z "$CHANGED_PROJECTS" ]; then
               echo "No specific projects changed, checking for new projects..."
-              CHANGED_PROJECTS=$(find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | while read folder; do
-                if [ ! -d "$OUTPUT_ROOT/$folder" ]; then
-                  echo "$folder"
+              for project in $ALL_PROJECTS; do
+                if [ ! -d "$OUTPUT_ROOT/$project" ]; then
+                  echo "New project detected: $project"
+                  CHANGED_PROJECTS="$CHANGED_PROJECTS $project"
                 fi
-              done | tr '\n' ' ')
+              done
             fi
           fi
 
@@ -96,10 +122,8 @@ jobs:
 
       - name: Pre-build folder listing
         run: |
-          echo "------ Present folders under 2025-2026 ------"
-          find 2025-2026 -mindepth 1 -maxdepth 1 -type d
-          echo "------ Projects with slides.md ------"
-          find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print
+          echo "------ All Slidev projects found ------"
+          echo "${{ steps.find-projects.outputs.all_projects }}"
           echo "------ Projects to build this run ------"
           echo "${{ steps.changed.outputs.projects }}"
           echo "------ Existing builds in dist/ ------"

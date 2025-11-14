@@ -1,5 +1,5 @@
 {
-  "name": "week03",
+  "name": "code-and-algorithm",
   "private": true,
   "scripts": {
     "build": "slidev build",
@@ -7,13 +7,14 @@
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.40.3",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
+    "@slidev/cli": "^52.8.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.49",
-    "@iconify-json/uim": "^1.1.5",
-    "playwright-chromium": "^1.31.2"
-  }
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/uim": "^1.2.3",
+    "playwright-chromium": "^1.56.1"
+  },
+  "packageManager": "pnpm@10.19.0+sha512.c9fc7236e92adf5c8af42fd5bf1612df99c2ceb62f27047032f4720b33f8eacdde311865e91c411f2774f618d82f320808ecb51718bfa82c060c4ba7c76a32b8"
 }

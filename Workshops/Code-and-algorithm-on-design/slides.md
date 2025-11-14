@@ -1,13 +1,13 @@
 ---
-background: https://source.unsplash.com/collection/94734566/1920x1080
-title: Week 03 - Objects & Arrays
-exportFilename: "week03--"
+background: https://cover.sli.dev
+title: Code and Algorithm on Design
+exportFilename: "code-and-algorithm"
 class: text-center
 highlighter: shiki
 lineNumbers: true
 info: |
     ## Özyeğin University Course Presentation
-    Lecturer Alp Tuğan
+    Lecturer Alp Tuğan, PhD
 
     Access all week contents @[Github/alptugan](https://github.com/alptugan/Slidev_Presentations)
 drawings:
@@ -28,7 +28,6 @@ export:
 selectable: true
 codeCopy: true
 # favicon, can be a local file path or URL
-favicon: "https://www.alptugan.com/v5/favicon-192.png"
 themeConfig:
     primary: "#ffcc00"
 transition: fade-out
