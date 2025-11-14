@@ -67,7 +67,7 @@ Things we learn about P5JS programming language.
 
 ---
 
-# Drawing Order
+# Drawing Order on p5js
 
 Drawing Order: Set the layer order of the shapes.
 

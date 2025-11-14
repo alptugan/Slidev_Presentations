@@ -144,7 +144,7 @@ layout: image-left
 
 
 # Requirements
-  - 💻 Computer, Web Browser
+  - 💻 Computer, Internet Browser
   - 👁️ Reading
   - 👂 Listening
   - 🗣️ Asking
