@@ -148,7 +148,7 @@ layout: image-left
 backgroundSize: 91%
 ---
 
-# Computational Collage
+# Computational Collage Practice
 
 <v-clicks>
 

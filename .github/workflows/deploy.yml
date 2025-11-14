@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history for git diff
+          fetch-depth: 2  # Fetch last 2 commits for git diff
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -34,9 +34,34 @@ jobs:
         with:
           node-version: 'lts/*'
 
+      - name: Download previous build artifacts
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: deploy.yml
+          name: github-pages
+          path: previous-dist
+
+      - name: Extract previous builds
+        continue-on-error: true
+        run: |
+          if [ -f previous-dist/artifact.tar ]; then
+            echo "Extracting previous build artifacts..."
+            mkdir -p dist
+            tar -xf previous-dist/artifact.tar -C dist
+            echo "Previous builds extracted to dist/"
+            ls -la dist/
+          else
+            echo "No previous artifacts found, starting fresh"
+            mkdir -p dist
+          fi
+
       - name: Detect changed projects
         id: changed
         run: |
+          OUTPUT_ROOT=dist
+          mkdir -p "$OUTPUT_ROOT"
+
           # Get list of changed files in the last commit
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             # For manual runs, build all projects
@@ -54,18 +79,20 @@ jobs:
                 echo "$folder"
               fi
             done | tr '\n' ' ')
+
+            # If no changed projects detected, check if any 2025-2026 folder was modified
+            if [ -z "$CHANGED_PROJECTS" ]; then
+              echo "No specific projects changed, checking for new projects..."
+              CHANGED_PROJECTS=$(find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | while read folder; do
+                if [ ! -d "$OUTPUT_ROOT/$folder" ]; then
+                  echo "$folder"
+                fi
+              done | tr '\n' ' ')
+            fi
           fi
 
           echo "Projects to build: $CHANGED_PROJECTS"
           echo "projects=$CHANGED_PROJECTS" >> $GITHUB_OUTPUT
-
-      - name: Cache previous builds
-        uses: actions/cache@v4
-        with:
-          path: dist
-          key: slidev-builds-${{ github.sha }}
-          restore-keys: |
-            slidev-builds-
 
       - name: Pre-build folder listing
         run: |
@@ -75,6 +102,8 @@ jobs:
           find 2025-2026 -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print
           echo "------ Projects to build this run ------"
           echo "${{ steps.changed.outputs.projects }}"
+          echo "------ Existing builds in dist/ ------"
+          find dist -mindepth 1 -maxdepth 2 -type d 2>/dev/null || echo "No existing builds"
 
       - name: Build changed Slidev projects
         run: |
@@ -88,6 +117,7 @@ jobs:
 
           if [ -z "$PROJECTS_TO_BUILD" ]; then
             echo "No projects need to be built"
+            echo "::notice::No changes detected in Slidev projects, deploying existing builds"
           else
             for folder in $PROJECTS_TO_BUILD; do
               if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
@@ -102,6 +132,13 @@ jobs:
                   ERROR=1
                   continue
                 fi
+
+                # Remove old build if exists
+                if [ -d "$OUTPUT_ROOT/$folder" ]; then
+                  echo "Removing old build for $folder"
+                  rm -rf "$OUTPUT_ROOT/$folder"
+                fi
+
                 echo "--> Installing dependencies in $folder..."
                 ls -l "$folder"
                 cd "$folder"
@@ -126,11 +163,11 @@ jobs:
                 fi
               fi
             done
+            echo "::notice::Built $BUILT_COUNT project(s) this run"
           fi
 
           echo "------ Final dist structure ------"
           find "$OUTPUT_ROOT" || echo "$OUTPUT_ROOT not found!"
-          echo "Built $BUILT_COUNT project(s) this run"
 
           # Final fail if any project errored
           if [ "$ERROR" -ne 0 ]; then
