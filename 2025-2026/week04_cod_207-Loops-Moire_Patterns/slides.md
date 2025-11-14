@@ -35,7 +35,7 @@ src: ./pages/header.md
 
 ---
 layout: iframe-left
-title: Video of the week
+title: Video of the week - Telefon Tel Aviv
 url: https://player.vimeo.com/video/23281150?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
 class: p-4
 ---

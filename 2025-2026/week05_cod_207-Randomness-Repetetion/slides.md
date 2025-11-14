@@ -240,7 +240,7 @@ layout: two-cols-header
 class: text-left
 ---
 
-# L-Systems, Iterative Actions
+# L-Systems - Iterative Behaviour
 An L-system or Lindenmayer system is a parallel rewriting system and a type of formal grammar. Ordered distrubution of instructions. 
 (ref: [🔗Wikipedia](https://en.wikipedia.org/wiki/L-system))
 
