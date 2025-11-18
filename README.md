@@ -11,6 +11,7 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 05 - Randomness & Repetition](https://alptugan.github.io/Slidev_Presentations/2025-2026/week05_cod_207-Randomness-Repetetion/)
 - [Week 06 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
 - [Week 07 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
+- [Week 08 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography)
 
 ## 🎓 Workshops
 
