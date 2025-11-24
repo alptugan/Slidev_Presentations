@@ -13,7 +13,7 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 07 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
 - [Week 08 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
 - [Week 09 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography)
-- [Week 10 - Sound](https://alptugan.github.io/Slidev_Presentations/2025-2026/week09-COD207-Sound)
+- [Week 10 - Sound](https://alptugan.github.io/Slidev_Presentations/2025-2026/week09_cod_207-Interactivity-Sound)
 - [Week 11 - Autonomous Agents](https://alptugan.github.io/Slidev_Presentations/2025-2026/week11_cod_207-Autonomous-Agents)
 - [Week 11 - ALAP](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis)
 - Week 12 - Final Project Proposals
