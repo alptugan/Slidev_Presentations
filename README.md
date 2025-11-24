@@ -9,9 +9,20 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 03 - Computational Thinking](https://alptugan.github.io/Slidev_Presentations/2025-2026/week03_cod_207-Computational_Thinking/)
 - [Week 04 - Loops & Moiré Patterns](https://alptugan.github.io/Slidev_Presentations/2025-2026/week04_cod_207-Loops-Moire_Patterns/)
 - [Week 05 - Randomness & Repetition](https://alptugan.github.io/Slidev_Presentations/2025-2026/week05_cod_207-Randomness-Repetetion/)
-- [Week 06 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
-- [Week 07 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
-- [Week 08 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography)
+- Week 06 - No Class: National Holiday (Research: Algorithmic Art Praxis)
+- [Week 07 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
+- [Week 08 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
+- [Week 09 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography)
+- [Week 10 - Sound](https://alptugan.github.io/Slidev_Presentations/2025-2026/week09-COD207-Sound)
+- [Week 11 - Autonomous Agents](https://alptugan.github.io/Slidev_Presentations/2025-2026/week11_cod_207-Autonomous-Agents)
+- [Week 11 - ALAP](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis)
+- Week 12 - Final Project Proposals
+- Week 13 - Final Project Revision & Feedback
+- Week 14 - Final Project Revision & Feedback
+- Week 15 - Final Project Presentation
+
+## Creative Coding Topics
+- [Algorithmic Art Praxis]() - Link will be added
 
 ## 🎓 Workshops
 
@@ -57,17 +68,24 @@ The `.github/workflows/deploy.yml` workflow provides:
         └── deploy.yml
 ```
 
-Each presentation project must contain:
-- `slides.md` - The Slidev presentation content
-- `package.json` - Project dependencies
-- `pnpm-lock.yaml` - Locked dependency versions
-
 ## 📝 Adding New Presentations
 
-1. Create a new folder in either `2025-2026/` or `Workshops/`
-2. Add your `slides.md`, `package.json`, and `pnpm-lock.yaml`
+1. Create a new folder in either `2025-2026/` or `Workshops/`. For a different directory, edit the `deploy.yml` file.
+2. Create a new Slidev project.
 3. Commit and push to `main` branch
 4. GitHub Actions will automatically build and deploy your presentation
+
+
+## Updating Existing Presentations
+1. Each presentation project must contain:
+    - 📝 `slides.md` - The Slidev presentation content
+    - 📝 `package.json` - Project dependencies
+    - 📝 `global-bottom.vue` - Footer text
+    - 📝 `style.css` - Custom styles
+    - 📁 `components` folder
+    - 📁 `pages` folder
+2. Run `pnpm install` to download packages.
+3. Run `pnpm run dev` to preview project on local host.
 
 ---
 
