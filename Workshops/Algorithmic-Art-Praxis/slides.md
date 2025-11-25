@@ -90,6 +90,26 @@ backgroundSize: 180%
 
 </v-click>
 
+
+---
+layout: center
+---
+
+# ALAP Cheat Sheet & Categories Download Links
+
+<div class='grid grid-cols-2 gap-4'>
+<div m-auto>
+    <img mb-3 h-80 src='/alap-categories-sm.jpg' />
+    <a target='_blank' href="https://github.com/alptugan/Slidev_Presentations/blob/e83aeafe5cdb34b797f5707678ea14cc414f25d3/Resources/ALAP%20Categories.pdf">Download the Categories</a>
+</div>
+
+<div m-auto >
+    <img mb-3 h-80 src='/alap-cheat-sheet.jpg' />
+    <a href='https://github.com/alptugan/Slidev_Presentations/blob/e83aeafe5cdb34b797f5707678ea14cc414f25d3/Resources/ALAP%20Categories%20-%20Cheat%20Sheet.pdf' target='_blank'>Download the Cheat Sheet</a>
+</div>
+</div>
+
+
 ---
 layout: image
 image: /alap-categories.jpg
