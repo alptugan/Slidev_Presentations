@@ -61,7 +61,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          SEARCH_DIRS=("2025-2026 Workshops")
+          SEARCH_DIRS=("2025-2026" "Workshops")
 
           projects=()
           for dir in "${SEARCH_DIRS[@]}"; do

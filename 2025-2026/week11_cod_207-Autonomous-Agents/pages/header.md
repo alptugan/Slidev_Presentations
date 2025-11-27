@@ -4,7 +4,7 @@ Autonomous Agents + Random Walk Algorithms
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    COD 207 - Week 11 Class <carbon:arrow-right class="inline" />
+    COD 207 - Week 11 The Last Class <carbon:arrow-right class="inline" />
   </span>
 </div>
 
