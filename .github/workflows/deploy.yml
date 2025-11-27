@@ -205,6 +205,29 @@ jobs:
             exit 1
           fi
 
+      - name: Copy root static files
+        run: |
+          echo "Copying root-level static files to dist..."
+          # Copy the main landing page files
+          cp -v index.html dist/ || echo "No index.html in root"
+          cp -v *.html dist/ 2>/dev/null || echo "No additional HTML files in root"
+
+          # Copy assets and images directories
+          if [ -d "assets" ]; then
+            cp -rv assets dist/
+            echo "Copied assets/ directory"
+          fi
+
+          if [ -d "images" ]; then
+            cp -rv images dist/
+            echo "Copied images/ directory"
+          fi
+
+          echo "Root static files copied successfully"
+          ls -la dist/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
