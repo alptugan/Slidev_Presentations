@@ -56,6 +56,35 @@ title: Algorithmic Art Database
 ---
 
 
+<Arrow v-click x1="100" y1="165" x2="305" y2="165" />
+
+<div
+  v-motion
+  :initial="{ opacity:0 }"
+  :enter="{ x: 0, y: 95 }"
+  :click-1="{ x: 45, y: 95, opacity:1 }"
+  :leave="{ y: 0, x: 80, opacity:0 }"
+>
+  Artist Name
+</div>
+
+
+
+<Arrow v-click x1="100" y1="285" x2="305" y2="185" />
+
+
+<div
+  v-motion
+  :initial="{ opacity:0 }"
+  :enter="{ x: 0, y: 285 }"
+  :click-2="{ x: 45, y: 225, opacity:1 }"
+  :leave="{ y: 500, x: 0, opacity:0 }"
+>
+  Artwork Name
+</div>
+
+
+
 ---
 layout: image
 image: /alap-detail.jpg
@@ -74,9 +103,8 @@ backgroundSize: 180%
 
 <v-click>
 
-| Parameter       | Description                                                                                           |
+| **Parameter**       | **Description**                                                                                           |
 | --------------- | ----------------------------------------------------------------------------------------------------- |
-| Created         | Database Item creation date.                                                                          |
 | Title           | The artwork’s official title.                                                                         |
 | Medium          | The tangible supplies that were utilized to make the artwork.                                         |
 | Artist          | The artist(s)’s name and last name.                                                                   |
@@ -118,12 +146,35 @@ title: Algorithmic Art Praxis Categories
 ---
 
 
----
-layout: image
-image: /ALAP-categories-and-cheat_sheet.jpg
-backgroundSize: 68%
-title: ALAP Categories & Cheat Sheet
----
+<Arrow v-click color-yellow x1="505" y1="15" x2="505" y2="125"  
+v-motion
+  :initial="{ opacity:0}"
+  :enter="{ 
+  opacity: 1,
+  transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+    }, 
+    }"
+/>
+
+
+<div
+  v-motion
+  :initial="{ opacity:0 }"
+  :enter="{ 
+  x: 460, y: -10,
+  transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+    }, 
+    }"
+  :click-1="{ x: 460, y: -10, opacity:1 }"
+  :leave="{ x: 460, y: -100, opacity:0 }"
+  text-yellow
+>
+  Choose Praxis (Category)
+</div>
 
 
 
@@ -135,13 +186,25 @@ layout: section
 Bring up your ALAP documents and answer the following 12 surveys.
 
 
+
+---
+layout: image
+image: /ALAP-categories-and-cheat_sheet.jpg
+backgroundSize: 68%
+title: ALAP Categories & Cheat Sheet
+---
+
+
+
 ---
 layout: image-left
 image: /surveys.jpg
 backgroundSize: 90%
+class: text-3.8
 ---
 
 # Quiz
+Take out your printed documents. You can choose multiple options.
 
 - [ALAP 01 Survey](https://forms.gle/4wVqCfkFkri42j8P8)
 - [ALAP 02 Survey](https://forms.gle/RRzGZ9cN3tusbUK89)
@@ -168,8 +231,8 @@ layout: section
 image: /inclass.png
 backgroundSize: 100%
 ---
-# In-class Practice
-Open your computers and ALAP Documents
+# In-class Discussion
+## Final Projects
 
 
 
