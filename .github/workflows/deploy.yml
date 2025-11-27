@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Fetch last 2 commits for git diff
+          fetch-depth: 0  # Fetch last 2 commits for git diff
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -58,78 +58,98 @@ jobs:
 
       - name: Find all Slidev projects
         id: find-projects
+        shell: bash
         run: |
-          # Define directories to search for Slidev projects
-          SEARCH_DIRS="2025-2026 Workshops"
+          set -euo pipefail
+          SEARCH_DIRS=("2025-2026 Workshops")
 
-          echo "Searching for Slidev projects in: $SEARCH_DIRS"
-          ALL_PROJECTS=""
-
-          for dir in $SEARCH_DIRS; do
+          projects=()
+          for dir in "${SEARCH_DIRS[@]}"; do
             if [ -d "$dir" ]; then
-              echo "Searching in $dir..."
-              FOUND=$(find "$dir" -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | tr '\n' ' ')
-              ALL_PROJECTS="$ALL_PROJECTS $FOUND"
+              # Find immediate subdirs that contain slides.md
+              while IFS= read -r p; do
+                projects+=("$p")
+              done < <(find "$dir" -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/slides.md' ';' -print | sort)
             fi
           done
 
-          echo "all_projects=$ALL_PROJECTS" >> $GITHUB_OUTPUT
-          echo "All Slidev projects found: $ALL_PROJECTS"
+          {
+            echo "all_projects<<EOF"
+            printf "%s\n" "${projects[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          printf "All Slidev projects found:\n%s\n" "$(printf "%s\n" "${projects[@]}")"
 
       - name: Detect changed projects
         id: changed
+        shell: bash
         run: |
+          set -euo pipefail
           OUTPUT_ROOT=dist
           mkdir -p "$OUTPUT_ROOT"
 
-          ALL_PROJECTS="${{ steps.find-projects.outputs.all_projects }}"
+          # Read projects (newline-separated) into an array
+          mapfile -t ALL_PROJECTS <<< "${{ steps.find-projects.outputs.all_projects }}"
 
-          # Get list of changed files in the last commit
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            # For manual runs, build all projects
+          CHANGED_FILES=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual trigger - building all projects"
-            CHANGED_PROJECTS="$ALL_PROJECTS"
-          else
-            # Get changed files from the push
-            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
-            echo "Changed files:"
-            echo "$CHANGED_FILES"
-
-            # Extract unique project folders that were changed
-            CHANGED_PROJECTS=""
-            for project in $ALL_PROJECTS; do
-              # Check if any file in this project folder was changed
-              if echo "$CHANGED_FILES" | grep -q "^$project/"; then
-                echo "Project $project has changes"
-                CHANGED_PROJECTS="$CHANGED_PROJECTS $project"
-              fi
-            done
-
-            # If no changed projects detected, check for new projects
-            if [ -z "$CHANGED_PROJECTS" ]; then
-              echo "No specific projects changed, checking for new projects..."
-              for project in $ALL_PROJECTS; do
-                if [ ! -d "$OUTPUT_ROOT/$project" ]; then
-                  echo "New project detected: $project"
-                  CHANGED_PROJECTS="$CHANGED_PROJECTS $project"
-                fi
-              done
-            fi
+            {
+              echo "projects<<EOF"
+              printf "%s\n" "${ALL_PROJECTS[@]}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-          echo "Projects to build: $CHANGED_PROJECTS"
-          echo "projects=$CHANGED_PROJECTS" >> $GITHUB_OUTPUT
+          # Prefer the push range provided by GitHub
+          if [ "${{ github.event_name }}" = "push" ] && [ -n "${{ github.event.before }}" ]; then
+            # Ensure we have the needed history
+            git fetch --no-tags --prune origin "${{ github.ref }}" || true
+            CHANGED_FILES="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" || true)"
+          else
+            # Fallback (may miss multi-commit pushes)
+            CHANGED_FILES="$(git diff --name-only HEAD~1 HEAD || true)"
+          fi
+
+          echo "Changed files:"
+          printf "%s\n" "$CHANGED_FILES"
+
+          declare -a CHANGED_PROJECTS=()
+          if [ -n "$CHANGED_FILES" ]; then
+            for project in "${ALL_PROJECTS[@]}"; do
+              # If any changed file is under this project directory, mark it
+              if printf '%s\n' "$CHANGED_FILES" | grep -Fq -- "$project/"; then
+                echo "Project changed: $project"
+                CHANGED_PROJECTS+=("$project")
+              fi
+            done
+          fi
+
+          {
+            echo "projects<<EOF"
+            printf "%s\n" "${CHANGED_PROJECTS[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Projects to build:"
+          printf "%s\n" "${CHANGED_PROJECTS[@]:-}"
+
 
       - name: Pre-build folder listing
+        shell: bash
         run: |
           echo "------ All Slidev projects found ------"
-          echo "${{ steps.find-projects.outputs.all_projects }}"
+          printf "%s\n" "${{ steps.find-projects.outputs.all_projects }}"
           echo "------ Projects to build this run ------"
-          echo "${{ steps.changed.outputs.projects }}"
+          printf "%s\n" "${{ steps.changed.outputs.projects }}"
           echo "------ Existing builds in dist/ ------"
           find dist -mindepth 1 -maxdepth 2 -type d 2>/dev/null || echo "No existing builds"
 
+
       - name: Build changed Slidev projects
+        shell: bash
         run: |
           set -euxo pipefail
           OUTPUT_ROOT=dist
@@ -143,7 +163,8 @@ jobs:
             echo "No projects need to be built"
             echo "::notice::No changes detected in Slidev projects, deploying existing builds"
           else
-            for folder in $PROJECTS_TO_BUILD; do
+            while IFS= read -r folder; do
+              [ -z "$folder" ] && continue
               if [ -d "$folder" ] && [ -f "$folder/slides.md" ]; then
                 echo "============ Processing: $folder ============"
                 if [ ! -f "$folder/package.json" ]; then
@@ -186,20 +207,18 @@ jobs:
                   continue
                 fi
               fi
-            done
+            done <<< "$PROJECTS_TO_BUILD"
             echo "::notice::Built $BUILT_COUNT project(s) this run"
           fi
 
           echo "------ Final dist structure ------"
           find "$OUTPUT_ROOT" || echo "$OUTPUT_ROOT not found!"
 
-          # Final fail if any project errored
           if [ "$ERROR" -ne 0 ]; then
             echo "::error:: One or more projects failed to build, check the log above."
             exit 1
           fi
 
-          # Ensure at least one index.html exists in total
           if ! find "$OUTPUT_ROOT" -type f -name index.html | grep .; then
             echo "::error:: No index.html files found in $OUTPUT_ROOT"
             exit 1
