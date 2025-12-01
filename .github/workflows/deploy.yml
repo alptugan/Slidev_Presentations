@@ -86,9 +86,29 @@ jobs:
           # Read projects (newline-separated) into an array
           mapfile -t ALL_PROJECTS <<< "${{ steps.find-projects.outputs.all_projects }}"
 
+          # Check if cache was restored (has any index.html files)
+          CACHE_RESTORED=false
+          if find "$OUTPUT_ROOT" -type f -name index.html 2>/dev/null | grep -q .; then
+            CACHE_RESTORED=true
+            echo "Cache restored successfully with previous builds"
+          else
+            echo "No cached builds found - will build all projects"
+          fi
+
           CHANGED_FILES=""
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual trigger - building all projects"
+            {
+              echo "projects<<EOF"
+              printf "%s\n" "${ALL_PROJECTS[@]}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # If no cache exists, build all projects
+          if [ "$CACHE_RESTORED" = "false" ]; then
+            echo "No cache available - building all projects"
             {
               echo "projects<<EOF"
               printf "%s\n" "${ALL_PROJECTS[@]}"
