@@ -34,27 +34,21 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Download previous build artifacts
-        continue-on-error: true
-        uses: dawidd6/action-download-artifact@v3
+      - name: Restore cached builds
+        id: cache-restore
+        uses: actions/cache/restore@v4
         with:
-          workflow: deploy.yml
-          name: github-pages
-          path: previous-dist
+          path: dist
+          key: slidev-builds-${{ github.run_id }}
+          restore-keys: |
+            slidev-builds-
 
-      - name: Extract previous builds
-        continue-on-error: true
+      - name: Check restored cache
         run: |
-          if [ -f previous-dist/artifact.tar ]; then
-            echo "Extracting previous build artifacts..."
-            mkdir -p dist
-            tar -xf previous-dist/artifact.tar -C dist
-            echo "Previous builds extracted to dist/"
-            ls -la dist/
-          else
-            echo "No previous artifacts found, starting fresh"
-            mkdir -p dist
-          fi
+          mkdir -p dist
+          echo "Restored cache contents:"
+          find dist -mindepth 1 -maxdepth 2 -type d 2>/dev/null || echo "No previous builds in cache"
+          ls -la dist/ 2>/dev/null || echo "dist/ is empty"
 
       - name: Find all Slidev projects
         id: find-projects
@@ -244,6 +238,12 @@ jobs:
 
           echo "Root static files copied successfully"
           ls -la dist/
+
+      - name: Save builds to cache
+        uses: actions/cache/save@v4
+        with:
+          path: dist
+          key: slidev-builds-${{ github.run_id }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
