@@ -28,6 +28,7 @@ A collection of Slidev presentation projects for courses and workshops.
 
 - [Code and Algorithm on Design](https://alptugan.github.io/Slidev_Presentations/Workshops/Code-and-algorithm-on-design/)
 - [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/Workshops/OMM_Arduino_Workshop/)
+- [OZU_Iletisim-ve-Tasarimi](https://alptugan.github.io/Slidev_Presentations/Workshops/OZU_Iletisim-ve-Tasarimi)
 
 ## 🚀 Automated Deployment
 

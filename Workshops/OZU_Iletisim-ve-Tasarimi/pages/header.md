@@ -13,3 +13,6 @@ Mimarlık ve Tasarım Fakültesi
 
 <a href="https://github.com/alptugan/Slidev_Presentations" target="_blank" alt="GitHub"
   class="abs-br m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white"><carbon-logo-github /></a>
+
+
+<img src='/qr-code.png' absolute scale-20 mt--130 ml-75/>

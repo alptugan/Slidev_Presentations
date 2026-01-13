@@ -39,9 +39,16 @@ src: /pages/header.md
 ---
 layout: default
 ---
-# Table of Contents
+# İçerik
 
-<Toc :columns="2" />
+<Toc :columns="3" text-4/>
+
+
+---
+title: QR Kod
+---
+
+<img src='/qr-code.png' scale-50 mt--50/>
 
 --- 
 image: /ovunc_ege_1.png
@@ -450,9 +457,17 @@ image: /redface_cult_woods.jpeg
 - [Alp Tuğan - Kişisel Sayfa](https://www.alptugan.com/)
 - [Teaching Blog](https://teaching.alptugan.com/)
 
+
+---
+title: QR Kod
+---
+
+<img src='/qr-code.png' scale-50 mt--50/>
+
 ---
 layout: end
 ---
 
 # görüşürüz 
 ^-^
+
