@@ -37,7 +37,7 @@ This repository uses GitHub Actions to automatically build and deploy Slidev pre
 
 The `.github/workflows/deploy.yml` workflow provides:
 
-- **Incremental Builds**: Only rebuilds presentations that have changed, saving build time
+- **Incremental Builds**: Only rebuilds presentations that have changed, saving build time. 
 - **Multi-Directory Support**: Scans both `2025-2026` and `Workshops` folders for Slidev projects
 - **Artifact Caching**: Preserves previously built presentations, ensuring all projects remain accessible
 - **Automatic Detection**: Detects new or modified presentations and builds them automatically on push to `main`
