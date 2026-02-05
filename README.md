@@ -4,6 +4,24 @@ A collection of Slidev presentation projects for courses and workshops.
 
 ## 📚 2025-2026 Course Materials
 
+### COD 208 Creative Coding II
+- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
+~~- [Week 02 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 03 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 04 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 05 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 06 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 07 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 08 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 09 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+~~- [Week 10 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- Week 12 - Final Project Proposals
+- Week 13 - Final Project Revision & Feedback
+- Week 14 - Final Project Revision & Feedback
+- Week 15 - Final Project Presentation
+
+
+### COD 207 Creative Coding I
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026/week01_cod_207/)
 - [Week 02 - Shapes](https://alptugan.github.io/Slidev_Presentations/2025-2026/week02_cod_207-Shapes/)
 - [Week 03 - Computational Thinking](https://alptugan.github.io/Slidev_Presentations/2025-2026/week03_cod_207-Computational_Thinking/)
@@ -21,7 +39,8 @@ A collection of Slidev presentation projects for courses and workshops.
 - Week 14 - Final Project Revision & Feedback
 - Week 15 - Final Project Presentation
 
-## Creative Coding Topics
+## Creative Coding Topics
+
 - [Algorithmic Art Praxis]() - Link will be added
 
 ## 🎓 Workshops
