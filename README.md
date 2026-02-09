@@ -4,6 +4,9 @@ A collection of Slidev presentation projects for courses and workshops.
 
 ## 📚 2025-2026 Course Materials
 
+### COD 301 Design Studio III
+- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
+
 ### COD 208 Creative Coding II
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
 ~~- [Week 02 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
