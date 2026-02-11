@@ -2,7 +2,9 @@
 
 A collection of Slidev presentation projects for courses and workshops.
 
-## 📚 2025-2026 Course Materials
+## 📚 Course Materials
+### COD 412 Sound Projects & Media
+- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week01/)
 
 ### COD 301 Design Studio III
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
