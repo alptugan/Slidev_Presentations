@@ -22,6 +22,7 @@ transition: fade-out
 mdc: true
 # duration of the presentation
 duration: 35min
+favicon: "https://www.alptugan.com/v6/favicon-192.png"
 ---
 
 # COD 301 Design Studio
@@ -62,7 +63,7 @@ title: Case Study Deniz Cem Önduygu
 class: text-center
 ---
 
-[Click to view Deniz's Datavis gfrd6t54e 3r5tt88< < 2qa3z3xxsz4Works](https://www.denizcemonduygu.com/)
+[Click to view Deniz's Datavis Works](https://www.denizcemonduygu.com/)
 
 <img src='/deniz.jpg' scale-70 mt--22/>
 

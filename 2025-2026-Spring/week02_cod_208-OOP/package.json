@@ -1,0 +1,18 @@
+{
+  "name": "cod208-week02-OOP",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.11.5",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "seedrandom": "^3.0.5",
+    "vue": "^3.5.27"
+  }
+}
