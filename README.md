@@ -5,7 +5,7 @@ A collection of Slidev presentation projects for courses and workshops.
 ## 📚 Course Materials
 ### COD 412 Sound Projects & Media
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week01/)
-- [Week 01 - Acoustic Ecology](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
+- [Week 02 - Acoustic Ecology](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
 
 ### COD 301 Design Studio III
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
