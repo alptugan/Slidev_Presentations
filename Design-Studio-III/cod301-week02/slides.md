@@ -34,7 +34,7 @@ themeConfig:
 week 02 - Visual variables and Encoding Data
 
 <div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
+  Press Space<carbon:arrow-right />
 </div>
 
 <div class="abs-br m-6 text-xl">
