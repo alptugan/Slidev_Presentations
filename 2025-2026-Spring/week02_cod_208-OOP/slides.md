@@ -1,6 +1,6 @@
 ---
 image: /cover-week2-2028.png
-title: Week 02 - Objects
+title: Week 02 - Objects Oriented Programming
 exportFilename: "week02-OOP"
 highlighter: shiki
 lineNumbers: true
