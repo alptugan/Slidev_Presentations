@@ -278,3 +278,243 @@ layout: center
 Refer to the [link](https://www.datasketch.es/project/figures-in-the-sky) to review behind the scenes of the data visualization project.
 
 <img src='/s4.jpeg' />
+
+
+---
+layout: section
+---
+
+# Studio Practice
+99 Variations Study (ref: Formstorming by Ellen Lupton)
+
+---
+layout: center
+---
+
+# Studio Exercise Guide: The "5 Apples" Formstorming
+
+- Total Duration: 3–4 Hours (In-Class)
+
+- Software: Adobe Illustrator, Photshop or Figma
+
+- Objective: Move beyond standard charts (bars/pies) and explore the visual semantics of quantity.
+
+
+---
+layout: default
+---
+
+# Formstorming 
+Theoretical Framing
+<br>
+
+**The Inspiration**: Explain that this exercise is based on Raymond Queneau's Exercises in Style (1947), where he retells the same mundane story (a man on a bus) in 99 different literary styles (e.g., as a sonnet, scientifically, slang, passive voice).
+
+**The Design Equivalent**: Show Matt Madden’s 99 Ways to Tell a Story: Exercises in Style. Madden took Queneau’s concept and applied it to comics.
+
+**The Goal**: We are applying this to Data. How can the number **"5"**{style="color:#ffcc00"} be represented **without using a number or a bar chart**{style="color:#ffcc00"} ?
+
+
+---
+layout: default
+---
+
+# 99 Ways to Tell Story
+by Matt Madden
+
+<div class='grid grid-cols-3 gap-4'>
+<div>
+<img h-90 src='/template.jpg' />
+Starter Sketch
+</div>
+
+<div>
+<img h-90 src='/Underground-Comix.jpg' />
+Underground Comix
+</div>
+
+<div>
+<img src='/Fantasy.jpg' />
+Fantasy
+</div>
+</div>
+
+---
+layout: default
+---
+
+# 99 Ways to Tell Story
+by Matt Madden
+
+<div class='grid grid-cols-3 gap-4'>
+<div>
+<img h-90 src='/superhero.jpg' />
+Super Hero
+</div>
+
+<div>
+<img h-90 src='/Palindrome.jpg' />
+Palindrome
+</div>
+
+<div>
+<img src='/one-panel.jpg' />
+One Panel
+</div>
+</div>
+
+
+---
+layout: default
+---
+
+# 99 Ways to Tell Story
+by Matt Madden
+
+<div class='grid grid-cols-3 gap-4'>
+<div>
+<img h-90 src='/Map.jpg' />
+Map
+</div>
+
+<div>
+<img h-90 src='/Manga.jpg' />
+Manga
+</div>
+
+<div>
+<img src='/humor-comic.jpg' />
+Humor Comic
+</div>
+</div>
+
+
+---
+layout: two-cols
+---
+
+# The Analog Sprint (45 Minutes)
+- [The Prompt:]{style="color:#ffcc00"} "You have 5 Apples. Visualize this quantity."
+
+- [The Constraint:]{style="color:#ffcc00"} You cannot use the number "5" or the word "Five." You cannot use a standard excel bar chart.
+
+- [Two minutes]{style="color:#ffcc00"} for each box.
+
+::right::
+
+# Inspiration
+
+- **Literal**: Show the apples.
+
+- **Abstract**: Show the volume of the apples.
+
+- **Geometric**: Use only triangles.
+
+- **Negative Space**: Show the absence of apples.
+
+- **Destructive**: Show 5 apples that have been eaten.
+
+- **Typographic**: Use the letter "A" five times.
+
+- **Instructional**: How would IKEA show 5 apples?
+
+- **Glitch**: The data is corrupted.
+
+
+---
+layout: two-cols
+---
+
+# Digital Execution (90 Minutes)
+Digitize the sketches that you created on analog session.
+
+1. Isotype (Iconography)
+2. Abstract Geometric
+3. Organic / Hand-Drawn
+4. Topographic (Map)
+5. Minimalist (1 pixel)
+6. Maximalist (Texture)
+7. Typographic (Text as image)
+8. Glitch / Error
+9. 3D / Isometric
+10. Photographic (Collage)
+
+::right::
+
+<br><br><br><br><br>
+
+11. Metaphorical (Pie crusts),12. Scientific (Molecular)
+13. Negative Space
+14. Pattern / Tessellation
+15. UI Element (Loading bar)
+16. Industrial (Blueprint)
+17. Fluid / Liquid
+18. 8-Bit / Pixel Art
+19. Blurred / Bokeh
+20. X-Ray / Transparent
+
+---
+layout: default
+---
+
+# Critique (30 Minutes)
+
+"The Wall of 120."
+
+Have them export all 20 as JPEGs.
+
+Upload to a shared 🔗 [FigJam](https://www.figma.com/board/xBbAYlsfm8WyMMahecs9Ve/Digital-Sketches-for-99-Variations?node-id=0-1&t=QbFiqP5rXKYolq7o-1).
+
+<!--
+Review Question: "Which of these conveys '5' the fastest? Which conveys the 'feeling' of an apple best?"
+
+This highlights the difference between Data Visualization (clarity/speed) and Data Art (emotion/aesthetic).
+-->
+
+---
+layout: section
+---
+
+# Which of these conveys '5' the fastest? Which conveys the 'feeling' of an apple best?
+In terms of Data Visualization (clarity/speed) and Data Art (emotion/aesthetic)
+
+---
+layout: default
+---
+
+# References
+
+Relevant Sources & Links for Class
+
+1. The Primary Reference (Design Pedagogy):
+<br>
+    Book: Graphic Design: The New Basics by Ellen Lupton & Jennifer Cole Phillips.
+<br>
+    Link:(https://medium.com/@PAPress/what-is-formstorming-3951e742a402)
+
+
+2. The Conceptual Reference (Literary):
+<br>
+    Book: 99 Ways to Tell a Story: Exercises in Style by Matt Madden.
+
+
+3. The Visual Reference (Data Styles):
+<br>
+    Website: The Data Viz Project.https://datavizproject.com/
+
+
+4. The Aesthetic Reference:
+<br>
+    Book/Project: Data Sketches by Nadieh Bremer & Shirley Wu.
+<br>
+    Link:(https://www.datasketch.es/) - Specifically look at their "process" pages to see how they sketched many versions of the same data.
+
+
+
+---
+layout: center
+---
+
+# Assignment
+
+### Digitize Week 1 data into a clean CSV file and produce 3 low-fidelity poster layouts based on one of your "99 Variations" sketches.
