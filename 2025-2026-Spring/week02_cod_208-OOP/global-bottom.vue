@@ -177,7 +177,7 @@ const poly3 = usePloy(3);
                 op-40
                 >•</span
             >
-            COD 412 Sound Projects & Media
+            COD 208 Creative Coding II
             <span
                 color-white
                 op-40
