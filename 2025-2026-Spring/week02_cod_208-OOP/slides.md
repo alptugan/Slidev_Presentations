@@ -165,6 +165,7 @@ class: text-left py-40
 - Choose a class name.
 - Create a new file on openProcessing or p5JS editor.
 - Use the template example of my sketch as starter code.
+- Watch the video tutorial in the following [link](https://teaching.alptugan.com/Tutorials/P5JS---How-to-create-class).
 
 ---
 layout: section

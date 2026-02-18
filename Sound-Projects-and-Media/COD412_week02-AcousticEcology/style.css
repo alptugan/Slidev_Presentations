@@ -4,7 +4,15 @@
 }
 
 .slidev-layout a {
-    border-color: #8888;
+    border-color: #ffcc00;
+}
+
+strong {
+    color: #ffcc00;
+}
+
+.move-bg-right {
+    background-position-x: right !important;
 }
 
 .monaco-editor {

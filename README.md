@@ -14,14 +14,14 @@ A collection of Slidev presentation projects for courses and workshops.
 ### COD 208 Creative Coding II
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
 - [Week 02 - OOP](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week02_cod_208-OOP/)
-~~- [Week 03 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 04 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 05 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 06 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 07 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 08 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 09 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-~~- [Week 10 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- [Week 03 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Arrays)
+- ~~[Week 04 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- ~~[Week 05 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- ~~[Week 06 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- ~~[Week 07 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- ~~[Week 08 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- ~~[Week 09 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- ~~[Week 10 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
 - Week 12 - Final Project Proposals
 - Week 13 - Final Project Revision & Feedback
 - Week 14 - Final Project Revision & Feedback
