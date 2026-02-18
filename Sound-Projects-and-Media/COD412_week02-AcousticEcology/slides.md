@@ -467,7 +467,8 @@ sound meter, decibel meter, sound level...
 # Assignment 1
 
 1. Collect sounds and classify them according to Schaefer's categories.
-2. **Sound**: Create a soundscape composition using your collected material.
+2. **Sound**: Create a soundscape composition using your collected material. 
+3. **Watch**: [Music Concrete](https://media-host.alptugan.workers.dev/sounddesign/screening-Musique_Concrete.mp4)
 3. **Reading**: Refer to Other Materials (11)
 
 
