@@ -523,23 +523,24 @@ layout: center
 
 # Assignment
 
-### 1. Digitize Week 1 data into a clean CSV file.
+<br>
+
+### 1. Digitize Week 1 data into a clean CSV or excel file. Include the data as a table in week 02 insights on your Notion page.
 
 <br>
 
-### 2. Produce 3 low-fidelity poster layouts based on one of your "99 Variations" sketches using Photoshop, Figma, or Illustrator.
+### 2. Produce 3 low-fidelity poster layouts based on one of your "99 Variations" sketches using Photoshop, Figma, or Illustrator. Then choose one of them as a guide for your original data.
 
 <br>
 
-### 3. Create entry about week 02 insights on your blog as a response paper due to [Monday]{color="red"}.
-
+### 3. Create entry about week 02 insights on your blog as a response paper due to Monday. Paste link as reply on LMS.
 <br>
 
 ### 4. Share the link on LMS.
 
 <br>
 
-### 5. Print your design on a A3 paper due to [Thurday]{color="green"} session. 
+### 5. Print your selected design on a A3 paper due to Thursday session. Include the final design and three low-fidelity (wireframe design) on your week02 insights blog entry. 
 
 ---
 layout: end
