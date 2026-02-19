@@ -6,6 +6,7 @@ A collection of Slidev presentation projects for courses and workshops.
 ### COD 412 Sound Projects & Media
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week01/)
 - [Week 02 - Acoustic Ecology](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
+- [Week 03 - Sound History 01](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week03-SoundHistory01/)
 
 ### COD 301 Design Studio III
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
@@ -14,7 +15,7 @@ A collection of Slidev presentation projects for courses and workshops.
 ### COD 208 Creative Coding II
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
 - [Week 02 - OOP](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week02_cod_208-OOP/)
-- [Week 03 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Arrays)
+- [Week 03 - Games](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Games)
 - ~~[Week 04 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
 - ~~[Week 05 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
 - ~~[Week 06 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~

@@ -299,20 +299,26 @@ layout: center
 
 - Objective: Move beyond standard charts (bars/pies) and explore the visual semantics of quantity.
 
-
 ---
-layout: default
+layout: image-right
+image: '/28234519-2328946103.webp'
+backgroundSize: 100%
+class: mt-0
 ---
 
 # Formstorming 
 Theoretical Framing
 <br>
 
-**The Inspiration**: Explain that this exercise is based on Raymond Queneau's Exercises in Style (1947), where he retells the same mundane story (a man on a bus) in 99 different literary styles (e.g., as a sonnet, scientifically, slang, passive voice).
+**The Inspiration**: Raymond Queneau's Exercises in Style (1947), where he retells the same mundane story (a man on a bus) in 99 different literary styles (e.g., as a sonnet, scientifically, slang, passive voice).
 
-**The Design Equivalent**: Show Matt Madden’s 99 Ways to Tell a Story: Exercises in Style. Madden took Queneau’s concept and applied it to comics.
+**The Design Equivalent**: Matt Madden’s 99 Ways to Tell a Story: Madden took Queneau’s concept and applied it to comics.
 
-**The Goal**: We are applying this to Data. How can the number **"5"**{style="color:#ffcc00"} be represented **without using a number or a bar chart**{style="color:#ffcc00"} ?
+**The Goal**: Apply this to your Data. 
+
+<br>
+
+[_For example:_]{style="color:#ffcc00"} How can the number **"5"**{style="color:#ffcc00"} be represented **without using a number or a bar chart**{style="color:#ffcc00"} ?
 
 
 ---
@@ -402,7 +408,7 @@ layout: two-cols
 
 ::right::
 
-# Inspiration
+# Possible Styles
 
 - **Literal**: Show the apples.
 
@@ -517,4 +523,28 @@ layout: center
 
 # Assignment
 
-### Digitize Week 1 data into a clean CSV file and produce 3 low-fidelity poster layouts based on one of your "99 Variations" sketches.
+### 1. Digitize Week 1 data into a clean CSV file.
+
+<br>
+
+### 2. Produce 3 low-fidelity poster layouts based on one of your "99 Variations" sketches using Photoshop, Figma, or Illustrator.
+
+<br>
+
+### 3. Create entry about week 02 insights on your blog as a response paper due to [Monday]{color="red"}.
+
+<br>
+
+### 4. Share the link on LMS.
+
+<br>
+
+### 5. Print your design on a A3 paper due to [Thurday]{color="green"} session. 
+
+---
+layout: end
+class: font-mono
+---
+
+# Fin
+^ _ ^
