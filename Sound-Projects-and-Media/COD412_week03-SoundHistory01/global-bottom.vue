@@ -187,7 +187,7 @@ const poly3 = usePloy(3);
 
             <div
                 v-if="$slidev.nav.currentLayout !== 'cover'"
-                class="absolute bottom-1 w-8 text-2 right-1 p-1 z-99999999 bg-#000000aa rounded-md"
+                class="absolute bottom-1 w-10 text-2 right-1 p-1 z-99999999 bg-#000000aa rounded-md"
             >
                 {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
             </div>
