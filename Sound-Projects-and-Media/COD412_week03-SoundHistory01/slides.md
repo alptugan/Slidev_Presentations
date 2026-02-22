@@ -23,7 +23,7 @@ glowSeed: 4
 lineNumbers: true
 selectable: true
 codeCopy: true
-routerMode: history
+routerMode: hash
 favicon: "https://www.alptugan.com/v6/favicon-192.png"
 layout: image-to
 themeConfig:
