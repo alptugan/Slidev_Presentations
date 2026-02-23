@@ -1,6 +1,6 @@
 # Creative Coding
 
-Array of Objects & Moving Objects
+Array of Moving Objects in Games
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">

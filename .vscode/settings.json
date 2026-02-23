@@ -1,4 +1,5 @@
 {
     "slidev.port": 3030,
-    "slidev.preview-sync": true
+    "slidev.preview-sync": true,
+    "slidev.include": ["**/slides.md", "2025-2026-Spring/week03_cod_208-Games/pages/assignment.md"]
 }

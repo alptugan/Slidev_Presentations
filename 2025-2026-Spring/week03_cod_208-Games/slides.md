@@ -1,7 +1,7 @@
 ---
-#theme: apple-basic
 css: unocss
-image: https://cover.sli.dev
+# background: /cover.jpeg
+image: /VR-headset.jpeg
 # some information about your slides (markdown enabled)
 title: COD 208 Creative Coding II
 info: |
@@ -23,6 +23,8 @@ glowSeed: 4
 lineNumbers: true
 selectable: true
 codeCopy: true
+routerMode: hash
+download: false
 favicon: "https://www.alptugan.com/v6/favicon-192.png"
 layout: image-to
 themeConfig:
@@ -54,6 +56,7 @@ If you are selected as emerging artist with your project, you will earn extra cr
 
 ---
 layout: default
+hide: true
 ---
 
 # A History of Generative Art
@@ -206,25 +209,26 @@ image: /Screenshot 2024-02-26 at 18.43.00.png
 
 # 90s in Turkey
 
-<Youtube id='wSLrhubWefM' width='100%' height='100%' />
+<Youtube id='wSLrhubWefM' width='100%' height='90%' />
 
 ---
-layout: default
+layout: center
 ---
 # Mobile Phone Games (2000s)
 
-<img src='/mobil.png' />
+<img ml-auto mr-auto src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExazg0bWp1ZDJpNjRodDdnajEwOHliNGN2dnRwbW9zYXZvN2hsa2RudSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zPdwt79PXjMEo/giphy.gif' />
 
 
 ---
 layout: image-left
 image: /a849db61df42b3c111d3fd773522c0e6.jpg
+backgroundSize: 80%
 ---
 # VR Games (2010s)
 
 Early prototypes (1960s) are the precursors of Oculus Rift, Google Glass, Apple Vision Pro, etc...
 
-<img src='/THE_VIEW_(Virtual_Reality).jpg' />
+<img h-80 src='/THE_VIEW_(Virtual_Reality).jpg' />
 
 ---
 layout: image
@@ -235,10 +239,20 @@ image: /360_F_657800939_7IKF8V1tSDBKyMnY1QgroVWFogUy60Ng.jpg
 
 ---
 layout: default
+class: mt-20
 ---
+
 # Resources
 
-<img src='/Screenshot 2024-02-26 at 18.55.05.png' />
+Some books related to game development and its delicate practices.
+
+<div class='flex gap-4 h-3/7'>
+<img class='flex-1 object-cover' src='/book1.jpg' />
+<img v-click class='flex-1 object-cover' src='/book2.jpg' />
+<img v-click class='flex-1 object-cover' src='/book3.jpeg' />
+<img v-click class='flex-1 object-cover' src='/book4.jpg' />
+<img v-click class='flex-1 object-cover' src='/book5.jpg' />
+</div>
 
 
 ---
@@ -262,6 +276,7 @@ title: Top-scrolling Game
 ---
 title: Top-scrolling Game
 ---
+
 <Youtube id='uoxfz_VDW8k' width='100%' height='100%' />
 
 ---
@@ -269,6 +284,36 @@ title: Side-scrolling Game
 ---
 
 <Youtube id='KXWV60toNls' width='100%' height='100%' />
+
+
+---
+layout: image-right
+image: https://teaching.alptugan.com/assets/p5js02.jpg
+backgroundSize: 100%
+class: mt-40
+---
+
+# Tutorial - 2D Basic Game 
+Refer to the [article](https://teaching.alptugan.com/Tutorials/P5JS---Casual-Game) to learn how to prepare your assets and implement your game.
+
+
+---
+layout: image-right
+image: '/game_proto.jpg'
+backgroundSize: 100%
+class: mt-0
+---
+
+# Modules and Game Examples
+
+- [Intro Scene by alptugan](https://editor.p5js.org/alptugan/sketches/wPV0-31Qv)
+- [Timer Module by alptugan](https://editor.p5js.org/alptugan/sketches/VxY7d-7PRt)
+- [Sound interactive game](https://editor.p5js.org/alptugan/sketches/GwedNwyRC)
+- [DINO DINNER TIME](https://editor.p5js.org/alptugan/sketches/-1KLl37m2)
+- [Another Game Prototype](https://editor.p5js.org/alptugan/sketches/5TXn7gahA)
+- [Implement Game Scenes by alptugan](https://editor.p5js.org/alptugan/sketches/GP3bv4yy8)
+- [Game Prototype - 🍌 Banana Empire 🐒](https://openprocessing.org/sketch/2191906)
+
 
 ---
 src: /pages/assignment.md
