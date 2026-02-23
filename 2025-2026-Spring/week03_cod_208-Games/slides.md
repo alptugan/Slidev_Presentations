@@ -17,6 +17,7 @@ transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 # duration of the presentation
+highlighter: shiki
 duration: 35min
 colorSchema: dark
 glowSeed: 4
@@ -77,15 +78,14 @@ Any one needs help?
 ---
 layout: center
 class: text-left
+title: Syntax Matters
 ---
-# Syntax Matters
-Some of you confused about the order. 
 
 <img h-60 src='/syntax.png' />
 
 
-```js {1|11|2|5|3|4|7|8|all}
-class Name-of-the-class {
+```javascript [NameOfTheClass.js] {1|11|2|5|3|4|7|8|all}
+class NameOfTheClass {
     constructor() {
         // Properties of the class
         this.name = "MyClass";
