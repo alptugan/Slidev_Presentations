@@ -143,7 +143,6 @@ backgroundSize: 80%
 ---
 
 
-
 ---
 layout: image
 image: /2.jpg

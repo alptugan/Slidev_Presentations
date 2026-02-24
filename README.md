@@ -11,6 +11,8 @@ A collection of Slidev presentation projects for courses and workshops.
 ### COD 301 Design Studio III
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
 - [Week 02 - Data Visualization](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week02/)
+- [Week 03 - Layouts](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Layouts/)
+- [Week 03 - Hierarchy](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Typography/)
 
 ### COD 208 Creative Coding II
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
