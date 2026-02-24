@@ -1,0 +1,16 @@
+{
+  "name": "cod301-week03-Typography",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.11.5",
+    "@slidev/theme-default": "latest",
+    "seedrandom": "^3.0.5",
+    "vue": "^3.5.27"
+  }
+}
