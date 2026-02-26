@@ -70,15 +70,13 @@ source: French composer (1883-1965)
 
 ---
 
-# Page 1
+# Live Coding?
 
-Live Coding?
-
-Sonic Pi: Textual
-
-Programming Language
-
-Music
+- Programming practice rather than a language
+- Music
+- On the fly programming
+- Text-based
+- Node-based
 
 
 ---
@@ -87,7 +85,7 @@ Music
 
 What is Live Coding?
 
-![Image 1](./image-1.png)
+![Image 1](/image-1.png)
 
 
 ---
@@ -100,7 +98,7 @@ What is Live Coding?
 
 - 2011, Algorave (N. Collins, A. McLean)
 
-![Image 2](./image-2.png)
+![Image 2](/image-2.png)
 
 
 ---
@@ -109,7 +107,7 @@ What is Live Coding?
 
 Algorave
 
-![Image 3](./image-3.png)
+![Image 3](/image-3.png)
 
 **Links:**
 
@@ -120,7 +118,7 @@ Algorave
 
 # Page 5
 
-![Image 4](./image-4.png)
+![Image 4](/image-4.png)
 
 
 ---
@@ -129,7 +127,7 @@ Algorave
 
 Documentary * Algorave Generation
 
-![Image 5](./image-5.png)
+![Image 5](/image-5.png)
 
 **Links:**
 
@@ -142,7 +140,7 @@ Documentary * Algorave Generation
 
 Coding the Party * Documentary
 
-![Image 6](./image-6.png)
+![Image 6](/image-6.png)
 
 **Links:**
 
@@ -155,7 +153,7 @@ Coding the Party * Documentary
 
 Documentary * The Creative Power of Live Coding
 
-![Image 7](./image-7.png)
+![Image 7](/image-7.png)
 
 **Links:**
 
@@ -166,7 +164,7 @@ Documentary * The Creative Power of Live Coding
 
 # Page 9
 
-![Image 8](./image-8.png)
+![Image 8](/image-8.png)
 
 **Links:**
 
@@ -179,7 +177,7 @@ Documentary * The Creative Power of Live Coding
 
 Kingdom - Mike Hodnick
 
-![Image 9](./image-9.png)
+![Image 9](/image-9.png)
 
 **Links:**
 
@@ -192,7 +190,7 @@ Kingdom - Mike Hodnick
 
 Joint Breakcore Live Coding Duo
 
-![Image 10](./image-10.png)
+![Image 10](/image-10.png)
 
 **Links:**
 
@@ -203,7 +201,7 @@ Joint Breakcore Live Coding Duo
 
 # Page 12
 
-![Image 11](./image-11.png)
+![Image 11](/image-11.png)
 
 
 ---
@@ -216,7 +214,7 @@ Joint Breakcore Live Coding Duo
 
 - Server sends messages to SC
 
-![Image 12](./image-12.png)
+![Image 12](/image-12.png)
 
 
 ---
@@ -237,7 +235,7 @@ Technology (CNMAT)
 
 other multimedia devices.
 
-![Image 13](./image-13.png)
+![Image 13](/image-13.png)
 
 
 ---
@@ -258,7 +256,7 @@ other multimedia devices.
 
 - scide: IDE
 
-![Image 14](./image-14.png)
+![Image 14](/image-14.png)
 
 
 ---
@@ -272,28 +270,28 @@ https://sonic-pi.net
 
 # Page 17
 
-![Image 15](./image-15.png)
+![Image 15](/image-15.png)
 
 
 ---
 
 # Page 18
 
-![Image 16](./image-16.png)
+![Image 16](/image-16.png)
 
 
 ---
 
 # Page 19
 
-![Image 17](./image-17.png)
+![Image 17](/image-17.png)
 
 
 ---
 
 # Page 20
 
-![Image 18](./image-18.png)
+![Image 18](/image-18.png)
 
 
 ---
@@ -302,7 +300,7 @@ https://sonic-pi.net
 
 https://newt.phys.unsw.edu.au/jw/notes.html
 
-![Image 19](./image-19.png)
+![Image 19](/image-19.png)
 
 **Links:**
 
@@ -313,56 +311,56 @@ https://newt.phys.unsw.edu.au/jw/notes.html
 
 # Page 22
 
-![Image 20](./image-20.png)
+![Image 20](/image-20.png)
 
 
 ---
 
 # Page 23
 
-![Image 21](./image-21.png)
+![Image 21](/image-21.png)
 
 
 ---
 
 # Page 24
 
-![Image 22](./image-22.png)
+![Image 22](/image-22.png)
 
 
 ---
 
 # Page 25
 
-![Image 23](./image-23.png)
+![Image 23](/image-23.png)
 
 
 ---
 
 # Page 26
 
-![Image 24](./image-24.png)
+![Image 24](/image-24.png)
 
 
 ---
 
 # Page 27
 
-![Image 25](./image-25.png)
+![Image 25](/image-25.png)
 
 
 ---
 
 # Page 28
 
-![Image 26](./image-26.png)
+![Image 26](/image-26.png)
 
 
 ---
 
 # Page 29
 
-![Image 27](./image-27.png)
+![Image 27](/image-27.png)
 
 
 ---
