@@ -200,13 +200,21 @@ layout: default
 
 # Project Launch: The A1 Data Poster
 
-**Deliverable:** An A1-sized static data visualization poster based on your collected data.
+<br>
+
+**Deliverable:** 
+1. An A1-sized printed data visualization poster based on your collected data.
+2. Response essay about week 03 including your analysis about your datavis poster. So include the digital version of your design on your Notion blog.
 
 **Requirements:**
 
-1. **Hierarchy:** Must clearly demonstrate the Read-Glance-Deep Dive structure.
-2. **Typography:** Strict use of grid, kerning, and typographic contrast to separate titles from annotations.
-3. **Scale:** The "Read" and "Glance" layers must be legible from 2 meters away. The "Deep Dive" layer should reward close reading at 30 centimeters.
+- **Hierarchy:** Must clearly demonstrate the Read-Glance-Deep Dive structure.
+- **Typography:** Strict use of grid, kerning, and typographic contrast to separate titles from annotations.
+- **Scale:** The "Read" and "Glance" layers must be legible from 2 meters away. The "Deep Dive" layer should reward close reading at 30 centimeters.
+
+
+**_Paste the link to your week 03 response essay link on LMS._**
+
 
 ---
 layout: center

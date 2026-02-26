@@ -1,0 +1,16 @@
+{
+  "name": "cod412-week04-Live Coding",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.11.5",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "seedrandom": "^3.0.5",
+    "vue": "^3.5.27"
+  }
+}
