@@ -109,43 +109,6 @@ Creating the CSV
 ---
 layout: two-cols-header
 ---
-
-# Step 1: Create Headers
-
-The first row defines your data structure
-
-<div class="mt-8">
-
-### ❌ Bad Headers
-
-```csv
-Time I drank coffee, Type of drink, Amount
-```
-
-### ✅ Good Headers
-
-```csv
-timestamp,drink_type,volume_ml,location,mood
-```
-
-</div>
-
-::right::
-
-
-<v-clicks>
-
-**Rules:**
-- Single words or short phrases
-- Use underscores instead of spaces
-- Lowercase recommended
-- Descriptive but concise
-
-</v-clicks>
-
----
-layout: two-cols-header
----
 # Step 1: Create Headers
 
 The first row defines your data structure
@@ -187,8 +150,18 @@ timestamp,drink_type,volume_ml,location,mood
 </div>
 
 ---
+layout: two-cols-header
+class: mt-0
+---
+
+<div mt-20>
 
 # Step 2: Input Data
+
+</div>
+
+
+::left::
 
 Each row = one single event (granular record)
 
@@ -198,6 +171,8 @@ timestamp,drink_type,volume_ml,location,mood
 14:00,latte,350,campus,energetic
 19:00,americano,250,library,focused
 ```
+
+::right::
 
 <v-clicks>
 
@@ -249,7 +224,9 @@ home
 </div>
 
 ---
-
+class: text-3.5
+layout: center
+---
 # Data Cleaning Checklist
 
 <v-clicks>
@@ -270,6 +247,8 @@ home
 
 </v-clicks>
 
+---
+layout: center
 ---
 
 # Step 4: Export as CSV
@@ -295,7 +274,8 @@ File → Download → Comma Separated Values (.csv)
 </v-clicks>
 
 ---
-
+layout: center
+---
 # CSV Real-World Example
 
 Personal tracking data (coffee consumption)
@@ -315,7 +295,8 @@ date,time,drink_type,volume_ml,location,mood,caffeine_mg
 - 📱 Any visualization tool
 
 ---
-
+layout: center
+---
 # Visualization Tools for Your Data
 
 Upload your CSV and instantly visualize:
@@ -379,7 +360,8 @@ layout: section
 Planning before polishing
 
 ---
-
+layout: center
+---
 # What is Low-Fidelity?
 
 **Low-Fi Layout = Visual Blueprint**
@@ -403,7 +385,8 @@ Also called: Wireframe, Thumbnail, Rough
 </v-clicks>
 
 ---
-
+layout: center
+---
 # Low-Fi Guidelines
 
 <div class="grid grid-cols-2 gap-8 mt-8">
@@ -432,7 +415,8 @@ Also called: Wireframe, Thumbnail, Rough
 </div>
 
 ---
-
+layout: center
+---
 # Create 3 Different Layouts
 
 **Why three?** Prevent falling in love with your first idea!
@@ -519,6 +503,7 @@ layout: two-cols-header
 
 ---
 layout: two-cols-header
+class: p-15
 ---
 
 # Layout B: Columnar Narrative
@@ -577,7 +562,6 @@ layout: two-cols-header
 │          │  ┌────────┐  │  ┌────────────┐  │
 │          │  │  Data  │  │  │   Stats    │  │
 │          │  └────────┘  │  └────────────┘  │
-│          │              │                  │
 └──────────┴──────────────┴──────────────────┘
              Source & Credits
 ```
@@ -594,6 +578,7 @@ layout: two-cols-header
 
 ---
 layout: two-cols-header
+class: p-15
 ---
 
 # Layout C: Split Contrast
@@ -673,7 +658,8 @@ class: text-center!
 <img h-100 ml-auto mr-auto src='/All.jpg' />
 
 ---
-
+layout: center
+---
 # Deliverable Options
 
 Choose your preferred method:
@@ -788,7 +774,7 @@ Articles like "Global wealth inequality" use columnar layouts:
 
 <div>
 
-### Data Visualization Galleries
+### Data Collection & Sources
 - [Our World in Data](https://ourworldindata.org)
 - [Kaggle Datasets](https://kaggle.com)
 - [Google News Lab](https://newslab.withgoogle.com)
@@ -817,8 +803,13 @@ Articles like "Global wealth inequality" use columnar layouts:
 </div>
 
 ---
+layout: two-cols-header
+class: p-10
+---
 
 # Assignment Checklist
+
+::left::
 
 <v-clicks>
 
@@ -830,6 +821,12 @@ Articles like "Global wealth inequality" use columnar layouts:
 - [ ] Dates standardized (YYYY-MM-DD)
 - [ ] Exported as `.csv`
 
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
 ## Part 2: Layout Variations ✓
 - [ ] Layout A: Central Anchor created
 - [ ] Layout B: Columnar Narrative created
@@ -840,19 +837,6 @@ Articles like "Global wealth inequality" use columnar layouts:
 
 </v-clicks>
 
----
-layout: center
----
-
-# Key Takeaway
-
-**Don't polish a bad idea**
-
-<div class="text-2xl mt-8 opacity-75">
-
-Create multiple structures → Choose the strongest → Then refine
-
-</div>
 
 ---
 layout: end
