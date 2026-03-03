@@ -16,6 +16,7 @@ drawings:
 transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
+routerMode: hash
 # duration of the presentation
 duration: 35min
 colorSchema: dark
@@ -69,8 +70,13 @@ source: French composer (1883-1965)
 
 
 ---
+image: /image-1.jpeg
+layout: image
+---
 
 # Live Coding?
+
+<v-clicks>
 
 - Programming practice rather than a language
 - Music
@@ -79,15 +85,13 @@ source: French composer (1883-1965)
 - Node-based
 
 
+</v-clicks>
+
+
+
 ---
-
-# Page 2
-
-What is Live Coding?
-
-![Image 1](/image-1.png)
-
-
+layout: two-cols
+class: m-auto
 ---
 
 # Brief History of Live Coding
@@ -98,149 +102,202 @@ What is Live Coding?
 
 - 2011, Algorave (N. Collins, A. McLean)
 
-![Image 2](/image-2.png)
+::right::
+
+![Image 2](/image-2.jpeg)
 
 
 ---
+layout: two-cols
+class: m-auto
+---
 
-# Page 4
+# Algorave
+An algorave is an event where people dance to music generated from algorithms, often using live coding techniques. 
 
-Algorave
+📺 [Watch ResidentAdvisor](https://www.youtube.com/watch?v=S2EZqikCIfY&t=28s&ab_channel=ResidentAdvisor)
 
-![Image 3](/image-3.png)
+::right::
 
-**Links:**
-
-- [https://www.youtube.com/watch?v=S2EZqikCIfY&t=28s&ab_channel=ResidentAdvisor](https://www.youtube.com/watch?v=S2EZqikCIfY&t=28s&ab_channel=ResidentAdvisor)
+![](/image-3.jpeg)
 
 
 ---
+layout: two-cols
+class: center m-auto
+---
 
-# Page 5
+# Algorave Generation
 
-![Image 4](/image-4.png)
+Watch the 📺 [documentary](http://www.youtube.com/watch?v=S2EZqikCIfY){style="color:#ffcc00"}
+
+::right::
+
+<a href='http://www.youtube.com/watch?v=S2EZqikCIfY' target='_blank'><img w-120 src='/image-5.jpeg' /></a>
+
 
 
 ---
+layout: two-cols
+class: center m-auto
+---
 
-# Page 6
+# Coding the Party
 
-Documentary * Algorave Generation
+Watch the 📺 [documentary](http://www.youtube.com/watch?v=BcbsDcZ9k-A){style="color:#ffcc00"}
 
-![Image 5](/image-5.png)
+::right::
 
-**Links:**
-
-- [http://www.youtube.com/watch?v=S2EZqikCIfY](http://www.youtube.com/watch?v=S2EZqikCIfY)
+<a href='http://www.youtube.com/watch?v=BcbsDcZ9k-A' target='_blank'><img w-120 src='/image-6.jpeg' /></a>
 
 
 ---
+layout: two-cols
+class: center m-auto
+---
 
-# Page 7
+# The Creative Power of Live Coding
 
-Coding the Party * Documentary
+Watch the 📺 [documentary](http://www.youtube.com/watch?v=uA4SDytz8Aw){style="color:#ffcc00"}
 
-![Image 6](/image-6.png)
+::right::
 
-**Links:**
+<a href='http://www.youtube.com/watch?v=uA4SDytz8Aw' target='_blank'><img w-120 src='/image-7.jpeg' /></a>
 
-- [http://www.youtube.com/watch?v=BcbsDcZ9k-A](http://www.youtube.com/watch?v=BcbsDcZ9k-A)
+---
+layout: two-cols
+class: center m-auto
+---
+
+# The Creative Power of Live Coding
+
+Watch the 📺 [documentary](http://www.youtube.com/watch?v=Ix2b_qFYfAA){style="color:#ffcc00"}
+
+::right::
+
+<a href='http://www.youtube.com/watch?v=Ix2b_qFYfAA' target='_blank'><img w-120 src='/image-8.jpeg' /></a>
 
 
 ---
+layout: two-cols
+class: center m-auto
+---
 
-# Page 8
+# DJ Kindohm 
+[Mike Hodnick]{style="color:grey"}
 
-Documentary * The Creative Power of Live Coding
+📺  Watch the [performance](http://www.youtube.com/watch?v=Ix2b_qFYfAA){style="color:#ffcc00"}
 
-![Image 7](/image-7.png)
+⚙️ _Live coding tool → Tidalcycles_
 
-**Links:**
+::right::
 
-- [http://www.youtube.com/watch?v=uA4SDytz8Aw](http://www.youtube.com/watch?v=uA4SDytz8Aw)
+<a href='http://www.youtube.com/watch?v=smQOiFt8e4Q' target='_blank'><img w-120 src='/image-9.jpeg' /></a>
 
 
 ---
+layout: two-cols
+class: center m-auto
+---
 
-# Page 9
+# Joint Breakcore Live Coding Duo
 
-![Image 8](/image-8.png)
+📺  Watch the [performance](http://www.youtube.com/watch?v=XYe8AKYPUYc){style="color:#ffcc00"}
 
-**Links:**
+⚙️ _Live coding tool → Tidalcycles + [Troop](https://github.com/Qirky/Troop)_ 
 
-- [http://www.youtube.com/watch?v=Ix2b_qFYfAA](http://www.youtube.com/watch?v=Ix2b_qFYfAA)
+::right::
+
+<a href='http://www.youtube.com/watch?v=XYe8AKYPUYc' target='_blank'><img w-120 src='/image-10.jpeg' /></a>
+
 
 
 ---
+layout: section
+---
 
-# Page 10
-
-Kingdom - Mike Hodnick
-
-![Image 9](/image-9.png)
-
-**Links:**
-
-- [http://www.youtube.com/watch?v=smQOiFt8e4Q](http://www.youtube.com/watch?v=smQOiFt8e4Q)
+# Live Coding Tools
 
 
 ---
+layout: center
+---
 
-# Page 11
+# Sonic Pi
+Developed by Sam Aaron, [sonic-pi.net](https://sonic-pi.net)
 
-Joint Breakcore Live Coding Duo
+<div class='grid grid-cols-2 gap-4'>
+<div>
 
-![Image 10](/image-10.png)
+![Image 11](/image-11.jpeg)
 
-**Links:**
+</div>
 
-- [http://www.youtube.com/watch?v=XYe8AKYPUYc](http://www.youtube.com/watch?v=XYe8AKYPUYc)
+<div>
+
+![Image 4](/image-4.jpeg)
+
+</div>
+</div>
+
+---
+layout: image
+image: /image-12.jpeg
+class: m-auto
+title: How it works?
+---
+
+# <span class="bg-black bg-op-70 text-white p-2">How it works?</span>
+
+
+<br>
+
+<v-clicks>
+
+<span class="bg-black bg-op-70 text-white p-2">Based on SuperCollider</span>
+
+<span class="bg-black bg-op-70 text-white p-2">Sonic Pi GUI sends/receives OSC messages to server</span>
+
+<span class="bg-black bg-op-70 text-white p-2">Server sends messages to OSC</span>
+
+<span class="bg-black bg-op-70 text-white p-2">Tools → [TouchOSC](https://hexler.net/touchosc)</span>
+
+</v-clicks>
+
 
 
 ---
+image: /image-13.jpeg
+layout: image
+class: center pt-30
+title: OSC (Open Sound Control)
+---
 
-# Page 12
+# <span class='bg-black bg-op-70 text-white p-2'>OSC (Open Sound Control)</span>
 
-![Image 11](/image-11.png)
+<br>
+
+<span class='bg-black bg-op-70 text-white p-2'>Ongoing research project by Berkeley Center for New Music and Audio Technology (CNMAT)</span>
+
+<span class='bg-black bg-op-70 text-white p-2'>Open Sound Control (OSC) is an open.</span>
+
+<span class='bg-black bg-op-70 text-white p-2'>Transport-independent.</span>
+
+<span class='bg-black bg-op-70 text-white p-2'>Message-based protocol based on UDP.</span>
+
+<span class='bg-black bg-op-70 text-white p-2'>Developed for communication among computers, sound synthesizers, and other multimedia devices.</span>
+
 
 
 ---
-
-# How it works?
-
-- Based on SuperCollider
-
-- Sonic Pi GUI sends/receives OSC messages to server
-
-- Server sends messages to SC
-
-![Image 12](/image-12.png)
-
-
----
-
-# OSC (Open Sound Control)
-
-● Ongoing research project by Berkeley Center for New Music and Audio
-
-Technology (CNMAT)
-
-● Open Sound Control (OSC) is an open,
-
-● Transport-independent,
-
-● Message-based protocol based on UDP
-
-● Developed for communication among computers, sound synthesizers, and
-
-other multimedia devices.
-
-![Image 13](/image-13.png)
-
-
+image: /image-14.jpeg
+layout: image-left
+backgroundSize: 100%
+class: m-auto
 ---
 
 # SuperCollider
+Review the [web page](https://supercollider.github.io/) for more information. 
 
 - 1996, developed by James McCartney
 
@@ -256,143 +313,84 @@ other multimedia devices.
 
 - scide: IDE
 
-![Image 14](/image-14.png)
+---
+layout: center
+---
+
+# Sonic Pi Basics
+
+
+<div class='grid grid-cols-4 gap-4'>
+<div v-click>
+
+![Image 15](/image-15.jpeg)
+
+[Try this!]{style="color:grey"}
+
+</div>
+
+<div v-click>
+
+![Image 16](/image-16.jpeg)
+
+[Add more lines and notice the difference.]{style="color:grey"}
+
+</div>
+
+<div v-click>
+
+![Image 17](/image-17.jpeg)
+
+[Add more control to add periods and timing.]{style="color:grey"}
+
+</div>
+
+<div v-click>
+
+![Image 18](/image-18.jpeg)
+
+[Use actual note terminology to create tones.]{style="color:grey"}
+
+</div>
+</div>
+
 
 
 ---
-
-# Page 16
-
-https://sonic-pi.net
-
-
+layout: two-cols
+class: m-auto
 ---
+# Further Information About MIDI
 
-# Page 17
+Test using the same `Note name` and `MIDI number` on Sonic Pi.
 
-![Image 15](/image-15.png)
+🔗 [Reference](https://newt.phys.unsw.edu.au/jw/notes.html)
 
+::right::
 
----
+<img h-130 src='/image-19.jpeg' />
 
-# Page 18
-
-![Image 16](/image-16.png)
-
-
----
-
-# Page 19
-
-![Image 17](/image-17.png)
-
-
----
-
-# Page 20
-
-![Image 18](/image-18.png)
-
-
----
-
-# Further information about MIDI
-
-https://newt.phys.unsw.edu.au/jw/notes.html
-
-![Image 19](/image-19.png)
-
-**Links:**
-
-- [https://newt.phys.unsw.edu.au/jw/notes.html](https://newt.phys.unsw.edu.au/jw/notes.html)
-
-
----
-
-# Page 22
-
-![Image 20](/image-20.png)
-
-
----
-
-# Page 23
-
-![Image 21](/image-21.png)
-
-
----
-
-# Page 24
-
-![Image 22](/image-22.png)
-
-
----
-
-# Page 25
-
-![Image 23](/image-23.png)
-
-
----
-
-# Page 26
-
-![Image 24](/image-24.png)
-
-
----
-
-# Page 27
-
-![Image 25](/image-25.png)
-
-
----
-
-# Page 28
-
-![Image 26](/image-26.png)
-
-
----
-
-# Page 29
-
-![Image 27](/image-27.png)
 
 
 ---
 
 # Related Links
 
-1. Sonic Pi Essentials Book -
-
-2. https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1/
-
-3. TOPLAP - http://toplap.org
-
-4. Live Code Slack - http://live-code-slack.herokuapp.com/
-
-5. Algorave - http://algorave.com
-
-6. Sonic Pi on Github - https://github.com/samaaron/sonic-pi
-
-7. Sonic Pi Google Group - https://groups.google.com/forum/#!forum/sonic-pi
-
-8. Sonic Pi on Gitter.im - https://gitter.im/samaaron/sonic-pi
+- Sonic Pi Essentials Book
+- https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1
+- TOPLAP - http://toplap.org
+- Live Code Slack - http://live-code-slack.herokuapp.com
+- Algorave - http://algorave.com
+- Sonic Pi on Github - https://github.com/samaaron/sonic-pi
+- Sonic Pi Google Group - https://groups.google.com/forum/#!forum/sonic-pi
+- Sonic Pi on Gitter.im - https://gitter.im/samaaron/sonic-pi
+- Tidalcycles - https://tidalcycles.org
+- Strudel - https://strudel.cc
 
 
 ---
 
-# Final Project Proposal
+# Assignment
 
-Reference Page
-
-Project proposal template
-
-**Links:**
-
-- [https://teaching.alptugan.com/en/category/cod-412-sound-in-new-media/](https://teaching.alptugan.com/en/category/cod-412-sound-in-new-media/)
-- [https://teaching.alptugan.com/en/wp-content/uploads/2020/04/MertolOkcu-Cod412-FinalProposal.pdf](https://teaching.alptugan.com/en/wp-content/uploads/2020/04/MertolOkcu-Cod412-FinalProposal.pdf)
+Record a live coding performance.
+Use example codes as a starting point. Edit the original code to get different sound patterns.

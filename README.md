@@ -18,14 +18,14 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
 - [Week 02 - OOP](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week02_cod_208-OOP/)
 - [Week 03 - Games](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Games)
-- [Week 04 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity)
-- [Week 04 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game)
-- ~~[Week 05 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-- ~~[Week 06 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-- ~~[Week 07 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-- ~~[Week 08 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-- ~~[Week 09 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
-- ~~[Week 10 - ](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)~~
+- [Week 04 - What is Interactivity](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity)
+- [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game)
+- [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 06 - Studio Session: AR](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 07 - Machine Learning](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 09 - P5JS ComfyUI integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 10 - Data Visualization vs. Info Graphics](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - Week 12 - Final Project Proposals
 - Week 13 - Final Project Revision & Feedback
 - Week 14 - Final Project Revision & Feedback
