@@ -7,12 +7,22 @@ transition: fade-out
 
 # Assignments
 
+1. Submit screen-capture video of your game play. Keep it under 2 minutes. You have to do it properly. Convert the screen capture to mp4 video format using the [Frame](https://www.framegui.app/) App (40 points).
+
+2. Read the [article](https://teaching.alptugan.com/Tutorials/P5JS---Augmented-Reality) about Augmented Reality.
+
+3. Submit an augmented reality project as a pdf document. You don't need to write the code. Submit only your project idea in appropriate format. Use reference images or drawings to explain your project. (40 points). Refer to the following [video1](https://www.youtube.com/watch?v=4CSYA9R70R8), [video2 ](https://www.youtube.com/watch?v=KRvEFwHXm8s)
+
+4. Print a [fiducial marker](https://github.com/tetunori/p5.simpleAR/tree/main/markers) (20 points).
+
+<!--
 1. Finalize the game. (40 points)
 2. Submit the link to your project. (10 points)
 3. Submit a zip version of your project. (10 points)
 4. Submit screen-capture video of your game play. Keep it under 2 minutes. Convert the screencapture to mp4 video format using the [Frame](https://www.framegui.app/) App (20 points).
 5. Read the [article](https://teaching.alptugan.com/Tutorials/P5JS---Augmented-Reality) about Augmented Reality. Submit an augmented reality project (10 points).
 6. Print a [fiducial marker](https://github.com/tetunori/p5.simpleAR/tree/main/markers) (10 points).
+-->
 
 <!--
 1. 👀 Implement all of the scenes that you design for your game in P5Js.

@@ -169,7 +169,8 @@ layout: two-cols
 class: center m-auto
 ---
 
-# The Creative Power of Live Coding
+# Programming Masterly Music
+[Juan Romero & Patrick Borgeat]{style="color:grey"}
 
 Watch the 📺 [documentary](http://www.youtube.com/watch?v=Ix2b_qFYfAA){style="color:#ffcc00"}
 
@@ -371,13 +372,48 @@ Test using the same `Note name` and `MIDI number` on Sonic Pi.
 <img h-130 src='/image-19.jpeg' />
 
 
+---
+layout: image-left
+image: /tidal.jpg
+backgroundSize: 100%
+class: m-auto
+---
+
+# TidalCycles
+Refer to the [website](https://tidalcycles.org/) to download and setup the app on your own laptop.
+
+<v-clicks>
+
+
+- Strudel is javascript version of TidalCycles. 
+- Easy to setup.
+- Built-in samples / synths.
+
+</v-clicks>
+
+---
+layout: image-left
+image: /strudel.jpg
+backgroundSize: 100%
+class: m-auto
+---
+
+# Strudel
+Refer to the [website](https://strudel.cc/) to try Strudel online.
+
+<v-clicks>
+
+- Strudel is javascript version of TidalCycles. 
+- Easy to setup.
+- Built-in samples / synths.
+
+</v-clicks>
 
 ---
 
 # Related Links
 
-- Sonic Pi Essentials Book
-- https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1
+- Sonic Pi Essentials [Book](https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1)
 - TOPLAP - http://toplap.org
 - Live Code Slack - http://live-code-slack.herokuapp.com
 - Algorave - http://algorave.com
@@ -387,10 +423,40 @@ Test using the same `Note name` and `MIDI number` on Sonic Pi.
 - Tidalcycles - https://tidalcycles.org
 - Strudel - https://strudel.cc
 
+---
+layout: section
+---
+
+# Sound Works
+Review the listed sound works in the following [link](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week03-SoundHistory01/#/18).
+
+
+---
+layout: image-right
+image: /tools.jpeg
+backgroundSize: 100%
+class: text-3.2
+---
+
+# Tools
+
+- [Audio Enhancer Free](https://voice-clone.org/tools/audio-enhancer) AI Voice Enhancer Online. Free alternative to Adobe's Speech Enhancer.
+- [Tape Fiasco](https://www.erikssonjonas.com/tapefiasco) A free glitch and granular synthesis tool for creating quality sound textures.
+- [Vital Synth](https://vital.audio/) Sound synthesizer.
+- [List of Free VST](https://www.ufukonen.com/tr/ucretsiz-pluginler.html) Huge list of free VST tools suggested by [Ufuk Önen](https://www.ufukonen.com/tr/). 
+- [img-encode](https://github.com/alexadam/img-encode) Convert images into sound spectrograms.
+- TwoTone.io → Sonification tool for textual data and numbers.
+- [Resemble AI - Custom AI Generated Voices](https://app.resemble.ai/hub/sts)
+- [Mosspillow](https://www.youtube.com/watch?v=yWN9omtVdoU&list=PLzujfpc1847-TGyVlwm9TNTvN6xWSqELM&index=9) A pillow help you to sleep with sounds of nature.
+- [Voice Changer - Online & Free](https://voicechanger.io/)
+- [node.music](https://nodemusic.cc/) Interactive Electroacoustic history timeline.
+- Also check [[COD 323 Sound Design#VST & Virtual Instruments |VST & Virtual Instruments]] on COD 323 Sound Design page. 
+
+
 
 ---
 
 # Assignment
 
-Record a live coding performance.
+Record a live coding performance at least 1 minute. 
 Use example codes as a starting point. Edit the original code to get different sound patterns.
