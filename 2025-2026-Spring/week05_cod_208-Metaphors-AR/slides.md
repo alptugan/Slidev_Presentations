@@ -1,6 +1,6 @@
 ---
 css: unocss
-# background: /cover.jpeg
+image: /cover.jpg
 #image: /sci-fi-desk.jpg
 # some information about your slides (markdown enabled)
 title: COD 208 Creative Coding II
@@ -33,7 +33,7 @@ themeConfig:
   secondary: "#e2d292"
 ---
 
-# Metaphors in Interactivity
+# Metaphors in Communication Design
 
 Creative Coding 
 
@@ -79,10 +79,10 @@ metaphor is a comparison between two unlike things
 --- 
 image: /ms.png
 layout: image
+title: Metaphors in Apps
 ---
 
-<div mt-30 mx-14>
-<h1>Metaphors for computers</h1>
+<div mt-40 mx-14>
 
 <div text-black my-9 mx-2 v-click>
 
@@ -170,7 +170,7 @@ layout: two-cols
 <v-click>
 
 ### 3. Facial Feature Extraction
-<div>tNow we have a sharper image which is cleared from visual noises. </div>
+<div>Now we have a sharper image which is cleared from visual noises. </div>
 </v-click>
 
 ::right::
@@ -181,8 +181,9 @@ layout: two-cols
 <img mt-0 ml-14 w-120 src="/5.jpg"/>
 </v-click>
 
-
-<!--Edge detection helps us to perceive the image by reducing the noise on it which reveals a more simpler form of the picture.-->
+<!--
+Edge detection helps us to perceive the image by reducing the noise on it which reveals a more simpler form of the picture.
+-->
 
 ---
 layout: two-cols
@@ -327,12 +328,39 @@ class: text-center pt-50%
 Then lab study...
 
 ---
-transition: slide-up
-class:  m-0 text-left text-shadow-lg p-0
+layout: section
 ---
-<div id="imge">
-  <img absolute src="https://source.unsplash.com/collection/9468077"/>
-</div>
+
+# Lab Study
+.
+
+- Refer to the [tutorial](https://teaching.alptugan.com/Tutorials/P5JS---Augmented-Reality) in the following link.
+
+- Review the previous student works from the following [link 1](https://drive.google.com/drive/folders/1edO4_MdxBJG1ZL_TSAljGU7GBJtT5Ljt), [link 2](https://drive.google.com/drive/folders/1ndAaIwq1CQCZ2IgkZDWIXEeU6Jo0Pxcy).
+
+---
+transition: slide-up
+class: text-left text-3.3
+---
+
+# Assignment
+Create an Augmented Reality project. You have 3 options. Choose one below. Link to the [tutorial](https://teaching.alptugan.com/Tutorials/P5JS---Augmented-Reality).
+
+1. **Art:** Create an interactive AR sketch where the fiducial marker displays a unique piece of digital art or animation.
+
+2. **Education:** Design an AR-based educational tool that uses fiducial markers to teach a concept (e.g., design, astronomy, biology, geography, or math).
+
+2. **Interactive Poster:** Create a poster about a topic of your choice. You can use a material that you did before in your other typography or basic design courses. Attach the marker to the corner of your poster. Whenever, the user points the camera at the poster, it displays some more information or animation related to the printed design.
+
+You can use a single or multiple markers if you want. Refer to the example sketch In this sketch you need to print the first 6 markers (0wFrame.png, 1wFrame.png, 2wFrame.png, 3wFrame.png, 4wFrame.png, 5wFrame.png) from the following link.
+
+**General Submission Guidelines for All Assignments:**
+1. **Code Submission:** Submit the p5.js or openProcessing link.
+2. **Zipped Project Folder:** Compress the entire project folder. Upload on LMS.
+3. **Proof of Concept Video:** Record a video using your mobile phone's screen recorder to demonstrate the AR application in action. The video should clearly show the fiducial markers being detected and the AR content responding accordingly.
+
+
+<!--
 <div absolute mx-20 my-10 p-10 rounded style="background:rgba(0,0,0, 0.7);">
 <h1>Assignment</h1>
 1. Research on masks. (<a href="https://www.britannica.com/art/mask-face-covering/The-wearing-of-masks" target="_blank">Mask - The wearing of masks | Britannica</a>)<br/>
@@ -346,3 +374,5 @@ class:  m-0 text-left text-shadow-lg p-0
 
 <span text-yellow>Reading:</span> Randomness, <i>Computer Graphics & Computer Art, H. Franke, 1985</i>
 </div>
+-->
+
