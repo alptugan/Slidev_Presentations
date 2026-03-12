@@ -55,7 +55,7 @@ This is a [red text]{style="color:red"}
 
 ---
 
-<Toc />
+<Toc columns="2" />
 
 ---
 image: /s1.jpg

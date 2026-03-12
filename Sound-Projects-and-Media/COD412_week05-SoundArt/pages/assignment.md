@@ -7,7 +7,7 @@ title: Assignments
 
 # Assignment (Option 1)
 
-- Make something produces pleasent or unpleasent sounds.
+- Make something produces pleasant or unpleasant sounds.
 - It must be a physical object (You can modify an existing device to create interesting sound effects, if you prefer).
 - Review the projects in the book.
 
