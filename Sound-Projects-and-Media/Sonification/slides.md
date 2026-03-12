@@ -120,7 +120,7 @@ For example, the rate of clicking of a Geiger counter conveys the level of radia
 Data sonification have been explored in forums. Auditory display researchers have various backgrounds in science, arts, and humanities, like computer science, cognitive science, human factors, systematic musicology and soundscape design. Most of the proceedings are freely available through the Georgia Tech SMARTech repository.
 
 
-![Image 2](./image-2.png)
+![Image 2](/image-2.png)
 
 [https://www.icad.org/](https://www.icad.org/)
 
