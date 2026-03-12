@@ -10,12 +10,14 @@ title: Assignments
 - Make something produces pleasant or unpleasant sounds.
 - It must be a physical object (You can modify an existing device to create interesting sound effects, if you prefer).
 - Review the projects in the book.
+- Shoot a proof of concept video and upload the video to Google Drive/week05.
 
 
 # Assignment (Option 2)
 
 - Research about Sonification. 
 - Bring a table of data about any topic (Election results, Weather data, Biometrics, etc...) It must include at least 100 rows of entry...
+
  
 
 ::right::
