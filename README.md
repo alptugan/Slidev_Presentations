@@ -8,7 +8,8 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 02 - Acoustic Ecology](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
 - [Week 03 - Sound History 01](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week03-SoundHistory01/)
 - [Week 04 - Live Coding](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week04-LiveCoding)
-- [Week 05 - Sound History 02](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/)
+- [Week 05 - Sound Art](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week05-SoundArt)
+- [Week 06 - Sonification](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Sonification)
 
 ### COD 301 Design Studio III
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
@@ -16,6 +17,17 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 03 - Layouts](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Layouts/)
 - [Week 03 - Hierarchy](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Typography/)
 - [Week 04 - History](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week04-History)
+- [Week 05 - Animation](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week05-Animation)
+- Week 06 - Animation Reviews
+- Week 07 - Sound
+- Week 08 - Animation + Sound - **Critique Session 2**
+- Week 09 - Large Data Drafts
+- Week 10 - Large Data Visualization
+- Week 11 - Animation
+- Week 12 - Animation + Sound - **Critique Session 3**
+- Week 13 - Final Preps 
+- Week 14 - Final Preps 
+- Week 15 - **Final Jury**
 
 ### COD 208 Creative Coding II
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
@@ -23,12 +35,13 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 03 - Games](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Games)
 - [Week 04 - What is Interactivity](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity)
 - [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game)
-- [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR)
 - [Week 06 - Studio Session: AR](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
-- [Week 07 - Machine Learning](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
-- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 07 - Machine Learning](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-ML5_FaceApi)
+- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-ML5_FaceApi)
 - [Week 09 - P5JS ComfyUI integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - [Week 10 - Data Visualization vs. Info Graphics](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- Week 11 - Final Project Moodboards
 - Week 12 - Final Project Proposals
 - Week 13 - Final Project Revision & Feedback
 - Week 14 - Final Project Revision & Feedback
