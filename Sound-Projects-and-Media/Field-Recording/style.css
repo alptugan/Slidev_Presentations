@@ -2,10 +2,7 @@
     --slidev-code-padding: 8px 10px;
     --slidev-code-background: #16161680 !important;
 }
-.slidev-layout a {
-    border-color: #ffcc00;
-    color: #ffcc00;
-}
+
 /* Enable text selection globally */
 .slidev-layout,
 .slidev-code,
@@ -22,6 +19,11 @@ h3 {
 pre code {
     user-select: text !important;
     -webkit-user-select: text !important;
+}
+
+.slidev-layout a {
+    border-color: #ffcc00;
+    color: #ffcc00;
 }
 
 strong,

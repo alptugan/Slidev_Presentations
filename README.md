@@ -10,6 +10,9 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 04 - Live Coding](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week04-LiveCoding)
 - [Week 05 - Sound Art](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week05-SoundArt)
 - [Week 06 - Sonification](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Sonification)
+- [Week 07 - Listening Modes](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Listening-Modes)
+- [Week 08 - Field Recording](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Field-Recording)
+
 
 ### COD 301 Design Studio III
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)

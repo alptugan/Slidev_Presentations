@@ -7,6 +7,23 @@
     border-color: #ffcc00;
     color: #ffcc00;
 }
+/* Enable text selection globally */
+.slidev-layout,
+.slidev-code,
+span,
+p,
+h1,
+h2,
+h3 {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+}
+
+/* Optional: Ensure code blocks remain selectable */
+pre code {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+}
 
 strong,
 b {
