@@ -38,7 +38,7 @@ Extending p5JS via machine learning libraries
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    COD 208 - Week 06 Class <carbon:arrow-right class="inline"/>
+    COD 208 - Week 06-07 Class <carbon:arrow-right class="inline"/>
   </span>
 </div>
   <a href="https://github.com/alptugan/Slidev_Presentations" target="_blank" alt="GitHub" class="abs-br m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
@@ -174,6 +174,13 @@ Artificial Super Intelligence (ASI)
 
 
 ---
+layout: section
+---
+
+# Teachable Machine
+Review the [**tutorial**](https://teaching.alptugan.com/Tutorials/P5JS---ml5-and-Teachable-Machine-Integration) in the following article.
+
+---
 image: /ml.avif
 layout: image-left
 class: effect_Shadow
@@ -257,6 +264,7 @@ p5js 🤝 ml5 Project
 ---
 class: text-left 
 ---
+
 # Import ml5.js on a openProcessing project
 
 <div class='grid grid-cols-4 gap-4'>
@@ -282,16 +290,41 @@ class: text-left
 </div>
 
 ---
+layout: center
+---
 
-<div text-8> 3. Goto → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://learn.ml5js.org/#/reference/face-api' target='_blank'>ml5js web page</a></div>
+# Import ml5.js Lib to p5js project
 
-<div text-8 pt-5> 4. Navigate to → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://learn.ml5js.org/#/reference/face-api?id=examples' target='_blank'>FaceApi → Examples</a></div>
+<div class='flex gap-4 h-60'>
+<img class='flex-1 object-cover' src='/gettingstarted-sketch-folder-alpha.png' />
+<img v-click class='flex-1 object-cover' src='/gettingstarted-import-lib-alpha.png' />
+</div>
 
-<div text-8 pt-5> 5. Goto Github Repository → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://github.com/ml5js/ml5-library/tree/main/examples/p5js/FaceApi/FaceApi_Image_Landmarks' target='_blank'>FaceApi_Image_Landmarks</a></div>
+---
+layout: center
+---
 
-<div text-8 pt-5> 6. Copy the source code from → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://github.com/ml5js/ml5-library/tree/main/examples/p5js/FaceApi/FaceApi_Image_Landmarks' target='_blank'>sketch.js file</a></div>
+# Your First Birds Classifier (Tutorial)
 
-<img v-click h-55 src='/s5.jpg'/>
+Follow the instructions on the following [**page**](https://docs.ml5js.org/#/)! 
+
+
+---
+layout: image-left
+image: /s5.jpg
+backgroundSize: 100%
+---
+
+# Use Example Codes on Github
+
+<div text-6> 1. Goto → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://learn.ml5js.org/#/reference/face-api' target='_blank'>ml5js web page</a></div>
+
+<div text-6 pt-5> 2. Navigate to → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://learn.ml5js.org/#/reference/face-api?id=examples' target='_blank'>FaceApi → Examples</a></div>
+
+<div text-6 pt-5> 3. Goto Github Repository → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://github.com/ml5js/ml5-library/tree/main/examples/p5js/FaceApi/FaceApi_Image_Landmarks' target='_blank'>FaceApi_Image_Landmarks</a></div>
+
+<div text-6 pt-5> 4. Copy the source code from → <a class="opacity-50 !border-none !hover:text-white -mt-2" href='https://github.com/ml5js/ml5-library/tree/main/examples/p5js/FaceApi/FaceApi_Image_Landmarks' target='_blank'>sketch.js file</a></div>
+
 
 ---
 src: /pages/break.md
@@ -326,6 +359,20 @@ class: text-center py-50 effect_Shadow
 <Youtube id='ZXX9mDuqL48' width='100%' height='400'/>
 
 ---
+layout: section
+---
+
+# Example Code 
+
+<div class='flex gap-4 h-70'>
+<div class='flex-1 object-cover'> Review the code and run it. Discover its limitations and possibilities. <a href="https://editor.p5js.org/alptugan/sketches/X7acB1rZE" target="_blank">Click</a> to view source code.<br><br>Refer to the following <a href="https://teaching.alptugan.com/Tutorials/P5JS---ml5-Face-mesh-Mask-Switch#1-designing-masks" target="_blank">article</a> to prepare your own mask.</div>
+<img class='flex-1 object-cover' src='/example-code.jpg' />
+</div>
+
+
+
+
+---
 
 # You can use Pose.Net from ml5
 
@@ -334,3 +381,27 @@ class: text-center py-50 effect_Shadow
 ---
 src: /pages/assignment.md
 ---
+
+---
+layout: center
+---
+
+# References
+
+- [Google's Teachable Machine](https://teachablemachine.withgoogle.com/)
+- [ml5 Library](https://ml5js.org/)
+- [Audio-based Model Training](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Sound-Training)
+- [Face API](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Face-mesh-Mask-Switch)
+
+**Search on YouTube using the keywords; #ml5 #p5js #teachablemachine
+
+<style>
+  ul li {
+     list-style-type: none;
+  }
+
+  li a {
+    margin-left: -20px;
+  }
+
+</style>
