@@ -40,8 +40,8 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game)
 - [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR)
 - [Week 06 - Studio Session: AR](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
-- [Week 07 - Machine Learning](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-ML5_FaceApi)
-- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-ML5_FaceApi)
+- [Week 07 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine)
+- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi)
 - [Week 09 - P5JS ComfyUI integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - [Week 10 - Data Visualization vs. Info Graphics](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - Week 11 - Final Project Moodboards
