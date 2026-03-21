@@ -12,6 +12,7 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 06 - Sonification](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Sonification)
 - [Week 07 - Listening Modes](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Listening-Modes)
 - [Week 08 - Field Recording](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Field-Recording)
+- [Week 09 - Audiovisual](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Audiovisual)
 
 
 ### COD 301 Design Studio III
@@ -39,9 +40,9 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 04 - What is Interactivity](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity)
 - [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game)
 - [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR)
-- [Week 06 - Studio Session: AR](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
-- [Week 07 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine)
-- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi)
+- [Week 06 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine)
+- [Week 07 - Machine Learning Model Integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi)
+- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - [Week 09 - P5JS ComfyUI integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - [Week 10 - Data Visualization vs. Info Graphics](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - Week 11 - Final Project Moodboards
@@ -75,9 +76,11 @@ A collection of Slidev presentation projects for courses and workshops.
 
 ## 🎓 Workshops
 
+- [Algorithmic Art Praxis](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis)
 - [Code and Algorithm on Design](https://alptugan.github.io/Slidev_Presentations/Workshops/Code-and-algorithm-on-design/)
 - [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/Workshops/OMM_Arduino_Workshop/)
 - [OZU_Iletisim-ve-Tasarimi](https://alptugan.github.io/Slidev_Presentations/Workshops/OZU_Iletisim-ve-Tasarimi)
+- [ODTÜ - Live Coding 2026-04-29](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding)
 
 ## 🚀 Automated Deployment
 
