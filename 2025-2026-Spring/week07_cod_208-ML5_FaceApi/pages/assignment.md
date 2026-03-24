@@ -26,8 +26,8 @@ backgroundSize: 100%
 ---
 
 
-# Assignment 
-## Interactive Art Installation (Option 1) 
+# Assignment (Option 1) 
+## Interactive Art Installation
 
 You may choose one of the following:
 
@@ -45,8 +45,9 @@ layout: image-left
 class: m-0 text-left text-shadow-lg
 backgroundSize: 100%
 ---
-# Assignment 
-## Educational Game (Option 2) 
+
+# Assignment (Option 2) 
+## Educational Game 
 
 **Objective:** Develop a simple game that teaches users about the objects recognized by the classifier.
 
@@ -61,8 +62,9 @@ layout: image-left
 class: m-0 text-left text-shadow-lg
 backgroundSize: 100%
 ---
-# Assignment 
-## Assistive Tool (Option 3) 
+
+# Assignment (Option 3)
+## Assistive Tool 
 
 **Objective:** Build a tool that aids individuals with visual impairments by audibly identifying objects.
 
