@@ -220,11 +220,6 @@ class: text-center py-50 effect_Shadow
 
 <Youtube id='3yqANLRWGLo' width='100%' height='400'/>
 
----
-
-# Apply mask in place of the user's head
-
-<Youtube id='ZXX9mDuqL48' width='100%' height='400'/>
 
 ---
 layout: section
