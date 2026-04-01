@@ -42,8 +42,8 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR)
 - [Week 06 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine)
 - [Week 07 - Machine Learning Model Integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi)
-- [Week 08 - Studio Session: ML](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
-- [Week 09 - P5JS ComfyUI integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 08 - Studio Session: ML](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Face-mesh-Mask-Switch)
+- [Week 09 - P5JS ML5 Sound Training](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Sound-Training)
 - [Week 10 - Data Visualization vs. Info Graphics](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
 - Week 11 - Final Project Moodboards
 - Week 12 - Final Project Proposals
