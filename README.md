@@ -44,7 +44,7 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 07 - Machine Learning Model Integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi)
 - [Week 08 - Studio Session: ML](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Face-mesh-Mask-Switch)
 - [Week 09 - P5JS ML5 Sound Training](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Sound-Training)
-- [Week 10 - Data Visualization vs. Info Graphics](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/)
+- [Week 10 - Data Visualization vs. Info Graphics](https://teaching.alptugan.com/Tutorials/P5JS---Data-Visualization)
 - Week 11 - Final Project Moodboards
 - Week 12 - Final Project Proposals
 - Week 13 - Final Project Revision & Feedback
@@ -81,6 +81,7 @@ A collection of Slidev presentation projects for courses and workshops.
 - [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/Workshops/OMM_Arduino_Workshop/)
 - [OZU_Iletisim-ve-Tasarimi](https://alptugan.github.io/Slidev_Presentations/Workshops/OZU_Iletisim-ve-Tasarimi)
 - [ODTÜ - Live Coding 2026-04-29](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding)
+- [Sonar - Live Coding 2026-05-10](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding-Sonar)
 
 ## 🚀 Automated Deployment
 
