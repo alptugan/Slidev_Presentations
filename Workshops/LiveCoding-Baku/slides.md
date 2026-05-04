@@ -347,6 +347,28 @@ title: Flusser
   class="w-full h-110">
 </video>
 
+
+
+---
+layout: two-cols
+class: center m-auto
+---
+
+# RAW Performance POV Camera
+
+RAW live coding peformance at NOH Extended
+_24.04.2026_
+
+::right::
+
+<video 
+  src="https://media-host.alptugan.workers.dev/soundprojects/livecoding-raw.mp4" 
+  controls 
+  class="w-full h-115">
+</video>
+
+
+
 ---
 layout: section
 title: RAW Sonar Performance
