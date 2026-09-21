@@ -1,19 +1,17 @@
 {
-  "name": "week01_cod_207",
+  "name": "cod207-week01",
   "type": "module",
   "private": true,
   "scripts": {
     "build": "slidev build",
-    "dev": "slidev --open",
+    "dev": "slidev",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^52.2.4",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.21"
-  },
-  "devDependencies": {
-    "playwright-chromium": "^1.55.0"
+    "@slidev/cli": "^52.11.5",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "@slidev/theme-default": "^0.25.0",
+    "seedrandom": "^3.0.5",
+    "vue": "^3.5.27"
   }
 }
