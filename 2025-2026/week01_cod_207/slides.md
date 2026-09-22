@@ -238,7 +238,7 @@ class: text-center
 
 # Syllabus
 
-Go to LMS and view the syllabus.
+🦄 How did skim the syllabus? 
 
 <div style="padding-top:2%;padding-left:25%;width:auto;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/JlxFcvNuzlPYA" width="55%" height="47%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
@@ -253,13 +253,13 @@ Your overall grade for the class depends on the following subjects;
 
 <v-clicks>
 
-✅ Attendance 30%
+✅ Attendance 20%
 
-✍🏻 Assignments 30%
+✍🏻 Homework 30%
 
-🕹️ Final Project 30%
+🪧 Midterm Project 15%
 
-🪧 Presentation 10%
+🕹️ Final Project 35%
 
 </v-clicks>
 
@@ -442,10 +442,11 @@ This class is intended for students interested in exploring the creation of art 
 <img class="bgCover" style="opacity:0.2" src='/ian-schneider-jk8rarn6lmw-unsplash.jpeg'/>
 
 ---
-layout: two-cols
+layout: two-cols-header
 class: m-auto
 ---
 
+::left::
 # In practice 
 No need to be 🙊 🙈 🙉
 
@@ -468,6 +469,7 @@ No need to be 🙊 🙈 🙉
 
 😉 You are here to ask questions, not to be questioned. We are always willing to listen.
 </v-click>
+
 ::right::
 
 <iframe src="https://giphy.com/embed/evB90wPnh5LxG3XU5o" width="480" height="275" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>

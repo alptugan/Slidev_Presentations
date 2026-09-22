@@ -177,7 +177,7 @@ const poly3 = usePloy(3);
                 op-40
                 >•</span
             >
-            COD 208 Creative Coding II
+            COD 207 Creative Coding I
             <span
                 color-white
                 op-40
