@@ -229,7 +229,7 @@ layout: center
 
 <div v-click>
 Textual Programming Languages 
-<div text-gray text-3><logos-Javascript /> Javascript, <logos-C /> C , <logos-python /> Python </div>
+<div text-gray text-3><logos-Javascript /> Javascript, <logos-C /> C , <logos-Python /> Python </div>
 </div>
 
 <div v-click pt-3>
