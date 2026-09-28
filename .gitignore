@@ -16,3 +16,7 @@ slidevpatch.sh
 template-assets/
 **/pnpm-workspace.yaml
 **/dist/
+
+.agents/
+.goose/
+skills-lock.json
