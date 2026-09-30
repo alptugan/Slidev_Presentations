@@ -4,7 +4,6 @@ title: Week 02 - Shapes & Colors
 exportFilename: "week02-shapes-and-colors"
 class: text-center
 highlighter: shiki
-lineNumbers: true
 info: |
     ## Özyeğin University Course Presentation
     Lecturer Alp Tuğan, PhD<br>
@@ -13,27 +12,23 @@ drawings:
     persist: true
 aspect-ratio: 16/9
 css: unocss
-download: false
-# export options
-# use export CLI options in camelCase format
-# Learn more: https://sli.dev/guide/exporting.html
+download: true
+lineNumbers: true
 export:
     format: pdf
     timeout: 30000
     dark: true
     withClicks: false
     withToc: true
-# controls whether texts in slides are selectable
 selectable: true
 codeCopy: true
 colorSchema: auto
-# favicon, can be a local file path or URL
-favicon: 'https://raw.githubusercontent.com/alptugan/alptugan.com-v6/refs/heads/main/v6/favicon-72-precomposed.png?token=GHSAT0AAAAAADJYWS74VCPN2IEKYITFOZ422G2WTWA'
+favicon: "https://www.alptugan.com/v6/favicon-192.png"
 themeConfig:
     primary: "#ffcc00"
+routerMode: hash
 transition: fade-out
 theme: seriph
-routerMode: hash
 src: ./pages/header.md
 ---
 
