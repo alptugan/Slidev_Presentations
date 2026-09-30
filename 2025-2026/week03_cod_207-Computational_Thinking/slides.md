@@ -26,11 +26,13 @@ export:
 # controls whether texts in slides are selectable
 selectable: true
 codeCopy: true
+colorSchema: auto
 # favicon, can be a local file path or URL
 favicon: 'https://raw.githubusercontent.com/alptugan/alptugan.com-v6/refs/heads/main/v6/favicon-72-precomposed.png?token=GHSAT0AAAAAADJYWS74VCPN2IEKYITFOZ422G2WTWA'
 themeConfig:
     primary: "#ffcc00"
 transition: fade-out
+routerMode: hash
 theme: seriph
 src: ./pages/header.md
 ---
