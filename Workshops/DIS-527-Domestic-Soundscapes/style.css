@@ -1,0 +1,724 @@
+:root {
+  --slidev-transition-duration: 650ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+/* =========================================================
+   Light Mode Theme Contrast & Readability
+   ========================================================= */
+
+html:not(.dark),
+html.light {
+  --slidev-slide-container-background: #f1f2f6;
+  --slidev-theme-primary: #2563eb;
+  --slidev-controls-foreground: #1f2937;
+}
+
+html.dark {
+  --slidev-controls-foreground: #ffffff;
+}
+
+/* =========================================================
+   Bottom Navigation Bar & Slidev Controls (Light Mode)
+   ========================================================= */
+
+/* Nav bar container */
+html:not(.dark) nav,
+html.light nav {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) nav > div,
+html.light nav > div {
+  color: #1f2937 !important;
+}
+
+/* Floating bar style when persistNav is false */
+html:not(.dark) nav .bg-main,
+html.light nav .bg-main,
+html:not(.dark) nav .border-main,
+html.light nav .border-main {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Buttons in nav bar & controls */
+html:not(.dark) .slidev-icon-btn,
+html.light .slidev-icon-btn {
+  color: #1f2937 !important;
+  opacity: 0.85;
+}
+
+html:not(.dark) .slidev-icon-btn:hover,
+html.light .slidev-icon-btn:hover {
+  color: #111827 !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  opacity: 1 !important;
+}
+
+html:not(.dark) .slidev-icon-btn.active,
+html.light .slidev-icon-btn.active {
+  color: #2563eb !important;
+  background-color: rgba(37, 99, 235, 0.12) !important;
+  opacity: 1 !important;
+}
+
+html:not(.dark) .slidev-icon-btn.disabled,
+html.light .slidev-icon-btn.disabled {
+  color: #9ca3af !important;
+  opacity: 0.35 !important;
+}
+
+/* Ensure all SVG/mask icon glyphs render with dark currentColor */
+html:not(.dark) .slidev-icon-btn [class*="i-"],
+html.light .slidev-icon-btn [class*="i-"],
+html:not(.dark) nav [class*="i-"],
+html.light nav [class*="i-"] {
+  background-color: currentColor !important;
+}
+
+/* Dividers in nav bar */
+html:not(.dark) nav .w-1px,
+html.light nav .w-1px,
+html:not(.dark) nav .w-1px.bg-current,
+html.light nav .w-1px.bg-current {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  opacity: 1 !important;
+}
+
+/* Slide Counter (e.g. 6 / 36) */
+html:not(.dark) nav .px2.my-auto,
+html.light nav .px2.my-auto {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) nav .px2.my-auto span,
+html.light nav .px2.my-auto span {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) nav .px2.my-auto .text-lg,
+html.light nav .px2.my-auto .text-lg {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+html:not(.dark) nav .px2.my-auto .opacity-50,
+html.light nav .px2.my-auto .opacity-50 {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Dropdown menus & popups opened from bottom bar (Settings, Sync, Drawing tools) */
+html:not(.dark) .z-menu,
+html.light .z-menu,
+html:not(.dark) .z-nav,
+html.light .z-nav {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .z-menu *,
+html.light .z-menu *,
+html:not(.dark) .z-nav *,
+html.light .z-nav * {
+  color: #1f2937;
+}
+
+html:not(.dark) .z-menu .slidev-icon-btn,
+html.light .z-menu .slidev-icon-btn,
+html:not(.dark) .z-nav .slidev-icon-btn,
+html.light .z-nav .slidev-icon-btn {
+  color: #1f2937 !important;
+}
+
+/* Drawing toolbar in light mode */
+html:not(.dark) .z-nav.bg-main,
+html.light .z-nav.bg-main {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Slide canvas base */
+html:not(.dark) .slidev-slide-content,
+html.light .slidev-slide-content {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+html:not(.dark) .slidev-layout:not([style*="background-image"]),
+html.light .slidev-layout:not([style*="background-image"]) {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+/* Base Headings & Titles in Light Mode */
+html:not(.dark) .slidev-layout:not([style*="background-image"]):not(.text-white) h1,
+html.light .slidev-layout:not([style*="background-image"]):not(.text-white) h1 {
+  color: #111827;
+}
+
+html:not(.dark) .slidev-layout:not([style*="background-image"]):not(.text-white) h2,
+html.light .slidev-layout:not([style*="background-image"]):not(.text-white) h2 {
+  color: #1f2937;
+}
+
+/* Full-page photo background slides */
+.slidev-layout[style*="background-image"],
+.slidev-layout.text-white {
+  color: #ffffff !important;
+}
+
+.slidev-layout[style*="background-image"] h1,
+.slidev-layout[style*="background-image"] h2,
+.slidev-layout[style*="background-image"] h3,
+.slidev-layout.text-white h1,
+.slidev-layout.text-white h2,
+.slidev-layout.text-white h3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Ensure headings with text-neutral-900 are sharp and high-contrast */
+html:not(.dark) .text-neutral-900,
+html.light .text-neutral-900 {
+  color: #111827 !important;
+}
+
+html:not(.dark) .text-neutral-800,
+html.light .text-neutral-800 {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) .text-neutral-700,
+html.light .text-neutral-700 {
+  color: #374151 !important;
+}
+
+html:not(.dark) .text-neutral-600,
+html.light .text-neutral-600 {
+  color: #4b5563 !important;
+}
+
+html:not(.dark) .text-neutral-500,
+html.light .text-neutral-500 {
+  color: #6b7280 !important;
+}
+
+/* Light mode card surfaces: crisp, clean background with subtle border */
+html:not(.dark) .bg-neutral-100,
+html.light .bg-neutral-100 {
+  background-color: #f8fafc !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Subtle pill backgrounds (e.g. formula units) */
+html:not(.dark) .bg-neutral-200\/50,
+html.light .bg-neutral-200\/50 {
+  background-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+/* =========================================================
+   CRITICAL: Overlays on Dark Cards/Images Must Stay White
+   ========================================================= */
+.bg-black\/75,
+.bg-black\/80,
+.bg-black\/90,
+.bg-black {
+  color: #ffffff !important;
+}
+
+.bg-black\/75 .text-white,
+.bg-black\/80 .text-white,
+.bg-black\/90 .text-white,
+.bg-black .text-white {
+  color: #ffffff !important;
+}
+
+.bg-black\/75 .text-gray-300,
+.bg-black\/75 .text-gray-200,
+.bg-black\/80 .text-gray-300,
+.bg-black\/80 .text-gray-200 {
+  color: #e2e8f0 !important;
+}
+
+.bg-black\/75 .font-mono,
+.bg-black\/80 .font-mono {
+  color: #cbd5e1 !important;
+}
+
+/* Solid colored buttons/badges keep white text */
+.bg-red-600,
+.bg-red-600 * {
+  color: #ffffff !important;
+}
+
+/* Accent badges in light mode (e.g. restful / vibrate) */
+html:not(.dark) .bg-blue-500\/20,
+html.light .bg-blue-500\/20 {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+html:not(.dark) .bg-amber-500\/20,
+html.light .bg-amber-500\/20 {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+/* Formula gradient box in light mode */
+html:not(.dark) .bg-gradient-to-r,
+html.light .bg-gradient-to-r {
+  background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%) !important;
+  border-color: #bfdbfe !important;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.08) !important;
+}
+
+/* Artist tag badges in light mode */
+html:not(.dark) .bg-blue-100,
+html.light .bg-blue-100 {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfdbfe !important;
+  text-decoration: none !important;
+}
+
+/* =========================================================
+   Table of Contents (<Toc />) Clean Navigation Styling
+   ========================================================= */
+.slidev-toc {
+  margin-top: 0.25rem;
+}
+
+.slidev-toc ol,
+.slidev-toc-list {
+  margin: 0 !important;
+  padding-left: 1.25rem !important;
+  line-height: 1.15 !important;
+}
+
+.slidev-toc-list-level-2,
+.slidev-toc-list-level-3 {
+  margin-top: 0.08rem !important;
+  margin-bottom: 0.08rem !important;
+  padding-left: 1rem !important;
+}
+
+.slidev-toc-item,
+.slidev-layout li.slidev-toc-item,
+.slidev-layout .slidev-toc-item {
+  margin-top: 0 !important;
+  margin-bottom: 0.12rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.15 !important;
+}
+
+.slidev-toc-item a,
+.slidev-layout .slidev-toc-item a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  font-size: 0.88rem;
+  line-height: 1.15 !important;
+  display: inline;
+  transition: color 200ms ease;
+}
+
+.slidev-toc-item p,
+.slidev-layout .slidev-toc-item p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+}
+
+html:not(.dark) .slidev-toc-item a,
+html.light .slidev-toc-item a {
+  color: #1f2937 !important;
+  font-weight: 500;
+}
+
+html:not(.dark) .slidev-toc-item a:hover,
+html.light .slidev-toc-item a:hover {
+  color: #2563eb !important;
+}
+
+html:not(.dark) .slidev-toc-item::before,
+html.light .slidev-toc-item::before {
+  color: #d97706 !important; /* High contrast amber star */
+  margin-right: 0.4rem;
+}
+
+.dark .slidev-toc-item a {
+  color: #e5e7eb !important;
+}
+
+.dark .slidev-toc-item a:hover {
+  color: #60a5fa !important;
+}
+
+.dark .slidev-toc-item::before {
+  color: #fbbf24 !important;
+  margin-right: 0.4rem;
+}
+
+/* Image-right layouts: stylish rounded photo containers that properly fill height */
+.grid.grid-cols-2.w-full.h-full {
+  height: 100% !important;
+  align-items: stretch !important;
+}
+
+.slidev-layout.image-right + div {
+  height: calc(100% - 7rem) !important;
+  min-height: calc(100% - 7rem) !important;
+  align-self: stretch !important;
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.dark .slidev-layout.image-right + div {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.5);
+}
+
+/* General Link Cleanliness - remove dashed underline from theme */
+.slidev-layout a {
+  border-bottom: none !important;
+}
+
+html:not(.dark) a.underline,
+html.light a.underline {
+  text-decoration: underline !important;
+}
+
+/* =========================================================
+   Paragraph Line Height Enhancement (Excluding Cover & TOC)
+   ========================================================= */
+.slidev-page:not(.slidev-page-1):not(.slidev-page-2) .slidev-layout p,
+.slidev-layout:not(.intro):not(.toc-page):not(:has(.slidev-toc)) p {
+  line-height: 1.8 !important;
+}
+
+.slidev-page:not(.slidev-page-1):not(.slidev-page-2) .slidev-layout p.text-2xl,
+.slidev-layout:not(.intro):not(.toc-page):not(:has(.slidev-toc)) p.text-2xl {
+  line-height: 1.65 !important;
+}
+
+.slidev-page:not(.slidev-page-1):not(.slidev-page-2) .slidev-layout p.text-xl,
+.slidev-layout:not(.intro):not(.toc-page):not(:has(.slidev-toc)) p.text-xl {
+  line-height: 1.75 !important;
+}
+
+.slidev-page:not(.slidev-page-1):not(.slidev-page-2) .slidev-layout p.text-lg,
+.slidev-layout:not(.intro):not(.toc-page):not(:has(.slidev-toc)) p.text-lg {
+  line-height: 1.8 !important;
+}
+
+.slidev-page:not(.slidev-page-1):not(.slidev-page-2) .slidev-layout p.text-base,
+.slidev-layout:not(.intro):not(.toc-page):not(:has(.slidev-toc)) p.text-base {
+  line-height: 1.8 !important;
+}
+
+.slidev-page:not(.slidev-page-1):not(.slidev-page-2) .slidev-layout p.text-sm,
+.slidev-layout:not(.intro):not(.toc-page):not(:has(.slidev-toc)) p.text-sm {
+  line-height: 1.7 !important;
+}
+
+/* =========================================================
+   Universal Vertical Centering for Slides with Empty Space
+   ========================================================= */
+
+/* Ensure the layout container always takes full slide height */
+.slidev-layout {
+  height: 100% !important;
+  min-height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Automatically center content vertically across standard layouts, EXCLUDING Table of Contents & Image-Right grid */
+.slidev-layout.default:not(.toc-page):not(.image-right),
+.slidev-layout.intro,
+.slidev-layout.quote,
+.slidev-layout.section {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Image-right text column should fill height and let inner flex container center text */
+.slidev-layout.image-right {
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure full width on centered containers */
+.slidev-layout > .w-full,
+.slidev-layout > .max-w-3xl,
+.slidev-layout > .max-w-4xl,
+.slidev-layout > .max-w-5xl {
+  width: 100%;
+}
+
+/* =========================================================
+   Table of Contents (TOC) Slide - Strictly Top-Aligned
+   Do NOT apply vertical centering to the TOC page
+   ========================================================= */
+.slidev-layout.toc-page,
+.slidev-page-2 .slidev-layout,
+div[data-slidev-no="2"] .slidev-layout,
+.slidev-layout:has(.slidev-toc),
+.slidev-page:has(.slidev-toc) .slidev-layout {
+  display: block !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.slidev-layout.toc-page h1,
+.slidev-page-2 .slidev-layout h1,
+.slidev-layout:has(.slidev-toc) h1 {
+  margin-top: 0 !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.slidev-layout.toc-page .slidev-toc,
+.slidev-page-2 .slidev-toc,
+.slidev-layout:has(.slidev-toc) .slidev-toc {
+  width: 100% !important;
+  margin-top: 0 !important;
+}
+
+/* Explicit text color utilities in light mode */
+html:not(.dark) .text-blue-600,
+html.light .text-blue-600 {
+  color: #2563eb !important;
+}
+
+html:not(.dark) .text-emerald-600,
+html.light .text-emerald-600 {
+  color: #059669 !important;
+}
+
+html:not(.dark) .text-purple-600,
+html.light .text-purple-600 {
+  color: #7c3aed !important;
+}
+
+html:not(.dark) .text-amber-600,
+html.light .text-amber-600 {
+  color: #d97706 !important;
+}
+
+/* =========================================================
+   Apple Keynote Exponential Motion & Slide Transitions
+   ========================================================= */
+
+/* 3D Perspective Context for Z-axis Transitions */
+#page-root,
+.slidev-slide-container,
+.slidev-page {
+  perspective: 1200px;
+}
+
+/* Directional Z-axis Motion with Exponential Deceleration */
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: 
+    transform var(--slidev-transition-duration) var(--ease-out-expo),
+    opacity var(--slidev-transition-duration) var(--ease-out-expo),
+    filter var(--slidev-transition-duration) var(--ease-out-expo) !important;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+}
+
+.slide-left-enter-from {
+  transform: translate3d(0, 0, 140px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+
+.slide-left-leave-to {
+  transform: translate3d(0, 0, -140px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+
+.slide-right-enter-from {
+  transform: translate3d(0, 0, -140px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+
+.slide-right-leave-to {
+  transform: translate3d(0, 0, 140px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+
+/* Vertical Up/Down Sliding with Exponential Curve on Z-axis */
+.slide-up-enter-active,
+.slide-up-leave-active,
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: 
+    transform var(--slidev-transition-duration) var(--ease-out-expo),
+    opacity var(--slidev-transition-duration) var(--ease-out-expo),
+    filter var(--slidev-transition-duration) var(--ease-out-expo) !important;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+}
+
+.slide-up-enter-from {
+  transform: translate3d(0, 0, 100px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+.slide-up-leave-to {
+  transform: translate3d(0, 0, -100px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+
+.slide-down-enter-from {
+  transform: translate3d(0, 0, -100px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+.slide-down-leave-to {
+  transform: translate3d(0, 0, 100px) scale(0.97) !important;
+  opacity: 0 !important;
+  filter: blur(4px) !important;
+}
+
+/* Atmospheric Exponential Fading */
+.fade-enter-active,
+.fade-leave-active {
+  transition: 
+    opacity 600ms var(--ease-out-expo),
+    transform 600ms var(--ease-out-expo),
+    filter 600ms var(--ease-out-expo) !important;
+  will-change: opacity, transform, filter;
+}
+
+.fade-enter-from {
+  opacity: 0 !important;
+  transform: scale(0.98) !important;
+  filter: blur(3px) !important;
+}
+
+.fade-leave-to {
+  opacity: 0 !important;
+  transform: scale(1.02) !important;
+  filter: blur(3px) !important;
+}
+
+/* =========================================================
+   Click Animations (v-click) - Exponential Float & Reveal
+   ========================================================= */
+
+.slidev-vclick-target {
+  transition: 
+    opacity 600ms var(--ease-out-expo),
+    transform 600ms var(--ease-out-expo),
+    filter 600ms var(--ease-out-expo),
+    box-shadow 600ms var(--ease-out-expo) !important;
+  will-change: opacity, transform, filter;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0 !important;
+  transform: translate3d(0, 16px, 0) scale(0.985) !important;
+  filter: blur(4px) !important;
+  pointer-events: none !important;
+}
+
+/* Smooth Interactive Micro-animations */
+a, 
+button, 
+.interactive-card {
+  transition: 
+    color 350ms var(--ease-out-expo),
+    background-color 350ms var(--ease-out-expo),
+    border-color 350ms var(--ease-out-expo),
+    transform 350ms var(--ease-out-expo),
+    box-shadow 350ms var(--ease-out-expo) !important;
+}
+
+/* Slide Typography & Contrast Polish */
+.slidev-layout {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apple-style subtle glass cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   Enable Text Selection (Override theme-apple-basic select-none)
+   ========================================================= */
+.slidev-layout,
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout p,
+.slidev-layout div,
+.slidev-layout span,
+.slidev-layout li,
+.slidev-layout table,
+.slidev-layout td,
+.slidev-layout th,
+.slidev-layout blockquote,
+.slidev-layout pre,
+.slidev-layout code {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* Explicitly keep UI controls & buttons non-selectable */
+button,
+.slidev-icon-btn,
+.toc-page-no,
+.toc-leader,
+nav,
+nav * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* =========================================================
+   Intro Image Cover Slide Styling
+   ========================================================= */
+.slidev-layout.intro-image {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.slidev-layout.intro-image h1,
+.slidev-layout.intro-image h2,
+.slidev-layout.intro-image h3,
+.slidev-layout.intro-image p {
+  color: #ffffff !important;
+}
+

@@ -1,0 +1,29 @@
+{
+  "name": "dis-527-domestic-soundscapes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.0.0",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "@slidev/theme-default": "latest",
+    "markdown-it": "^14.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "markdown-it": "^14.1.0"
+    }
+  },
+  "overrides": {
+    "markdown-it": "^14.1.0"
+  },
+  "resolutions": {
+    "markdown-it": "^14.1.0"
+  },
+  "packageManager": "pnpm@10.29.2"
+}
