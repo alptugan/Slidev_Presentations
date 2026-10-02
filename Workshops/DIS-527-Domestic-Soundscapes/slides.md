@@ -16,6 +16,9 @@ aspectRatio: 16/9
 canvasWidth: 980
 layout: intro-image
 image: /images/cover.jpeg
+themeConfig:
+  primary: "#ffcc00"
+  secondary: "#e2d292"
 ---
 
 # Domestic Soundscapes
@@ -31,6 +34,13 @@ From Field Capture to Audio Archive
   <span>Field Recording & Sensory Methods</span>
 </div>
 
+
+
+---
+src: /pages/aboutme.md
+---
+
+
 ---
 layout: default
 hideInToc: true
@@ -39,6 +49,7 @@ hideInToc: true
 # Table of Contents
 
 <TableOfContents :columns="2" />
+
 
 ---
 layout: intro-image
@@ -57,7 +68,7 @@ layout: default
 
 <div class="grid grid-cols-2 gap-8 mt-4">
   <div class="space-y-4">
-  <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60" v-click>
+  <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60">
   <p class="text-sm text-neutral-600 dark:text-neutral-300 m-0">
   Investigates the reciprocal relationship between living inhabitants and their sound environment, mediated through sensory perception and cultural practices.
   </p>
@@ -70,7 +81,7 @@ layout: default
   </div>
   </div>
 
-  <div class="relative w-full h-full min-h-[280px] rounded-xl overflow-hidden shadow-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900">
+  <div class="relative w-full h-full min-h-[280px] rounded-xl overflow-hidden shadow-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900" v-click>
   <img 
     src="/images/domestic-kitchen.jpg" 
     alt="Domestic acoustic habitat: everyday culinary routines and kitchen soundscape" 
@@ -145,7 +156,7 @@ layout: default
 layout: default
 ---
 
-# Domestic Keynote Sounds
+# Keynote Sounds
 ### The Unconscious Acoustic Foundation
 
 <div class="grid grid-cols-2 gap-8 items-center mt-2">
@@ -194,7 +205,7 @@ hideInToc: true
 layout: default
 ---
 
-# Domestic Sound Signals
+# Sound Signals
 ### Foreground Prompts & Household Alerts
 
 <div class="grid grid-cols-2 gap-8 items-center mt-2">
@@ -234,7 +245,7 @@ layout: default
 layout: default
 ---
 
-# Domestic Soundmarks
+# Soundmarks
 ### Auditory Landmarks & Memory Anchors
 
 <div class="grid grid-cols-2 gap-8 items-center mt-2">
@@ -350,7 +361,7 @@ backgroundSize: cover
 class: text-white
 ---
 
-# Domestic Biophony & Geophony
+# Biophony & Geophony
 ### Natural Energies Infiltrating the Shell
 
 <div class="grid grid-cols-2 gap-8 items-start mt-2">
@@ -399,7 +410,7 @@ class: text-white
 layout: default
 ---
 
-# Domestic Anthrophony & Materiality
+# Anthrophony
 ### Embodied Actions and Mechanical Companions
 
 <div class="grid grid-cols-2 gap-8 items-center mt-2">
@@ -527,7 +538,7 @@ layout: default
 layout: default
 ---
 
-# Step 1: Define Research Scope
+# Step 1: The Scope
 ### Questions, Spatial Boundaries & Practices
 
 <div class="grid grid-cols-3 gap-5 mt-4">
@@ -563,7 +574,7 @@ class: text-white
 ---
 
 # Step 2: Design Data Schema & Metadata
-### Standardizing Multimodal Field Capture
+### Standardizing Multimodal Field Capture (Gökçeada and Assos cases)
 
 <div class="grid grid-cols-2 gap-6 mt-4">
   <div class="p-4 rounded-xl border border-white/15 bg-black/75 backdrop-blur-md shadow-2xl" v-click>
@@ -802,10 +813,10 @@ layout: default
   <h4 class="text-xs font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-200 m-0">Capture & Documentation</h4>
   </div>
   <ul class="text-xs text-neutral-700 dark:text-neutral-300 space-y-1.5 m-0 p-0 pl-4">
-  <li v-click><strong>Audio Recording:</strong> Mobile phones, handheld recorders, cables, mics, stand, tripod, headphones</li>
-  <li v-click><strong>Note Taking:</strong> Digital tablet, pen and paper</li>
-  <li v-click><strong>Camera:</strong> Mobile phones, professional camera</li>
-  <li v-click><strong>Backup Power:</strong> Power banks, spare batteries, chargers</li>
+  <li><strong>Audio Recording:</strong> Mobile phones, handheld recorders, cables, mics, stand, tripod, headphones</li>
+  <li><strong>Note Taking:</strong> Digital tablet, pen and paper</li>
+  <li><strong>Camera:</strong> Mobile phones, professional camera</li>
+  <li><strong>Backup Power:</strong> Power banks, spare batteries, chargers</li>
   </ul>
   </div>
 
@@ -815,9 +826,9 @@ layout: default
   <h4 class="text-xs font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-200 m-0">Studio & Post-Production</h4>
   </div>
   <ul class="text-xs text-neutral-700 dark:text-neutral-300 space-y-1.5 m-0 p-0 pl-4">
-  <li v-click><strong>DAW / Sound Editor:</strong> Reaper, DaVinci Resolve, Pro Tools, Live, Logic Pro, Audacity</li>
-  <li v-click><strong>Sound Analysis Tools:</strong> Sonic Visualiser</li>
-  <li v-click><strong>Listening Monitors:</strong> Genelec, Dynaudio, Kali, M-Audio</li>
+  <li><strong>DAW / Sound Editor:</strong> Reaper, DaVinci Resolve, Pro Tools, Live, Logic Pro, Audacity</li>
+  <li><strong>Sound Analysis Tools:</strong> Sonic Visualiser</li>
+  <li><strong>Listening Monitors:</strong> Genelec, Dynaudio, Kali, M-Audio</li>
   </ul>
   </div>
   </div>
@@ -870,15 +881,15 @@ hideInToc: true
     Acoustic Ecology & Soundscape Theory
   </h3>
   <div class="space-y-3.5 text-xs text-neutral-700 dark:text-neutral-300">
-  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed" v-click>
+  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed">
   <strong class="text-neutral-900 dark:text-white block mb-0.5">Schafer, R. M. (1977).</strong>
   <em>The Tuning of the World</em>. New York: Alfred A. Knopf.
   </div>
-  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed" v-click>
+  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed">
   <strong class="text-neutral-900 dark:text-white block mb-0.5">Krause, B. (2008).</strong>
   Anatomy of the soundscape: Evolving perspectives. <em>Journal of the Audio Engineering Society</em>, 56(1/2), 73–80.
   </div>
-  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed" v-click>
+  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed">
   <strong class="text-neutral-900 dark:text-white block mb-0.5">Grinfeder, E., Lorenzi, C., Haupert, S., & Sueur, J. (2022).</strong>
   What do we mean by “soundscape”? A functional description. <em>Frontiers in Ecology and Evolution</em>, 10, 894232.
   <a href="https://doi.org/10.3389/fevo.2022.894232" target="_blank" class="block mt-1 text-blue-600 dark:text-blue-400 font-mono text-[0.7rem] hover:underline">
@@ -893,11 +904,11 @@ hideInToc: true
     Sensory Methods & Ecological Frameworks
   </h3>
   <div class="space-y-3.5 text-xs text-neutral-700 dark:text-neutral-300">
-  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed" v-click>
+  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed">
   <strong class="text-neutral-900 dark:text-white block mb-0.5">Pink, S. (2015).</strong>
   <em>Doing Sensory Ethnography</em> (2nd ed.). London: SAGE Publications.
   </div>
-  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed" v-click>
+  <div class="p-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/60 leading-relaxed">
   <strong class="text-neutral-900 dark:text-white block mb-0.5">Znidersic, E., & Watson, D. M. (2022).</strong>
   Acoustic restoration: Using soundscapes to benchmark and fast-track recovery of ecological communities. <em>Ecology Letters</em>, 25(7), 1595–1604.
   <a href="https://doi.org/10.1111/ele.14015" target="_blank" class="block mt-1 text-blue-600 dark:text-blue-400 font-mono text-[0.7rem] hover:underline">
