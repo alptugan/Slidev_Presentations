@@ -82,9 +82,9 @@ layout: default
 
 # Simulation
 
-Click <a href="/Drawing%20Order%20Simulator.html" target="_blank" rel="noopener">here</a> or the image to open the Drawing Order Simulator.
+Click <a href="Drawing%20Order%20Simulator.html" target="_blank" rel="noopener">here</a> or the image to open the Drawing Order Simulator.
 
-<a href="/Drawing%20Order%20Simulator.html" target="_blank" rel="noopener">
+<a href="Drawing%20Order%20Simulator.html" target="_blank" rel="noopener">
   <img src='/simulation-order.jpg' />
 </a>
 
