@@ -1,0 +1,768 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset=utf8>
+  <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <style>
+    :root {
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font: 14px -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #faf9f5;
+      color: #141413
+    }
+
+    img {
+      max-width: 100%
+    }
+
+    [hidden]:not([hidden=until-found i]) {
+      display: none !important
+    }
+  </style>
+</head>
+
+<body>
+  <title>Drawing Order Simulator</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap">
+  <style>
+    /* Layout: two-column workbench (code list | canvas + layer stack), then a draw() loop demo, then class prompts. Same identity as the for-loop simulators. */
+    :root {
+      --bg: #eef0f4;
+      --panel: #fff;
+      --ink: #14161a;
+      --mute: #5d6470;
+      --line: #d5d9e0;
+      --accent: #ff3d8b;
+      --state: #2f4bff;
+      --shape: #00996a;
+      --wipe: #e59a00;
+      --code: #14161a;
+      --codeink: #e9ecf1;
+      --hl: #2a2f3a;
+      --display: "Bricolage Grotesque", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #101216;
+        --panel: #1a1d23;
+        --ink: #eef0f4;
+        --mute: #9aa2b0;
+        --line: #2c313a;
+        --accent: #ff6aa5;
+        --state: #7b8dff;
+        --shape: #2fd39b;
+        --wipe: #ffbb33;
+        --code: #0b0c0f;
+        --hl: #232833;
+        color-scheme: dark
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #101216;
+      --panel: #1a1d23;
+      --ink: #eef0f4;
+      --mute: #9aa2b0;
+      --line: #2c313a;
+      --accent: #ff6aa5;
+      --state: #7b8dff;
+      --shape: #2fd39b;
+      --wipe: #ffbb33;
+      --code: #0b0c0f;
+      --hl: #232833;
+      color-scheme: dark
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 16px/1.5 var(--display);
+      margin: 0
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+      display: grid;
+      gap: 16px
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.05;
+      margin: 8px 0 4px;
+      letter-spacing: -.02em;
+      text-wrap: balance
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: var(--mute)
+    }
+
+    .sub {
+      color: var(--mute);
+      margin: 0;
+      max-width: 64ch
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: 16px
+    }
+
+    @media(max-width:860px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      min-width: 0
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center
+    }
+
+    label.sel {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--mute)
+    }
+
+    select {
+      font: 600 15px var(--display);
+      padding: 8px;
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--ink)
+    }
+
+    button {
+      font: 600 15px var(--display);
+      padding: 9px 14px;
+      border-radius: 6px;
+      border: 2px solid var(--ink);
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer
+    }
+
+    button.pri {
+      background: var(--ink);
+      color: var(--bg)
+    }
+
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--state);
+      outline-offset: 2px
+    }
+
+    button:disabled {
+      opacity: .35;
+      cursor: default
+    }
+
+    /* code list */
+    .code {
+      background: var(--code);
+      color: var(--codeink);
+      border-radius: 8px;
+      padding: 8px 0;
+      margin: 12px 0 0;
+      font: 400 14px/1.5 var(--mono);
+      overflow-x: auto
+    }
+
+    .ln {
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px 3px 6px;
+      border-left: 4px solid transparent;
+      min-width: 340px
+    }
+
+    .ln .no {
+      color: #6b7280;
+      text-align: right;
+      font-size: 12px
+    }
+
+    .ln .tx {
+      white-space: pre
+    }
+
+    .ln.state .tx .fn {
+      color: #8b9bff
+    }
+
+    .ln.shape .tx .fn {
+      color: #3fe0a8
+    }
+
+    .ln.wipe .tx .fn {
+      color: #ffc44d
+    }
+
+    .ln.done {
+      opacity: 1
+    }
+
+    .ln.todo {
+      opacity: .55
+    }
+
+    .ln.cur {
+      background: var(--hl);
+      border-left-color: #ff6aa5
+    }
+
+    .ln.off .tx {
+      color: #6b7280;
+      text-decoration: line-through
+    }
+
+    .sw {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      margin-left: 8px;
+      vertical-align: -1px;
+      border: 1px solid #fff5
+    }
+
+    .tools {
+      display: flex;
+      gap: 2px
+    }
+
+    .tools button {
+      font: 700 13px var(--mono);
+      padding: 2px 7px;
+      border: 1px solid #3a404c;
+      background: transparent;
+      color: var(--codeink);
+      border-radius: 4px;
+      min-width: 28px
+    }
+
+    .tools button:hover:not(:disabled) {
+      background: #2f3542
+    }
+
+    .say {
+      min-height: 3.4em;
+      padding: 10px 12px;
+      border-left: 6px solid var(--line);
+      background: var(--bg);
+      border-radius: 0 6px 6px 0;
+      margin-top: 12px
+    }
+
+    .say.state {
+      border-color: var(--state)
+    }
+
+    .say.shape {
+      border-color: var(--shape)
+    }
+
+    .say.wipe {
+      border-color: var(--wipe)
+    }
+
+    .say.note {
+      border-color: var(--accent)
+    }
+
+    /* canvas side */
+    .stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 12px
+    }
+
+    @media(max-width:560px) {
+      .stage {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .holder {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      background-image: linear-gradient(45deg, #e6e8ec 25%, transparent 25%, transparent 75%, #e6e8ec 75%), linear-gradient(45deg, #e6e8ec 25%, transparent 25%, transparent 75%, #e6e8ec 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px
+    }
+
+    .holder canvas {
+      display: block;
+      width: 100% !important;
+      height: auto !important
+    }
+
+    .cap {
+      font-size: 13px;
+      color: var(--mute);
+      margin: 6px 0 0
+    }
+
+    .pen {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: var(--mute);
+      flex-wrap: wrap
+    }
+
+    .pen b {
+      font: 700 13px var(--mono);
+      color: var(--ink)
+    }
+
+    .pen .sw {
+      border-color: var(--line);
+      margin-left: 4px
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 4px
+    }
+
+    .layer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font: 400 12px var(--mono);
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--bg)
+    }
+
+    .layer .sw {
+      margin: 0;
+      border-color: var(--line)
+    }
+
+    .layer.new {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent)
+    }
+
+    .layer.bg {
+      border-style: dashed
+    }
+
+    .stack-h {
+      font-size: 12px;
+      color: var(--mute);
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 4px
+    }
+
+    /* loop demo */
+    .choice {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .choice button[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--bg)
+    }
+
+    pre.loop {
+      margin: 12px 0 0;
+      background: var(--code);
+      color: var(--codeink);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font: 400 14px/1.6 var(--mono);
+      overflow-x: auto
+    }
+
+    pre.loop .on {
+      background: #e59a00;
+      color: #111;
+      border-radius: 3px;
+      padding: 0 3px
+    }
+
+    pre.loop .gone {
+      color: #6b7280
+    }
+
+    .fc {
+      font: 700 14px var(--mono)
+    }
+
+    ul {
+      margin: 6px 0 0;
+      padding-left: 20px
+    }
+
+    li {
+      margin: 4px 0;
+      max-width: 80ch
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important
+      }
+    }
+  </style>
+
+  <main>
+    <header>
+      <h1>Drawing order in p5.js</h1>
+      <p class="sub">p5.js paints like a painter: each line adds paint on top of what is already there. Nothing is ever
+        moved behind. Reorder the lines, then step through them and watch the layers stack up.</p>
+    </header>
+
+    <div class="grid">
+      <section class="card" aria-labelledby="h-code">
+        <h2 id="h-code">1. The code, top to bottom</h2>
+        <div class="row">
+          <label class="sel">Example
+            <select id="preset">
+              <option value="land">A house in the hills</option>
+              <option value="target">A target of circles</option>
+            </select>
+          </label>
+        </div>
+        <div class="code" id="code" role="list" aria-label="Lines of the sketch"></div>
+        <p class="cap">↑ ↓ move a line. <b>//</b> turns a line off, like commenting it out.</p>
+        <div class="row" style="margin-top:8px">
+          <button class="pri" id="bStep">Step</button>
+          <button id="bPlay">Play</button>
+          <button id="bAll">Run all</button>
+          <button id="bReset">Reset order</button>
+        </div>
+        <div class="say" id="say" aria-live="polite"></div>
+      </section>
+
+      <section class="card" aria-labelledby="h-canvas">
+        <h2 id="h-canvas">2. The canvas</h2>
+        <div class="pen" id="pen"></div>
+        <div class="stage">
+          <div>
+            <div class="holder" id="holder"></div>
+            <p class="cap">The checkerboard means nothing has been painted there yet.</p>
+          </div>
+          <div>
+            <div class="stack-h"><span>Layers</span><span>top ↑</span></div>
+            <div class="stack" id="stack" aria-label="Shapes painted so far, newest on top"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="h-try">
+      <h2 id="h-try">Try this in by yourself</h2>
+      <ul>
+        <li>In the house example, move <b>circle()</b> (the sun) below <b>triangle()</b>. The sun now sits in front of
+          the hill. Ask students why.</li>
+        <li>Move <b>background()</b> to the last line. Everything disappears. Step through it so students see the shapes
+          being painted and then covered.</li>
+        <li>Move the door's <b>fill()</b> below its <b>rect()</b>. The door turns the house colour. fill() changes the
+          paint for the shapes that come after it, never before.</li>
+        <li>Turn off the first <b>background()</b> with <b>//</b>. The empty areas show the checkerboard: an unpainted
+          canvas is transparent.</li>
+        <li>In the target example, ask students to predict the picture if the smallest circle is drawn first. Then try
+          it.</li>
+        <li>In part 3, choose "In setup()". The circle leaves a trail because nothing paints over the old frames.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script>
+    const $ = id => document.getElementById(id);
+    const W = 400, H = 300;
+
+    const PRESETS = {
+      land: [
+        { t: "background", a: [135, 196, 235], name: "sky" },
+        { t: "noStroke", a: [] },
+        { t: "fill", a: [255, 190, 60] },
+        { t: "circle", a: [290, 95, 90], name: "sun" },
+        { t: "fill", a: [72, 122, 96] },
+        { t: "triangle", a: [20, 240, 230, 80, 420, 240], name: "hill" },
+        { t: "fill", a: [112, 162, 82] },
+        { t: "rect", a: [0, 240, 400, 60], name: "ground" },
+        { t: "fill", a: [196, 82, 60] },
+        { t: "rect", a: [70, 160, 110, 100], name: "house" },
+        { t: "fill", a: [62, 42, 32] },
+        { t: "rect", a: [112, 200, 28, 60], name: "door" }
+      ],
+      target: [
+        { t: "background", a: [238, 232, 220], name: "paper" },
+        { t: "noStroke", a: [] },
+        { t: "fill", a: [214, 40, 60] },
+        { t: "circle", a: [200, 150, 230], name: "big red" },
+        { t: "fill", a: [255, 255, 255] },
+        { t: "circle", a: [200, 150, 160], name: "white" },
+        { t: "fill", a: [214, 40, 60] },
+        { t: "circle", a: [200, 150, 90], name: "small red" },
+        { t: "fill", a: [255, 255, 255] },
+        { t: "circle", a: [200, 150, 30], name: "centre" }
+      ]
+    };
+    const KIND = { background: "wipe", fill: "state", stroke: "state", noStroke: "state", noFill: "state", circle: "shape", rect: "shape", triangle: "shape", ellipse: "shape" };
+
+    let lines, ptr, timer = null, uid = 0;
+
+    function load(key) {
+      lines = PRESETS[key].map(c => ({ ...c, a: [...c.a], off: false, id: uid++ }));
+      ptr = lines.length - 1;
+      stop();
+      render("start");
+    }
+    const rgb = a => `rgb(${a.join(",")})`;
+    const codeOf = c => `${c.t}(${c.a.join(", ")});`;
+
+    // replay the program up to index `upto` (inclusive) and report state + layers
+    function simulate(upto) {
+      const st = { fill: [255, 255, 255], stroke: true, layers: [], covered: 0 };
+      for (let i = 0; i <= upto && i < lines.length; i++) {
+        const c = lines[i];
+        if (c.off) continue;
+        if (c.t === "fill") st.fill = c.a;
+        else if (c.t === "noStroke") st.stroke = false;
+        else if (c.t === "stroke") st.stroke = true;
+        else if (c.t === "background") { st.covered = st.layers.filter(l => !l.bg).length; st.layers = [{ bg: true, color: c.a, name: c.name || "background", i }]; }
+        else st.layers.push({ t: c.t, color: st.fill, stroke: st.stroke, name: c.name || c.t, i });
+      }
+      return st;
+    }
+
+    let sketch;
+    new p5(p => {
+      sketch = p;
+      p.setup = () => { p.pixelDensity(2); p.createCanvas(W, H).parent("holder"); p.noLoop(); };
+      p.draw = () => {
+        p.clear();
+        p.fill(255); p.stroke(0); p.strokeWeight(1);
+        if (!lines) return;
+        for (let i = 0; i <= ptr && i < lines.length; i++) {
+          const c = lines[i];
+          if (c.off) continue;
+          p[c.t](...c.a);
+        }
+        const cur = lines[ptr];
+        if (stepping && cur && !cur.off && KIND[cur.t] === "shape") {
+          p.push();
+          p.noFill(); p.stroke(255, 61, 139); p.strokeWeight(3);
+          p.drawingContext.setLineDash([8, 6]);
+          p[cur.t](...cur.a);
+          p.pop();
+        }
+      };
+    });
+    let stepping = false;
+
+    function render(why) {
+      // code list
+      const code = $("code");
+      code.innerHTML = "";
+      lines.forEach((c, i) => {
+        const el = document.createElement("div");
+        const k = KIND[c.t];
+        el.className = `ln ${k} ${i <= ptr ? "done" : "todo"} ${i === ptr && stepping ? "cur" : ""} ${c.off ? "off" : ""}`;
+        el.setAttribute("role", "listitem");
+        const sw = (c.t === "fill" || c.t === "background") ? `<span class="sw" style="background:${rgb(c.a)}"></span>` : "";
+        el.innerHTML = `<span class="no">${i + 1}</span><span class="tx">${c.off ? "// " : ""}<span class="fn">${c.t}</span>(${c.a.join(", ")});${sw}</span>
+      <span class="tools">
+        <button aria-label="Move line ${i + 1} up" ${i === 0 ? "disabled" : ""} data-act="up" data-i="${i}">↑</button>
+        <button aria-label="Move line ${i + 1} down" ${i === lines.length - 1 ? "disabled" : ""} data-act="down" data-i="${i}">↓</button>
+        <button aria-label="${c.off ? "Turn on" : "Turn off"} line ${i + 1}" aria-pressed="${c.off}" data-act="off" data-i="${i}">//</button>
+      </span>`;
+        code.appendChild(el);
+      });
+
+      const st = simulate(ptr);
+      // pen state
+      $("pen").innerHTML = `<span>Current fill <span class="sw" style="background:${rgb(st.fill)}"></span> <b>fill(${st.fill.join(", ")})</b></span><span>Outline <b>${st.stroke ? "on (black)" : "noStroke()"}</b></span>`;
+      // layers, newest on top
+      const stack = $("stack");
+      stack.innerHTML = "";
+      if (!st.layers.length) stack.innerHTML = `<div class="layer">nothing painted yet</div>`;
+      [...st.layers].reverse().forEach((l, k) => {
+        const d = document.createElement("div");
+        d.className = "layer" + (l.bg ? " bg" : "") + (k === 0 && stepping && l.i === ptr ? " new" : "");
+        d.innerHTML = `<span class="sw" style="background:${rgb(l.color)}"></span>${l.name}`;
+        stack.appendChild(d);
+      });
+
+      // explanation
+      const say = $("say");
+      const cur = lines[ptr];
+      let cls = "note", msg = "";
+      if (why === "start") msg = "This is the finished picture. Press <b>Step</b> to paint it again one line at a time, or move a line and see what changes.";
+      else if (why === "moved") msg = "Order changed. This is the new picture. Press <b>Step</b> to watch it being painted line by line.";
+      else if (why === "toggled") msg = "Line turned " + (lines[lastToggled].off ? "off" : "on") + ". This is the new picture.";
+      else if (why === "begin") msg = "The canvas is empty and transparent. Nothing has run yet.";
+      else if (cur && cur.off) { msg = `Line ${ptr + 1} is turned off, so it is skipped.`; }
+      else if (cur) {
+        cls = KIND[cur.t];
+        const n = ptr + 1;
+        if (cur.t === "background") {
+          const before = simulate(ptr - 1).layers.filter(l => !l.bg).length;
+          msg = `<b>Line ${n}: background()</b> paints the whole canvas in one colour.` + (before ? ` It just covered the ${before} shape${before > 1 ? "s" : ""} drawn before it. They are still in the code, but you can't see them any more.` : " Everything drawn after this line goes on top of it.");
+        } else if (cur.t === "fill") {
+          msg = `<b>Line ${n}: fill()</b> draws nothing. It loads a new colour into the brush. Every shape <i>after</i> this line uses it, until the next fill().`;
+        } else if (cur.t === "noStroke") {
+          msg = `<b>Line ${n}: noStroke()</b> draws nothing. It switches off the black outline for every shape after this line.`;
+        } else {
+          const fillNow = simulate(ptr).layers.slice(-1)[0];
+          const under = simulate(ptr - 1).layers.length;
+          msg = `<b>Line ${n}: ${cur.t}()</b> paints the ${cur.name} with the current fill <span class="sw" style="background:${rgb(fillNow.color)}"></span>. It goes on top of ${under ? "the " + under + " layer" + (under > 1 ? "s" : "") + " already there" : "nothing, so it sits on the empty canvas"}.`;
+        }
+        if (ptr === lines.length - 1) msg += " <b>That was the last line.</b>";
+      }
+      say.className = "say " + cls;
+      say.innerHTML = msg;
+      sketch && sketch.redraw();
+    }
+    let lastToggled = 0;
+
+    $("code").addEventListener("click", e => {
+      const b = e.target.closest("button[data-act]");
+      if (!b) return;
+      const i = +b.dataset.i, act = b.dataset.act;
+      stop(); stepping = false;
+      if (act === "up" && i > 0) [lines[i - 1], lines[i]] = [lines[i], lines[i - 1]];
+      if (act === "down" && i < lines.length - 1) [lines[i + 1], lines[i]] = [lines[i], lines[i + 1]];
+      if (act === "off") { lines[i].off = !lines[i].off; lastToggled = i; }
+      ptr = lines.length - 1;
+      render(act === "off" ? "toggled" : "moved");
+      const target = act === "up" ? i - 1 : act === "down" ? i + 1 : i;
+      const btn = $("code").querySelector(`button[data-act="${act}"][data-i="${target}"]:not(:disabled)`) || $("code").querySelector(`button[data-i="${target}"]`);
+      btn && btn.focus();
+    });
+
+    function step() {
+      if (!stepping || ptr >= lines.length - 1) { stepping = true; ptr = -1; render("begin"); return true; }
+      ptr++;
+      render("step");
+      return ptr < lines.length - 1;
+    }
+    function stop() { clearTimeout(timer); timer = null; $("bPlay").textContent = "Play"; }
+    $("bStep").onclick = () => { stop(); step(); };
+    $("bPlay").onclick = () => {
+      if (timer) { stop(); return; }
+      $("bPlay").textContent = "Pause";
+      if (!stepping || ptr >= lines.length - 1) { stepping = true; ptr = -1; render("begin"); }
+      const tick = () => { if (step()) timer = setTimeout(tick, 900); else stop(); };
+      timer = setTimeout(tick, 700);
+    };
+    $("bAll").onclick = () => { stop(); stepping = false; ptr = lines.length - 1; render("start"); };
+    $("bReset").onclick = () => { stepping = false; load($("preset").value); };
+    $("preset").onchange = () => { stepping = false; load($("preset").value); };
+
+    load("land");
+
+    /* ---------- part 3: background() and the draw loop ---------- */
+    let where = "draw", loopP, paused = false;
+    const LOOP_MSG = {
+      draw: "background() runs at the start of <b>every frame</b>, so the old circle is painted over before the new one is drawn. You see one moving circle.",
+      setup: "background() runs <b>once</b>, before the first frame. After that nothing paints over the old circles, so every frame stays visible as a trail.",
+      none: "There is no background() at all. The canvas starts transparent and every circle stays, so you get a trail on the checkerboard."
+    };
+    function loopCode() {
+      const bg = w => where === w ? `<span class="on">background(30, 34, 44);</span>` : `<span class="gone">// background(30, 34, 44);</span>`;
+      $("loopCode").innerHTML =
+        `let x = 0;
+
+function setup() {
+  createCanvas(400, 300);
+  ${bg("setup")}
+}
+
+function draw() {
+  ${bg("draw")}
+  fill(255, 61, 139);
+  circle(x, 150 + sin(x * 0.05) * 60, 40);
+  x = x + 3;
+}`;
+      $("loopSay").innerHTML = LOOP_MSG[where];
+      ["draw", "setup", "none"].forEach(w => $("w-" + w).setAttribute("aria-pressed", w === where));
+    }
+    new p5(p => {
+      let x = 0;
+      loopP = p;
+      p.restart = () => { x = 0; p.frameCount = 0; p.clear(); if (where === "setup") p.background(30, 34, 44); };
+      p.setup = () => { p.pixelDensity(2); p.createCanvas(W, H).parent("loopHolder"); p.restart(); };
+      p.draw = () => {
+        if (where === "draw") p.background(30, 34, 44);
+        p.noStroke();
+        p.fill(255, 61, 139);
+        p.circle(x, 150 + Math.sin(x * 0.05) * 60, 40);
+        x += 3;
+        if (x > W + 20) x = -20;
+        $("fc").textContent = "frameCount = " + p.frameCount;
+      };
+    });
+    ["draw", "setup", "none"].forEach(w => $("w-" + w).onclick = () => { where = w; loopCode(); loopP.restart(); });
+    $("lRestart").onclick = () => loopP.restart();
+    $("lPause").onclick = () => { paused = !paused; paused ? loopP.noLoop() : loopP.loop(); $("lPause").textContent = paused ? "Resume" : "Pause"; };
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { paused = true; loopP.noLoop && setTimeout(() => { loopP.noLoop(); $("lPause").textContent = "Resume"; }, 1500); }
+    loopCode();
+  </script>
+
+</body>
+
+</html>
