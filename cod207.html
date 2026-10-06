@@ -24,10 +24,10 @@
 
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="cod207-2025-2026.html" class="nav-link active">COD 207</a>
-        <a href="cod208-2025-2026.html" class="nav-link">COD 208</a>
-        <a href="COD301-design-studio-III-DataVis.html" class="nav-link">COD 301</a>
-        <a href="COD412-sound-projects-media.html" class="nav-link">COD 412</a>
+        <a href="cod207.html" class="nav-link active">COD 207</a>
+        <a href="cod208.html" class="nav-link">COD 208</a>
+        <a href="COD301.html" class="nav-link">COD 301</a>
+        <a href="COD412.html" class="nav-link">COD 412</a>
         <a href="workshops.html" class="nav-link">Workshops</a>
         <a href="https://teaching.alptugan.com" target="_blank" rel="noopener noreferrer" class="nav-link">Teaching Blog ↗</a>
       </nav>
@@ -113,12 +113,21 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
             <input type="text" id="session-search" class="search-input" placeholder="Search topics, weeks..." aria-label="Search topics in this course">
+            <kbd class="search-kbd" aria-hidden="true">/</kbd>
           </div>
         </div>
       </div>
 
-      <div id="no-results-msg" style="display:none; padding: 2rem; text-align: center; color: var(--text-muted);">
-        No sessions match your search.
+      <div id="no-results-msg" class="empty-state" style="display:none;">
+        <div class="empty-state-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path stroke-linecap="round" d="M21 21l-5-5"></path>
+          </svg>
+        </div>
+        <div class="empty-state-title">No matching sessions found</div>
+        <p class="empty-state-desc">Try searching by week number (e.g., "Week 02") or topic keyword.</p>
+        <button type="button" class="btn btn-secondary btn-sm empty-state-btn" id="reset-session-search">Clear Search</button>
       </div>
 
       <!-- Weekly Sessions List -->
@@ -473,7 +482,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Teaching & Studio</h4>
+          <h3 class="footer-col-title">Teaching & Studio</h3>
           <ul class="footer-links-list">
             <li><a href="https://teaching.alptugan.com" target="_blank" rel="noopener noreferrer">Teaching Blog ↗</a></li>
             <li><a href="https://randomseed.cargo.site" target="_blank" rel="noopener noreferrer">RandomSeed Archive ↗</a></li>
@@ -483,7 +492,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Connect & Source</h4>
+          <h3 class="footer-col-title">Connect & Source</h3>
           <ul class="footer-links-list">
             <li><a href="https://www.alptugan.com" target="_blank" rel="noopener noreferrer">alptugan.com ↗</a></li>
             <li><a href="https://github.com/alptugan/Slidev_Presentations" target="_blank" rel="noopener noreferrer">Presentations GitHub ↗</a></li>

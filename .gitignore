@@ -19,4 +19,8 @@ template-assets/
 
 .agents/
 .goose/
+.impeccable/
+.vscode/
 skills-lock.json
+DESIGN.md
+PRODUCT.md

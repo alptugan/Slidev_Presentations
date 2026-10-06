@@ -13,7 +13,7 @@ drawings:
     persist: true
 aspect-ratio: 16/9
 css: unocss
-download: false
+download: true
 # export options
 # use export CLI options in camelCase format
 # Learn more: https://sli.dev/guide/exporting.html

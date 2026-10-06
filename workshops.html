@@ -28,10 +28,10 @@
 
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="cod207-2025-2026.html" class="nav-link">COD 207</a>
-        <a href="cod208-2025-2026.html" class="nav-link">COD 208</a>
-        <a href="COD301-design-studio-III-DataVis.html" class="nav-link">COD 301</a>
-        <a href="COD412-sound-projects-media.html" class="nav-link">COD 412</a>
+        <a href="cod207.html" class="nav-link">COD 207</a>
+        <a href="cod208.html" class="nav-link">COD 208</a>
+        <a href="COD301.html" class="nav-link">COD 301</a>
+        <a href="COD412.html" class="nav-link">COD 412</a>
         <a href="workshops.html" class="nav-link active">Workshops</a>
         <a href="https://teaching.alptugan.com" target="_blank" rel="noopener noreferrer" class="nav-link">Teaching Blog
           ↗</a>
@@ -121,12 +121,21 @@
             </svg>
             <input type="text" id="session-search" class="search-input" placeholder="Search workshops..."
               aria-label="Search workshops">
+            <kbd class="search-kbd" aria-hidden="true">/</kbd>
           </div>
         </div>
       </div>
 
-      <div id="no-results-msg" style="display:none; padding: 2rem; text-align: center; color: var(--text-muted);">
-        No workshops match your search.
+      <div id="no-results-msg" class="empty-state" style="display:none;">
+        <div class="empty-state-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path stroke-linecap="round" d="M21 21l-5-5"></path>
+          </svg>
+        </div>
+        <div class="empty-state-title">No matching workshops found</div>
+        <p class="empty-state-desc">Try searching by topic keyword or institution name.</p>
+        <button type="button" class="btn btn-secondary btn-sm empty-state-btn" id="reset-session-search">Clear Search</button>
       </div>
 
       <!-- Workshop Cards Grid -->
@@ -260,7 +269,7 @@
 
         <!-- Workshop 7: ÖZÜ Communication Design Program Overview -->
         <article class="workshop-card session-card">
-          <span class="badge badge-code">Department Overview</span>
+          <span class="badge badge-code">Özyeğin University</span>
           <h2 class="workshop-title">ÖZÜ İletişim ve Tasarımı Bölüm Tanıtımı</h2>
           <ul class="workshop-topics">
             <li>Özyeğin University Communication Design curriculum</li>
@@ -281,9 +290,12 @@
 
         <!-- Workshop 7: ÖZÜ Communication Design Program Overview -->
         <article class="workshop-card session-card">
-          <span class="badge badge-code">Department Overview</span>
+          <span class="badge badge-code">Özyeğin University</span>
           <h2 class="workshop-title">DIS 527 - Domestic Soundscapes</h2>
           <ul class="workshop-topics">
+            <li>Sensory ethnography and sonic ecology in the domestic environment</li>
+            <li>R. Murray Schafer's soundscape taxonomy: keynote sounds, signals, and soundmarks</li>
+            <li>Field recording protocols, binaural capture, and audio archival schemas</li>
           </ul>
           <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
             <a href="https://alptugan.github.io/Slidev_Presentations/Workshops/DIS-527-Domestic-Soundscapes/"
@@ -313,7 +325,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Teaching & Studio</h4>
+          <h3 class="footer-col-title">Teaching & Studio</h3>
           <ul class="footer-links-list">
             <li><a href="https://teaching.alptugan.com" target="_blank" rel="noopener noreferrer">Teaching Blog ↗</a>
             </li>
@@ -327,7 +339,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Connect & Source</h4>
+          <h3 class="footer-col-title">Connect & Source</h3>
           <ul class="footer-links-list">
             <li><a href="https://www.alptugan.com" target="_blank" rel="noopener noreferrer">alptugan.com ↗</a></li>
             <li><a href="https://github.com/alptugan/Slidev_Presentations" target="_blank"
