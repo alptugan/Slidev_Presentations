@@ -28,6 +28,7 @@ codeCopy: true
 favicon: "https://www.alptugan.com/v6/favicon-192.png"
 layout: image-to
 hideInToc: true
+download: true
 themeConfig:
   primary: "#ffcc00"
   secondary: "#e2d292"
