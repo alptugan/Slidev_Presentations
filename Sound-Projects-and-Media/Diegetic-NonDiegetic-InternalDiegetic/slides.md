@@ -3,9 +3,10 @@ theme: apple-basic
 css: unocss
 image: /cover.jpg
 # some information about your slides (markdown enabled)
-title: COD 412 Sound Projects & Media
+title: COD 412 & COD 323
 info: |
   ## COD 412 Sound Projects & Media
+  ## COD 323 Sound Design
   Author: Alp Tuğan, PhD
 
   Learn more at [alptugan.com](https://alptugan.com)
@@ -38,7 +39,7 @@ Diegetic, Non-diegetic, and Internal Diegetic
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    COD 412 - Week 06 Class <carbon:arrow-right class="inline"/>
+    COD 412 (Week 6) - COD 323 (Week 3) <carbon:arrow-right class="inline"/>
   </span>
 </div>
   <a href="https://github.com/alptugan/Slidev_Presentations" target="_blank" alt="GitHub" class="abs-br m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
