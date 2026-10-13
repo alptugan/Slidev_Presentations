@@ -1,5 +1,5 @@
 ---
-background: ./week4-cover.png
+background: /week4-cover.jpeg
 exportFilename: "week04-Loops-Moire_Patterns"
 class: text-center
 highlighter: shiki
@@ -24,10 +24,14 @@ export:
 selectable: true
 codeCopy: true
 # favicon, can be a local file path or URL
-favicon: "https://www.alptugan.com/v5/favicon-192.png"
+colorSchema: dark
+glowSeed: 4
+routerMode: hash
+favicon: "https://www.alptugan.com/v6/favicon-192.png"
+hideInToc: true
 themeConfig:
-    primary: "#ffcc00"
-transition: fade-out
+  primary: "#ffcc00"
+  secondary: "#e2d292"
 theme: seriph
 src: ./pages/header.md
 ---
@@ -211,9 +215,25 @@ class: text-center
 
 <img h-100 m-auto src='/loops3.png' />
 
+---
+layout: default
+title: For Loop Simulator
+class: px-8 py-4
+---
+
+<h1>Simulation: how a <i text-white>for</i> loop works</h1>
+
+
+<div flex items-baseline justify-between>
+  <a href="for-loop-simulator.html" target="_blank" rel="noopener" text-sm>Open in new tab ↗</a>
+</div>
+
+<iframe src="for-loop-simulator.html?embed" class="w-full mt-2 rounded" style="height:470px;border:0;background:transparent"></iframe>
+
 
 ---
 layout: fact
+hide: true
 ---
 
 # Why do we need to learn coding?
@@ -222,6 +242,7 @@ layout: fact
 title: Ne işime yarayacak bu?
 layout: two-cols
 class: text-3.8
+hide: true
 ---
 
 <SlidevVideo m-auto h-120 autoplay controls>

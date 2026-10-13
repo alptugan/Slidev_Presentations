@@ -44,7 +44,7 @@ class: p-5 text-2.6
 
 1. Choose a Moire Pattern or create by yourself. 
 2. Write-down the Computational Thinking Analysis of the pattern 2️⃣0️⃣ PTS
-3. Canvas size 900 x 900 px  5️⃣ PTS
+3. Canvas size 1080 x 1080 px  5️⃣ PTS
 4. Use `for` loops 3️⃣0️⃣ PTS
 5. Use variables 1️⃣0️⃣ PTS
 6. Use comments in your code 1️⃣0️⃣ PTS

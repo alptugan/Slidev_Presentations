@@ -20,7 +20,9 @@ template-assets/
 .agents/
 .goose/
 .impeccable/
+.claude/
 .vscode/
 skills-lock.json
 DESIGN.md
 PRODUCT.md
+CLAUDE.md

@@ -1,0 +1,354 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>translate() Simulator</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: code panel (scrubbable numbers, clickable lines) beside a large canvas; the canvas carries the explanation. Same identity as the loop and drawing-order simulators. */
+:root{
+  --bg:#eef0f4;--panel:#fff;--ink:#14161a;--mute:#5d6470;--line:#d5d9e0;
+  --move:#2f4bff;--shapeA:#ff3d8b;--shapeB:#00996a;--back:#e59a00;
+  --code:#14161a;--codeink:#e9ecf1;--hl:#2a2f3a;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--panel:#1a1d23;--ink:#eef0f4;--mute:#9aa2b0;--line:#2c313a;--move:#7b8dff;--shapeA:#ff6aa5;--shapeB:#2fd39b;--back:#ffbb33;--code:#0b0c0f;--hl:#232833;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101216;--panel:#1a1d23;--ink:#eef0f4;--mute:#9aa2b0;--line:#2c313a;--move:#7b8dff;--shapeA:#ff6aa5;--shapeB:#2fd39b;--back:#ffbb33;--code:#0b0c0f;--hl:#232833;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.5 var(--display);margin:0}
+main{max-width:1120px;margin:0 auto;padding-block:20px 48px;padding-inline:16px;display:grid;gap:16px}
+h1{font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:8px 0 4px;letter-spacing:-.02em;text-wrap:balance}
+h1 code{font-family:var(--mono);font-weight:700;font-size:.82em;letter-spacing:-.03em}
+.sub{color:var(--mute);margin:0;max-width:60ch}
+.grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:16px;align-items:start}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+
+.modes{display:flex;flex-wrap:wrap;gap:6px}
+.modes button{font:600 14px var(--display);padding:7px 12px;border-radius:99px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.modes button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+button:focus-visible,.num:focus-visible,.ln:focus-visible{outline:3px solid var(--move);outline-offset:2px}
+
+.code{background:var(--code);color:var(--codeink);border-radius:8px;padding:8px 0;margin:12px 0 0;font:400 15px/1.5 var(--mono);overflow-x:auto}
+.ln{display:flex;align-items:center;gap:10px;padding:5px 12px 5px 8px;border-left:4px solid transparent;cursor:pointer;white-space:pre;min-width:max-content}
+.ln .no{color:#6b7280;font-size:12px;width:16px;text-align:right}
+.ln .fn{color:#c9cfdb}
+.ln.t .fn{color:#8b9bff}.ln.ra .fn{color:#ff8ab8}.ln.rb .fn{color:#3fe0a8}.ln.pp .fn{color:#ffc44d}
+.ln.cur{background:var(--hl);border-left-color:#ff6aa5}
+.ln.later{opacity:.35}
+.num{display:inline-block;min-width:3ch;text-align:right;color:#fff;background:#2f4bff33;border-bottom:2px dotted #8b9bff;border-radius:3px;padding:0 3px;cursor:ew-resize;touch-action:none;user-select:none;font-variant-numeric:tabular-nums}
+.num:hover,.num.drag{background:#2f4bff66}
+.steps{display:flex;gap:8px;margin-top:12px;align-items:center}
+.steps button{font:600 15px var(--display);padding:8px 14px;border-radius:6px;border:2px solid var(--ink);background:var(--panel);color:var(--ink);cursor:pointer}
+.steps button.pri{background:var(--ink);color:var(--bg)}
+.steps button:disabled{opacity:.35;cursor:default}
+.hint{font-size:13px;color:var(--mute);margin:10px 0 0}
+
+.holder{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#f7f6f2;touch-action:none}
+.holder canvas{display:block;width:100%!important;height:auto!important}
+.readout{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font:400 13px var(--mono);color:var(--mute);min-height:20px;font-variant-numeric:tabular-nums}
+.readout b{color:var(--ink);font-weight:700}
+.readout .k{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+
+details{color:var(--mute);font-size:15px}
+details summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details ul{margin:8px 0 0;padding-left:20px}details li{margin:4px 0;max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<main>
+<header>
+  <h1>How <code>translate()</code> works</h1>
+  <p class="sub">translate() doesn't move the shape. It moves the point (0, 0), and every shape after it is drawn from there.</p>
+</header>
+
+<div class="grid">
+  <section class="card" aria-label="Code">
+    <div class="modes" role="group" aria-label="Example">
+      <button data-mode="one" aria-pressed="true">One move</button>
+      <button data-mode="two" aria-pressed="false">Moves add up</button>
+      <button data-mode="push" aria-pressed="false">push() / pop()</button>
+    </div>
+    <div class="code" id="code" role="list" aria-label="Lines of the sketch"></div>
+    <div class="steps">
+      <button id="prev" aria-label="Previous line">◀</button>
+      <button id="next" class="pri" aria-label="Next line">▶</button>
+      <button id="all">Show all</button>
+    </div>
+    <p class="hint">Drag the blue numbers, or the dots on the canvas.</p>
+  </section>
+
+  <section class="card" aria-label="Canvas">
+    <div class="holder" id="holder"></div>
+    <div class="readout" id="readout" aria-live="polite"></div>
+  </section>
+</div>
+
+<details class="card">
+  <summary>Ideas for class</summary>
+  <ul>
+    <li>Ask where the rectangle lands before you change a number, then drag it.</li>
+    <li>Set a translate to negative values. The origin can sit outside the canvas.</li>
+    <li>In "Moves add up", step through line by line. The second translate starts from where the first one ended.</li>
+    <li>In "push() / pop()", ask where the green rect would go without pop(). Then step through to check.</li>
+    <li>Hover the canvas: the same pixel has two addresses, one before and one after translate().</li>
+  </ul>
+</details>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const W = 640, H = 440;
+const RW = 90, RH = 60; // rect size used in every example
+
+const vals = { a: { x: 180, y: 120 }, b: { x: 150, y: 110 } };
+const MODES = {
+  one:  [{ t: "translate", v: "a" }, { t: "rect", c: "A" }],
+  two:  [{ t: "translate", v: "a" }, { t: "rect", c: "A" }, { t: "translate", v: "b" }, { t: "rect", c: "B" }],
+  push: [{ t: "push" }, { t: "translate", v: "a" }, { t: "rect", c: "A" }, { t: "pop" }, { t: "rect", c: "B" }]
+};
+let mode = "one", upto = null; // upto = index of last line run (null = all)
+
+// ---------- code panel ----------
+function lineHTML(L, i) {
+  const n = k => `<span class="num" tabindex="0" role="slider" aria-label="${L.v}.${k}" data-v="${L.v}" data-k="${k}">${vals[L.v][k]}</span>`;
+  let body, cls;
+  if (L.t === "translate") { body = `<span class="fn">translate</span>(${n("x")}, ${n("y")});`; cls = "t"; }
+  else if (L.t === "rect") { body = `<span class="fn">rect</span>(0, 0, ${RW}, ${RH});`; cls = L.c === "A" ? "ra" : "rb"; }
+  else { body = `<span class="fn">${L.t}</span>();`; cls = "pp"; }
+  return `<div class="ln ${cls}" role="listitem" tabindex="0" data-i="${i}"><span class="no">${i + 1}</span><span>${body}</span></div>`;
+}
+function buildCode() {
+  $("code").innerHTML = MODES[mode].map(lineHTML).join("");
+  paintCode();
+}
+function paintCode() {
+  const lines = MODES[mode];
+  document.querySelectorAll("#code .ln").forEach(el => {
+    const i = +el.dataset.i;
+    el.classList.toggle("cur", upto === i);
+    el.classList.toggle("later", upto !== null && i > upto);
+  });
+  document.querySelectorAll("#code .num").forEach(s => {
+    const v = vals[s.dataset.v][s.dataset.k];
+    s.textContent = v;
+    s.setAttribute("aria-valuenow", v);
+  });
+  $("prev").disabled = upto === -1;
+  $("next").disabled = upto === null;
+  $("all").disabled = upto === null;
+}
+
+document.querySelectorAll(".modes button").forEach(b => b.onclick = () => {
+  mode = b.dataset.mode; upto = null;
+  document.querySelectorAll(".modes button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  buildCode();
+});
+$("code").addEventListener("click", e => {
+  if (e.target.closest(".num")) return;
+  const ln = e.target.closest(".ln"); if (!ln) return;
+  const i = +ln.dataset.i;
+  upto = upto === i ? null : i;
+  paintCode();
+});
+$("code").addEventListener("keydown", e => {
+  const s = e.target.closest(".num");
+  if (s && (e.key === "ArrowRight" || e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "ArrowDown")) {
+    e.preventDefault();
+    const d = (e.key === "ArrowRight" || e.key === "ArrowUp" ? 1 : -1) * (e.shiftKey ? 50 : 10);
+    setVal(s.dataset.v, s.dataset.k, vals[s.dataset.v][s.dataset.k] + d);
+    return;
+  }
+  const ln = e.target.closest(".ln");
+  if (ln && !s && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); ln.click(); }
+});
+// scrub numbers by dragging sideways
+let scrub = null;
+$("code").addEventListener("pointerdown", e => {
+  const s = e.target.closest(".num"); if (!s) return;
+  e.preventDefault();
+  s.setPointerCapture(e.pointerId);
+  s.classList.add("drag");
+  scrub = { s, x0: e.clientX, v0: vals[s.dataset.v][s.dataset.k] };
+});
+$("code").addEventListener("pointermove", e => {
+  if (!scrub) return;
+  const d = Math.round((e.clientX - scrub.x0) * 2 / 5) * 5;
+  setVal(scrub.s.dataset.v, scrub.s.dataset.k, scrub.v0 + d);
+});
+const endScrub = () => { if (scrub) { scrub.s.classList.remove("drag"); scrub = null; } };
+$("code").addEventListener("pointerup", endScrub);
+$("code").addEventListener("pointercancel", endScrub);
+
+function setVal(v, k, n) {
+  vals[v][k] = Math.max(-300, Math.min(700, Math.round(n)));
+  paintCode();
+}
+$("prev").onclick = () => { const n = MODES[mode].length; upto = upto === null ? n - 2 : Math.max(-1, upto - 1); paintCode(); };
+$("next").onclick = () => { const n = MODES[mode].length; if (upto === null) return; upto = upto + 1 >= n - 1 ? null : upto + 1; paintCode(); };
+$("all").onclick = () => { upto = null; paintCode(); };
+
+// ---------- run the program ----------
+function run() {
+  let o = { x: 0, y: 0 };
+  const stack = [], arrows = [], shapes = [], pops = [];
+  MODES[mode].forEach((L, i) => {
+    if (upto !== null && i > upto) return;
+    if (L.t === "translate") { const v = vals[L.v]; const n = { x: o.x + v.x, y: o.y + v.y }; arrows.push({ from: o, to: n, v: L.v, i }); o = n; }
+    else if (L.t === "rect") shapes.push({ o: { ...o }, c: L.c, i });
+    else if (L.t === "push") stack.push({ ...o });
+    else if (L.t === "pop") { const p = stack.pop() || { x: 0, y: 0 }; pops.push({ from: o, to: p, i }); o = p; }
+  });
+  return { o, arrows, shapes, pops, saved: stack };
+}
+
+// ---------- canvas ----------
+const C = {
+  paper: [247, 246, 242], grid: [214, 216, 222], gridMajor: [190, 194, 202], label: [128, 134, 146],
+  move: [47, 75, 255], A: [255, 61, 139], B: [0, 153, 106], back: [229, 154, 0], ink: [20, 22, 26]
+};
+const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+let disp = { x: 0, y: 0 }, drag = null, hover = null;
+
+new p5(p => {
+  p.setup = () => { p.pixelDensity(2); p.createCanvas(W, H).parent("holder"); p.textFont("JetBrains Mono"); };
+
+  function arrow(a, b, col, w, dashed) {
+    const d = Math.hypot(b.x - a.x, b.y - a.y);
+    if (d < 2) return;
+    p.push();
+    p.stroke(...col); p.strokeWeight(w); p.noFill();
+    if (dashed) p.drawingContext.setLineDash([7, 6]);
+    const ang = Math.atan2(b.y - a.y, b.x - a.x);
+    const tip = { x: b.x - Math.cos(ang) * 8, y: b.y - Math.sin(ang) * 8 };
+    p.line(a.x, a.y, tip.x, tip.y);
+    p.drawingContext.setLineDash([]);
+    p.noStroke(); p.fill(...col);
+    p.translate(b.x, b.y); p.rotate(ang);
+    p.triangle(0, 0, -13, -6, -13, 6);
+    p.pop();
+  }
+  function tag(x, y, s, col) {
+    p.push();
+    p.textSize(12); p.textStyle(p.BOLD);
+    const tw = p.textWidth(s) + 12;
+    x = Math.max(4, Math.min(W - tw - 4, x)); y = Math.max(4, Math.min(H - 24, y));
+    p.noStroke(); p.fill(...col); p.rect(x, y, tw, 20, 4);
+    p.fill(255); p.textAlign(p.LEFT, p.CENTER); p.text(s, x + 6, y + 10);
+    p.pop();
+  }
+
+  p.draw = () => {
+    const R = run();
+    // the origin glides to its new place so students see it move
+    const k = reduce || drag ? 1 : 0.2;
+    disp.x += (R.o.x - disp.x) * k; disp.y += (R.o.y - disp.y) * k;
+
+    p.background(...C.paper);
+    // canvas grid: where pixels really are
+    for (let x = 0; x <= W; x += 20) { p.stroke(...(x % 100 ? C.grid : C.gridMajor)); p.strokeWeight(1); p.line(x, 0, x, H); }
+    for (let y = 0; y <= H; y += 20) { p.stroke(...(y % 100 ? C.grid : C.gridMajor)); p.line(0, y, W, y); }
+    p.noStroke(); p.fill(...C.label); p.textSize(10); p.textStyle(p.NORMAL);
+    for (let x = 100; x < W; x += 100) p.text(x, x + 3, 12);
+    for (let y = 100; y < H; y += 100) p.text(y, 3, y - 3);
+
+    // the moved coordinate system
+    const moved = Math.abs(disp.x) + Math.abs(disp.y) > 0.5;
+    if (moved) {
+      p.push();
+      p.stroke(...C.move, 38); p.strokeWeight(1);
+      const ox = ((disp.x % 50) + 50) % 50, oy = ((disp.y % 50) + 50) % 50;
+      for (let x = ox; x <= W; x += 50) p.line(x, 0, x, H);
+      for (let y = oy; y <= H; y += 50) p.line(0, y, W, y);
+      p.pop();
+    }
+    // axes at the current origin
+    const ax = disp.x, ay = disp.y;
+    arrow({ x: ax, y: ay }, { x: ax + 120, y: ay }, C.move, 3);
+    arrow({ x: ax, y: ay }, { x: ax, y: ay + 120 }, C.move, 3);
+    p.noStroke(); p.fill(...C.move); p.textSize(13); p.textStyle(p.BOLD);
+    p.text("x", ax + 124, ay + 5); p.text("y", ax - 4, ay + 138);
+
+    // a ghost of the page origin when it has moved away
+    if (moved) { p.noFill(); p.stroke(...C.label); p.strokeWeight(1.5); p.circle(0, 0, 18); }
+
+    // shapes, each drawn at the origin that was current when its line ran
+    R.shapes.forEach(s => {
+      const col = C[s.c];
+      p.push();
+      p.fill(...col, 215); p.stroke(...C.ink); p.strokeWeight(1.5);
+      p.rect(s.o.x, s.o.y, RW, RH, 2);
+      p.noStroke(); p.fill(255); p.textSize(11); p.textStyle(p.BOLD);
+      p.text("0, 0", s.o.x + 6, s.o.y + 16);
+      p.pop();
+    });
+
+    // translate arrows, chained
+    R.arrows.forEach(a => {
+      arrow(a.from, a.to, C.move, 4);
+      const v = vals[a.v];
+      tag((a.from.x + a.to.x) / 2 + 8, (a.from.y + a.to.y) / 2 - 26, `+${v.x}, +${v.y}`.replace(/\+-/g, "−"), C.move);
+    });
+    // pop() jumps back
+    R.pops.forEach(q => { arrow(q.from, q.to, C.back, 3, true); tag((q.from.x + q.to.x) / 2 - 30, (q.from.y + q.to.y) / 2 + 6, "pop()", C.back); });
+    // push() bookmark
+    R.saved.forEach(sv => { p.noFill(); p.stroke(...C.back); p.strokeWeight(2.5); p.drawingContext.setLineDash([4, 4]); p.circle(sv.x, sv.y, 26); p.drawingContext.setLineDash([]); });
+
+    // draggable handles at the end of each translate
+    R.arrows.forEach(a => {
+      const hot = drag && drag.v === a.v || hover && Math.hypot(hover.x - a.to.x, hover.y - a.to.y) < 14;
+      p.fill(255); p.stroke(...C.move); p.strokeWeight(3);
+      p.circle(a.to.x, a.to.y, hot ? 20 : 15);
+    });
+    // origin dot
+    p.noStroke(); p.fill(...C.move); p.circle(ax, ay, 8);
+
+    // hover: the same pixel, two addresses
+    if (hover && !drag) {
+      p.stroke(...C.ink, 90); p.strokeWeight(1); p.drawingContext.setLineDash([3, 4]);
+      p.line(hover.x, 0, hover.x, H); p.line(0, hover.y, W, hover.y);
+      p.drawingContext.setLineDash([]);
+    }
+    p.cursor(drag ? "grabbing" : hover && R.arrows.some(a => Math.hypot(hover.x - a.to.x, hover.y - a.to.y) < 14) ? "grab" : "crosshair");
+    readout(R);
+  };
+
+  const inCanvas = () => p.mouseX >= 0 && p.mouseX <= W && p.mouseY >= 0 && p.mouseY <= H;
+  p.mouseMoved = () => { hover = inCanvas() ? { x: p.mouseX, y: p.mouseY } : null; };
+  p.mousePressed = () => {
+    if (!inCanvas()) return;
+    const R = run();
+    for (let j = R.arrows.length - 1; j >= 0; j--) {
+      const a = R.arrows[j];
+      if (Math.hypot(p.mouseX - a.to.x, p.mouseY - a.to.y) < 16) { drag = { v: a.v, from: a.from }; return false; }
+    }
+  };
+  p.mouseDragged = () => {
+    hover = inCanvas() ? { x: p.mouseX, y: p.mouseY } : null;
+    if (!drag) return;
+    const snap = n => Math.round(n / 5) * 5;
+    vals[drag.v].x = snap(Math.max(-300, Math.min(700, p.mouseX - drag.from.x)));
+    vals[drag.v].y = snap(Math.max(-300, Math.min(700, p.mouseY - drag.from.y)));
+    paintCode();
+    return false;
+  };
+  p.mouseReleased = () => { drag = null; };
+  document.getElementById("holder").addEventListener("pointerleave", () => { if (!drag) hover = null; });
+});
+
+let lastRead = "";
+function readout(R) {
+  let html;
+  if (hover) {
+    const hx = Math.round(hover.x), hy = Math.round(hover.y);
+    html = `<span><span class="k" style="background:rgb(${C.label})"></span>canvas <b>${hx}, ${hy}</b></span>` +
+           `<span><span class="k" style="background:var(--move)"></span>after translate <b>${hx - R.o.x}, ${hy - R.o.y}</b></span>`;
+  } else {
+    html = `<span><span class="k" style="background:var(--move)"></span>(0, 0) is now at canvas <b>${R.o.x}, ${R.o.y}</b></span>`;
+  }
+  if (html !== lastRead) { $("readout").innerHTML = html; lastRead = html; }
+}
+
+buildCode();
+</script>
+
+</body></html>

@@ -7,12 +7,13 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week01/)
 - [Week 02 - Acoustic Ecology](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
 - [Week 03 - Sound History 01](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week03-SoundHistory01/)
-- [Week 04 - Live Coding](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week04-LiveCoding)
-- [Week 05 - Sound Art](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week05-SoundArt)
-- [Week 06 - Sonification](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Sonification)
-- [Week 07 - Listening Modes](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Listening-Modes)
-- [Week 08 - Field Recording](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Field-Recording)
-- [Week 09 - Audiovisual](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Audiovisual)
+- [Week 04 - Live Coding](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week04-LiveCoding/)
+- [Week 05 - Sound Art](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week05-SoundArt/)
+- [Week 06 - Sonification](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Sonification/)
+- [Extra - Sound in Films: Diegetic, Non-Diegetic & Internal Diegetic](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Diegetic-NonDiegetic-InternalDiegetic/)
+- [Week 07 - Listening Modes](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Listening-Modes/)
+- [Week 08 - Field Recording](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Field-Recording/)
+- [Week 09 - Audiovisual](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Audiovisual/)
 
 
 ### COD 301 Design Studio III
@@ -20,8 +21,8 @@ A collection of Slidev presentation projects for courses and workshops.
 - [Week 02 - Data Visualization](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week02/)
 - [Week 03 - Layouts](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Layouts/)
 - [Week 03 - Hierarchy](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Typography/)
-- [Week 04 - History](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week04-History)
-- [Week 05 - Animation](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week05-Animation)
+- [Week 04 - History](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week04-History/)
+- [Week 05 - Animation](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week05-Animation/)
 - Week 06 - Animation Reviews
 - Week 07 - Sound
 - Week 08 - Animation + Sound - **Critique Session 2**
@@ -36,12 +37,12 @@ A collection of Slidev presentation projects for courses and workshops.
 ### COD 208 Creative Coding II
 - [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
 - [Week 02 - OOP](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week02_cod_208-OOP/)
-- [Week 03 - Games](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Games)
-- [Week 04 - What is Interactivity](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity)
-- [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game)
-- [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR)
-- [Week 06 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine)
-- [Week 07 - Machine Learning Model Integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi)
+- [Week 03 - Games](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Games/)
+- [Week 04 - What is Interactivity](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity/)
+- [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game/)
+- [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR/)
+- [Week 06 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine/)
+- [Week 07 - Machine Learning Model Integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi/)
 - [Week 08 - Studio Session: ML](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Face-mesh-Mask-Switch)
 - [Week 09 - P5JS ML5 Sound Training](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Sound-Training)
 - [Week 10 - Data Visualization vs. Info Graphics](https://teaching.alptugan.com/Tutorials/P5JS---Data-Visualization)
@@ -61,10 +62,10 @@ A collection of Slidev presentation projects for courses and workshops.
 - Week 06 - No Class: National Holiday (Research: Algorithmic Art Praxis)
 - [Week 07 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
 - [Week 08 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
-- [Week 09 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography)
-- [Week 10 - Sound](https://alptugan.github.io/Slidev_Presentations/2025-2026/week09_cod_207-Interactivity-Sound)
-- [Week 11 - Autonomous Agents](https://alptugan.github.io/Slidev_Presentations/2025-2026/week11_cod_207-Autonomous-Agents)
-- [Week 11 - ALAP](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis)
+- [Week 09 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography/)
+- [Week 10 - Sound](https://alptugan.github.io/Slidev_Presentations/2025-2026/week09_cod_207-Interactivity-Sound/)
+- [Week 11 - Autonomous Agents](https://alptugan.github.io/Slidev_Presentations/2025-2026/week11_cod_207-Autonomous-Agents/)
+- [Week 11 - ALAP](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis/)
 - Week 12 - Final Project Proposals
 - Week 13 - Final Project Revision & Feedback
 - Week 14 - Final Project Revision & Feedback
@@ -72,16 +73,19 @@ A collection of Slidev presentation projects for courses and workshops.
 
 ## Creative Coding Topics
 
-- [Algorithmic Art Praxis]() - Link will be added
+- [Algorithmic Art Praxis](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis/)
 
 ## 🎓 Workshops
 
-- [Algorithmic Art Praxis](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis)
+- [Algorithmic Art Praxis](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis/)
 - [Code and Algorithm on Design](https://alptugan.github.io/Slidev_Presentations/Workshops/Code-and-algorithm-on-design/)
 - [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/Workshops/OMM_Arduino_Workshop/)
-- [OZU_Iletisim-ve-Tasarimi](https://alptugan.github.io/Slidev_Presentations/Workshops/OZU_Iletisim-ve-Tasarimi)
-- [ODTÜ - Live Coding 2026-04-29](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding)
-- [Sonar - Live Coding 2026-05-10](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding-Sonar)
+- [OZU_Iletisim-ve-Tasarimi](https://alptugan.github.io/Slidev_Presentations/Workshops/OZU_Iletisim-ve-Tasarimi/)
+- [ODTÜ - Live Coding 2026-04-29](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding/)
+- [Baku - Live Coding Masterclass](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding-Baku/)
+- [Sonar - Live Coding 2026-05-10](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding-Sonar/)
+- [PCD@İstanbul - Algoritmik Sanat ve Anadolu Türk Motifleri 2026-10-17](https://alptugan.github.io/Slidev_Presentations/Workshops/Algoritmik-Sanat-Anadolu-Turk-Motifleri/)
+- [DIS 527 - Domestic Soundscapes](https://alptugan.github.io/Slidev_Presentations/Workshops/DIS-527-Domestic-Soundscapes/)
 
 ## 🚀 Automated Deployment
 
@@ -92,7 +96,7 @@ This repository uses GitHub Actions to automatically build and deploy Slidev pre
 The `.github/workflows/deploy.yml` workflow provides:
 
 - **Incremental Builds**: Only rebuilds presentations that have changed, saving build time. 
-- **Multi-Directory Support**: Scans both `2025-2026` and `Workshops` folders for Slidev projects
+- **Multi-Directory Support**: Scans `2025-2026`, `2025-2026-Spring`, `Design-Studio-III`, `Sound-Projects-and-Media` and `Workshops` folders for Slidev projects
 - **Artifact Caching**: Preserves previously built presentations, ensuring all projects remain accessible
 - **Automatic Detection**: Detects new or modified presentations and builds them automatically on push to `main`
 - **Manual Trigger**: Can be manually triggered via workflow_dispatch to rebuild all presentations
@@ -124,7 +128,7 @@ The `.github/workflows/deploy.yml` workflow provides:
 
 ## 📝 Adding New Presentations
 
-1. Create a new folder in either `2025-2026/` or `Workshops/`. For a different directory, edit the `deploy.yml` file.
+1. Create a new folder in one of the scanned folders listed above (for example `2025-2026/` or `Workshops/`). For a different directory, add it to `SEARCH_DIRS` in `deploy.yml`.
 2. Create a new Slidev project.
 3. Commit and push to `main` branch
 4. GitHub Actions will automatically build and deploy your presentation
