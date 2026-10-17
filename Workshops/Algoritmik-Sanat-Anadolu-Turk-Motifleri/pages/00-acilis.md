@@ -97,17 +97,24 @@ layout: center
 title: Atölyenin Amacı
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-7.png" />
+<div class="absolute inset-0 bg-black/70"></div>
+
+<div class="relative z-10" style="text-shadow: 0 0 2px rgba(0,0,0,0.9), 0 2px 12px rgba(0,0,0,0.95)">
+
 # Bugün ne yapacağız?
 
 <v-clicks>
 
-1. Anadolu dokuma motiflerinin **köklerini** ve **anlamlarını** tanıyacağız
-2. Bir motifi **geometrik parçalarına** ayırmayı (analiz) öğreneceğiz
-3. **p5.js** ile temel şekiller, renk ve koordinat dönüşümlerini kullanacağız
-4. Motifleri **fonksiyon**, **döngü** ve **simetri** ile çoğaltacağız
+1. **Anadolu, Türk** kültürüne dair **motifleri**
+2. **Temel formları** kullanarak soyutlama ve analiz
+3. **Yaratıcı Kodlama** ve **p5.js**
+4. Motif ve jeneratif sanat pratikleri; **olasılık, trigonometri, programlama**
 5. Kendi **algoritmik kilim** kompozisyonumuzu üreteceğiz
 
 </v-clicks>
+
+</div>
 
 ---
 layout: default

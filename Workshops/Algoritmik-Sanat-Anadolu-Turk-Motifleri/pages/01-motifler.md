@@ -3,8 +3,15 @@ layout: section
 title: Bölüm 1 · Motiflerin Kökleri
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-9.png" />
+<div class="absolute inset-0 bg-black/60"></div>
+
+<div class="relative z-10">
+
 # Bölüm 1
-[Motiflerin Kökleri · Dokuma, Tarih, Anlam]{style="font-style: italic; color: grey"}
+[Motiflerin Kökleri · Dokuma, Tarih, Anlam]{style="font-style: italic; color: #ddd"}
+
+</div>
 
 ---
 layout: quotes
@@ -32,15 +39,15 @@ title: Dokuma ve Hesaplama
 
 </v-clicks>
 
-<div v-click class="mt-3 px-4 py-1 rounded-lg bg-white/5 border border-white/10 text-xs">
-<p class="opacity-60 mb-1">Tezgâh ↔ kod</p>
-<table>
+<div v-click class="mt-4 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-xs">
+<p class="loom-title">Tezgâh ↔ kod</p>
+<table class="loom-table">
 <tbody>
-<tr><td>çözgü (dikey iplik)</td><td>→ sütun / <code>x</code></td></tr>
-<tr><td>atkı (yatay iplik)</td><td>→ satır / <code>y</code></td></tr>
-<tr><td>bir ilmek / geçiş</td><td>→ piksel</td></tr>
-<tr><td>tekrar eden desen</td><td>→ döngü (<code>for</code>)</td></tr>
-<tr><td>motif</td><td>→ fonksiyon</td></tr>
+<tr><td>çözgü (dikey iplik)</td><td><span class="arrow">→</span> sütun / <code>x</code></td></tr>
+<tr><td>atkı (yatay iplik)</td><td><span class="arrow">→</span> satır / <code>y</code></td></tr>
+<tr><td>bir ilmek / geçiş</td><td><span class="arrow">→</span> piksel</td></tr>
+<tr><td>tekrar eden desen</td><td><span class="arrow">→</span> döngü (<code>for</code>)</td></tr>
+<tr><td>motif</td><td><span class="arrow">→</span> fonksiyon</td></tr>
 </tbody>
 </table>
 </div>
@@ -53,7 +60,13 @@ title: Dokuma ve Hesaplama
 </div>
 
 <style>
-td { padding: 0.05rem 0.6rem !important; line-height: 1.3; }
+.loom-title { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em; color: #ffcc00; margin: 0 0 0.4rem; }
+.loom-table { width: 100%; border-collapse: collapse; margin: 0; }
+.loom-table tr { border: 0; background: transparent !important; }
+.loom-table tr + tr td { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.loom-table td { padding: 0.35rem 0.6rem 0.35rem 0 !important; line-height: 1.6; border-bottom: 0; }
+.loom-table td:first-child { opacity: 0.75; white-space: nowrap; }
+.loom-table .arrow { color: #ffcc00; opacity: 0.8; margin-right: 0.35rem; }
 </style>
 
 <!--
@@ -343,8 +356,15 @@ layout: section
 title: Motif sözlüğü
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-21.png" />
+<div class="absolute inset-0 bg-black/60"></div>
+
+<div class="relative z-10">
+
 # Motif Sözlüğü
-[Biçim · anlam · geometri]{style="font-style: italic; color: grey"}
+[Biçim · anlam · geometri]{style="font-style: italic; color: #ddd"}
+
+</div>
 
 <!-- Her motifte üç şeye bakıyoruz: neye benziyor, geleneksel yorumu ne, hangi geometrik kurala dayanıyor. -->
 

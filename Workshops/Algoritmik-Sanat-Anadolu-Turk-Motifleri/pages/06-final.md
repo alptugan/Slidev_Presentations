@@ -3,33 +3,32 @@ layout: section
 title: Final · Algoritmik Kilim
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-62.png" />
+<div class="absolute inset-0 bg-black/60"></div>
+
+<div class="relative z-10">
+
 # Final
-[Kendi algoritmik kilimin]{style="font-style: italic; color: grey"}
+[Kendi algoritmik kilimin + Post Efekt]{style="font-style: italic; color: #ddd"}
+
+</div>
 
 ---
-layout: two-cols
-class: pr-4
+layout: default
 title: 08 · Final kompozisyon
 ---
 
-# 08 · Final kompozisyon
+# 08 · Final kompozisyon + Shader Efekti
 
-<<< @/public/sketches/08-final-composition/sketch.js js {all|9-14|16-23|25-30|32-46|48-60|62-70}{lines:true,maxHeight:'430px'}
-
-::right::
-
-<div class="flex flex-col items-center mt-4">
-<Embed src="sketches/08-final-composition/index.html" :w="1000" :h="1000" :size="320" />
-<a class="text-sm mt-2" href="https://editor.p5js.org" target="_blank">editor.p5js.org ↗</a>
+<div class="flex items-center justify-center gap-6 mt-6">
+<img class="w-[340px] rounded-md border border-white/15" src="/final/final-kompozisyon.jpg" />
+<svg class="w-16 h-16 shrink-0" viewBox="0 0 64 64" fill="none" stroke="#ffcc00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32h46M40 18l14 14-14 14" /></svg>
+<img class="w-[340px] rounded-md border border-white/15" src="/final/final-weave-knit.jpg" />
 </div>
 
-<v-clicks class="text-sm mt-3">
-
-- **Bordür** + **hayat ağaçları** (dönme) + **eli belinde halkası** + **serpiştirme**
-- `randomSeed(seed)`: rastlantı **tekrarlanabilir** olur. Aynı seed, aynı kilim
-- Seed'i değiştir → yeni bir varyasyon
-
-</v-clicks>
+<div class="text-center mt-4">
+<a class="text-sm" href="https://editor.p5js.org/alptugan/sketches/I0jp1R8uW" target="_blank">p5.js kaynak kodu ↗</a>
+</div>
 
 ---
 layout: default

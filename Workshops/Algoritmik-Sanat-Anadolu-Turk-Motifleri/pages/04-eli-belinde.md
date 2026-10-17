@@ -3,13 +3,21 @@ layout: section
 title: Vaka Çalışması · Eli Belinde
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-49.jpg" />
+<div class="absolute inset-0 bg-black/50"></div>
+
+<div class="relative z-10">
+
 # Vaka Çalışması
-[Eli Belinde · motifi parçalarına ayırmak]{style="font-style: italic; color: grey"}
+[Eli Belinde · motifi parçalarına ayırmak]{style="font-style: italic; color: #ddd"}
+
+</div>
 
 ---
 layout: image-right
 image: /motifs/eli-belinde.jpg
 backgroundSize: contain
+class: img-contain
 title: Eli belinde nedir?
 ---
 
@@ -52,31 +60,6 @@ Her tıklamada bir parça daha: 1 kafa, 2 boyun, 3 omuz, 4 gövde, 5-6 sol kol /
 Katılımcılara sorun: Bu parça hangi temel şekil? Kaç köşesi var? Sağ ve sol aynı mı?
 -->
 
----
-layout: default
-title: Parçadan koda
----
-
-# Parçadan koda
-
-| # | Parça | Geometri | p5.js |
-|---|---|---|---|
-| 1 | Kafa | beşgen | `beginShape()` + 5 × `vertex()` |
-| 2 | Boyun | dikdörtgen | `rect()` |
-| 3 | Omuz | ince dikdörtgen | `rect()` |
-| 4 | Gövde | ters yamuk | `quad()` |
-| 5–6 | Sol kol + el | 7 köşeli çokgen | `beginShape()` → fonksiyon `kol()` |
-| 7–8 | Sağ kol + el | sol kolun **aynası** | `scale(-1, 1)` + `kol()` |
-| 9 | Bel | dikdörtgen | `rect()` |
-| 10 | Bacaklar / etek | yamuk | `quad()` |
-| 11–14 | Etek motifleri | **aynı üçgen × 4**, aşağı kayarak | `for` + `triangle()` |
-
-<p v-click class="mt-4 text-center">14 parça → <b>8 farklı fikir</b>: tekrar eden her şey bir <b>döngü</b> ya da <b>fonksiyon</b> olur.</p>
-
-<style>
-table { font-size: 0.85rem; }
-td, th { padding: 0.25rem 0.6rem !important; }
-</style>
 
 ---
 layout: two-cols
@@ -91,8 +74,9 @@ title: 07 · Eli belinde kodu
 ::right::
 
 <div class="flex flex-col items-center mt-6">
-<Embed src="sketches/07-eli-belinde/index.html" :size="300" />
-<a class="text-sm mt-2" href="https://editor.p5js.org" target="_blank">editor.p5js.org ↗</a>
+<img class="w-[300px] rounded-md border border-white/15" src="/page-53.jpg" />
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/5rmg7Qs3Z" target="_blank">editor.p5js.org-Temel Şekiller ↗</a>
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/YFXwSp-m0" target="_blank">editor.p5js.org-Trigonometrik↗</a>
 </div>
 
 <v-clicks class="text-sm mt-4">
@@ -109,33 +93,19 @@ Sırayla: draw → fonksiyon başlığı → kafa → boyun/omuz/gövde → sol 
 -->
 
 ---
-layout: center
-title: Eli belinde · deneyler
+layout: default
+title: Eli belinde · figür ve madalyon
 ---
 
-# Şimdi sıra sende
+# Eli belinde · figürden madalyona
 
-<div class="grid grid-cols-2 gap-6 mt-6 text-left">
-<div v-click class="p-4 rounded-lg bg-white/5">
-<b>1 · Renk</b><br/>
-<span class="text-sm opacity-80">Etek motiflerini farklı bir renkle doldur. Kafayı ayrı bir renkte çiz.</span>
+<div class="grid grid-cols-2 gap-10 mt-4">
+<div class="flex flex-col items-center">
+<img class="w-[320px] rounded-md border border-white/15" src="/eli-belinde/eli-belinde-figur.jpg" />
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/dd6I9ZqBy" target="_blank">p5.js kaynak kodu ↗</a>
 </div>
-<div v-click class="p-4 rounded-lg bg-white/5">
-<b>2 · Döngü</b><br/>
-<span class="text-sm opacity-80">Etekteki üçgen sayısını <code>4</code>'ten <code>3</code>'e indir. Aralığı (<code>85</code>) değiştir.</span>
-</div>
-<div v-click class="p-4 rounded-lg bg-white/5">
-<b>3 · Çoğalt</b><br/>
-<span class="text-sm opacity-80"><code>eliBelinde()</code>'yi yan yana 3 kez çağır: <code>(200, 400, 0.4)</code>, <code>(400, …)</code>, <code>(600, …)</code></span>
-</div>
-<div v-click class="p-4 rounded-lg bg-white/5">
-<b>4 · Ayna</b><br/>
-<span class="text-sm opacity-80">Figürü baş aşağı çevirip ilkinin altına koy. Madalyon çıkıyor mu?</span>
-<pre class="text-xs mt-1">eliBelinde(400, 220, 0.4, kirmizi);
-push();
-translate(400, 400);
-scale(1, -1);   // dikey ayna
-eliBelinde(0, -180, 0.4, kirmizi);
-pop();</pre>
+<div class="flex flex-col items-center">
+<img class="w-[320px] rounded-md border border-white/15" src="/eli-belinde/eli-belinde-madalyon.jpg" />
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/gDS-uMWxv" target="_blank">p5.js kaynak kodu ↗</a>
 </div>
 </div>

@@ -3,12 +3,19 @@ layout: section
 title: Uygulama 2 · Tekrar, Dönüşüm, Simetri
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-55.jpeg" />
+<div class="absolute inset-0 bg-black/60"></div>
+
+<div class="relative z-10">
+
 # Uygulama 2
-[Tekrar · Dönüşüm · Simetri]{style="font-style: italic; color: grey"}
+[Tekrar · Dönüşüm · Simetri]{style="font-style: italic; color: #ddd"}
+
+</div>
 
 ---
 layout: two-cols
-class: pr-6
+class: pr-6 mt-30
 title: for döngüsü
 ---
 
@@ -65,16 +72,10 @@ title: 04 · Tekrar
 ::right::
 
 <div class="flex flex-col items-center mt-6">
-<Embed src="sketches/04-repetition/index.html" :size="300" />
+<img class="w-[300px] rounded-md border border-white/15" src="/hayat-agaci/hayat-agaci-desen.jpg" />
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/CrtND4FJ-" target="_blank">p5.js kaynak kodu ↗</a>
 </div>
 
-<v-clicks class="text-sm mt-4">
-
-- İç içe iki döngü → **ızgara**
-- `drawTree()` hiç değişmedi; sadece **nereye** ve **kaç kez** çağrıldığı değişti
-- **Dene:** `+= 190` ve `+= 260` aralıklarını değiştir
-
-</v-clicks>
 
 ---
 layout: two-cols
@@ -89,16 +90,9 @@ title: 05 · Dönüşüm
 ::right::
 
 <div class="flex flex-col items-center mt-6">
-<Embed src="sketches/05-transformation/index.html" :size="300" />
+<img class="w-[380px] rounded-md border border-white/15" src="/hayat-agaci/hayat-agaci-donusum.jpg" />
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/QeceQDIvb" target="_blank">p5.js kaynak kodu ↗</a>
 </div>
-
-<v-clicks class="text-sm mt-4">
-
-- `random(a, b)`: a ile b arasında rastgele bir sayı
-- Her ağaç biraz **eğik**, biraz **farklı boyda** → el dokumasının "kusurlu" canlılığı
-- Her çalıştırmada **farklı** sonuç (önizlemeyi yenile!)
-
-</v-clicks>
 
 ---
 layout: two-cols
@@ -113,13 +107,6 @@ title: 06 · Simetri
 ::right::
 
 <div class="flex flex-col items-center mt-6">
-<Embed src="sketches/06-symmetry/index.html" :size="300" />
+<img class="w-[380px] rounded-md border border-white/15" src="/hayat-agaci/hayat-agaci-simetri.jpg" />
+<a class="text-sm mt-2" href="https://editor.p5js.org/alptugan/sketches/NpL6aFZsq" target="_blank">p5.js kaynak kodu ↗</a>
 </div>
-
-<v-clicks class="text-sm mt-4">
-
-- Önce merkeze taşı, sonra **8 kez** `TWO_PI / 8` (45°) döndür
-- Yıldız, pıtrak, haç motiflerinin kuralı
-- **Dene:** `8` yerine `6` ya da `12` yaz. İki yerde birden değiştirmen gerekiyor; bunu bir değişkene (`let n = 8;`) taşı!
-
-</v-clicks>

@@ -3,8 +3,15 @@ layout: section
 title: Bölüm 2 · p5.js Temelleri
 ---
 
+<img class="absolute inset-0 w-full h-full object-cover" src="/page-33.jpg" />
+<div class="absolute inset-0 bg-black/50"></div>
+
+<div class="relative z-10">
+
 # Bölüm 2
-[p5.js Temelleri · Şekil, Renk, Koordinat]{style="font-style: italic; color: grey"}
+[p5.js Temelleri · Şekil, Renk, Koordinat]{style="font-style: italic; color: #ddd"}
+
+</div>
 
 ---
 layout: default
@@ -157,6 +164,8 @@ vertex(-130, -313);
 endShape(CLOSE);
 ```
 
+<img class="h-44 mt-4 mx-auto rounded-md border border-white/15" src="/page-38.jpg" />
+
 </div>
 <div>
 
@@ -180,23 +189,27 @@ title: fill ve stroke
 
 # Dolgu ve çizgi
 
-<<< @/public/sketches/00b-renk/sketch.js js {all|9-12|14-18|20-24|26-30}{lines:true,maxHeight:'400px'}
+<<< @/public/sketches/00b-renk/sketch.js js {all|9-12|14-18|20-24|26-30}{lines:true,maxHeight:'380px'}
 
 ::right::
 
-<div class="flex flex-col items-center mt-6">
-<Embed src="sketches/00b-renk/index.html" :w="400" :h="400" :size="300" />
+<div class="flex flex-col items-center mt-2">
+<Embed src="sketches/00b-renk/index.html" :w="400" :h="400" :size="250" />
 </div>
 
-<div class="text-sm mt-4 leading-6">
+<table class="text-sm mt-3 mx-auto">
+<tbody>
+<tr><td class="py-1 pr-4"><code>fill(renk)</code> / <code>noFill()</code></td><td class="py-1">iç dolgu açık / kapalı</td></tr>
+<tr><td class="py-1 pr-4"><code>stroke(renk)</code> / <code>noStroke()</code></td><td class="py-1">kontur açık / kapalı</td></tr>
+<tr><td class="py-1 pr-4"><code>strokeWeight(px)</code></td><td class="py-1">kontur kalınlığı</td></tr>
+</tbody>
+</table>
 
-| | |
-|---|---|
-| `fill(renk)` / `noFill()` | iç dolgu açık / kapalı |
-| `stroke(renk)` / `noStroke()` | kontur açık / kapalı |
-| `strokeWeight(px)` | kontur kalınlığı |
-
-</div>
+<style>
+/* uzun satırları kaydır, yatay kaydırma çubuğu yok */
+.slidev-code { overflow-x: hidden !important; }
+.slidev-code, .slidev-code code { white-space: pre-wrap; word-break: break-word; }
+</style>
 
 <!--
 Önemli: bu fonksiyonlar bir "durum" ayarlar. Sonraki tüm şekiller bu ayarla çizilir, ta ki yeniden değiştirene kadar.

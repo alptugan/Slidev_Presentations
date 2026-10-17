@@ -1,80 +1,122 @@
-// 07 - Eli Belinde
-// Analiz görsellerindeki parçalar (1-14) sırasıyla koda dönüştürüldü.
-// Motifin merkezi (0, 0) noktasıdır; yükseklik ~865 birimdir.
-// p5.js 1.x ve 2.x ile aynı şekilde çalışır.
-
-let zemin = '#efe2c2';
-let kirmizi = '#8b0000';
+// Anatolian / Turkic motif palette
+let zemin = "#efe2c2";
+let kirmizi = "#8b0000";
 
 function setup() {
-  createCanvas(800, 800);
-  noLoop();
+    createCanvas(800, 800);
+
+    angleMode(DEGREES);
 }
 
 function draw() {
-  background(zemin);
-  eliBelinde(width / 2, height / 2, 0.8, kirmizi);
+    background(zemin);
+
+    // Dolguları kapat sadece çizgiler görünsün
+    noFill();
+
+    // 1. Kafa
+    push();
+    translate(width / 2, 110);
+    polygon(70, 60, 5);
+    pop();
+
+    // 2. Boyun
+    push();
+    translate(width / 2, 170);
+    polygon(22, 15, 4);
+    pop();
+
+    // 3. Omuz
+    push();
+    translate(width / 2, 191);
+    polygon(150, 15, 4);
+    pop();
+
+    // 4. Gövde
+    push();
+    translate(width / 2, 241);
+    polygon(100, 120, 3);
+    pop();
+
+    // 5. Sol Kol
+    push();
+    translate(width / 2 - 132, 247);
+    rotate(120);
+    polygon(100, 15, 4);
+    pop();
+
+    // 6. Sol El
+    push();
+    translate(width / 2 - 132, 312);
+    rotate(0);
+    polygon(50, 20, 3);
+    pop();
+
+    // 7. Sağ Kol
+    push();
+    translate(width / 2 + 132, 247);
+    rotate(360 - 120);
+    polygon(100, 15, 4);
+    pop();
+
+    // 8. Sağ El
+    push();
+    translate(width / 2 + 132, 312);
+    polygon(50, 20, 3);
+    pop();
+
+    // 9. Bel
+    push();
+    translate(width / 2, 340);
+    polygon(28, 25, 4);
+    pop();
+
+    // 10. Bacaklar
+    push();
+    translate(width / 2, 522);
+    rotate(180);
+    polygon(210, 200, 3);
+    pop();
+
+    // 11. Ete Desen 01
+    push();
+    translate(width / 2, 425);
+    rotate(180);
+    polygon(55, 55, 3);
+    pop();
+
+    // 11. Ete Desen 02
+    push();
+    translate(width / 2, 475);
+    rotate(180);
+    polygon(55, 55, 3);
+    pop();
+
+    // 11. Ete Desen 03
+    push();
+    translate(width / 2, 525);
+    rotate(180);
+    polygon(55, 55, 3);
+    pop();
+
+    // 11. Ete Desen 04
+    push();
+    translate(width / 2, 575);
+    rotate(180);
+    polygon(55, 55, 3);
+    pop();
 }
 
-function eliBelinde(x, y, s, renk) {
-  push();
-  translate(x, y);
-  scale(s);
-  noStroke();
-  fill(renk);
-
-  // 1. KAFA: beşgen
-  beginShape();
-  vertex(-63, -432);
-  vertex(63, -432);
-  vertex(130, -313);
-  vertex(0, -238);
-  vertex(-130, -313);
-  endShape(CLOSE);
-
-  // 2. BOYUN
-  rect(-23, -252, 46, 28);
-
-  // 3. OMUZ
-  rect(-183, -224, 366, 35);
-
-  // 4. GÖVDE: ters yamuk
-  quad(-120, -189, 120, -189, 34, -40, -34, -40);
-
-  // 5-6. SOL KOL + SOL EL
-  kol();
-
-  // 7-8. SAĞ KOL + SAĞ EL: aynı kol, x ekseninde aynalanır
-  push();
-  scale(-1, 1);
-  kol();
-  pop();
-
-  // 9. BEL
-  rect(-34, -40, 68, 45);
-
-  // 10. BACAKLAR / ETEK
-  quad(-34, 5, 34, 5, 281, 433, -281, 433);
-
-  // 11-14. ETEK MOTİFLERİ: aynı üçgen 4 kez aşağı kaydırılır
-  fill(zemin);
-  for (let i = 0; i < 4; i++) {
-    let dy = i * 85;
-    triangle(0, 20 + dy, -84, 167 + dy, 84, 167 + dy);
-  }
-
-  pop();
-}
-
-// Kol ve el tek bir çokgen: omuzdan aşağı iner, bele doğru kıvrılır
-function kol() {
-  beginShape();
-  vertex(-183, -224);
-  vertex(-283, -49);
-  vertex(-147, 30);
-  vertex(-92, -67);
-  vertex(-232, -67);
-  vertex(-162, -189);
-  vertex(-183, -189);
-  endShape(CLOSE);
+function polygon(rx, ry, npoints) {
+    let angle = 360 / npoints;
+    let offset = npoints === 4 ? angle / 2 : 0;
+    push();
+    beginShape();
+    for (let a = 0; a < 360; a += angle) {
+        let sx = cos(90 + a + offset) * rx;
+        let sy = sin(90 + a + offset) * ry;
+        vertex(sx, sy);
+    }
+    endShape(CLOSE);
+    pop();
 }

@@ -230,3 +230,18 @@ h6 {
     font-size: 72px;
     font-weight: 700;
 }
+
+/* image-right: theme forces background-size: cover. Add `class: img-contain` to show the whole image */
+.image-right.img-contain + div {
+    background-size: contain !important;
+}
+
+/* theme styles ul but not ol; the UnoCSS reset hides ol numbers */
+.slidev-layout ol {
+    list-style: decimal;
+}
+
+.slidev-layout ol > li::marker {
+    color: #ffcc00;
+    font-weight: 600;
+}

@@ -60,12 +60,20 @@ class: text-center
 title: Teşekkürler
 ---
 
+<img class="absolute top-28 mx-88 w-40 h-40 rounded-full object-cover" style="object-position: 35% 30%" src="/profile-ascii-art.jpg" />
+
 # Teşekkürler!
 
-<img class="h-16 mx-auto my-6" src="/pcd/pcd-2026-logo.svg" />
+<img class="h-16 mx-auto my-6 mt-40" src="/pcd/pcd-2026-logo.svg" />
 
 <div class="opacity-80">
-Alp Tuğan · <a href="https://www.alptugan.com" target="_blank">alptugan.com</a> · <a href="https://github.com/alptugan" target="_blank">github.com/alptugan</a>
+Alp Tuğan, Dr. · <a href="https://www.alptugan.com" target="_blank">alptugan.com</a> · <a href="https://github.com/alptugan" target="_blank">github.com/alptugan</a>
 </div>
 
-<p class="text-sm opacity-50 mt-6">PCD@İstanbul 2026 · Özyeğin Üniversitesi İletişim Tasarımı · TAK Kadıköy</p>
+<p class="text-sm opacity-50 mt-6">PCD@İstanbul 2026 · Özyeğin Üniversitesi İletişim ve Tasarımı · TAK Kadıköy</p>
+
+<div class="grid grid-cols-3 gap-2 items-center justify-items-center max-w-sm mx-auto mt-5">
+  <img class="h-12 object-contain" src="/logos/ozu-fad.png" />
+  <img class="h-10 object-contain" src="/logos/cod.png" />
+  <img class="h-12 object-contain rounded-full" src="/logos/tak-kadikoy.png" />
+</div>
