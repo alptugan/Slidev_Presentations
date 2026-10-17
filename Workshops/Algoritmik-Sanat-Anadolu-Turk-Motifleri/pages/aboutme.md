@@ -1,5 +1,5 @@
 ---
-image: /alp_tugan_noiseparticle.jpg
+image: /self-portrait-mono-7.png
 layout: image-left
 title: Ben kimim?
 ---
