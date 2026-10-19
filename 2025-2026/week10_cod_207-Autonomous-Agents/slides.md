@@ -8,7 +8,7 @@ routerMode: hash
 lineNumbers: true
 info: |
     ## Özyeğin University Course Presentation
-    Lecturer Alp Tuğan
+    Lecturer Alp Tuğan, Dr.
 
     Access all week contents @[Github/alptugan](https://github.com/alptugan/Slidev_Presentations)
 drawings:
