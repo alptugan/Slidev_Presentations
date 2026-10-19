@@ -1,9 +1,10 @@
 ---
 background: /cover-osc-agents.png
-title: Week 11 Autonomous Agents + Oscillations
-exportFilename: "week11-COD207-Autonomous-Agents_Oscillations"
+title: Week 10 Autonomous Agents + Oscillations
+exportFilename: "week10-COD207-Autonomous-Agents_Oscillations"
 class: text-center
 highlighter: shiki
+routerMode: hash
 lineNumbers: true
 info: |
     ## Özyeğin University Course Presentation

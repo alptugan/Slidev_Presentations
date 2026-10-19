@@ -31,6 +31,7 @@ codeCopy: true
 themeConfig:
     primary: "#ffcc00"
 transition: fade-out
+favicon: "https://www.alptugan.com/v6/favicon-192.png"
 theme: seriph
 src: /pages/header.md
 ---

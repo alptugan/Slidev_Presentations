@@ -3,6 +3,7 @@ background: /cover_grid_loops.png
 title: Week 05 - Randomness & Nested Loops and Algorithmic Art Praxis
 exportFilename: "week05-cod207-Algorithmic-Art-Praxis-Randomness-Nested-Loops"
 class: text-center
+routerMode: hash
 highlighter: shiki
 lineNumbers: true
 info: |
@@ -28,11 +29,11 @@ export:
 selectable: true
 codeCopy: true
 # favicon, can be a local file path or URL
-favicon: 'https://raw.githubusercontent.com/alptugan/alptugan.com-v6/refs/heads/main/v6/favicon-72-precomposed.png?token=GHSAT0AAAAAADJYWS74VCPN2IEKYITFOZ422G2WTWA'
+favicon: "https://www.alptugan.com/v6/favicon-192.png"
 themeConfig:
     primary: "#ffcc00"
 transition: fade-out
-theme: seriph
+theme: default
 src: pages/header.md
 ---
 
