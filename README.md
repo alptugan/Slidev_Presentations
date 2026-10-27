@@ -4,25 +4,25 @@ A collection of Slidev presentation projects for courses and workshops.
 
 ## 📚 Course Materials
 ### COD 412 Sound Projects & Media
-- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week01/)
-- [Week 02 - Acoustic Ecology](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
-- [Week 03 - Sound History 01](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week03-SoundHistory01/)
-- [Week 04 - Live Coding](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week04-LiveCoding/)
-- [Week 05 - Sound Art](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week05-SoundArt/)
-- [Week 06 - Sonification](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Sonification/)
-- [Extra - Sound in Films: Diegetic, Non-Diegetic & Internal Diegetic](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Diegetic-NonDiegetic-InternalDiegetic/)
-- [Week 07 - Listening Modes](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Listening-Modes/)
-- [Week 08 - Field Recording](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Field-Recording/)
-- [Week 09 - Audiovisual](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/Audiovisual/)
+- [Week 01 - Introduction](https://presentations.alptugan.com/Sound-Projects-and-Media/COD412_week01/)
+- [Week 02 - Acoustic Ecology](https://presentations.alptugan.com/Sound-Projects-and-Media/COD412_week02-AcousticEcology/)
+- [Week 03 - Sound History 01](https://presentations.alptugan.com/Sound-Projects-and-Media/COD412_week03-SoundHistory01/)
+- [Week 04 - Live Coding](https://presentations.alptugan.com/Sound-Projects-and-Media/COD412_week04-LiveCoding/)
+- [Week 05 - Sound Art](https://presentations.alptugan.com/Sound-Projects-and-Media/COD412_week05-SoundArt/)
+- [Week 06 - Sonification](https://presentations.alptugan.com/Sound-Projects-and-Media/Sonification/)
+- [Extra - Sound in Films: Diegetic, Non-Diegetic & Internal Diegetic](https://presentations.alptugan.com/Sound-Projects-and-Media/Diegetic-NonDiegetic-InternalDiegetic/)
+- [Week 07 - Listening Modes](https://presentations.alptugan.com/Sound-Projects-and-Media/Listening-Modes/)
+- [Week 08 - Field Recording](https://presentations.alptugan.com/Sound-Projects-and-Media/Field-Recording/)
+- [Week 09 - Audiovisual](https://presentations.alptugan.com/Sound-Projects-and-Media/Audiovisual/)
 
 
 ### COD 301 Design Studio III
-- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week01/)
-- [Week 02 - Data Visualization](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week02/)
-- [Week 03 - Layouts](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Layouts/)
-- [Week 03 - Hierarchy](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week03-Typography/)
-- [Week 04 - History](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week04-History/)
-- [Week 05 - Animation](https://alptugan.github.io/Slidev_Presentations/Design-Studio-III/cod301-week05-Animation/)
+- [Week 01 - Introduction](https://presentations.alptugan.com/Design-Studio-III/cod301-week01/)
+- [Week 02 - Data Visualization](https://presentations.alptugan.com/Design-Studio-III/cod301-week02/)
+- [Week 03 - Layouts](https://presentations.alptugan.com/Design-Studio-III/cod301-week03-Layouts/)
+- [Week 03 - Hierarchy](https://presentations.alptugan.com/Design-Studio-III/cod301-week03-Typography/)
+- [Week 04 - History](https://presentations.alptugan.com/Design-Studio-III/cod301-week04-History/)
+- [Week 05 - Animation](https://presentations.alptugan.com/Design-Studio-III/cod301-week05-Animation/)
 - Week 06 - Animation Reviews
 - Week 07 - Sound
 - Week 08 - Animation + Sound - **Critique Session 2**
@@ -35,14 +35,14 @@ A collection of Slidev presentation projects for courses and workshops.
 - Week 15 - **Final Jury**
 
 ### COD 208 Creative Coding II
-- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week01_cod_208/)
-- [Week 02 - OOP](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week02_cod_208-OOP/)
-- [Week 03 - Games](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week03_cod_208-Games/)
-- [Week 04 - What is Interactivity](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Interactivity/)
-- [Week 04 - Studio Session:Side Scrolling](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game/)
-- [Week 05 - Augmented Reality](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week05_cod_208-Metaphors-AR/)
-- [Week 06 - Teachable Machine](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine/)
-- [Week 07 - Machine Learning Model Integration](https://alptugan.github.io/Slidev_Presentations/2025-2026-Spring/week07_cod_208-ML5_FaceApi/)
+- [Week 01 - Introduction](https://presentations.alptugan.com/2025-2026-Spring/week01_cod_208/)
+- [Week 02 - OOP](https://presentations.alptugan.com/2025-2026-Spring/week02_cod_208-OOP/)
+- [Week 03 - Games](https://presentations.alptugan.com/2025-2026-Spring/week03_cod_208-Games/)
+- [Week 04 - What is Interactivity](https://presentations.alptugan.com/2025-2026-Spring/week04_cod_208-Interactivity/)
+- [Week 04 - Studio Session:Side Scrolling](https://presentations.alptugan.com/2025-2026-Spring/week04_cod_208-Side_Scrolling_Game/)
+- [Week 05 - Augmented Reality](https://presentations.alptugan.com/2025-2026-Spring/week05_cod_208-Metaphors-AR/)
+- [Week 06 - Teachable Machine](https://presentations.alptugan.com/2025-2026-Spring/week06_cod_208-AI-Teachable-Machine/)
+- [Week 07 - Machine Learning Model Integration](https://presentations.alptugan.com/2025-2026-Spring/week07_cod_208-ML5_FaceApi/)
 - [Week 08 - Studio Session: ML](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Face-mesh-Mask-Switch)
 - [Week 09 - P5JS ML5 Sound Training](https://teaching.alptugan.com/Tutorials/P5JS---ml5-Sound-Training)
 - [Week 10 - Data Visualization vs. Info Graphics](https://teaching.alptugan.com/Tutorials/P5JS---Data-Visualization)
@@ -54,18 +54,18 @@ A collection of Slidev presentation projects for courses and workshops.
 
 
 ### COD 207 Creative Coding I
-- [Week 01 - Introduction](https://alptugan.github.io/Slidev_Presentations/2025-2026/week01_cod_207/)
-- [Week 02 - Shapes](https://alptugan.github.io/Slidev_Presentations/2025-2026/week02_cod_207-Shapes/)
-- [Week 03 - Computational Thinking](https://alptugan.github.io/Slidev_Presentations/2025-2026/week03_cod_207-Computational_Thinking/)
-- [Week 04 - Loops & Moiré Patterns](https://alptugan.github.io/Slidev_Presentations/2025-2026/week04_cod_207-Loops-Moire_Patterns/)
-- [Week 05 - Randomness & Repetition](https://alptugan.github.io/Slidev_Presentations/2025-2026/week05_cod_207-Randomness-Repetetion/)
+- [Week 01 - Introduction](https://presentations.alptugan.com/2025-2026/week01_cod_207/)
+- [Week 02 - Shapes](https://presentations.alptugan.com/2025-2026/week02_cod_207-Shapes/)
+- [Week 03 - Computational Thinking](https://presentations.alptugan.com/2025-2026/week03_cod_207-Computational_Thinking/)
+- [Week 04 - Loops & Moiré Patterns](https://presentations.alptugan.com/2025-2026/week04_cod_207-Loops-Moire_Patterns/)
+- [Week 05 - Randomness & Repetition](https://presentations.alptugan.com/2025-2026/week05_cod_207-Randomness-Repetetion/)
 - Week 06 - No Class: National Holiday (Research: Algorithmic Art Praxis)
-- [Week 07 - Media](https://alptugan.github.io/Slidev_Presentations/2025-2026/week06_cod_207-Media/)
-- [Week 08 - Image Processing](https://alptugan.github.io/Slidev_Presentations/2025-2026/week07_cod_207-Image-Processing/)
-- [Week 09 - Typography](https://alptugan.github.io/Slidev_Presentations/2025-2026/week08_cod_207-Typography/)
-- [Week 10 - Sound](https://alptugan.github.io/Slidev_Presentations/2025-2026/week09_cod_207-Interactivity-Sound/)
-- [Week 11 - Autonomous Agents](https://alptugan.github.io/Slidev_Presentations/2025-2026/week10_cod_207-Autonomous-Agents/)
-- [Week 11 - ALAP](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis/)
+- [Week 07 - Media](https://presentations.alptugan.com/2025-2026/week06_cod_207-Media/)
+- [Week 08 - Image Processing](https://presentations.alptugan.com/2025-2026/week07_cod_207-Image-Processing/)
+- [Week 09 - Typography](https://presentations.alptugan.com/2025-2026/week08_cod_207-Typography/)
+- [Week 10 - Sound](https://presentations.alptugan.com/2025-2026/week09_cod_207-Interactivity-Sound/)
+- [Week 11 - Autonomous Agents](https://presentations.alptugan.com/2025-2026/week10_cod_207-Autonomous-Agents/)
+- [Week 11 - ALAP](https://presentations.alptugan.com/Workshops/Algorithmic-Art-Praxis/)
 - Week 12 - Final Project Proposals
 - Week 13 - Final Project Revision & Feedback
 - Week 14 - Final Project Revision & Feedback
@@ -73,19 +73,19 @@ A collection of Slidev presentation projects for courses and workshops.
 
 ## Creative Coding Topics
 
-- [Algorithmic Art Praxis](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis/)
+- [Algorithmic Art Praxis](https://presentations.alptugan.com/Workshops/Algorithmic-Art-Praxis/)
 
 ## 🎓 Workshops
 
-- [Algorithmic Art Praxis](https://alptugan.github.io/Slidev_Presentations/Workshops/Algorithmic-Art-Praxis/)
-- [Code and Algorithm on Design](https://alptugan.github.io/Slidev_Presentations/Workshops/Code-and-algorithm-on-design/)
-- [OMM Arduino Workshop](https://alptugan.github.io/Slidev_Presentations/Workshops/OMM_Arduino_Workshop/)
-- [OZU_Iletisim-ve-Tasarimi](https://alptugan.github.io/Slidev_Presentations/Workshops/OZU_Iletisim-ve-Tasarimi/)
-- [ODTÜ - Live Coding 2026-04-29](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding/)
-- [Baku - Live Coding Masterclass](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding-Baku/)
-- [Sonar - Live Coding 2026-05-10](https://alptugan.github.io/Slidev_Presentations/Workshops/LiveCoding-Sonar/)
-- [PCD@İstanbul - Algoritmik Sanat ve Anadolu Türk Motifleri 2026-10-17](https://alptugan.github.io/Slidev_Presentations/Workshops/Algoritmik-Sanat-Anadolu-Turk-Motifleri/)
-- [DIS 527 - Domestic Soundscapes](https://alptugan.github.io/Slidev_Presentations/Workshops/DIS-527-Domestic-Soundscapes/)
+- [Algorithmic Art Praxis](https://presentations.alptugan.com/Workshops/Algorithmic-Art-Praxis/)
+- [Code and Algorithm on Design](https://presentations.alptugan.com/Workshops/Code-and-algorithm-on-design/)
+- [OMM Arduino Workshop](https://presentations.alptugan.com/Workshops/OMM_Arduino_Workshop/)
+- [OZU_Iletisim-ve-Tasarimi](https://presentations.alptugan.com/Workshops/OZU_Iletisim-ve-Tasarimi/)
+- [ODTÜ - Live Coding 2026-04-29](https://presentations.alptugan.com/Workshops/LiveCoding/)
+- [Baku - Live Coding Masterclass](https://presentations.alptugan.com/Workshops/LiveCoding-Baku/)
+- [Sonar - Live Coding 2026-05-10](https://presentations.alptugan.com/Workshops/LiveCoding-Sonar/)
+- [PCD@İstanbul - Algoritmik Sanat ve Anadolu Türk Motifleri 2026-10-17](https://presentations.alptugan.com/Workshops/Algoritmik-Sanat-Anadolu-Turk-Motifleri/)
+- [DIS 527 - Domestic Soundscapes](https://presentations.alptugan.com/Workshops/DIS-527-Domestic-Soundscapes/)
 
 ## 🚀 Automated Deployment
 

@@ -428,7 +428,7 @@ layout: section
 ---
 
 # Sound Works
-Review the listed sound works in the following [link](https://alptugan.github.io/Slidev_Presentations/Sound-Projects-and-Media/COD412_week03-SoundHistory01/#/18).
+Review the listed sound works in the following [link](https://presentations.alptugan.com/Sound-Projects-and-Media/COD412_week03-SoundHistory01/#/18).
 
 
 ---
