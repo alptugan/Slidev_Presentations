@@ -119,15 +119,13 @@ layout: two-cols
 loadFont(), textFont()
 
 
-```js {1|3-4|7-9|14|15|16|18,25|19-20|21|23|24|all}{maxHeight:'400px'} 
+```js {1|3-7|9-24|10|12|13|14|16|17-18|19|21|22|16-23|all}{maxHeight:'400px'} 
 let fontAkira; // font variable
 
-function preload() {
-	fontAkira = loadFont("Akira Expanded Demo.otf"); // store font into variable
-}
-
-function setup() {
+async function setup() {
 	createCanvas(800, 800);
+
+	fontAkira = await loadFont("Akira Expanded Demo.otf"); // store font into variable
 }
 
 function draw() {
@@ -151,6 +149,143 @@ function draw() {
 ::right::
 
 <img v-click mt-22.5 ml-10 w-95 src='/w10-text03.png' />
+
+---
+layout: two-cols
+---
+
+# Star Wars Game Card
+Image + Text + Custom Design -> [p5js link](https://editor.p5js.org/alptugan/sketches/L9pLQZwZJ)
+
+<div class="wrap-code">
+
+```js {1-2|4-5|7-8|10-11|13-14|17-33|36-37|39-48|52-75|82-108|111-115|all}{maxHeight:'380px'}
+// declare font var
+var titleFont;
+
+// Declare title text
+var titleTxt;
+
+// Content text
+var contentTxt;
+
+// declare content font
+var contentFont;
+
+// header image
+var headerImg;
+
+
+async function setup() {
+  createCanvas(600, 800);
+
+  titleTxt = "Star Wars";
+  
+  contentTxt =
+    "Star Wars is an American media franchise created by George Lucas. The space opera saga began with the original Star Wars film and quickly became a worldwide pop culture phenomenon. It has expanded into various films and other media, including television series, video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe.";
+
+  // Load Title Font
+  titleFont = await loadFont("STJEDISE.TTF");
+
+  // Load Content Font
+  contentFont = await loadFont("Satoshi-Variable.ttf");
+
+  // Load Header Image
+  headerImg = await loadImage("mandalorian.jpg");
+}
+
+function draw() {
+  // Set backgorund color
+  background("#A4C4A4");
+
+  // -------------------------------------
+  // HEADER IMAGE RELATED - START
+  // -------------------------------------
+  push();
+  scale(0.335); // adjust the size of the image
+  image(headerImg, 50, 50);
+  pop();
+  // -------------------------------------
+  // HEADER IMAGE RELATED - END
+  // -------------------------------------
+
+  
+
+  // -------------------------------------
+  // TITLE RELATED - START
+  // -------------------------------------
+  // align text
+  textAlign(CENTER);
+
+  // size
+  textSize(64);
+
+  // set the font
+  textFont(titleFont);
+
+  // x position of the title
+  var titleX = width / 2;
+
+  // y position of the title
+  var titleY = 400;
+
+  // display title
+  text(titleTxt, titleX , titleY);
+  
+  // -------------------------------------
+  // TITLE RELATED - END
+  // -------------------------------------
+
+
+
+
+
+  
+  // -------------------------------------
+  // CONTENT TEXT RELATED - START
+  // -------------------------------------
+  // align text
+  textAlign(LEFT);
+
+  // size
+  textSize(23);
+
+  // set the font
+  textFont(contentFont);
+
+  // x position of the content paragraph
+  var contentX = 50;
+
+  // y position of the content paragraph is positioned according to the position of the `titleY`
+  var contentY = titleY + 40;
+
+  // Set the content text box width
+  var contentTxtWidth = width - 100;
+  
+  // display title
+  text(contentTxt, contentX , contentY, contentTxtWidth);
+  
+  // -------------------------------------
+  // CONTENT TEXT RELATED - END
+  // -------------------------------------
+}
+
+function keyPressed() {
+  if(key === 's') {
+    saveCanvas("mandaloria-card.jpg");
+  }
+}
+
+```
+
+</div>
+
+::right::
+
+<img mt-0 ml-15 w-90 src='/mandaloria-card.jpg' />
+
+
+
 
 ---
 src: /pages/break.md

@@ -48,3 +48,9 @@
     left: 0;
     width: max-content;
 }
+
+.wrap-code .slidev-code,
+.wrap-code .slidev-code .line {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
