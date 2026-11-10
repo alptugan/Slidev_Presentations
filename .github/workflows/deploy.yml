@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 60
 
     steps:
       - name: Checkout
@@ -204,8 +204,17 @@ jobs:
                 cd "$folder"
                 timeout 10m pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
                 echo "--> Dependencies installed in $folder"
+                # Slidev resolves playwright-chromium from the deck itself; add it in CI only (no lockfile change)
+                if [ ! -d node_modules/playwright-chromium ]; then
+                  timeout 10m pnpm add -D playwright-chromium --lockfile=false || echo "::warning:: could not add playwright-chromium in $folder"
+                fi
                 echo "--> Building Slidev presentation in $folder"
-                timeout 10m pnpm exec slidev build --base "/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
+                BUILD_ARGS=(--base "/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none")
+                # PDF export is best-effort: fall back to a plain build so the site still deploys
+                if ! timeout 10m pnpm exec slidev build --download "${BUILD_ARGS[@]}"; then
+                  echo "::warning:: PDF build failed in $folder, retrying without PDF"
+                  timeout 10m pnpm exec slidev build "${BUILD_ARGS[@]}" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
+                fi
                 cd -
                 echo "--> Build complete for $folder. Listing output:"
                 if [ -d "$OUTPUT_ROOT/$folder" ]; then
