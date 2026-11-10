@@ -17,13 +17,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    timeout-minutes: 120
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch last 2 commits for git diff
+          fetch-depth: 0  # full history so the diff against the last built commit works
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -33,7 +33,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          # 'lts/*' moved to Node 26, which hangs playwright's Chromium download
+          node-version: '22'
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/pnpm/store
+          key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: pnpm-store-
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: playwright-
 
       - name: Restore cached builds
         id: cache-restore
@@ -87,15 +102,6 @@ jobs:
           # Read projects (newline-separated) into an array
           mapfile -t ALL_PROJECTS <<< "${{ steps.find-projects.outputs.all_projects }}"
 
-          # Check if cache was restored (has any index.html files)
-          CACHE_RESTORED=false
-          if find "$OUTPUT_ROOT" -type f -name index.html 2>/dev/null | grep -q .; then
-            CACHE_RESTORED=true
-            echo "Cache restored successfully with previous builds"
-          else
-            echo "No cached builds found - will build all projects"
-          fi
-
           CHANGED_FILES=""
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual trigger - building all projects"
@@ -107,40 +113,32 @@ jobs:
             exit 0
           fi
 
-          # If no cache exists, build all projects
-          if [ "$CACHE_RESTORED" = "false" ]; then
-            echo "No cache available - building all projects"
-            {
-              echo "projects<<EOF"
-              printf "%s\n" "${ALL_PROJECTS[@]}"
-              echo "EOF"
-            } >> "$GITHUB_OUTPUT"
-            exit 0
+          # Diff against the last commit that was actually built (stored in the cached dist),
+          # so cancelled or failed runs never cause changes to be skipped.
+          BASE=""
+          [ -f "$OUTPUT_ROOT/.built_sha" ] && BASE="$(cat "$OUTPUT_ROOT/.built_sha")"
+          if [ -z "$BASE" ] || ! git cat-file -e "${BASE}^{commit}" 2>/dev/null; then
+            BASE="${{ github.event.before }}"
           fi
-
-          # Prefer the push range provided by GitHub
-          if [ "${{ github.event_name }}" = "push" ] && [ -n "${{ github.event.before }}" ]; then
-            # Ensure we have the needed history
-            git fetch --no-tags --prune origin "${{ github.ref }}" || true
-            CHANGED_FILES="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" || true)"
-          else
-            # Fallback (may miss multi-commit pushes)
-            CHANGED_FILES="$(git diff --name-only HEAD~1 HEAD || true)"
+          if [ -z "$BASE" ] || ! git cat-file -e "${BASE}^{commit}" 2>/dev/null; then
+            BASE="HEAD~1"
           fi
+          echo "Diff base: $BASE"
+          CHANGED_FILES="$(git diff --name-only "$BASE" "${{ github.sha }}" || true)"
 
           echo "Changed files:"
           printf "%s\n" "$CHANGED_FILES"
 
           declare -a CHANGED_PROJECTS=()
-          if [ -n "$CHANGED_FILES" ]; then
-            for project in "${ALL_PROJECTS[@]}"; do
-              # If any changed file is under this project directory, mark it
-              if printf '%s\n' "$CHANGED_FILES" | grep -Fq -- "$project/"; then
-                echo "Project changed: $project"
-                CHANGED_PROJECTS+=("$project")
-              fi
-            done
-          fi
+          for project in "${ALL_PROJECTS[@]}"; do
+            if printf '%s\n' "$CHANGED_FILES" | grep -Fq -- "$project/"; then
+              echo "Project changed: $project"
+              CHANGED_PROJECTS+=("$project")
+            elif [ ! -f "$OUTPUT_ROOT/$project/index.html" ]; then
+              echo "Project missing from cache: $project"
+              CHANGED_PROJECTS+=("$project")
+            fi
+          done
 
           {
             echo "projects<<EOF"
@@ -200,25 +198,36 @@ jobs:
                 fi
 
                 echo "--> Installing dependencies in $folder..."
-                ls -l "$folder"
                 cd "$folder"
-                timeout 10m pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
+                # Browser download is done separately below, with its own short timeout
+                export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+                timeout 5m pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
                 echo "--> Dependencies installed in $folder"
                 # Slidev resolves playwright-chromium from the deck itself; add it in CI only (no lockfile change)
                 if [ ! -d node_modules/playwright-chromium ]; then
-                  timeout 10m pnpm add -D playwright-chromium --lockfile=false || echo "::warning:: could not add playwright-chromium in $folder"
+                  timeout 3m pnpm add -D playwright-chromium --lockfile=false || echo "::warning:: could not add playwright-chromium in $folder"
                 fi
+                unset PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD
+                HAVE_BROWSER=1
+                timeout 4m pnpm exec playwright install chromium || { echo "::warning:: chromium unavailable in $folder, skipping PDF"; HAVE_BROWSER=0; }
                 echo "--> Building Slidev presentation in $folder"
-                BUILD_ARGS=(--base "/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none")
+                # Build into a temp dir and move on success, so a killed build never leaves a partial output
+                TMP_OUT="$RUNNER_TEMP/out/$folder"
+                rm -rf "$TMP_OUT"; mkdir -p "$(dirname "$TMP_OUT")"
+                BUILD_ARGS=(--base "/$folder/" --out "$TMP_OUT" --wait-until "none")
                 # PDF export is best-effort: fall back to a plain build so the site still deploys
-                if ! timeout 10m pnpm exec slidev build --download "${BUILD_ARGS[@]}"; then
-                  echo "::warning:: PDF build failed in $folder, retrying without PDF"
-                  timeout 10m pnpm exec slidev build "${BUILD_ARGS[@]}" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
+                if [ "$HAVE_BROWSER" = 1 ] && timeout 5m pnpm exec slidev build --download "${BUILD_ARGS[@]}"; then
+                  :
+                else
+                  echo "::warning:: building $folder without PDF"
+                  rm -rf "$TMP_OUT"
+                  timeout 5m pnpm exec slidev build "${BUILD_ARGS[@]}" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
                 fi
                 cd -
-                echo "--> Build complete for $folder. Listing output:"
+                mkdir -p "$(dirname "$OUTPUT_ROOT/$folder")"
+                mv "$TMP_OUT" "$OUTPUT_ROOT/$folder"
+                echo "--> Build complete for $folder."
                 if [ -d "$OUTPUT_ROOT/$folder" ]; then
-                  ls -lhR "$OUTPUT_ROOT/$folder"
                   BUILT_COUNT=$((BUILT_COUNT + 1))
                 else
                   echo "::error:: Expected output folder $OUTPUT_ROOT/$folder not found"
@@ -236,7 +245,12 @@ jobs:
           fi
 
           echo "------ Final dist structure ------"
-          find "$OUTPUT_ROOT" || echo "$OUTPUT_ROOT not found!"
+          find "$OUTPUT_ROOT" -maxdepth 3 -type d
+
+          # Only a fully successful build advances the diff base
+          if [ "$ERROR" -eq 0 ]; then
+            echo "${{ github.sha }}" > "$OUTPUT_ROOT/.built_sha"
+          fi
 
           if [ "$ERROR" -ne 0 ]; then
             echo "::error:: One or more projects failed to build, check the log above."
@@ -249,6 +263,7 @@ jobs:
           fi
 
       - name: Copy root static files
+        if: success()
         run: |
           echo "Copying root-level static files to dist..."
           # Copy the main landing page files
@@ -273,6 +288,7 @@ jobs:
           ls -la dist/
 
       - name: Save builds to cache
+        if: always()
         uses: actions/cache/save@v4
         with:
           path: dist
