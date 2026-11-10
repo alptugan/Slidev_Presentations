@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -201,10 +202,10 @@ jobs:
                 echo "--> Installing dependencies in $folder..."
                 ls -l "$folder"
                 cd "$folder"
-                pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
+                timeout 10m pnpm install --frozen-lockfile || { echo "::error:: pnpm install failed in $folder"; ERROR=1; cd -; continue; }
                 echo "--> Dependencies installed in $folder"
                 echo "--> Building Slidev presentation in $folder"
-                pnpm exec slidev build --base "/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
+                timeout 10m pnpm exec slidev build --base "/$folder/" --out "../../$OUTPUT_ROOT/$folder" --wait-until "none" || { echo "::error:: Slidev build failed in $folder"; ERROR=1; cd -; continue; }
                 cd -
                 echo "--> Build complete for $folder. Listing output:"
                 if [ -d "$OUTPUT_ROOT/$folder" ]; then
